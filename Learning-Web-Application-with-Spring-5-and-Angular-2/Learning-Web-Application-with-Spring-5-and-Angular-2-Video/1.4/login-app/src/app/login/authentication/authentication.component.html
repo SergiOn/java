@@ -1,0 +1,10 @@
+<p>
+  Login component - {{counter}}
+  <br>
+  <input type="text" #username>
+  <br>
+  <input type="password" #password>
+  <br>
+  <button (click)="login(username.value, password.value)">Login</button>
+</p>
+{{isLoggedIn}}

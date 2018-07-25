@@ -1,0 +1,9 @@
+<p *ngIf="userInfo; else elseBlock">
+  Name: {{userInfo.name}}
+  Token: {{userInfo.details.tokenValue}}
+  <br>
+  <button (click)="logout()">Logout</button>
+</p>
+<ng-template #elseBlock>
+  <a routerLink="/login" routerLinkActive="active">Login</a>
+</ng-template>

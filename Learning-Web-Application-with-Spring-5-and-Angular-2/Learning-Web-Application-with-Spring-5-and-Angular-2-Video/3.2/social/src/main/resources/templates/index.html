@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>Social</title>
+</head>
+<body>
+<div th:fragment="logout" sec:authorize="isAuthenticated()">
+	<div>
+		<div>User:</div>
+        <p th:text="${user}"></p>
+    </div>
+
+	<div>
+		<form action="#" th:action="@{/logout}" method="post">
+			<input type="submit" value="Logout" />
+		</form>
+	</div>
+</div>
+</body>
+</html>
