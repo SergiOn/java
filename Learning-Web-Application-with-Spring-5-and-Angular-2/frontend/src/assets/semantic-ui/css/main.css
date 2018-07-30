@@ -1,0 +1,20 @@
+.nav-bar {
+  /*border: 1px solid red;*/
+}
+
+.container {
+  margin: auto;
+  margin-top: 80px;
+  width: 80%;
+  /*border: 1px solid red;*/
+}
+
+.box {
+  border: 1px solid red;
+}
+
+.image-background {
+  background-color: #212124;
+  width:auto;
+  height: 500px;
+}
