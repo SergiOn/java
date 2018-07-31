@@ -5,6 +5,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Photo {
@@ -12,7 +13,6 @@ public class Photo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long photoId;
-
     private String photoName;
     private String title;
     private String description;
