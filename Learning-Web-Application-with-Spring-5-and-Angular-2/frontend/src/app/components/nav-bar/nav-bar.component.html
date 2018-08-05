@@ -14,11 +14,11 @@
     </a>
   </div>
   <div class="right menu ">
-    <a class="item" routerLink="/register" routerLinkActive="active" >
+    <a class="item" *ngIf="!checkLogin()" routerLink="/register" routerLinkActive="active" >
       Register
     </a>
     <a class="item" routerLink="/login" routerLinkActive="active" (click)="onClick()">
-      Login
+      {{ !checkLogin() ? 'Logout' : 'Login' }}
     </a>
   </div>
 </div>
