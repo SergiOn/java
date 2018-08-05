@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Photo } from '../models/photo';
-import { User } from '../models/user';
+import { Photo } from '../../models/photo';
+import { User } from '../../models/user';
 
 @Injectable()
 export class PhotoService {
