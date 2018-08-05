@@ -10,8 +10,7 @@ export class LoginService {
   sendCredential(model) {
     const tokenUrl1 = 'http://localhost:8080/user/login';
     const headers1 = new HttpHeaders({'Content-Type': 'application/json'});
-
-    return this.http.post(tokenUrl1, model, { headers: headers1 });
+    return this.http.post(tokenUrl1, model, { headers: headers1, responseType: 'text' });
   }
 
   sendToken(token) {
@@ -20,7 +19,7 @@ export class LoginService {
 
     const getHeaders = new HttpHeaders({ 'Authorization': 'Bearer ' + token });
 
-    return this.http.get(tokenUrl2, { headers: getHeaders });
+    return this.http.get(tokenUrl2, { headers: getHeaders, responseType: 'text' });
   }
 
   logout() {
