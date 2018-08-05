@@ -1,0 +1,36 @@
+<div class="container">
+  <form *ngIf="!registered" class="ui form" (ngSubmit)="onSubmit()" #registerForm = "ngForm">
+    <h2 class="ui dividing header">Register User</h2>
+    <div class="field">
+      <label>* Name</label>
+      <div class="two fields">
+        <div class="field">
+          <input type="text" name="firstName" placeholder="First Name" [(ngModel)]="newUser.firstName" ngControl="firstName" required>
+        </div>
+        <div class="field">
+          <input type="text" name="lastName" placeholder="Last Name" [(ngModel)]="newUser.lastName" ngControl="lastName" required>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>* Username/Pasword</label>
+      <div class="three fields">
+        <div class="field">
+          <input type="text" name="userName" placeholder="User Name" [(ngModel)]="newUser.userName" ngControl="userName" required>
+        </div>
+        <div class="field">
+          <input type="password" name="password" placeholder="Password" [(ngModel)]="newUser.password" ngControl="password1" required>
+        </div>
+        <div class="field">
+          <input type="password" name="password" placeholder="Password Again" ngControl="password2" required>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="ui button" [disabled]="!registerForm.form.valid" >Register</button>
+  </form>
+
+  <div *ngIf="registered">
+    <h1>Register Success!</h1>
+  </div>
+</div>
