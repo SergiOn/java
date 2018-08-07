@@ -22,7 +22,7 @@ export class LoginComponent {
   onSubmit() {
     this.loginService.sendCredential(this.model).subscribe(
       (data) => {
-        localStorage.setItem('token', JSON.stringify(data));
+        localStorage.setItem('token', data);
 
         this.loginService.sendToken(localStorage.getItem('token')).subscribe(
           (_data) => {

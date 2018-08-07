@@ -47,7 +47,7 @@ public class UserController {
                 .setSubject(username)
                 .claim("roles", "user")
                 .setIssuedAt(new Date())
-                .signWith(SignatureAlgorithm.HS256, "secretKey")
+                .signWith(SignatureAlgorithm.HS256, "secretkey")
                 .compact();
     }
 
