@@ -18,7 +18,7 @@
       Register
     </a>
     <a class="item" routerLink="/login" routerLinkActive="active" (click)="onClick()">
-      {{ !checkLogin() ? 'Logout' : 'Login' }}
+      {{ checkLogin() ? 'Logout' : 'Login' }}
     </a>
   </div>
 </div>
