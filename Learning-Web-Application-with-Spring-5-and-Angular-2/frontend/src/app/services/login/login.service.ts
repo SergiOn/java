@@ -34,13 +34,15 @@ export class LoginService {
       && localStorage.getItem('token') !== null
       && localStorage.getItem('token') !== '';
 
-    if (userLogged) {
-      console.log(localStorage.getItem('currentUserName'));
-      console.log(localStorage.getItem('token'));
-      return true;
-    } else {
-      return false;
-    }
+    return userLogged;
+
+    // if (userLogged) {
+    //   // console.log(localStorage.getItem('currentUserName'));
+    //   // console.log(localStorage.getItem('token'));
+    //   return true;
+    // } else {
+    //   return false;
+    // }
   }
 
 }

@@ -25,14 +25,14 @@ export class MyAlbumComponent {
         this.user = user;
 
         console.log(this.user);
-/*
+
         this.photoService.getPhotosByUser(this.user).subscribe(
           (photos)  => {
             console.log(this.photos = user.photoList);
           },
           (error) => console.log(error)
         );
-*/
+
       },
       error => console.log(error)
     );

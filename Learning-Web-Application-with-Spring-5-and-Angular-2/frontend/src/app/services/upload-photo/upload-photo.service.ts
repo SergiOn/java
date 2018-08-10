@@ -45,7 +45,7 @@ export class UploadPhotoService {
       formData.append('uploads[]', files[i], files[i].name);
     }
 
-    return this.http.post(url, formData, { headers: headers });
+    return this.http.post(url, formData, { headers: headers, responseType: 'text' });
       // .subscribe(
       //   data => alert('Upload successful!'),
       //   error => console.log(error)
