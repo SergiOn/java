@@ -1,0 +1,37 @@
+<div class="container">
+  <form *ngIf="!photoAdded" class="ui form" (ngSubmit)="onSubmit()" #addPhotoForm = "ngForm">
+    <h2 class="ui dividing header">Add Your Photo</h2>
+    <div class="field">
+      <div class="two fields">
+        <div class="field">
+          <label>* Photo Name</label>
+          <input type="text" name="photoName" placeholder="Photo Name" [(ngModel)]="newPhoto.photoName" ngControl="photoName" required>
+        </div>
+        <div class="field">
+          <label>* Photo Title</label>
+          <input type="text" name="title" placeholder="Photo Title" [(ngModel)]="newPhoto.title" ngControl="title" required>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Description</label>
+      <div class="field">
+        <input type="text" name="Description" placeholder="Description" [(ngModel)]="newPhoto.description" ngControl="description">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Upload Photo</label>
+      <input type="file" (change)="fileChangeEvent($event)" />
+      <button type="button" (click)="upload()" class="ui mini button">Upload</button>
+
+    </div>
+    <hr>
+    <br>
+    <button type="submit" class="ui button" [disabled]="!addPhotoForm.form.valid" >Submit</button>
+  </form>
+
+  <div *ngIf="photoAdded">
+    <h1>Add Photo Success!</h1>
+  </div>
+</div>

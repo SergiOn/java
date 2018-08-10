@@ -12,11 +12,14 @@ import { User } from '../../models/user';
 })
 export class MyAlbumComponent {
 
-  private photos: Photo[];
+  public photos: Photo[];
   private user;
   private selectedPhoto: Photo;
 
-  constructor (private router: Router, private userService: UserService, private photoService: PhotoService) {
+  constructor (private router: Router,
+               private userService: UserService,
+               private photoService: PhotoService) {
+
     this.userService.getUserByName(localStorage.getItem('currentUserName')).subscribe(
       (user: User) => {
         this.user = user;
