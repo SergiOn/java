@@ -5,7 +5,7 @@ export class Comment {
   commentId: number;
   photo: Photo;
   userName: string;
-  // content: string;
-  comment: string;
+  content: string;
+  // comment: string;
   photoId: number;
 }

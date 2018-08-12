@@ -10,7 +10,7 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long commentId;
-    private String comment;
+    private String content;
 
     @ManyToOne
     @JsonIgnore
@@ -26,12 +26,12 @@ public class Comment {
         this.commentId = commentId;
     }
 
-    public String getComment() {
-        return comment;
+    public String getContent() {
+        return content;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public Photo getPhoto() {
