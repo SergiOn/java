@@ -6,6 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { MyAlbumComponent } from './components/my-album/my-album.component';
 import { AddPhotoComponent } from './components/add-photo/add-photo.component';
+import { ImageDetailComponent } from './components/image-detail/image-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -32,6 +33,10 @@ const appRoutes: Routes = [
   {
     path: 'add-photo',
     component: AddPhotoComponent
+  },
+  {
+    path: 'image-detail/:id',
+    component: ImageDetailComponent
   }
 ];
 

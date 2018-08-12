@@ -11,7 +11,8 @@ public interface CommentDao extends CrudRepository<Comment, Long> {
 
     Comment save(Comment comment);
 
-    Comment findOne(Long commentId);
+//    Comment findOne(Long commentId);
+    Comment findByCommentId(Long commentId);
 
     List<Comment> findByPhotoId(Long photoId);
 }

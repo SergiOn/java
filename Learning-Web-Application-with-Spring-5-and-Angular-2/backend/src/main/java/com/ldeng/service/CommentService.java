@@ -9,5 +9,6 @@ public interface CommentService {
 
     List<Comment> findByPhotoId(Long photoId);
 
-    Comment findOne(Long commentId);
+//    Comment findOne(Long commentId);
+    Comment findByCommentId(Long commentId);
 }

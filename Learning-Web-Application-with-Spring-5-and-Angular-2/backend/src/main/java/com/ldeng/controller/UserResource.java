@@ -27,7 +27,7 @@ public class UserResource {
         return userService.findByUserName(userName);
     }
 
-    @RequestMapping(value = "/user/updated", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/update", method = RequestMethod.POST)
     public User updateUser(@RequestBody User user) {
         return userService.save(user);
     }

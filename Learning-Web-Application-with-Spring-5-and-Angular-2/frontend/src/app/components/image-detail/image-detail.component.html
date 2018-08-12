@@ -1,0 +1,24 @@
+<div class="pusher">
+  <div class="ui inverted vertical masthead segment">
+    <div class="ui text container">
+
+      <div class="center aligned">
+        <img *ngIf="photo.imageName" src="http://localhost:8080/images/{{photo.imageName}}" class="ui image massive centered" />
+      </div>
+      <br>
+      <div class="ui grid">
+        <div class="left floated six wide column " style="cursor: pointer; color: gray;">
+          <i class="long arrow left icon"></i><span (click)="goBack()">Back</span>
+        </div>
+        <div class="right floated right aligned six wide column" style="color: gray;">
+          <i class="thumbs outline up icon"></i> {{photo.likes}}
+          &nbsp;&nbsp;<a style="cursor: pointer" (click)="likeDisplay()">{{like}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <image-comments [photo]="photo"></image-comments>
+</div>

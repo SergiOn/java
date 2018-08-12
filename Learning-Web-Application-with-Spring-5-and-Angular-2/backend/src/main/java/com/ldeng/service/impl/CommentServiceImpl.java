@@ -25,7 +25,8 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public Comment findOne(Long commentId) {
-        return commentDao.findOne(commentId);
+//    public Comment findOne(Long commentId) {
+    public Comment findByCommentId(Long commentId) {
+        return commentDao.findByCommentId(commentId);
     }
 }
