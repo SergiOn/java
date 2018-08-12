@@ -26,6 +26,7 @@ public class CommentResources {
     public void addComment(@RequestBody Comment comment) {
         Photo photo = photoService.findByPhotoId(comment.getPhotoId());
         List<Comment> commentList = photo.getCommentList();
+        comment.setPhoto(photo);
         commentService.save(comment);
     }
 
