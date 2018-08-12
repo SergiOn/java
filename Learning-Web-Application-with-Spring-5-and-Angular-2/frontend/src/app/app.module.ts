@@ -22,6 +22,7 @@ import { UploadPhotoService } from './services/upload-photo/upload-photo.service
 import { ImageDetailComponent } from './components/image-detail/image-detail.component';
 import { ImageCommentsComponent } from './components/image-comments/image-comments.component';
 import { CommentService } from './services/comment/comment.service';
+import { PhotoRowComponent } from './components/photo-row/photo-row.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { CommentService } from './services/comment/comment.service';
     AddPhotoComponent,
     ImageDetailComponent,
     ImageCommentsComponent,
+    PhotoRowComponent,
   ],
   imports: [
     BrowserModule,
