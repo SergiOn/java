@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
+import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-authentication',
@@ -9,6 +11,7 @@ import { AuthenticationService } from '../authentication.service';
 export class AuthenticationComponent implements OnInit {
 
   public isLoggedIn: boolean = false;
+  public connectionError: string = 'no errors';
 
   constructor(private authenticationService: AuthenticationService) { }
 
@@ -16,7 +19,10 @@ export class AuthenticationComponent implements OnInit {
   }
 
   public login(username: string, password: string): void {
-    this.isLoggedIn = this.authenticationService.isLoggedIn(username, password);
+    this.authenticationService.isLoggedIn(username, password).subscribe(
+      (res: boolean) => this.isLoggedIn = res,
+      (error: string) => this.connectionError = error
+    );
   }
 
 }
