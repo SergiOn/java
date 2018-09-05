@@ -8,13 +8,15 @@ import { AuthenticationService } from '../authentication.service';
 })
 export class AuthenticationComponent implements OnInit {
 
-  username: string = 'Mario';
-  isLoggedIn: boolean = false;
+  public isLoggedIn: boolean = false;
 
   constructor(private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
-    this.isLoggedIn = this.authenticationService.isLoggedIn(this.username);
+  }
+
+  public login(username: string, password: string): void {
+    this.isLoggedIn = this.authenticationService.isLoggedIn(username, password);
   }
 
 }
