@@ -1,0 +1,13 @@
+
+<pre>
+Res: {{ res$ | async | json }}
+</pre>
+
+<pre>
+Users: {{ users$ | async | json }}
+</pre>
+
+<div *ngFor="let user of users$ | async">
+  {{ user.name }}
+  {{ user.surname }}
+</div>
