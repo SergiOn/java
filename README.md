@@ -37,3 +37,5 @@
 ##### About this course
 
 Learn how to make your own Web Application with Spring 5 and Angular 2
+
+https://console.developers.google.com/apis/credentials?project=packt-lwa-spring-5-angular-2
