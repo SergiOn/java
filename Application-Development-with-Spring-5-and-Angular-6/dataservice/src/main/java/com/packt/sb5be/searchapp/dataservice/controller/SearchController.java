@@ -1,6 +1,6 @@
 package com.packt.sb5be.searchapp.dataservice.controller;
 
-import com.packt.sb5be.searchapp.dataservice.dbmodel.orm.Topic;
+import com.packt.sb5be.searchapp.dataservice.dao.TopicCopy;
 import com.packt.sb5be.searchapp.dataservice.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ public class SearchController {
     TopicRepository topicRepository;
 
     @GetMapping("/topics")
-    public List<Topic> searchTopics(@RequestParam("searchString") String searchString) {
+    public List<TopicCopy> searchTopics(@RequestParam("searchString") String searchString) {
         return topicRepository.findByDescriptionLikeIgnoreCase("%"+searchString+"%");
     }
 }
