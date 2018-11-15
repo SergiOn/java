@@ -9,9 +9,10 @@ import com.packt.petstore.repository.PetStoreUserRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
+
+import java.security.Principal;
 
 @RestController
 public class BuyController {
@@ -27,20 +28,26 @@ public class BuyController {
     @PostMapping("/buy/{petId}")
     public Mono<ResponseEntity<Pet>> buyPet(
             @PathVariable("petId") String petId,
-            @RequestParam("userId") String userId) {
+            Mono<Principal> principalMono) {
+//          @RequestParam("userId") String userId) {
 
-        if (userId == null || userId.isEmpty())
-            return Mono.just(ResponseEntity.badRequest().build());
+//        if (userId == null || userId.isEmpty())
+//            return Mono.just(ResponseEntity.badRequest().build());
+//
+//        Mono<PetStoreUser> userMono = petStoreUserRepository.findById(userId)
+//                .switchIfEmpty(Mono.error(new NotFoundInDBException("User not found in DB")));
 
-        Mono<PetStoreUser> userMono = petStoreUserRepository.findById(userId)
-                .switchIfEmpty(Mono.error(new NotFoundInDBException("User not found in DB")));
+        Mono<PetStoreUser> userMono = principalMono
+                .map(principal -> principal.getName())
+                .flatMap(email -> petStoreUserRepository.findByEmail(email))
+                        .switchIfEmpty(Mono.error(new NotFoundInDBException("USer not found in DB")));
 
         return this.petRepository.findById(petId)
                 .switchIfEmpty(Mono.error(new NotFoundInDBException("Pet is not on the records")))
                 .zipWith(userMono, (pet, user) -> {
 
                     if (user.getMoneyAvailable() < pet.getCost()) {
-                        throw new UserDoNotHaveEnoughFoundsException(String.format("The User %s do not have enough founds!", userId));
+                        throw new UserDoNotHaveEnoughFoundsException("The User do not have enough founds!");
                     }
 
                     user.setMoneyAvailable(user.getMoneyAvailable() - pet.getCost());

@@ -27,9 +27,12 @@ public class SecurityConfig {
     }
 
     @Bean
-    SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
+    public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
         http
                 .authorizeExchange()
+                    .pathMatchers(HttpMethod.POST, "/login").permitAll()
+                    .pathMatchers(HttpMethod.POST, "/logout").permitAll()
+                    .pathMatchers(HttpMethod.POST, "/register").permitAll()
                     .anyExchange().authenticated()
                 .and()
                 .httpBasic().disable()
@@ -48,7 +51,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    ReactiveAuthenticationManager authenticationManager() {
+    public ReactiveAuthenticationManager authenticationManager() {
         UserDetailsRepositoryReactiveAuthenticationManager authManager =
                 new UserDetailsRepositoryReactiveAuthenticationManager(reactiveUserDetailsService);
 
