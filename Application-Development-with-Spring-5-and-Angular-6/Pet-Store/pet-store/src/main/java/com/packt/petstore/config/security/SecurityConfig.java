@@ -37,6 +37,7 @@ public class SecurityConfig {
                 .and()
                 .httpBasic().disable()
                 .csrf().disable()
+//                .cors().disable()
                 .formLogin()
                     .authenticationManager(authenticationManager())
                     .requiresAuthenticationMatcher(ServerWebExchangeMatchers.pathMatchers(HttpMethod.POST, "/login"))
