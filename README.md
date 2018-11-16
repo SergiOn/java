@@ -66,3 +66,12 @@ https://www.udemy.com/application-development-with-spring-50-and-angular-6
 ##### About this course
 
 Explore the power of Spring 5.0 with Java to create your own real-world and enterprise-level applications
+
+
+## Build An Online Bank With Java, Angular 2, Spring and More
+
+https://www.udemy.com/build-an-online-bank-with-java-angular-2-spring-and-more
+
+##### About this course
+
+Comprehensive guide on building online banking system with Frontend, Backend, Database, REST and more using latest Tech
