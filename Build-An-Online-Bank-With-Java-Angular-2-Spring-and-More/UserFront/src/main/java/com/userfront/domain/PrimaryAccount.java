@@ -1,6 +1,7 @@
 package com.userfront.domain;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class PrimaryAccount {
 
