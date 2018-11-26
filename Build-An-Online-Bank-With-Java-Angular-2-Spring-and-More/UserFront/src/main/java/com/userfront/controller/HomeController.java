@@ -51,7 +51,7 @@ public class HomeController {
             return "signup";
         } else {
 
-            userService.save(user);
+            userService.createUser(user);
 
             return "redirect:/";
         }
