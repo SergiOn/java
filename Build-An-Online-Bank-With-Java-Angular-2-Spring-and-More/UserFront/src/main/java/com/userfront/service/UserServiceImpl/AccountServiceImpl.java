@@ -4,8 +4,9 @@ import com.userfront.dao.PrimaryAccountDao;
 import com.userfront.dao.SavingsAccountDao;
 import com.userfront.domain.*;
 import com.userfront.service.AccountService;
+import com.userfront.service.TransactionService;
 import com.userfront.service.UserService;
-import org.omg.IOP.TransactionService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -17,17 +18,17 @@ public class AccountServiceImpl implements AccountService {
 
     private static int nextAccountNumber = 11223145;
 
-    private final PrimaryAccountDao primaryAccountDao;
-    private final SavingsAccountDao savingsAccountDao;
-    private final UserService userService;
-    private final TransactionService transactionService;
+    @Autowired
+    private PrimaryAccountDao primaryAccountDao;
 
-    public AccountServiceImpl(PrimaryAccountDao primaryAccountDao, SavingsAccountDao savingsAccountDao, UserService userService, TransactionService transactionService) {
-        this.primaryAccountDao = primaryAccountDao;
-        this.savingsAccountDao = savingsAccountDao;
-        this.userService = userService;
-        this.transactionService = transactionService;
-    }
+    @Autowired
+    private SavingsAccountDao savingsAccountDao;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private TransactionService transactionService;
 
     public PrimaryAccount createPrimaryAccount() {
         PrimaryAccount primaryAccount = new PrimaryAccount();

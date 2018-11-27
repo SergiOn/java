@@ -8,6 +8,7 @@ import com.userfront.service.AccountService;
 import com.userfront.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,20 +21,17 @@ public class UserServiceImpl implements UserService {
 
     private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
 
-    private final UserDao userDao;
+    @Autowired
+    private UserDao userDao;
 
+    @Autowired
     private RoleDao roleDao;
 
-    private final BCryptPasswordEncoder passwordEncoder;
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
-    private final AccountService accountService;
-
-    public UserServiceImpl(UserDao userDao, RoleDao roleDao, BCryptPasswordEncoder passwordEncoder, AccountService accountService) {
-        this.userDao = userDao;
-        this.roleDao = roleDao;
-        this.passwordEncoder = passwordEncoder;
-        this.accountService = accountService;
-    }
+    @Autowired
+    private AccountService accountService;
 
     public void save(User user) {
         userDao.save(user);
