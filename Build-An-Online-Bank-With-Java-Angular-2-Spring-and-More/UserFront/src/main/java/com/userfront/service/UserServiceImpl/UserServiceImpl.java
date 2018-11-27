@@ -4,6 +4,7 @@ import com.userfront.dao.RoleDao;
 import com.userfront.dao.UserDao;
 import com.userfront.domain.User;
 import com.userfront.domain.security.UserRole;
+import com.userfront.service.AccountService;
 import com.userfront.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
