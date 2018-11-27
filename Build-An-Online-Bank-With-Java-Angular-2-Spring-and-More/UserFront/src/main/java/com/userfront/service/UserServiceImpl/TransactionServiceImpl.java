@@ -4,7 +4,6 @@ import com.userfront.dao.*;
 import com.userfront.domain.*;
 import com.userfront.service.TransactionService;
 import com.userfront.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -23,7 +22,6 @@ public class TransactionServiceImpl implements TransactionService {
 	private final SavingsAccountDao savingsAccountDao;
 	private final RecipientDao recipientDao;
 
-    @Autowired
     public TransactionServiceImpl(UserService userService, PrimaryTransactionDao primaryTransactionDao, SavingsTransactionDao savingsTransactionDao, PrimaryAccountDao primaryAccountDao, SavingsAccountDao savingsAccountDao, RecipientDao recipientDao) {
         this.userService = userService;
         this.primaryTransactionDao = primaryTransactionDao;
@@ -32,7 +30,6 @@ public class TransactionServiceImpl implements TransactionService {
         this.savingsAccountDao = savingsAccountDao;
         this.recipientDao = recipientDao;
     }
-
 
     public List<PrimaryTransaction> findPrimaryTransactionList(String username){
         User user = userService.findByUsername(username);
