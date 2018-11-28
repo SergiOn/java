@@ -37,6 +37,10 @@ public class UserServiceImpl implements UserService {
         userDao.save(user);
     }
 
+    public User saveUser(User user) {
+        return userDao.save(user);
+    }
+
     public User createUser(User user, Set<UserRole> userRoles) {
         User localUser = userDao.findByUsername(user.getUsername());
 
