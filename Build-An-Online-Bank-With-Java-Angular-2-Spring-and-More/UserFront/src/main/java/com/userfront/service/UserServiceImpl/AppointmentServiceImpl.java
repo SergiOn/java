@@ -32,6 +32,11 @@ public class AppointmentServiceImpl implements AppointmentService {
     public void confirmAppointment(Long id) {
         Optional<Appointment> appointment = findAppointment(id);
 
+//        if (appointment.isPresent()) {
+//            Appointment appointmentPresent = appointment.get();
+//            appointmentDao.save(appointmentPresent);
+//        }
+
         appointment.ifPresent((value) -> {
             value.setConfirmed(true);
             appointmentDao.save(value);
