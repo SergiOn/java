@@ -1,0 +1,17 @@
+server:
+  port: 9411
+  
+logging:
+  level:
+    com.netflix: WARN
+    com.springframework.web: WARN
+    com.itemsharing: DEBUG
+
+eureka:
+  instance:
+    perferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://54.235.233.109:8761/eureka/

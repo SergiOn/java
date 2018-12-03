@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: userservice
+  profiles:
+    active: default
+  zipkin:
+    baseUrl: http://localhost:9411
+  cloud:
+    config:
+#      enabled: false
+      uri: http://localhost:8888
+    

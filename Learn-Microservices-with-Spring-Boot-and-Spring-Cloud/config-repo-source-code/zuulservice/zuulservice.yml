@@ -1,0 +1,49 @@
+
+# security:
+#   basic:
+#     enabled: false
+    
+server:
+  port: 5555
+  
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://54.235.233.109:8761/eureka
+      
+zuul:
+  routes:
+    userservice: /user/**
+    itemservice: /item/**
+  ignored-services: '*'
+  prefix: /api
+  sensitive-headers: Cookie, Set-Cookie
+  
+    
+#Setting the logging levels for the service
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.itemsharing: DEBUG
+
+management:
+  security:
+    enabled: false
+
+# hystrix:
+#   command:
+#     choose:
+#       default:
+#         execution:
+#           timeout:
+#             enabled: false
+
+itemservice.ribbon.ReadTimeout: 5000
+userservice.ribbon.ReadTimeout: 5000
+authorizationservice.ribbon.ReadTimeout: 5000
+    
