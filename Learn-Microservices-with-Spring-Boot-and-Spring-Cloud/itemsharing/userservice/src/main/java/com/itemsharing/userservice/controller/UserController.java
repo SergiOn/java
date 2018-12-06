@@ -1,7 +1,7 @@
 package com.itemsharing.userservice.controller;
 
 import com.itemsharing.userservice.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.itemsharing.userservice.service.UserService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
