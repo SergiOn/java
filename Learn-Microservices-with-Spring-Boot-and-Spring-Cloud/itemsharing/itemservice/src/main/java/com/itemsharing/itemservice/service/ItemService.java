@@ -15,11 +15,13 @@ public interface ItemService {
     List<Item> getItemsByUsername(String username);
 
     Item getItemById(Long id);
+//    Optional<Item> getItemById(Long id);
 
     Item updateItem(Item item) throws IOException;
 
     void deleteItemById(Long id);
 
     User getUserByUsername(String username);
+//    Optional<User> getUserByUsername(String username);
 
 }

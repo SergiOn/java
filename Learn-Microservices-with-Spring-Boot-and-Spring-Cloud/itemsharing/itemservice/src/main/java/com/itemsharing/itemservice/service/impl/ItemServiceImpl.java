@@ -47,32 +47,52 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<Item> getAllItems() {
-        return null;
+        return (List<Item>) itemRepository.findAll();
     }
 
     @Override
     public List<Item> getItemsByUsername(String username) {
-        return null;
+        User user = userService.findByUsername(username);
+
+        return itemRepository.findByUser(user);
     }
 
     @Override
     public Item getItemById(Long id) {
-        return null;
+        return itemRepository.findById(id).orElse(null);
     }
 
     @Override
     public Item updateItem(Item item) throws IOException {
-        return null;
+        Item localItem = itemRepository.findById(item.getId()).orElseThrow(() -> new IOException("Item was not found"));
+
+        localItem.setName(item.getName());
+        localItem.setItemCondition(item.getItemCondition());
+        localItem.setStatus(item.getStatus());
+        localItem.setDescription(item.getDescription());
+
+        return itemRepository.save(localItem);
+
+//        if (localItem == null) {
+//            throw new IOException("Item was not found");
+//        } else {
+//            localItem.setName(item.getName());
+//            localItem.setItemCondition(item.getItemCondition());
+//            localItem.setStatus(item.getStatus());
+//            localItem.setDescription(item.getDescription());
+//
+//            return itemRepository.save(localItem);
+//        }
     }
 
     @Override
     public void deleteItemById(Long id) {
-
+        itemRepository.deleteById(id);
     }
 
     @Override
     public User getUserByUsername(String username) {
-        return null;
+        return userService.findByUsername(username);
     }
 
 }
