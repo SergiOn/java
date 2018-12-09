@@ -1,3 +1,15 @@
+#spring:
+#  main:
+#    allow-bean-definition-overriding: true
+#  application:
+#    name: userservice
+#  profiles:
+#    active: default
+#  cloud:
+#    config:
+#      uri: http://localhost:8888
+
+
 spring:
   jpa:
     hibernate:
