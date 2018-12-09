@@ -1,0 +1,17 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/SergiOn/java
+          search-paths:
+#            - userservice
+#            - itemservice
+            - Learn-Microservices-with-Spring-Boot-and-Spring-Cloud/config-repo/userservice
+            - Learn-Microservices-with-Spring-Boot-and-Spring-Cloud/config-repo/itemservice
+          default-label: 9-learn-microservices-spring-boot-spring-cloud
+        encrypt:
+          enabled: false

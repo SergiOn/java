@@ -27,6 +27,7 @@
     <modules>
         <module>userservice</module>
         <module>itemservice</module>
+        <module>configserver</module>
     </modules>
 
     <dependencies>
