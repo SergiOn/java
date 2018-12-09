@@ -15,4 +15,4 @@ spring:
     test-while-idle: true
     validation-query: "SELECT 1"
 server:
-  port: 8081
+  port: 8082
