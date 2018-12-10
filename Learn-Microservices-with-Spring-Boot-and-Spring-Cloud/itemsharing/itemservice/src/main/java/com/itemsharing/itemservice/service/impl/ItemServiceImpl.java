@@ -1,5 +1,6 @@
 package com.itemsharing.itemservice.service.impl;
 
+import com.itemsharing.itemservice.client.UserFeignClient;
 import com.itemsharing.itemservice.model.Item;
 import com.itemsharing.itemservice.model.User;
 import com.itemsharing.itemservice.repository.ItemRepository;
@@ -20,10 +21,12 @@ public class ItemServiceImpl implements ItemService {
 
     private ItemRepository itemRepository;
     private UserService userService;
+    private UserFeignClient userFeignClient;
 
-    public ItemServiceImpl(ItemRepository itemRepository, UserService userService) {
+    public ItemServiceImpl(ItemRepository itemRepository, UserService userService, UserFeignClient userFeignClient) {
         this.itemRepository = itemRepository;
         this.userService = userService;
+        this.userFeignClient = userFeignClient;
     }
 
     @Override
@@ -92,7 +95,8 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public User getUserByUsername(String username) {
-        return userService.findByUsername(username);
+        return userFeignClient.getUserByUsername(username);
+//        return userService.findByUsername(username);
     }
 
 }

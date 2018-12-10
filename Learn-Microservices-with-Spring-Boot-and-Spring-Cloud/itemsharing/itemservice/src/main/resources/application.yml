@@ -30,3 +30,12 @@ spring:
     validation-query: "SELECT 1"
 server:
   port: 8082
+
+eureka:
+  instance:
+    perfer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka/
