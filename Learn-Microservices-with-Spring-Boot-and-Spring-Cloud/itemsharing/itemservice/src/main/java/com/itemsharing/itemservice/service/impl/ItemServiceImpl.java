@@ -6,6 +6,8 @@ import com.itemsharing.itemservice.model.User;
 import com.itemsharing.itemservice.repository.ItemRepository;
 import com.itemsharing.itemservice.service.ItemService;
 import com.itemsharing.itemservice.service.UserService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -94,9 +97,40 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
+//    @HystrixCommand(commandProperties = { @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds", value = "12000") })
+//    @HystrixCommand(fallbackMethod = "buildFallbackUser")
+    @HystrixCommand(fallbackMethod = "buildFallbackUser", threadPoolKey = "itemByUserThreadPool", threadPoolProperties = {
+            @HystrixProperty(name = "coreSize", value = "30"),
+            //(requests per second at peak when the service is healthy * 99th percentile latency in seconds) + small amount of extra threads for overhead
+            @HystrixProperty(name = "maxQueueSize", value = "10"),
+    })
     public User getUserByUsername(String username) {
+        randomlyRunLong();
+
         return userFeignClient.getUserByUsername(username);
 //        return userService.findByUsername(username);
+    }
+
+    private void randomlyRunLong() {
+        Random rand = new Random();
+        int randomRun = rand.nextInt((3 - 1) + 1) + 1;
+        if (randomRun == 3) sleep();
+    }
+
+    private void sleep() {
+        try {
+            Thread.sleep(11000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private User buildFallbackUser(String username) {
+        User user = new User();
+        user.setId(123123L);
+        user.setUsername("Temp user");
+
+        return user;
     }
 
 }
