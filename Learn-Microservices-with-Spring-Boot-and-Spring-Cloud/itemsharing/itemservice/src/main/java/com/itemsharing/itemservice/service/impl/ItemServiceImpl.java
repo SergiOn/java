@@ -106,7 +106,7 @@ public class ItemServiceImpl implements ItemService {
             @HystrixProperty(name = "maxQueueSize", value = "10"),
     })
     public User getUserByUsername(String username) {
-        randomlyRunLong();
+//        randomlyRunLong();
 
         LOG.debug("ItemService.getUserByUsername Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
 
