@@ -8,12 +8,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @SpringBootApplication
 @EnableEurekaClient
+@EnableResourceServer
 public class UserserviceApplication implements CommandLineRunner {
 
 	private UserService userService;
