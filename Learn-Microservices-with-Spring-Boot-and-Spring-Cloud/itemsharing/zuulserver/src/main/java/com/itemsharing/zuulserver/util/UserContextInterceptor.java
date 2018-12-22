@@ -19,6 +19,31 @@ public class UserContextInterceptor implements ClientHttpRequestInterceptor {
         headers.add(UserContext.CORRELATION_ID, UserContextHolder.getContext().getCorrelationId());
         headers.add(UserContext.AUTH_TOKEN, UserContextHolder.getContext().getAuthToken());
 
+        logger.debug("ClientHttpResponse");
+
         return execution.execute(request, body);
     }
+
 }
+
+//public class UserContextInterceptor extends HandlerInterceptorAdapter {
+//    private static final Logger logger = LoggerFactory.getLogger(UserContextInterceptor.class);
+//
+//    @Override
+//    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+//        logger.debug("preHandle");
+//        return super.preHandle(request, response, handler);
+//    }
+//
+//    @Override
+//    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+//        logger.debug("postHandle");
+//        super.postHandle(request, response, handler, modelAndView);
+//    }
+//
+//    @Override
+//    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+//        logger.debug("afterCompletion");
+//        super.afterCompletion(request, response, handler, ex);
+//    }
+//}

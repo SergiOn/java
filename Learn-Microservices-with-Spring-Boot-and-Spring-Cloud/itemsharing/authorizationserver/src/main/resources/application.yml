@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: authorizationserver
   jpa:
     hibernate:
       ddl-auto: update

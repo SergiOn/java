@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.Date;
 
 @Component
 public class UserContextFilter implements Filter {
@@ -21,6 +22,8 @@ public class UserContextFilter implements Filter {
         UserContextHolder.getContext().setAuthToken(httpServletRequest.getHeader(UserContext.AUTH_TOKEN));
 
         logger.debug("UserContextFilter Correlationid: {}", UserContextHolder.getContext().getCorrelationId());
+        logger.debug("UserContextFilter AuthToken: {}", UserContextHolder.getContext().getAuthToken());
+        logger.debug("UserContextFilter Time: {}", new Date().getTime());
 
         filterChain.doFilter(httpServletRequest, servletResponse);
     }

@@ -1,15 +1,15 @@
 ## Docker
 
 ```bash
-docker run --name learn-microservices-spring-boot-spring-cloud-userservice -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql
+docker run --name learn-microservices-spring-boot-spring-cloud -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql
 ```
 
 ```bash
-docker start learn-microservices-spring-boot-spring-cloud-userservice
+docker start learn-microservices-spring-boot-spring-cloud
 ```
 
 ```bash
-docker stop learn-microservices-spring-boot-spring-cloud-userservice
+docker stop learn-microservices-spring-boot-spring-cloud
 ```
 
 ## Connect by terminal

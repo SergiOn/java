@@ -2,7 +2,7 @@ spring:
 #  main:
 #    allow-bean-definition-overriding: true
   application:
-    name: zuulservice
+    name: zuulserver
 
 server:
   port: 5555
@@ -22,7 +22,7 @@ zuul:
     itemservice: /item/**
   ignored-services: '*'
   prefix: /api
-#  sensitive-headers: Cookie, Set-Cookie
+  sensitive-headers: Cookie, Set-Cookie
 
 
 #Setting the logging levels for the service

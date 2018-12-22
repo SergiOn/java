@@ -61,7 +61,7 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-			<version>${spring-cloud-netflix-eureka-server.version}</version>
+			<!--<version>${spring-cloud-starter.version}</version>-->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -76,6 +76,11 @@
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
 			<version>${jjwt.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+			<!--<version>${spring-cloud-starter.version}</version>-->
 		</dependency>
 
 		<!--<dependency>  // duplicated-->
