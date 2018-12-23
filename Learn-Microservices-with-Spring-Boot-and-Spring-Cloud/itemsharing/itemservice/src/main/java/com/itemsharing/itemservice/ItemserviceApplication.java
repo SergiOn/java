@@ -1,5 +1,6 @@
 package com.itemsharing.itemservice;
 
+import brave.sampler.Sampler;
 import com.itemsharing.itemservice.model.Item;
 import com.itemsharing.itemservice.model.User;
 import com.itemsharing.itemservice.service.ItemService;
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.Bean;
 
 import java.util.Date;
 
@@ -55,4 +57,13 @@ public class ItemserviceApplication implements CommandLineRunner {
 
 		itemService.addItemByUser(item2, user.getUsername());
 	}
+
+	//spring.sleuth.sampler.percentage .5
+	//spring.sleuth.sampler.probability .5  // new
+	@Bean
+	public Sampler defaultSampler() {
+//		return new AlwaysSampler();
+		return Sampler.ALWAYS_SAMPLE;
+	}
+
 }

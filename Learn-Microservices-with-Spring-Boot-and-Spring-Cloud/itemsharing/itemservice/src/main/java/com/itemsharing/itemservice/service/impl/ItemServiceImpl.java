@@ -7,8 +7,6 @@ import com.itemsharing.itemservice.repository.ItemRepository;
 import com.itemsharing.itemservice.service.ItemService;
 import com.itemsharing.itemservice.service.UserService;
 import com.itemsharing.itemservice.util.UserContextHolder;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -100,11 +98,11 @@ public class ItemServiceImpl implements ItemService {
     @Override
 //    @HystrixCommand(commandProperties = { @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds", value = "12000") })
 //    @HystrixCommand(fallbackMethod = "buildFallbackUser")
-    @HystrixCommand(fallbackMethod = "buildFallbackUser", threadPoolKey = "itemByUserThreadPool", threadPoolProperties = {
-            @HystrixProperty(name = "coreSize", value = "30"),
-            //(requests per second at peak when the service is healthy * 99th percentile latency in seconds) + small amount of extra threads for overhead
-            @HystrixProperty(name = "maxQueueSize", value = "10"),
-    })
+//    @HystrixCommand(fallbackMethod = "buildFallbackUser", threadPoolKey = "itemByUserThreadPool", threadPoolProperties = {
+//            @HystrixProperty(name = "coreSize", value = "30"),
+//            //(requests per second at peak when the service is healthy * 99th percentile latency in seconds) + small amount of extra threads for overhead
+//            @HystrixProperty(name = "maxQueueSize", value = "10"),
+//    })
     public User getUserByUsername(String username) {
 //        randomlyRunLong();
 

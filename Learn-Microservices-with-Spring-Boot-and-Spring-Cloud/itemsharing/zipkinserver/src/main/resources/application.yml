@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: zipkinserver
+
+server:
+  port: 9411
+
+# https://github.com/openzipkin/zipkin/issues/2043
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
+
+#Setting the logging levels for the service
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.itemsharing: DEBUG

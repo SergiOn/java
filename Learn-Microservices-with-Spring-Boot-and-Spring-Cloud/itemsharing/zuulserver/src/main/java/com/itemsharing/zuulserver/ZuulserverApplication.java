@@ -1,5 +1,6 @@
 package com.itemsharing.zuulserver;
 
+import brave.sampler.Sampler;
 import com.itemsharing.zuulserver.util.UserContextInterceptor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -31,6 +32,14 @@ public class ZuulserverApplication {
 		}
 
 		return template;
+	}
+
+	//spring.sleuth.sampler.percentage .5
+	//spring.sleuth.sampler.probability .5  // new
+	@Bean
+	public Sampler defaultSampler() {
+//		return new AlwaysSampler();
+		return Sampler.ALWAYS_SAMPLE;
 	}
 
 }

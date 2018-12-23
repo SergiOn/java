@@ -24,11 +24,13 @@
         <java.version>1.8</java.version>
         <!--<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>-->
         <spring-cloud.version>Greenwich.RC1</spring-cloud.version>
+        <!--<spring-cloud.version>Greenwich.RC2</spring-cloud.version>-->
         <spring-cloud-starter.version>2.0.2.RELEASE</spring-cloud-starter.version>
         <spring-cloud-feign.version>1.4.6.RELEASE</spring-cloud-feign.version>
         <spring-security-jwt.version>1.0.9.RELEASE</spring-security-jwt.version>
         <spring-security-rsa.version>1.0.8.RELEASE</spring-security-rsa.version>
         <jjwt.version>0.9.1</jjwt.version>
+        <zipkin.version>2.11.12</zipkin.version>
     </properties>
 
     <modules>
@@ -38,6 +40,7 @@
         <module>eurekaserver</module>
         <module>zuulserver</module>
         <module>authorizationserver</module>
+        <module>zipkinserver</module>
     </modules>
 
     <dependencies>

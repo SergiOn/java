@@ -1,5 +1,6 @@
 package com.itemsharing.userservice;
 
+import brave.sampler.Sampler;
 import com.itemsharing.userservice.model.Role;
 import com.itemsharing.userservice.model.User;
 import com.itemsharing.userservice.model.UserRole;
@@ -8,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 import java.util.HashSet;
@@ -46,4 +48,13 @@ public class UserserviceApplication implements CommandLineRunner {
 
 		userService.createUser(user1);
 	}
+
+	//spring.sleuth.sampler.percentage .5
+	//spring.sleuth.sampler.probability .5  // new
+	@Bean
+	public Sampler defaultSampler() {
+//		return new AlwaysSampler();
+		return Sampler.ALWAYS_SAMPLE;
+	}
+
 }
