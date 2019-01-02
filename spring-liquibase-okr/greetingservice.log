@@ -1,0 +1,190 @@
+2019-01-02 00:12:39.331  INFO 3400 --- [restartedMain] c.s.g.GreetingserviceApplication         : Starting GreetingserviceApplication on Serhiis-MacBook-Pro.local with PID 3400 (/Users/serhii/Documents/Web/Training/Java/java/spring-liquibase-okr/greetingservice/target/classes started by serhii in /Users/serhii/Documents/Web/Training/Java/java/spring-liquibase-okr)
+2019-01-02 00:12:39.336  INFO 3400 --- [restartedMain] c.s.g.GreetingserviceApplication         : No active profile set, falling back to default profiles: default
+2019-01-02 00:12:39.403  INFO 3400 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-01-02 00:12:39.403  INFO 3400 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-01-02 00:12:39.911  INFO 3400 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-02 00:12:39.953  INFO 3400 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37ms. Found 1 repository interfaces.
+2019-01-02 00:12:40.190  INFO 3400 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7d232351] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-02 00:12:40.600  INFO 3400 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-02 00:12:40.614  INFO 3400 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-02 00:12:40.614  INFO 3400 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-02 00:12:40.619  INFO 3400 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/serhii/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-02 00:12:40.693  INFO 3400 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-02 00:12:40.694  INFO 3400 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1291 ms
+2019-01-02 00:12:40.775  INFO 3400 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-02 00:12:41.135  INFO 3400 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-02 00:12:41.459  INFO 3400 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-02 00:12:41.465  INFO 3400 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-02 00:12:41.468  INFO 3400 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM greetingdatabase.DATABASECHANGELOGLOCK WHERE ID=1
+2019-01-02 00:12:41.584  INFO 3400 --- [restartedMain] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-01-02 00:12:42.122  INFO 3400 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM greetingdatabase.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-01-02 00:12:42.123  INFO 3400 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOG
+2019-01-02 00:12:42.125  INFO 3400 --- [restartedMain] l.c.StandardChangeLogHistoryService      : Reading from greetingdatabase.DATABASECHANGELOG
+2019-01-02 00:12:42.125  INFO 3400 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM greetingdatabase.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-01-02 00:12:42.178  INFO 3400 --- [restartedMain] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-01-02 00:12:42.251  INFO 3400 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-02 00:12:42.292  INFO 3400 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-02 00:12:42.292  INFO 3400 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-02 00:12:42.386  INFO 3400 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-02 00:12:42.514  INFO 3400 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-02 00:12:42.876  INFO 3400 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-02 00:12:43.272  INFO 3400 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-02 00:12:43.314  WARN 3400 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-02 00:12:43.447  INFO 3400 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-01-02 00:12:43.513  INFO 3400 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-02 00:12:43.516  INFO 3400 --- [restartedMain] c.s.g.GreetingserviceApplication         : Started GreetingserviceApplication in 4.641 seconds (JVM running for 5.455)
+2019-01-02 00:13:12.361  INFO 3400 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-02 00:13:12.361  INFO 3400 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-01-02 00:13:12.367  INFO 3400 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2019-01-02 00:13:12.432  INFO 3400 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-01-02 00:17:06.082  WARN 3400 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2019-01-02 00:30:35.568  INFO 3400 --- [Thread-18] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-02 00:30:35.575  INFO 3400 --- [Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-02 00:30:35.579  INFO 3400 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-02 00:30:35.592  INFO 3400 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-01-02 00:30:40.210  INFO 3555 --- [restartedMain] c.s.g.GreetingserviceApplication         : Starting GreetingserviceApplication on Serhiis-MacBook-Pro.local with PID 3555 (/Users/serhii/Documents/Web/Training/Java/java/spring-liquibase-okr/greetingservice/target/classes started by serhii in /Users/serhii/Documents/Web/Training/Java/java/spring-liquibase-okr)
+2019-01-02 00:30:40.212  INFO 3555 --- [restartedMain] c.s.g.GreetingserviceApplication         : No active profile set, falling back to default profiles: default
+2019-01-02 00:30:40.293  INFO 3555 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-01-02 00:30:40.293  INFO 3555 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-01-02 00:30:40.886  INFO 3555 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-02 00:30:40.932  INFO 3555 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40ms. Found 1 repository interfaces.
+2019-01-02 00:30:41.184  INFO 3555 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d6195acd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-02 00:30:41.433  INFO 3555 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-02 00:30:41.451  INFO 3555 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-02 00:30:41.451  INFO 3555 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-02 00:30:41.456  INFO 3555 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/serhii/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-02 00:30:41.529  INFO 3555 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-02 00:30:41.529  INFO 3555 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1236 ms
+2019-01-02 00:30:41.613  INFO 3555 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-02 00:30:41.996  INFO 3555 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-02 00:30:42.331  INFO 3555 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-02 00:30:42.336  INFO 3555 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-02 00:30:42.339  INFO 3555 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM greetingdatabase.DATABASECHANGELOGLOCK WHERE ID=1
+2019-01-02 00:30:42.436  INFO 3555 --- [restartedMain] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-01-02 00:30:42.963  INFO 3555 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM greetingdatabase.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-01-02 00:30:42.965  INFO 3555 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOG
+2019-01-02 00:30:42.966  INFO 3555 --- [restartedMain] l.c.StandardChangeLogHistoryService      : Reading from greetingdatabase.DATABASECHANGELOG
+2019-01-02 00:30:42.966  INFO 3555 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM greetingdatabase.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-01-02 00:30:43.037  INFO 3555 --- [restartedMain] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-01-02 00:30:43.105  INFO 3555 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-02 00:30:43.141  INFO 3555 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-02 00:30:43.142  INFO 3555 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-02 00:30:43.241  INFO 3555 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-02 00:30:43.371  INFO 3555 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-02 00:30:43.758  INFO 3555 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-02 00:30:44.206  INFO 3555 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-02 00:30:44.231  WARN 3555 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-02 00:30:44.349  INFO 3555 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-01-02 00:30:44.400  INFO 3555 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-02 00:30:44.402  INFO 3555 --- [restartedMain] c.s.g.GreetingserviceApplication         : Started GreetingserviceApplication in 4.511 seconds (JVM running for 5.291)
+2019-01-02 00:31:44.465  INFO 3555 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-02 00:31:44.466  INFO 3555 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-01-02 00:31:44.474  INFO 3555 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-01-02 00:31:44.489  WARN 3555 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2019-01-02 00:32:46.057  WARN 3555 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2019-01-02 00:33:03.795  INFO 3555 --- [http-nio-8080-exec-8] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-01-02 00:34:01.258  WARN 3555 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2019-01-02 00:34:06.223  WARN 3555 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2019-01-02 00:35:11.074  WARN 3555 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2019-01-02 00:35:36.603  WARN 3555 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2019-01-02 00:36:11.409  INFO 3555 --- [Thread-18] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-02 00:36:11.410  INFO 3555 --- [Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-02 00:36:11.412  INFO 3555 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-02 00:36:11.416  INFO 3555 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-01-02 00:36:15.504  INFO 3671 --- [restartedMain] c.s.g.GreetingserviceApplication         : Starting GreetingserviceApplication on Serhiis-MacBook-Pro.local with PID 3671 (/Users/serhii/Documents/Web/Training/Java/java/spring-liquibase-okr/greetingservice/target/classes started by serhii in /Users/serhii/Documents/Web/Training/Java/java/spring-liquibase-okr)
+2019-01-02 00:36:15.507  INFO 3671 --- [restartedMain] c.s.g.GreetingserviceApplication         : No active profile set, falling back to default profiles: default
+2019-01-02 00:36:15.567  INFO 3671 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-01-02 00:36:15.567  INFO 3671 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-01-02 00:36:16.054  INFO 3671 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-02 00:36:16.093  INFO 3671 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35ms. Found 1 repository interfaces.
+2019-01-02 00:36:16.314  INFO 3671 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ed5c5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-02 00:36:16.563  INFO 3671 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-02 00:36:16.579  INFO 3671 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-02 00:36:16.580  INFO 3671 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-02 00:36:16.585  INFO 3671 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/serhii/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-02 00:36:16.659  INFO 3671 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-02 00:36:16.659  INFO 3671 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1092 ms
+2019-01-02 00:36:16.740  INFO 3671 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-02 00:36:17.061  INFO 3671 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-02 00:36:17.391  INFO 3671 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-02 00:36:17.397  INFO 3671 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-02 00:36:17.399  INFO 3671 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM greetingdatabase.DATABASECHANGELOGLOCK WHERE ID=1
+2019-01-02 00:36:17.438  INFO 3671 --- [restartedMain] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-01-02 00:36:17.972  INFO 3671 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM greetingdatabase.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-01-02 00:36:17.974  INFO 3671 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOG
+2019-01-02 00:36:17.975  INFO 3671 --- [restartedMain] l.c.StandardChangeLogHistoryService      : Reading from greetingdatabase.DATABASECHANGELOG
+2019-01-02 00:36:17.975  INFO 3671 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM greetingdatabase.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-01-02 00:36:18.035  INFO 3671 --- [restartedMain] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-01-02 00:36:18.104  INFO 3671 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-02 00:36:18.140  INFO 3671 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-02 00:36:18.141  INFO 3671 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-02 00:36:18.219  INFO 3671 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-02 00:36:18.313  INFO 3671 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-02 00:36:18.731  INFO 3671 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-02 00:36:19.118  INFO 3671 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-02 00:36:19.146  WARN 3671 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-02 00:36:19.262  INFO 3671 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-01-02 00:36:19.313  INFO 3671 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-02 00:36:19.315  INFO 3671 --- [restartedMain] c.s.g.GreetingserviceApplication         : Started GreetingserviceApplication in 4.214 seconds (JVM running for 5.023)
+2019-01-02 00:36:56.321  INFO 3671 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-02 00:36:56.321  INFO 3671 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-01-02 00:36:56.327  INFO 3671 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2019-01-02 00:36:56.339  WARN 3671 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2019-01-02 00:36:58.537  INFO 3671 --- [http-nio-8080-exec-3] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-01-02 00:39:55.492  INFO 3671 --- [Thread-18] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-02 00:39:55.495  INFO 3671 --- [Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-02 00:39:55.498  INFO 3671 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-02 00:39:55.511  INFO 3671 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-01-02 00:40:00.562  INFO 3822 --- [restartedMain] c.s.g.GreetingserviceApplication         : Starting GreetingserviceApplication on Serhiis-MacBook-Pro.local with PID 3822 (/Users/serhii/Documents/Web/Training/Java/java/spring-liquibase-okr/greetingservice/target/classes started by serhii in /Users/serhii/Documents/Web/Training/Java/java/spring-liquibase-okr)
+2019-01-02 00:40:00.565  INFO 3822 --- [restartedMain] c.s.g.GreetingserviceApplication         : No active profile set, falling back to default profiles: default
+2019-01-02 00:40:00.669  INFO 3822 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-01-02 00:40:00.669  INFO 3822 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-01-02 00:40:01.443  INFO 3822 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-02 00:40:01.497  INFO 3822 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46ms. Found 1 repository interfaces.
+2019-01-02 00:40:01.758  INFO 3822 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$46dffd7f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-02 00:40:02.019  INFO 3822 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-02 00:40:02.035  INFO 3822 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-02 00:40:02.035  INFO 3822 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-02 00:40:02.041  INFO 3822 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/serhii/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-02 00:40:02.127  INFO 3822 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-02 00:40:02.127  INFO 3822 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1458 ms
+2019-01-02 00:40:02.215  INFO 3822 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-02 00:40:02.710  INFO 3822 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-02 00:40:03.060  INFO 3822 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-02 00:40:03.066  INFO 3822 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-02 00:40:03.069  INFO 3822 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM greetingdatabase.DATABASECHANGELOGLOCK WHERE ID=1
+2019-01-02 00:40:03.143  INFO 3822 --- [restartedMain] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-01-02 00:40:03.898  INFO 3822 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM greetingdatabase.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-01-02 00:40:03.900  INFO 3822 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOG
+2019-01-02 00:40:03.901  INFO 3822 --- [restartedMain] l.c.StandardChangeLogHistoryService      : Reading from greetingdatabase.DATABASECHANGELOG
+2019-01-02 00:40:03.902  INFO 3822 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM greetingdatabase.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-01-02 00:40:04.026  INFO 3822 --- [restartedMain] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-01-02 00:40:04.102  INFO 3822 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-02 00:40:04.158  INFO 3822 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-02 00:40:04.159  INFO 3822 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-02 00:40:04.288  INFO 3822 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-02 00:40:04.606  INFO 3822 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-02 00:40:05.080  INFO 3822 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-02 00:40:05.541  INFO 3822 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-02 00:40:05.572  WARN 3822 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-02 00:40:05.719  INFO 3822 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-01-02 00:40:05.787  INFO 3822 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-02 00:40:05.791  INFO 3822 --- [restartedMain] c.s.g.GreetingserviceApplication         : Started GreetingserviceApplication in 5.599 seconds (JVM running for 6.167)
+2019-01-02 00:43:06.753  INFO 3822 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-02 00:43:06.754  INFO 3822 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-01-02 00:43:06.762  INFO 3822 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-01-02 00:43:06.898  INFO 3822 --- [http-nio-8080-exec-3] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-01-02 00:43:08.811  WARN 3822 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2019-01-02 00:44:19.789  WARN 3822 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2019-01-02 00:46:09.858  INFO 3822 --- [Thread-20] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-02 00:46:09.859  INFO 3822 --- [Thread-20] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-02 00:46:09.861  INFO 3822 --- [Thread-20] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-02 00:46:09.866  INFO 3822 --- [Thread-20] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
