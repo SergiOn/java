@@ -84,3 +84,12 @@ https://www.udemy.com/learn-microservices-with-spring-boot-and-spring-cloud
 ##### About this course
 
 A Hands-on Guide on Spring and Microservices
+
+
+## Spring-Liquibase-Okr
+
+##### About project
+
+Project includes Spring Boot, Liquibase, Spring Cloud dependencies and similar staff.
+
+The idea is use: Spring boot, Spring Cloud, Liquibase, MySQL, Hibernate, Eureka, Zuul, Oauth2, Jwt, Zipkin, Sleuth, Elasticsearch, Kibana, Logstash, Configuration server, Redis, Feign, Hystrix, Prometheus, Grafana, Docker, Kubernetes, AWS.
