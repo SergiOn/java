@@ -29,7 +29,6 @@ public class Greeting {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "language_type_id")
     @NotNull
     private LanguageType languageType;
 

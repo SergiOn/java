@@ -13,6 +13,11 @@ public class GreetingController {
 
     private final GreetingService greetingService;
 
+    @RequestMapping
+    public ResponseEntity<?> helloQuery(@RequestParam("name") String name) {
+        return ResponseEntity.ok(greetingService.getAllGreetingsWithName(name));
+    }
+
     @RequestMapping("/{name}")
     public ResponseEntity<?> helloPath(@PathVariable String name) {
         return ResponseEntity.ok(greetingService.getAllGreetingsWithName(name));
