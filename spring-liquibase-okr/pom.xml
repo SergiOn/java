@@ -20,6 +20,7 @@
 		<module>zuulservice</module>
 		<module>greetingservice</module>
 		<module>authorizationservice</module>
+		<module>zipkinservice</module>
 	</modules>
 
 </project>
