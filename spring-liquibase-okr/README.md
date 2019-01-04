@@ -101,3 +101,5 @@ https://github.com/SergiOn/spring-boot-oauth2-jwt-revoke-token-silverauth
 https://github.com/SergiOn/spring-security-jwt-demo
 
 https://github.com/SergiOn/angular-6-jwt-authentication-example
+
+https://www.youtube.com/watch?v=o4nt9IR8iL8&t=3952

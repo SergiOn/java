@@ -18,8 +18,9 @@
 	<modules>
 		<module>eurekaservice</module>
 		<module>zuulservice</module>
-		<module>greetingservice</module>
 		<module>authorizationservice</module>
+		<module>detailservice</module>
+		<module>greetingservice</module>
 		<module>zipkinservice</module>
 	</modules>
 
