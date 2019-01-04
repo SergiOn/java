@@ -9,6 +9,7 @@ spring:
 
 zuul:
   routes:
+    detail-service: /detail/**
     greeting-service: /greeting/**
   ignored-services: '*'
   prefix: /api

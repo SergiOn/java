@@ -1,7 +1,7 @@
-package com.springliquibase.greetingservice.controller;
+package com.springliquibase.detailservice.controller;
 
-import com.springliquibase.greetingservice.message.request.GreetingRequest;
-import com.springliquibase.greetingservice.service.GreetingService;
+import com.springliquibase.detailservice.request.GreetingRequest;
+import com.springliquibase.detailservice.service.GreetingService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,17 +15,17 @@ public class GreetingController {
 
     @RequestMapping
     public ResponseEntity<?> helloByQuery(@RequestParam("name") String name) {
-        return ResponseEntity.ok(greetingService.getAllGreetingsWithName(name));
+        return ResponseEntity.ok(greetingService.getAllGreetingsByQueryWithName(name));
     }
 
     @RequestMapping("/{name}")
     public ResponseEntity<?> helloByPath(@PathVariable String name) {
-        return ResponseEntity.ok(greetingService.getAllGreetingsWithName(name));
+        return ResponseEntity.ok(greetingService.getAllGreetingsByPathWithName(name));
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> helloByBody(@RequestBody GreetingRequest greetingRequest) {
-        return ResponseEntity.ok(greetingService.getAllGreetingsWithName(greetingRequest.getName()));
+        return ResponseEntity.ok(greetingService.getAllGreetingsByBodyWithName(greetingRequest));
     }
 
 }
