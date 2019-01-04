@@ -188,3 +188,208 @@
 2019-01-02 00:46:09.859  INFO 3822 --- [Thread-20] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2019-01-02 00:46:09.861  INFO 3822 --- [Thread-20] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2019-01-02 00:46:09.866  INFO 3822 --- [Thread-20] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-01-04 13:47:44.007  INFO [greeting-service,,,] 1639 --- [restartedMain] c.s.g.GreetingserviceApplication         : No active profile set, falling back to default profiles: default
+2019-01-04 13:47:44.548  INFO [greeting-service,,,] 1639 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-04 13:47:44.588  INFO [greeting-service,,,] 1639 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35ms. Found 1 repository interfaces.
+2019-01-04 13:47:44.820  INFO [greeting-service,,,] 1639 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=92efddbc-8230-3e30-90e9-a2247df07bed
+2019-01-04 13:47:44.986  INFO [greeting-service,,,] 1639 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$52b49464] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-04 13:47:45.018  INFO [greeting-service,,,] 1639 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6ece9761] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-04 13:47:45.467  INFO [greeting-service,,,] 1639 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-04 13:47:45.481  INFO [greeting-service,,,] 1639 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-04 13:47:45.481  INFO [greeting-service,,,] 1639 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-04 13:47:45.486  INFO [greeting-service,,,] 1639 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/work/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-04 13:47:45.550  INFO [greeting-service,,,] 1639 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-04 13:47:45.811  INFO [greeting-service,,,] 1639 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-04 13:47:46.017  INFO [greeting-service,,,] 1639 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-04 13:47:46.376  INFO [greeting-service,,,] 1639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-04 13:47:46.382  INFO [greeting-service,,,] 1639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-04 13:47:46.385  INFO [greeting-service,,,] 1639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM greetingdatabase.DATABASECHANGELOGLOCK WHERE ID=1
+2019-01-04 13:47:46.463  INFO [greeting-service,,,] 1639 --- [restartedMain] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-01-04 13:47:47.056  INFO [greeting-service,,,] 1639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM greetingdatabase.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-01-04 13:47:47.057  INFO [greeting-service,,,] 1639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOG
+2019-01-04 13:47:47.059  INFO [greeting-service,,,] 1639 --- [restartedMain] l.c.StandardChangeLogHistoryService      : Reading from greetingdatabase.DATABASECHANGELOG
+2019-01-04 13:47:47.059  INFO [greeting-service,,,] 1639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM greetingdatabase.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-01-04 13:47:47.142  INFO [greeting-service,,,] 1639 --- [restartedMain] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-01-04 13:47:47.239  INFO [greeting-service,,,] 1639 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-04 13:47:47.289  INFO [greeting-service,,,] 1639 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-04 13:47:47.291  INFO [greeting-service,,,] 1639 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-04 13:47:47.404  INFO [greeting-service,,,] 1639 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-04 13:47:47.483  INFO [greeting-service,,,] 1639 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-04 13:47:48.060  INFO [greeting-service,,,] 1639 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 13:47:48.528  INFO [greeting-service,,,] 1639 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-04 13:47:48.573  WARN [greeting-service,,,] 1639 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-04 13:47:48.832  INFO [greeting-service,,,] 1639 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-01-04 13:47:48.999  INFO [greeting-service,,,] 1639 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-04 13:47:49.002  INFO [greeting-service,,,] 1639 --- [restartedMain] c.s.g.GreetingserviceApplication         : Started GreetingserviceApplication in 6.136 seconds (JVM running for 7.085)
+2019-01-04 13:48:22.643  INFO [greeting-service,,,] 1639 --- [Thread-25] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-04 13:48:22.644  INFO [greeting-service,,,] 1639 --- [Thread-25] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 13:48:22.646  INFO [greeting-service,,,] 1639 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-04 13:48:22.653  INFO [greeting-service,,,] 1639 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-01-04 14:10:05.884  INFO [greeting-service,,,] 1939 --- [restartedMain] c.s.g.GreetingserviceApplication         : No active profile set, falling back to default profiles: default
+2019-01-04 14:10:06.456  INFO [greeting-service,,,] 1939 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-04 14:10:06.513  INFO [greeting-service,,,] 1939 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45ms. Found 1 repository interfaces.
+2019-01-04 14:10:06.790  INFO [greeting-service,,,] 1939 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fa0f1fe1-1ec6-3405-8b62-b4b1a3748b3a
+2019-01-04 14:10:06.958  INFO [greeting-service,,,] 1939 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$baeb9e5d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-04 14:10:06.983  INFO [greeting-service,,,] 1939 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$d705a15a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-04 14:10:07.462  INFO [greeting-service,,,] 1939 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-04 14:10:07.477  INFO [greeting-service,,,] 1939 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-04 14:10:07.477  INFO [greeting-service,,,] 1939 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-04 14:10:07.482  INFO [greeting-service,,,] 1939 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/work/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-04 14:10:07.560  INFO [greeting-service,,,] 1939 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-04 14:10:07.947  INFO [greeting-service,,,] 1939 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-04 14:10:08.186  INFO [greeting-service,,,] 1939 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-04 14:10:08.616  INFO [greeting-service,,,] 1939 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-04 14:10:08.626  INFO [greeting-service,,,] 1939 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-04 14:10:08.629  INFO [greeting-service,,,] 1939 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM greetingdatabase.DATABASECHANGELOGLOCK WHERE ID=1
+2019-01-04 14:10:08.690  INFO [greeting-service,,,] 1939 --- [restartedMain] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-01-04 14:10:09.250  INFO [greeting-service,,,] 1939 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM greetingdatabase.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-01-04 14:10:09.252  INFO [greeting-service,,,] 1939 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOG
+2019-01-04 14:10:09.253  INFO [greeting-service,,,] 1939 --- [restartedMain] l.c.StandardChangeLogHistoryService      : Reading from greetingdatabase.DATABASECHANGELOG
+2019-01-04 14:10:09.253  INFO [greeting-service,,,] 1939 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM greetingdatabase.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-01-04 14:10:09.280  INFO [greeting-service,,,] 1939 --- [restartedMain] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-01-04 14:10:09.382  INFO [greeting-service,,,] 1939 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-04 14:10:09.424  INFO [greeting-service,,,] 1939 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-04 14:10:09.425  INFO [greeting-service,,,] 1939 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-04 14:10:09.538  INFO [greeting-service,,,] 1939 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-04 14:10:09.654  INFO [greeting-service,,,] 1939 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-04 14:10:10.194  INFO [greeting-service,,,] 1939 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 14:10:10.428  WARN [greeting-service,,,] 1939 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-04 14:10:10.431  WARN [greeting-service,,,] 1939 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-04 14:10:10.736  INFO [greeting-service,,,] 1939 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-04 14:10:10.795  WARN [greeting-service,,,] 1939 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-04 14:10:11.122  INFO [greeting-service,,,] 1939 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-01-04 14:10:11.197  WARN [greeting-service,,,] 1939 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'eurekaClientConfigBean': Could not bind properties to 'EurekaClientConfigBean' : prefix=eureka.client, ignoreInvalidFields=false, ignoreUnknownFields=true; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'eureka.client.service-url' to java.util.Map<java.lang.String, java.lang.String>
+2019-01-04 14:10:11.199  INFO [greeting-service,,,] 1939 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-04 14:10:11.200  INFO [greeting-service,,,] 1939 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 14:10:11.202  INFO [greeting-service,,,] 1939 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-04 14:10:11.207  INFO [greeting-service,,,] 1939 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-01-04 14:10:11.208  INFO [greeting-service,,,] 1939 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-01-04 14:10:11.218  INFO [greeting-service,,,] 1939 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-01-04 14:10:11.222 ERROR [greeting-service,,,] 1939 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'eureka.client.service-url' to java.util.Map<java.lang.String, java.lang.String>:
+
+    Reason: No converter found capable of converting from type [java.lang.String] to type [java.util.Map<java.lang.String, java.lang.String>]
+
+Action:
+
+Update your application's configuration
+
+2019-01-04 14:10:31.026  INFO [greeting-service,,,] 1947 --- [restartedMain] c.s.g.GreetingserviceApplication         : No active profile set, falling back to default profiles: default
+2019-01-04 14:10:31.598  INFO [greeting-service,,,] 1947 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-04 14:10:31.660  INFO [greeting-service,,,] 1947 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45ms. Found 1 repository interfaces.
+2019-01-04 14:10:31.935  INFO [greeting-service,,,] 1947 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fa0f1fe1-1ec6-3405-8b62-b4b1a3748b3a
+2019-01-04 14:10:32.140  INFO [greeting-service,,,] 1947 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4a6de5f0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-04 14:10:32.171  INFO [greeting-service,,,] 1947 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6687e8ed] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-04 14:10:32.725  INFO [greeting-service,,,] 1947 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-04 14:10:32.748  INFO [greeting-service,,,] 1947 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-04 14:10:32.748  INFO [greeting-service,,,] 1947 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-04 14:10:32.754  INFO [greeting-service,,,] 1947 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/work/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-04 14:10:32.827  INFO [greeting-service,,,] 1947 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-04 14:10:33.162  INFO [greeting-service,,,] 1947 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-04 14:10:33.389  INFO [greeting-service,,,] 1947 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-04 14:10:33.772  INFO [greeting-service,,,] 1947 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-04 14:10:33.778  INFO [greeting-service,,,] 1947 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-04 14:10:33.780  INFO [greeting-service,,,] 1947 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM greetingdatabase.DATABASECHANGELOGLOCK WHERE ID=1
+2019-01-04 14:10:33.838  INFO [greeting-service,,,] 1947 --- [restartedMain] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-01-04 14:10:34.487  INFO [greeting-service,,,] 1947 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM greetingdatabase.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-01-04 14:10:34.489  INFO [greeting-service,,,] 1947 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOG
+2019-01-04 14:10:34.490  INFO [greeting-service,,,] 1947 --- [restartedMain] l.c.StandardChangeLogHistoryService      : Reading from greetingdatabase.DATABASECHANGELOG
+2019-01-04 14:10:34.491  INFO [greeting-service,,,] 1947 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM greetingdatabase.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-01-04 14:10:34.514  INFO [greeting-service,,,] 1947 --- [restartedMain] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-01-04 14:10:34.619  INFO [greeting-service,,,] 1947 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-04 14:10:34.657  INFO [greeting-service,,,] 1947 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-04 14:10:34.658  INFO [greeting-service,,,] 1947 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-04 14:10:34.772  INFO [greeting-service,,,] 1947 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-04 14:10:34.903  INFO [greeting-service,,,] 1947 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-04 14:10:35.440  INFO [greeting-service,,,] 1947 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 14:10:35.691  WARN [greeting-service,,,] 1947 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-04 14:10:35.695  WARN [greeting-service,,,] 1947 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-04 14:10:35.998  INFO [greeting-service,,,] 1947 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-04 14:10:36.046  WARN [greeting-service,,,] 1947 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-04 14:10:36.371  INFO [greeting-service,,,] 1947 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-01-04 14:10:36.444  WARN [greeting-service,,,] 1947 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'eurekaClientConfigBean': Could not bind properties to 'EurekaClientConfigBean' : prefix=eureka.client, ignoreInvalidFields=false, ignoreUnknownFields=true; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'eureka.client.service-url' to java.util.Map<java.lang.String, java.lang.String>
+2019-01-04 14:10:36.445  INFO [greeting-service,,,] 1947 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-04 14:10:36.447  INFO [greeting-service,,,] 1947 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 14:10:36.449  INFO [greeting-service,,,] 1947 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-04 14:10:36.454  INFO [greeting-service,,,] 1947 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-01-04 14:10:36.456  INFO [greeting-service,,,] 1947 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-01-04 14:10:36.466  INFO [greeting-service,,,] 1947 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-01-04 14:10:36.470 ERROR [greeting-service,,,] 1947 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'eureka.client.service-url' to java.util.Map<java.lang.String, java.lang.String>:
+
+    Reason: No converter found capable of converting from type [java.lang.String] to type [java.util.Map<java.lang.String, java.lang.String>]
+
+Action:
+
+Update your application's configuration
+
+2019-01-04 14:11:07.209  INFO [greeting-service,,,] 1960 --- [restartedMain] c.s.g.GreetingserviceApplication         : No active profile set, falling back to default profiles: default
+2019-01-04 14:11:07.735  INFO [greeting-service,,,] 1960 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-04 14:11:07.793  INFO [greeting-service,,,] 1960 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53ms. Found 1 repository interfaces.
+2019-01-04 14:11:08.043  INFO [greeting-service,,,] 1960 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fa0f1fe1-1ec6-3405-8b62-b4b1a3748b3a
+2019-01-04 14:11:08.217  INFO [greeting-service,,,] 1960 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f19ab4a7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-04 14:11:08.242  INFO [greeting-service,,,] 1960 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$db4b7a4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-04 14:11:08.717  INFO [greeting-service,,,] 1960 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-04 14:11:08.732  INFO [greeting-service,,,] 1960 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-04 14:11:08.733  INFO [greeting-service,,,] 1960 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-04 14:11:08.738  INFO [greeting-service,,,] 1960 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/work/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-04 14:11:08.806  INFO [greeting-service,,,] 1960 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-04 14:11:09.094  INFO [greeting-service,,,] 1960 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-04 14:11:09.335  INFO [greeting-service,,,] 1960 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-04 14:11:09.722  INFO [greeting-service,,,] 1960 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-04 14:11:09.729  INFO [greeting-service,,,] 1960 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOGLOCK
+2019-01-04 14:11:09.731  INFO [greeting-service,,,] 1960 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM greetingdatabase.DATABASECHANGELOGLOCK WHERE ID=1
+2019-01-04 14:11:09.808  INFO [greeting-service,,,] 1960 --- [restartedMain] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-01-04 14:11:10.379  INFO [greeting-service,,,] 1960 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM greetingdatabase.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-01-04 14:11:10.381  INFO [greeting-service,,,] 1960 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM greetingdatabase.DATABASECHANGELOG
+2019-01-04 14:11:10.382  INFO [greeting-service,,,] 1960 --- [restartedMain] l.c.StandardChangeLogHistoryService      : Reading from greetingdatabase.DATABASECHANGELOG
+2019-01-04 14:11:10.382  INFO [greeting-service,,,] 1960 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM greetingdatabase.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-01-04 14:11:10.411  INFO [greeting-service,,,] 1960 --- [restartedMain] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-01-04 14:11:10.517  INFO [greeting-service,,,] 1960 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-04 14:11:10.554  INFO [greeting-service,,,] 1960 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-04 14:11:10.555  INFO [greeting-service,,,] 1960 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-04 14:11:10.685  INFO [greeting-service,,,] 1960 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-04 14:11:10.798  INFO [greeting-service,,,] 1960 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-04 14:11:11.390  INFO [greeting-service,,,] 1960 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 14:11:11.620  WARN [greeting-service,,,] 1960 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-04 14:11:11.628  WARN [greeting-service,,,] 1960 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-04 14:11:11.928  INFO [greeting-service,,,] 1960 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-04 14:11:11.974  WARN [greeting-service,,,] 1960 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-04 14:11:12.301  INFO [greeting-service,,,] 1960 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-01-04 14:11:12.650  INFO [greeting-service,,,] 1960 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-01-04 14:11:13.157  INFO [greeting-service,,,] 1960 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GREETING-SERVICE with eureka with status UP
+2019-01-04 14:11:13.204  INFO [greeting-service,,,] 1960 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-04 14:11:13.205  INFO [greeting-service,,,] 1960 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2019-01-04 14:11:13.208  INFO [greeting-service,,,] 1960 --- [restartedMain] c.s.g.GreetingserviceApplication         : Started GreetingserviceApplication in 7.207 seconds (JVM running for 8.089)
+2019-01-04 14:15:46.660  INFO [greeting-service,,,] 1960 --- [Thread-27] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application GREETING-SERVICE with eureka with status DOWN
+2019-01-04 14:15:46.661  WARN [greeting-service,,,] 1960 --- [Thread-27] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1546604146661, current=DOWN, previous=UP]
+2019-01-04 14:15:46.669  INFO [greeting-service,,,] 1960 --- [Thread-27] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-04 14:15:46.671  INFO [greeting-service,,,] 1960 --- [Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 14:15:49.696  INFO [greeting-service,,,] 1960 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-04 14:15:49.701  INFO [greeting-service,,,] 1960 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
