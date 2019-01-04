@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--<preConditions>-->
+        <!--<runningAs username="liquibase"/>-->
+    <!--</preConditions>-->
+
+    <!--<changeSet id="1" author="SerhiiOn">-->
+        <!--<sqlFile dbms="mysql, oracle"-->
+                 <!--path="dbchangelog/001_init.sql"-->
+                 <!--relativeToChangelogFile="true"-->
+                 <!--stripComments="true"/>-->
+    <!--</changeSet>-->
+
+    <!--<changeSet id="2" author="SerhiiOn">-->
+        <!--<sqlFile dbms="mysql, oracle"-->
+                 <!--path="dbchangelog/002_insert_language_type.sql"-->
+                 <!--relativeToChangelogFile="true"-->
+                 <!--stripComments="true"/>-->
+    <!--</changeSet>-->
+
+    <!--<changeSet id="3" author="SerhiiOn">-->
+        <!--<sqlFile dbms="mysql, oracle"-->
+                 <!--path="dbchangelog/003_insert_greeting.sql"-->
+                 <!--relativeToChangelogFile="true"-->
+                 <!--stripComments="true"/>-->
+    <!--</changeSet>-->
+
+</databaseChangeLog>

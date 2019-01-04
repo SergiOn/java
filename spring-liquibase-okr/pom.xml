@@ -17,6 +17,7 @@
 
 	<modules>
 		<module>greetingservice</module>
+		<module>authorizationservice</module>
 		<module>eurekaservice</module>
 	</modules>
 
