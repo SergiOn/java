@@ -1,0 +1,176 @@
+2019-01-04 18:04:20.178  INFO [authorization-service,,,] 6639 --- [restartedMain] c.s.a.AuthorizationserviceApplication    : No active profile set, falling back to default profiles: default
+2019-01-04 18:04:21.181  INFO [authorization-service,,,] 6639 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-04 18:04:21.198  INFO [authorization-service,,,] 6639 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2019-01-04 18:04:21.512  INFO [authorization-service,,,] 6639 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2d320aca-4744-3e52-b564-381bce4533fc
+2019-01-04 18:04:21.787  INFO [authorization-service,,,] 6639 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d77c36dd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-04 18:04:21.820  INFO [authorization-service,,,] 6639 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f39639da] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-04 18:04:22.467  INFO [authorization-service,,,] 6639 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-04 18:04:22.493  INFO [authorization-service,,,] 6639 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-04 18:04:22.493  INFO [authorization-service,,,] 6639 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-04 18:04:22.504  INFO [authorization-service,,,] 6639 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/work/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-04 18:04:22.602  INFO [authorization-service,,,] 6639 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-04 18:04:23.569  INFO [authorization-service,,,] 6639 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-04 18:04:23.859  INFO [authorization-service,,,] 6639 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-04 18:04:24.306  INFO [authorization-service,,,] 6639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM authorizationdatabase.DATABASECHANGELOGLOCK
+2019-01-04 18:04:24.335  INFO [authorization-service,,,] 6639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE authorizationdatabase.DATABASECHANGELOGLOCK (ID INT NOT NULL, `LOCKED` BIT(1) NOT NULL, LOCKGRANTED datetime NULL, LOCKEDBY VARCHAR(255) NULL, CONSTRAINT PK_DATABASECHANGELOGLOCK PRIMARY KEY (ID))
+2019-01-04 18:04:24.435  INFO [authorization-service,,,] 6639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM authorizationdatabase.DATABASECHANGELOGLOCK
+2019-01-04 18:04:24.443  INFO [authorization-service,,,] 6639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM authorizationdatabase.DATABASECHANGELOGLOCK
+2019-01-04 18:04:24.445  INFO [authorization-service,,,] 6639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO authorizationdatabase.DATABASECHANGELOGLOCK (ID, `LOCKED`) VALUES (1, 0)
+2019-01-04 18:04:24.452  INFO [authorization-service,,,] 6639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM authorizationdatabase.DATABASECHANGELOGLOCK WHERE ID=1
+2019-01-04 18:04:24.466  INFO [authorization-service,,,] 6639 --- [restartedMain] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-01-04 18:04:25.016  INFO [authorization-service,,,] 6639 --- [restartedMain] l.c.StandardChangeLogHistoryService      : Creating database history table with name: authorizationdatabase.DATABASECHANGELOG
+2019-01-04 18:04:25.017  INFO [authorization-service,,,] 6639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE authorizationdatabase.DATABASECHANGELOG (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED datetime NOT NULL, ORDEREXECUTED INT NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35) NULL, `DESCRIPTION` VARCHAR(255) NULL, COMMENTS VARCHAR(255) NULL, TAG VARCHAR(255) NULL, LIQUIBASE VARCHAR(20) NULL, CONTEXTS VARCHAR(255) NULL, LABELS VARCHAR(255) NULL, DEPLOYMENT_ID VARCHAR(10) NULL)
+2019-01-04 18:04:25.075  INFO [authorization-service,,,] 6639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM authorizationdatabase.DATABASECHANGELOG
+2019-01-04 18:04:25.078  INFO [authorization-service,,,] 6639 --- [restartedMain] l.c.StandardChangeLogHistoryService      : Reading from authorizationdatabase.DATABASECHANGELOG
+2019-01-04 18:04:25.079  INFO [authorization-service,,,] 6639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM authorizationdatabase.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-01-04 18:04:25.081  INFO [authorization-service,,,] 6639 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM authorizationdatabase.DATABASECHANGELOGLOCK
+2019-01-04 18:04:25.090  INFO [authorization-service,,,] 6639 --- [restartedMain] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-01-04 18:04:25.225  INFO [authorization-service,,,] 6639 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-04 18:04:25.331  INFO [authorization-service,,,] 6639 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-04 18:04:25.333  INFO [authorization-service,,,] 6639 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-04 18:04:25.514  INFO [authorization-service,,,] 6639 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-04 18:04:25.688  INFO [authorization-service,,,] 6639 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-04 18:04:25.812  WARN [authorization-service,,,] 6639 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: No identifier specified for entity: com.springliquibase.authorizationservice.model.User
+2019-01-04 18:04:25.975  INFO [authorization-service,,,] 6639 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-04 18:04:26.198  INFO [authorization-service,,,] 6639 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-01-04 18:04:26.199  INFO [authorization-service,,,] 6639 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-01-04 18:04:26.214  INFO [authorization-service,,,] 6639 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-01-04 18:04:26.237 ERROR [authorization-service,,,] 6639 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: No identifier specified for entity: com.springliquibase.authorizationservice.model.User
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1745) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083) ~[spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:853) ~[spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at com.springliquibase.authorizationservice.AuthorizationserviceApplication.main(AuthorizationserviceApplication.java:10) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_172]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_172]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_172]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_172]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+Caused by: org.hibernate.AnnotationException: No identifier specified for entity: com.springliquibase.authorizationservice.model.User
+	at org.hibernate.cfg.InheritanceState.determineDefaultAccessType(InheritanceState.java:266) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.cfg.InheritanceState.getElementsToProcess(InheritanceState.java:211) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:778) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:250) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:231) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:274) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:904) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) ~[spring-orm-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) ~[spring-orm-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) ~[spring-orm-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1741) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	... 21 common frames omitted
+
+2019-01-04 18:37:08.696  INFO [authorization-service,,,] 6686 --- [restartedMain] c.s.a.AuthorizationserviceApplication    : No active profile set, falling back to default profiles: default
+2019-01-04 18:37:09.647  INFO [authorization-service,,,] 6686 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-04 18:37:09.661  INFO [authorization-service,,,] 6686 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 repository interfaces.
+2019-01-04 18:37:09.972  INFO [authorization-service,,,] 6686 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2d320aca-4744-3e52-b564-381bce4533fc
+2019-01-04 18:37:10.274  INFO [authorization-service,,,] 6686 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b941ddd5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-04 18:37:10.307  INFO [authorization-service,,,] 6686 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$d55be0d2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-04 18:37:10.880  INFO [authorization-service,,,] 6686 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-04 18:37:10.906  INFO [authorization-service,,,] 6686 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-04 18:37:10.907  INFO [authorization-service,,,] 6686 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-04 18:37:10.915  INFO [authorization-service,,,] 6686 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/work/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-04 18:37:11.007  INFO [authorization-service,,,] 6686 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-04 18:37:11.955  INFO [authorization-service,,,] 6686 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-04 18:37:12.215  INFO [authorization-service,,,] 6686 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-04 18:37:12.663  INFO [authorization-service,,,] 6686 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM authorizationdatabase.DATABASECHANGELOGLOCK
+2019-01-04 18:37:12.670  INFO [authorization-service,,,] 6686 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM authorizationdatabase.DATABASECHANGELOGLOCK
+2019-01-04 18:37:12.672  INFO [authorization-service,,,] 6686 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM authorizationdatabase.DATABASECHANGELOGLOCK WHERE ID=1
+2019-01-04 18:37:12.779  INFO [authorization-service,,,] 6686 --- [restartedMain] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-01-04 18:37:13.279  INFO [authorization-service,,,] 6686 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM authorizationdatabase.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-01-04 18:37:13.282  INFO [authorization-service,,,] 6686 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM authorizationdatabase.DATABASECHANGELOG
+2019-01-04 18:37:13.284  INFO [authorization-service,,,] 6686 --- [restartedMain] l.c.StandardChangeLogHistoryService      : Reading from authorizationdatabase.DATABASECHANGELOG
+2019-01-04 18:37:13.284  INFO [authorization-service,,,] 6686 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM authorizationdatabase.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-01-04 18:37:13.384  INFO [authorization-service,,,] 6686 --- [restartedMain] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-01-04 18:37:13.522  INFO [authorization-service,,,] 6686 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-04 18:37:13.631  INFO [authorization-service,,,] 6686 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-04 18:37:13.633  INFO [authorization-service,,,] 6686 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-04 18:37:13.858  INFO [authorization-service,,,] 6686 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-04 18:37:14.035  INFO [authorization-service,,,] 6686 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-04 18:37:14.894  INFO [authorization-service,,,] 6686 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 18:37:15.243  INFO [authorization-service,,,] 6686 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-04 18:37:15.293  WARN [authorization-service,,,] 6686 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-04 18:37:15.789  INFO [authorization-service,,,] 6686 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 226c0ee5-ec83-408e-8c3f-bc4bd3b83c89
+
+2019-01-04 18:37:15.959  INFO [authorization-service,,,] 6686 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@9f792b4, org.springframework.security.web.context.SecurityContextPersistenceFilter@b561e6e, org.springframework.security.web.header.HeaderWriterFilter@4b7b6607, org.springframework.security.web.csrf.CsrfFilter@75677228, org.springframework.security.web.authentication.logout.LogoutFilter@68ef67d2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@151eab5b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@16349385, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@43f82215, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@67a87079, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2464b01b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32c2d1a6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@315b3c9a, org.springframework.security.web.session.SessionManagementFilter@6ecb7d4e, org.springframework.security.web.access.ExceptionTranslationFilter@57fc5a5d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@69394736]
+2019-01-04 18:37:16.048  INFO [authorization-service,,,] 6686 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-01-04 18:37:16.154  INFO [authorization-service,,,] 6686 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-01-04 18:37:16.382  INFO [authorization-service,,,] 6686 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-04 18:37:16.385  INFO [authorization-service,,,] 6686 --- [restartedMain] c.s.a.AuthorizationserviceApplication    : Started AuthorizationserviceApplication in 8.935 seconds (JVM running for 9.695)
+2019-01-04 18:37:16.456  INFO [authorization-service,,,] 6686 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-04 18:40:44.276  INFO [authorization-service,,,] 6686 --- [Thread-32] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-04 18:40:44.279  INFO [authorization-service,,,] 6686 --- [Thread-32] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 18:40:44.916  INFO [authorization-service,,,] 6686 --- [Thread-32] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-04 18:40:44.929  INFO [authorization-service,,,] 6686 --- [Thread-32] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-01-04 18:40:51.138  INFO [authorization-service,,,] 6719 --- [restartedMain] c.s.a.AuthorizationserviceApplication    : No active profile set, falling back to default profiles: default
+2019-01-04 18:40:51.821  INFO [authorization-service,,,] 6719 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-04 18:40:51.832  INFO [authorization-service,,,] 6719 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 repository interfaces.
+2019-01-04 18:40:52.089  INFO [authorization-service,,,] 6719 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2d320aca-4744-3e52-b564-381bce4533fc
+2019-01-04 18:40:52.272  INFO [authorization-service,,,] 6719 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c734ddaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-04 18:40:52.307  INFO [authorization-service,,,] 6719 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e34ee0ac] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-04 18:40:52.790  INFO [authorization-service,,,] 6719 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-04 18:40:52.805  INFO [authorization-service,,,] 6719 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-04 18:40:52.805  INFO [authorization-service,,,] 6719 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-04 18:40:52.810  INFO [authorization-service,,,] 6719 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/work/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-04 18:40:52.877  INFO [authorization-service,,,] 6719 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-04 18:40:53.739  INFO [authorization-service,,,] 6719 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-04 18:40:53.977  INFO [authorization-service,,,] 6719 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-04 18:40:54.394  INFO [authorization-service,,,] 6719 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM authorizationdatabase.DATABASECHANGELOGLOCK
+2019-01-04 18:40:54.401  INFO [authorization-service,,,] 6719 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM authorizationdatabase.DATABASECHANGELOGLOCK
+2019-01-04 18:40:54.404  INFO [authorization-service,,,] 6719 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM authorizationdatabase.DATABASECHANGELOGLOCK WHERE ID=1
+2019-01-04 18:40:54.476  INFO [authorization-service,,,] 6719 --- [restartedMain] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-01-04 18:40:54.956  INFO [authorization-service,,,] 6719 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM authorizationdatabase.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-01-04 18:40:54.966  INFO [authorization-service,,,] 6719 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM authorizationdatabase.DATABASECHANGELOG
+2019-01-04 18:40:54.968  INFO [authorization-service,,,] 6719 --- [restartedMain] l.c.StandardChangeLogHistoryService      : Reading from authorizationdatabase.DATABASECHANGELOG
+2019-01-04 18:40:54.968  INFO [authorization-service,,,] 6719 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM authorizationdatabase.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-01-04 18:40:54.992  INFO [authorization-service,,,] 6719 --- [restartedMain] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-01-04 18:40:55.087  INFO [authorization-service,,,] 6719 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-04 18:40:55.128  INFO [authorization-service,,,] 6719 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-04 18:40:55.128  INFO [authorization-service,,,] 6719 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-04 18:40:55.231  INFO [authorization-service,,,] 6719 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-04 18:40:55.350  INFO [authorization-service,,,] 6719 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-01-04 18:40:55.916  INFO [authorization-service,,,] 6719 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 18:40:56.222  INFO [authorization-service,,,] 6719 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-04 18:40:56.270  WARN [authorization-service,,,] 6719 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-04 18:40:56.703  INFO [authorization-service,,,] 6719 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f30fd7f6-569f-4bc6-b075-f96dfcc52a07
+
+2019-01-04 18:40:56.803  INFO [authorization-service,,,] 6719 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8772645, org.springframework.security.web.context.SecurityContextPersistenceFilter@594364e, org.springframework.security.web.header.HeaderWriterFilter@2594e830, org.springframework.security.web.csrf.CsrfFilter@287638e, org.springframework.security.web.authentication.logout.LogoutFilter@7dd4f0e7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@56a28020, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@660d6fdc, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4ea03045, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1c165088, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c8c45b5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@640883d1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bc19690, org.springframework.security.web.session.SessionManagementFilter@564eda6e, org.springframework.security.web.access.ExceptionTranslationFilter@77f8bab2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@69002d30]
+2019-01-04 18:40:56.874  INFO [authorization-service,,,] 6719 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-01-04 18:40:56.982  INFO [authorization-service,,,] 6719 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-01-04 18:40:57.196  INFO [authorization-service,,,] 6719 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-04 18:40:57.200  INFO [authorization-service,,,] 6719 --- [restartedMain] c.s.a.AuthorizationserviceApplication    : Started AuthorizationserviceApplication in 7.408 seconds (JVM running for 8.602)
+2019-01-04 18:40:57.290  INFO [authorization-service,,,] 6719 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-04 18:41:28.861  INFO [authorization-service,,,] 6719 --- [Thread-29] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-04 18:41:28.861  INFO [authorization-service,,,] 6719 --- [Thread-29] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-04 18:41:29.297  INFO [authorization-service,,,] 6719 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-04 18:41:29.306  INFO [authorization-service,,,] 6719 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
