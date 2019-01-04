@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: "zuul-service"
+  sleuth:
+    sampler:
+      probability: 0.5
+
+zuul:
+  routes:
+    greeting-service: /greeting/**
+  ignored-services: '*'
+  prefix: /api
+  sensitive-headers: Cookie, Set-Cookie
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone: "http://localhost:8761/eureka/"
+
+server:
+  port: 5555
+
+logging:
+  file: "zuulservice.log"
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.springliquibase: DEBUG

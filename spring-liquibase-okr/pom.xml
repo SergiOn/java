@@ -16,9 +16,10 @@
 	</properties>
 
 	<modules>
+		<module>eurekaservice</module>
+		<module>zuulservice</module>
 		<module>greetingservice</module>
 		<module>authorizationservice</module>
-		<module>eurekaservice</module>
 	</modules>
 
 </project>
