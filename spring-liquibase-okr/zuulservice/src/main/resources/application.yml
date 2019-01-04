@@ -27,7 +27,7 @@ server:
   port: 5555
 
 logging:
-  file: "zuulservice.log"
+  file: "zuulservice/logs/zuulservice.log"
   level:
     com.netflix: WARN
     org.springframework.web: WARN

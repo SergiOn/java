@@ -14,7 +14,7 @@ server:
   port: 8761
 
 logging:
-  file: "eurekaservice.log"
+  file: "eurekaservice/logs/eurekaservice.log"
   level:
     com.netflix: WARN
     org.springframework.web: WARN

@@ -20,7 +20,7 @@ server:
   port: 8102
 
 logging:
-  file: "./logs/detailservice.log"
+  file: "detailservice/logs/detailservice.log"
   level:
     com.netflix: WARN
     org.springframework.web: WARN
