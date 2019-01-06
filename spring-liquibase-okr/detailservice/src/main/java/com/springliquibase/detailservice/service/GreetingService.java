@@ -1,7 +1,7 @@
 package com.springliquibase.detailservice.service;
 
 import com.springliquibase.detailservice.model.Greeting;
-import com.springliquibase.detailservice.request.GreetingRequest;
+import com.springliquibase.detailservice.message.request.GreetingRequest;
 
 import java.util.List;
 

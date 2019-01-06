@@ -1,4 +1,4 @@
-package com.springliquibase.detailservice.request;
+package com.springliquibase.detailservice.message.request;
 
 import lombok.Getter;
 import lombok.Setter;
