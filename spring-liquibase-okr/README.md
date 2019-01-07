@@ -51,6 +51,25 @@ docker stop spring-liquibase-okr-kibana
 ```
 
 
+## Docker (Prometheus)
+
+```bash
+docker run --name spring-liquibase-okr-prometheus -p 9090:9090 prom/prometheus
+```
+
+```bash
+docker start spring-liquibase-okr-prometheus
+```
+
+```bash
+docker stop spring-liquibase-okr-prometheus
+```
+
+```bash
+docker -D exec -it spring-liquibase-okr-prometheus sh
+```
+
+
 
 #### Links
 
@@ -109,3 +128,15 @@ https://cloud.spring.io/spring-cloud-netflix/multi/multi__router_and_filter_zuul
 https://github.com/SergiOn/spring-cloud-zuul-filters-sample
 
 https://github.com/SergiOn/java/blob/master/Build-A-Web-App-With-Spring-Framework-and-Angular-2/backend/src/main/java/com/ldeng/controller/UserController.java
+
+https://stackoverflow.com/questions/19825946/how-to-add-a-filter-class-in-spring-boot
+
+https://www.javadevjournal.com/spring-boot/spring-boot-add-filter/
+
+https://stackoverflow.com/questions/31082981/spring-boot-adding-http-request-interceptors
+
+https://stackoverflow.com/questions/2811769/adding-an-http-header-to-the-request-in-a-servlet-filter
+
+https://stackoverflow.com/questions/51137893/feign-client-concurrency-issue
+
+http://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/1.2.0.RELEASE/#_propagating_the_security_context_or_using_spring_scopes
