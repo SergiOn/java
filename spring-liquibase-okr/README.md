@@ -54,7 +54,7 @@ docker stop spring-liquibase-okr-kibana
 ## Docker (Prometheus)
 
 ```bash
-docker run --name spring-liquibase-okr-prometheus -p 9090:9090 prom/prometheus
+docker run -d --name spring-liquibase-okr-prometheus -p 9090:9090 prom/prometheus
 ```
 
 ```bash
@@ -67,6 +67,37 @@ docker stop spring-liquibase-okr-prometheus
 
 ```bash
 docker -D exec -it spring-liquibase-okr-prometheus sh
+vi prometheus.yml
+```
+
+```yaml
+global:
+  scrape_interval:     5s # Set the scrape interval to every 5 seconds.
+  evaluation_interval: 5s # Evaluate rules every 5 seconds.
+scrape_configs:
+  - job_name: 'greeting-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['192.168.1.103:8103']
+
+https://2ip.ua/ua/
+Ваша локальна IP адреса
+```
+
+```bash
+docker run -d --name spring-liquibase-okr-grafana --link spring-liquibase-okr-prometheus:prometheus -p 3000:3000 grafana/grafana
+```
+
+```bash
+docker start spring-liquibase-okr-grafana
+```
+
+```bash
+docker stop spring-liquibase-okr-grafana
+```
+
+```bash
+http://prometheus:9090
 ```
 
 
@@ -140,3 +171,9 @@ https://stackoverflow.com/questions/2811769/adding-an-http-header-to-the-request
 https://stackoverflow.com/questions/51137893/feign-client-concurrency-issue
 
 http://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/1.2.0.RELEASE/#_propagating_the_security_context_or_using_spring_scopes
+
+https://dzone.com/articles/monitoring-using-spring-boot-2-prometheus-and-graf
+
+https://dzone.com/articles/monitoring-using-spring-boot-20-prometheus-and-gra
+
+https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach
