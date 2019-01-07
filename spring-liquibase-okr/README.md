@@ -103,3 +103,9 @@ https://github.com/SergiOn/spring-security-jwt-demo
 https://github.com/SergiOn/angular-6-jwt-authentication-example
 
 https://www.youtube.com/watch?v=o4nt9IR8iL8&t=3952
+
+https://cloud.spring.io/spring-cloud-netflix/multi/multi__router_and_filter_zuul.html
+
+https://github.com/SergiOn/spring-cloud-zuul-filters-sample
+
+https://github.com/SergiOn/java/blob/master/Build-A-Web-App-With-Spring-Framework-and-Angular-2/backend/src/main/java/com/ldeng/controller/UserController.java
