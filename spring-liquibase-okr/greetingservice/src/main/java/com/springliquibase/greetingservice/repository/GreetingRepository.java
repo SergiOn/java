@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface GreetingRepository extends CrudRepository<Greeting, Long> {
 
+    @Override
     List<Greeting> findAll();
 
 }
