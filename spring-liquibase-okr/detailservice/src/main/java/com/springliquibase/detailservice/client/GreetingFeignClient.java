@@ -1,7 +1,7 @@
 package com.springliquibase.detailservice.client;
 
-import com.springliquibase.detailservice.model.Greeting;
 import com.springliquibase.detailservice.message.request.GreetingRequest;
+import com.springliquibase.detailservice.model.Greeting;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

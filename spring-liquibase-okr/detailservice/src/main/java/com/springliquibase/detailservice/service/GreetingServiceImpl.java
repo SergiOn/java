@@ -1,10 +1,11 @@
 package com.springliquibase.detailservice.service;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.springliquibase.detailservice.client.GreetingFeignClient;
+import com.springliquibase.detailservice.message.request.GreetingRequest;
 import com.springliquibase.detailservice.model.Greeting;
 import com.springliquibase.detailservice.model.LanguageType;
-import com.springliquibase.detailservice.message.request.GreetingRequest;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,22 +20,30 @@ public class GreetingServiceImpl implements GreetingService {
 
     private final GreetingFeignClient greetingFeignClient;
 
+    // https://stackoverflow.com/questions/51137893/feign-client-concurrency-issue
+
     @Override
-    @HystrixCommand(fallbackMethod = "getAllGreetingsFallback")
+    @HystrixCommand(fallbackMethod = "getAllGreetingsFallback", commandProperties = {
+            @HystrixProperty(name = "execution.isolation.strategy", value = "SEMAPHORE")
+    })
     public List<Greeting> getAllGreetingsByQueryWithName(String name) {
         log.debug("GreetingServiceImpl -> getAllGreetingsByQueryWithName");
         return greetingFeignClient.getGreetingByQuery(name);
     }
 
     @Override
-    @HystrixCommand(fallbackMethod = "getAllGreetingsFallback")
+    @HystrixCommand(fallbackMethod = "getAllGreetingsFallback", commandProperties = {
+            @HystrixProperty(name = "execution.isolation.strategy", value = "SEMAPHORE")
+    })
     public List<Greeting> getAllGreetingsByPathWithName(String name) {
         log.debug("GreetingServiceImpl -> getAllGreetingsByPathWithName");
         return greetingFeignClient.getGreetingByPath(name);
     }
 
     @Override
-    @HystrixCommand(fallbackMethod = "getAllGreetingsByBodyFallback")
+    @HystrixCommand(fallbackMethod = "getAllGreetingsByBodyFallback", commandProperties = {
+            @HystrixProperty(name = "execution.isolation.strategy", value = "SEMAPHORE")
+    })
     public List<Greeting> getAllGreetingsByBodyWithName(GreetingRequest greetingRequest) {
         log.debug("GreetingServiceImpl -> getAllGreetingsByBodyWithName");
         return greetingFeignClient.getGreetingByBody(greetingRequest);
