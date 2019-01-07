@@ -54,6 +54,8 @@ docker stop spring-liquibase-okr-kibana
 ## Docker (Prometheus)
 
 ```bash
+docker run -d --name spring-liquibase-okr-prometheus -p 9090:9090 -v /Users/serhii/Documents/Web/Training/Java/java/spring-liquibase-okr/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus --config.file=/etc/prometheus/prometheus.yml
+
 docker run -d --name spring-liquibase-okr-prometheus -p 9090:9090 prom/prometheus
 ```
 
