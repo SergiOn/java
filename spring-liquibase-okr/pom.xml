@@ -22,6 +22,7 @@
 		<module>detailservice</module>
 		<module>greetingservice</module>
 		<module>zipkinservice</module>
+		<module>configservice</module>
 	</modules>
 
 </project>
