@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/hello")
 @AllArgsConstructor
@@ -28,7 +30,7 @@ public class GreetingController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<?> helloByBody(@RequestBody GreetingRequest greetingRequest) {
+    public ResponseEntity<?> helloByBody(@Valid @RequestBody GreetingRequest greetingRequest) {
         log.debug("GreetingController -> helloByBody");
         return ResponseEntity.ok(greetingService.getAllGreetingsByBodyWithName(greetingRequest));
     }
