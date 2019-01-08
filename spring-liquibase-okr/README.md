@@ -51,12 +51,23 @@ docker stop spring-liquibase-okr-kibana
 ```
 
 
+### Logstash
+
+```bash
+logstash -f /Users/serhii/Documents/Web/Training/Java/java/spring-liquibase-okr/logstash.conf
+
+logstash -f /Users/work/Documents/Training/Java/java/spring-liquibase-okr/logstash.conf
+```
+
+
 ## Docker (Prometheus, Grafana)
 
 ### Prometheus
 
 ```bash
 docker run -d --name spring-liquibase-okr-prometheus -p 9090:9090 -v /Users/serhii/Documents/Web/Training/Java/java/spring-liquibase-okr/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus --config.file=/etc/prometheus/prometheus.yml
+
+docker run -d --name spring-liquibase-okr-prometheus -p 9090:9090 -v /Users/work/Documents/Training/Java/java/spring-liquibase-okr/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus --config.file=/etc/prometheus/prometheus.yml
 
 docker run -d --name spring-liquibase-okr-prometheus -p 9090:9090 prom/prometheus
 ```
