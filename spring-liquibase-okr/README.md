@@ -51,7 +51,9 @@ docker stop spring-liquibase-okr-kibana
 ```
 
 
-## Docker (Prometheus)
+## Docker (Prometheus, Grafana)
+
+### Prometheus
 
 ```bash
 docker run -d --name spring-liquibase-okr-prometheus -p 9090:9090 -v /Users/serhii/Documents/Web/Training/Java/java/spring-liquibase-okr/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus --config.file=/etc/prometheus/prometheus.yml
@@ -85,6 +87,9 @@ scrape_configs:
 https://2ip.ua/ua/
 Ваша локальна IP адреса
 ```
+
+
+### Grafana
 
 ```bash
 docker run -d --name spring-liquibase-okr-grafana --link spring-liquibase-okr-prometheus:prometheus -p 3000:3000 grafana/grafana
