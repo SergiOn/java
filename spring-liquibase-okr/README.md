@@ -107,6 +107,22 @@ docker stop spring-liquibase-okr-grafana
 http://prometheus:9090
 ```
 
+```text
+greeting-service
+dashboard name: Greeting service
+
+Graph:
+1)
+http_server_requests_seconds_max{uri="/hello/{name}"}
+Requests Seconds Max: "/hello/{name}"
+2)
+http_server_requests_seconds_count
+Requests Seconds Count
+3)
+system_cpu_usage
+System CPU Usage
+```
+
 
 
 #### Links
