@@ -1,4 +1,4 @@
-package com.springliquibase.zuulservice.security;
+package com.springliquibase.authorizationservice.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -8,9 +8,12 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 public class SecurityConfig extends ResourceServerConfigurerAdapter {
 
     private static final String[] PUBLIC_MATCHERS = {
-            "/",
-            "/api/detail/**",
-            "/api/auth/**"
+            "/sign-in",
+            "/sign-up",
+            "/sign-out",
+            "/login",
+            "/registration",
+            "/logout"
     };
 
     @Override

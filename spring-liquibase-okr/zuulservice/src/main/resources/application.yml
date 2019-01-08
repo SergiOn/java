@@ -11,6 +11,7 @@ zuul:
   routes:
     detail-service: /detail/**
     greeting-service: /greeting/**
+    authorization-service: /auth/**
   ignored-services: '*'
   prefix: /api
   sensitive-headers: Cookie, Set-Cookie
