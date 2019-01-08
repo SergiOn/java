@@ -33,7 +33,7 @@ public class AuthorizationserviceApplication implements CommandLineRunner {
 		user1.setPassword("12345");
 		user1.setEmail("email@mail.com");
 
-		userService.createUser(user1);
+		userService.createDefaultUser(user1);
 
 	}
 }

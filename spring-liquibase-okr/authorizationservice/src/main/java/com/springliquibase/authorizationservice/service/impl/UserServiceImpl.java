@@ -8,8 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-
 @Service
 @AllArgsConstructor
 @Slf4j
@@ -23,20 +21,28 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User createUser(User user) {
+    public boolean isUserNotExist(User user) {
+        return userRepository.findByUsernameOrEmail(user.getUsername(), user.getEmail()).isEmpty();
+    }
+
+    @Override
+    public User saveUser(User user) {
+        return userRepository.save(user);
+    }
+
+    @Override
+    public User createDefaultUser(User user) {
         return userRepository.findByUsername(user.getUsername())
                 .map(userByRepository -> {
                     log.info("User with username {} already exists. Nothing will be done.", userByRepository.getUsername());
                     return userByRepository;
                 })
                 .orElseGet(() -> {
-                    Date today = new Date();
-                    user.setJoinDate(today);
-
                     String encryptedPassword = SecurityUtility.passwordEncoder().encode(user.getPassword());
                     user.setPassword(encryptedPassword);
 
                     return userRepository.save(user);
                 });
     }
+
 }
