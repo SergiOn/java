@@ -34,3 +34,31 @@
 2019-01-08 01:45:15.896  WARN 21374 --- [TaskBatchingWorker-target_localhost-6] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
 2019-01-08 02:01:55.739  INFO 21374 --- [Thread-23] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVICE with eureka with status DOWN
 2019-01-08 02:01:55.751  INFO 21374 --- [Thread-23] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-08 12:39:50.893  INFO 23846 --- [main] c.s.e.EurekaserviceApplication           : No active profile set, falling back to default profiles: default
+2019-01-08 12:39:51.630  WARN 23846 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-01-08 12:39:51.811  INFO 23846 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7552ba5a-3420-3280-988f-bd76dc5c1fbd
+2019-01-08 12:39:51.933  INFO 23846 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f19b3d5f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-08 12:39:52.249  INFO 23846 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
+2019-01-08 12:39:52.276  INFO 23846 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-08 12:39:52.277  INFO 23846 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-08 12:39:52.284  INFO 23846 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/work/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-08 12:39:52.416  INFO 23846 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-08 12:39:52.525  WARN 23846 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-08 12:39:53.247  INFO 23846 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
+2019-01-08 12:39:54.087  WARN 23846 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-08 12:39:54.405  INFO 23846 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-08 12:39:54.873  INFO 23846 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-01-08 12:39:55.429  INFO 23846 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-01-08 12:39:55.491  INFO 23846 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVICE with eureka with status UP
+2019-01-08 12:39:55.493  INFO 23846 --- [Thread-24] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
+2019-01-08 12:39:55.493  INFO 23846 --- [Thread-24] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
+2019-01-08 12:39:55.494  INFO 23846 --- [Thread-24] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
+2019-01-08 12:39:55.503  INFO 23846 --- [Thread-24] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2019-01-08 12:39:55.503  INFO 23846 --- [Thread-24] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2019-01-08 12:39:55.512  INFO 23846 --- [Thread-24] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2019-01-08 12:39:55.546  INFO 23846 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8761 (http) with context path ''
+2019-01-08 12:39:55.547  INFO 23846 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+2019-01-08 12:39:55.549  INFO 23846 --- [main] c.s.e.EurekaserviceApplication           : Started EurekaserviceApplication in 5.697 seconds (JVM running for 6.787)
+2019-01-08 12:39:55.806  INFO 23846 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-08 14:32:14.271  INFO 23846 --- [Thread-26] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVICE with eureka with status DOWN
+2019-01-08 14:32:14.286  INFO 23846 --- [Thread-26] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

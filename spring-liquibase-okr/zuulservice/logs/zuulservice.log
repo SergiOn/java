@@ -1105,3 +1105,318 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1011) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:931) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
 
+2019-01-08 12:45:41.323  INFO [zuul-service,,,] 23895 --- [restartedMain] c.s.zuulservice.ZuulserviceApplication   : No active profile set, falling back to default profiles: default
+2019-01-08 12:45:42.119  WARN [zuul-service,,,] 23895 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-01-08 12:45:42.181  WARN [zuul-service,,,] 23895 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-01-08 12:45:42.479  INFO [zuul-service,,,] 23895 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=882ad708-4442-36e6-abaf-1efa35dc515c
+2019-01-08 12:45:42.706  INFO [zuul-service,,,] 23895 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bbbf088] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-08 12:45:42.713  INFO [zuul-service,,,] 23895 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.sleuth.instrument.web.client.TraceWebClientAutoConfiguration$TraceOAuthConfiguration' of type [org.springframework.cloud.sleuth.instrument.web.client.TraceWebClientAutoConfiguration$TraceOAuthConfiguration$$EnhancerBySpringCGLIB$$349e7fea] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-08 12:45:43.276  INFO [zuul-service,,,] 23895 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5555 (http)
+2019-01-08 12:45:43.292  INFO [zuul-service,,,] 23895 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-08 12:45:43.292  INFO [zuul-service,,,] 23895 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-08 12:45:43.300  INFO [zuul-service,,,] 23895 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/work/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-08 12:45:43.372  INFO [zuul-service,,,] 23895 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-08 12:45:43.524  WARN [zuul-service,,,] 23895 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-08 12:45:44.658  WARN [zuul-service,,,] 23895 --- [restartedMain] o.s.s.o.p.t.s.JwtAccessTokenConverter    : Unable to create an RSA verifier from verifierKey (ignoreable if using MAC)
+2019-01-08 12:45:44.782  WARN [zuul-service,,,] 23895 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-08 12:45:45.025  INFO [zuul-service,,,] 23895 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-08 12:45:45.457  INFO [zuul-service,,,] 23895 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e8ca88a6-132e-4be1-a2a2-eff6e4214466
+
+2019-01-08 12:45:45.656  INFO [zuul-service,,,] 23895 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f129292, org.springframework.security.web.context.SecurityContextPersistenceFilter@77bef774, org.springframework.security.web.header.HeaderWriterFilter@27355114, org.springframework.security.web.authentication.logout.LogoutFilter@13bc666c, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@4c85451b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5002a762, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@11870d79, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ad87f3, org.springframework.security.web.session.SessionManagementFilter@60fb3f3d, org.springframework.security.web.access.ExceptionTranslationFilter@361e0c0b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5957f02e]
+2019-01-08 12:45:45.808  INFO [zuul-service,,,] 23895 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-01-08 12:45:45.919  WARN [zuul-service,,,] 23895 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-01-08 12:45:46.305  INFO [zuul-service,,,] 23895 --- [restartedMain] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
+2019-01-08 12:45:46.415  INFO [zuul-service,,,] 23895 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-01-08 12:45:46.806  INFO [zuul-service,,,] 23895 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ZUUL-SERVICE with eureka with status UP
+2019-01-08 12:45:46.862  INFO [zuul-service,,,] 23895 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5555 (http) with context path ''
+2019-01-08 12:45:46.863  INFO [zuul-service,,,] 23895 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 5555
+2019-01-08 12:45:46.866  INFO [zuul-service,,,] 23895 --- [restartedMain] c.s.zuulservice.ZuulserviceApplication   : Started ZuulserviceApplication in 6.687 seconds (JVM running for 7.528)
+2019-01-08 12:45:47.108  INFO [zuul-service,,,] 23895 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-08 12:46:11.667 DEBUG [zuul-service,7c779d9546d5cbeb,7c779d9546d5cbeb,true] 23895 --- [http-nio-5555-exec-2] c.s.zuulservice.filter.TrackingFilter    : is-correlation-id generated in tracking filter: 9349912c-b276-408c-a555-c0fe5992cc7a
+2019-01-08 12:46:11.667 DEBUG [zuul-service,7c779d9546d5cbeb,7c779d9546d5cbeb,true] 23895 --- [http-nio-5555-exec-2] c.s.zuulservice.filter.TrackingFilter    : Processing incoming request for /api/detail/hello/Serhii
+2019-01-08 12:46:12.869 DEBUG [zuul-service,7c779d9546d5cbeb,7c779d9546d5cbeb,true] 23895 --- [http-nio-5555-exec-2] c.s.zuulservice.filter.ResponseFilter    : Adding the correlation id to the outbound headers. 9349912c-b276-408c-a555-c0fe5992cc7a
+2019-01-08 12:46:12.869 DEBUG [zuul-service,7c779d9546d5cbeb,7c779d9546d5cbeb,true] 23895 --- [http-nio-5555-exec-2] c.s.zuulservice.filter.ResponseFilter    : Completing outgoing request for /api/detail/hello/Serhii
+2019-01-08 12:46:21.245 DEBUG [zuul-service,99defdc87faa3c40,99defdc87faa3c40,true] 23895 --- [http-nio-5555-exec-4] c.s.zuulservice.filter.TrackingFilter    : is-correlation-id generated in tracking filter: 7bacb422-8e35-4ee2-96f7-15de5d082b88
+2019-01-08 12:46:21.245 DEBUG [zuul-service,99defdc87faa3c40,99defdc87faa3c40,true] 23895 --- [http-nio-5555-exec-4] c.s.zuulservice.filter.TrackingFilter    : Processing incoming request for /api/greeting/hello/Serhii
+2019-01-08 12:46:21.588 DEBUG [zuul-service,99defdc87faa3c40,99defdc87faa3c40,true] 23895 --- [http-nio-5555-exec-4] c.s.zuulservice.filter.ResponseFilter    : Adding the correlation id to the outbound headers. 7bacb422-8e35-4ee2-96f7-15de5d082b88
+2019-01-08 12:46:21.589 DEBUG [zuul-service,99defdc87faa3c40,99defdc87faa3c40,true] 23895 --- [http-nio-5555-exec-4] c.s.zuulservice.filter.ResponseFilter    : Completing outgoing request for /api/greeting/hello/Serhii
+2019-01-08 12:47:33.109 DEBUG [zuul-service,545899f6f7ee574a,545899f6f7ee574a,true] 23895 --- [http-nio-5555-exec-7] c.s.zuulservice.filter.TrackingFilter    : is-correlation-id generated in tracking filter: a4d6bd2c-43a0-44ad-898a-663265918662
+2019-01-08 12:47:33.110 DEBUG [zuul-service,545899f6f7ee574a,545899f6f7ee574a,true] 23895 --- [http-nio-5555-exec-7] c.s.zuulservice.filter.TrackingFilter    : Processing incoming request for /api/detail/hello/Serhii
+2019-01-08 12:47:33.184 DEBUG [zuul-service,545899f6f7ee574a,545899f6f7ee574a,true] 23895 --- [http-nio-5555-exec-7] c.s.zuulservice.filter.ResponseFilter    : Adding the correlation id to the outbound headers. a4d6bd2c-43a0-44ad-898a-663265918662
+2019-01-08 12:47:33.184 DEBUG [zuul-service,545899f6f7ee574a,545899f6f7ee574a,true] 23895 --- [http-nio-5555-exec-7] c.s.zuulservice.filter.ResponseFilter    : Completing outgoing request for /api/detail/hello/Serhii
+2019-01-08 12:52:37.129 DEBUG [zuul-service,6b7747eb989a7fdc,6b7747eb989a7fdc,true] 23895 --- [http-nio-5555-exec-2] c.s.zuulservice.filter.TrackingFilter    : is-correlation-id generated in tracking filter: 9dfe61b9-fd27-43e1-9324-f7de279d6065
+2019-01-08 12:52:37.129 DEBUG [zuul-service,6b7747eb989a7fdc,6b7747eb989a7fdc,true] 23895 --- [http-nio-5555-exec-2] c.s.zuulservice.filter.TrackingFilter    : Processing incoming request for /api/greeting/hello/Serhii
+2019-01-08 12:52:37.161 DEBUG [zuul-service,6b7747eb989a7fdc,6b7747eb989a7fdc,true] 23895 --- [http-nio-5555-exec-2] c.s.zuulservice.filter.ResponseFilter    : Adding the correlation id to the outbound headers. 9dfe61b9-fd27-43e1-9324-f7de279d6065
+2019-01-08 12:52:37.162 DEBUG [zuul-service,6b7747eb989a7fdc,6b7747eb989a7fdc,true] 23895 --- [http-nio-5555-exec-2] c.s.zuulservice.filter.ResponseFilter    : Completing outgoing request for /api/greeting/hello/Serhii
+2019-01-08 12:53:10.771 DEBUG [zuul-service,ed37135adce881f2,ed37135adce881f2,true] 23895 --- [http-nio-5555-exec-3] c.s.zuulservice.filter.TrackingFilter    : is-correlation-id generated in tracking filter: 4ca90c84-e09b-474b-b59d-0862ef878034
+2019-01-08 12:53:10.772 DEBUG [zuul-service,ed37135adce881f2,ed37135adce881f2,true] 23895 --- [http-nio-5555-exec-3] c.s.zuulservice.filter.TrackingFilter    : Processing incoming request for /api/greeting/hello/Serhii
+2019-01-08 12:53:10.807 DEBUG [zuul-service,ed37135adce881f2,ed37135adce881f2,true] 23895 --- [http-nio-5555-exec-3] c.s.zuulservice.filter.ResponseFilter    : Adding the correlation id to the outbound headers. 4ca90c84-e09b-474b-b59d-0862ef878034
+2019-01-08 12:53:10.807 DEBUG [zuul-service,ed37135adce881f2,ed37135adce881f2,true] 23895 --- [http-nio-5555-exec-3] c.s.zuulservice.filter.ResponseFilter    : Completing outgoing request for /api/greeting/hello/Serhii
+2019-01-08 13:37:53.622 DEBUG [zuul-service,93b89ca05f188b4a,93b89ca05f188b4a,true] 23895 --- [http-nio-5555-exec-6] c.s.zuulservice.filter.TrackingFilter    : is-correlation-id generated in tracking filter: e3ab6c5a-8a1c-44b0-bdae-e7e1ac698829
+2019-01-08 13:37:53.624 DEBUG [zuul-service,93b89ca05f188b4a,93b89ca05f188b4a,true] 23895 --- [http-nio-5555-exec-6] c.s.zuulservice.filter.TrackingFilter    : Processing incoming request for /api/detail/hello/Serhii
+2019-01-08 13:37:53.743 DEBUG [zuul-service,93b89ca05f188b4a,93b89ca05f188b4a,true] 23895 --- [http-nio-5555-exec-6] c.s.zuulservice.filter.ResponseFilter    : Adding the correlation id to the outbound headers. e3ab6c5a-8a1c-44b0-bdae-e7e1ac698829
+2019-01-08 13:37:53.743 DEBUG [zuul-service,93b89ca05f188b4a,93b89ca05f188b4a,true] 23895 --- [http-nio-5555-exec-6] c.s.zuulservice.filter.ResponseFilter    : Completing outgoing request for /api/detail/hello/Serhii
+2019-01-08 13:39:10.368 DEBUG [zuul-service,3b5398a2f6c3b18b,3b5398a2f6c3b18b,true] 23895 --- [http-nio-5555-exec-9] c.s.zuulservice.filter.TrackingFilter    : is-correlation-id generated in tracking filter: 417f6420-7a3b-4ed9-a3d9-3d95f6182e57
+2019-01-08 13:39:10.369 DEBUG [zuul-service,3b5398a2f6c3b18b,3b5398a2f6c3b18b,true] 23895 --- [http-nio-5555-exec-9] c.s.zuulservice.filter.TrackingFilter    : Processing incoming request for /api/detail/hello/serhii
+2019-01-08 13:39:10.422 DEBUG [zuul-service,3b5398a2f6c3b18b,3b5398a2f6c3b18b,true] 23895 --- [http-nio-5555-exec-9] c.s.zuulservice.filter.ResponseFilter    : Adding the correlation id to the outbound headers. 417f6420-7a3b-4ed9-a3d9-3d95f6182e57
+2019-01-08 13:39:10.423 DEBUG [zuul-service,3b5398a2f6c3b18b,3b5398a2f6c3b18b,true] 23895 --- [http-nio-5555-exec-9] c.s.zuulservice.filter.ResponseFilter    : Completing outgoing request for /api/detail/hello/serhii
+2019-01-08 13:39:21.819 DEBUG [zuul-service,660c466a57a0b774,660c466a57a0b774,true] 23895 --- [http-nio-5555-exec-1] c.s.zuulservice.filter.TrackingFilter    : is-correlation-id generated in tracking filter: 032a6067-c17c-4aa7-b2d2-99393f5d4b2c
+2019-01-08 13:39:21.820 DEBUG [zuul-service,660c466a57a0b774,660c466a57a0b774,true] 23895 --- [http-nio-5555-exec-1] c.s.zuulservice.filter.TrackingFilter    : Processing incoming request for /api/detail/hello/Serhii
+2019-01-08 13:39:21.868 DEBUG [zuul-service,660c466a57a0b774,660c466a57a0b774,true] 23895 --- [http-nio-5555-exec-1] c.s.zuulservice.filter.ResponseFilter    : Adding the correlation id to the outbound headers. 032a6067-c17c-4aa7-b2d2-99393f5d4b2c
+2019-01-08 13:39:21.868 DEBUG [zuul-service,660c466a57a0b774,660c466a57a0b774,true] 23895 --- [http-nio-5555-exec-1] c.s.zuulservice.filter.ResponseFilter    : Completing outgoing request for /api/detail/hello/Serhii
+2019-01-08 14:19:52.071 DEBUG [zuul-service,41262f042b8fef9a,41262f042b8fef9a,true] 23895 --- [http-nio-5555-exec-4] c.s.zuulservice.filter.TrackingFilter    : is-correlation-id generated in tracking filter: 8cf2f1af-1625-460c-8364-245ce0186f60
+2019-01-08 14:19:52.073 DEBUG [zuul-service,41262f042b8fef9a,41262f042b8fef9a,true] 23895 --- [http-nio-5555-exec-4] c.s.zuulservice.filter.TrackingFilter    : Processing incoming request for /api/detail/hello/Serhii
+2019-01-08 14:19:52.156 DEBUG [zuul-service,41262f042b8fef9a,41262f042b8fef9a,true] 23895 --- [http-nio-5555-exec-4] c.s.zuulservice.filter.ResponseFilter    : Adding the correlation id to the outbound headers. 8cf2f1af-1625-460c-8364-245ce0186f60
+2019-01-08 14:19:52.156 DEBUG [zuul-service,41262f042b8fef9a,41262f042b8fef9a,true] 23895 --- [http-nio-5555-exec-4] c.s.zuulservice.filter.ResponseFilter    : Completing outgoing request for /api/detail/hello/Serhii
+2019-01-08 14:23:10.314 DEBUG [zuul-service,a8b0dae537432f6a,a8b0dae537432f6a,true] 23895 --- [http-nio-5555-exec-7] c.s.zuulservice.filter.TrackingFilter    : is-correlation-id generated in tracking filter: 442c05e9-1950-49db-be45-a886e26dbc7e
+2019-01-08 14:23:10.314 DEBUG [zuul-service,a8b0dae537432f6a,a8b0dae537432f6a,true] 23895 --- [http-nio-5555-exec-7] c.s.zuulservice.filter.TrackingFilter    : Processing incoming request for /api/detail/hello/Serhii
+2019-01-08 14:23:10.353 DEBUG [zuul-service,a8b0dae537432f6a,a8b0dae537432f6a,true] 23895 --- [http-nio-5555-exec-7] c.s.zuulservice.filter.ResponseFilter    : Adding the correlation id to the outbound headers. 442c05e9-1950-49db-be45-a886e26dbc7e
+2019-01-08 14:23:10.353 DEBUG [zuul-service,a8b0dae537432f6a,a8b0dae537432f6a,true] 23895 --- [http-nio-5555-exec-7] c.s.zuulservice.filter.ResponseFilter    : Completing outgoing request for /api/detail/hello/Serhii
+2019-01-08 14:32:14.440  INFO [zuul-service,,,] 23895 --- [Thread-26] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ZUUL-SERVICE with eureka with status DOWN
+2019-01-08 14:32:14.440  WARN [zuul-service,,,] 23895 --- [Thread-26] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1546950734440, current=DOWN, previous=UP]
+2019-01-08 14:32:14.486  INFO [zuul-service,,,] 23895 --- [Thread-26] o.s.c.n.zuul.ZuulFilterInitializer       : Stopping filter initializer
+2019-01-08 14:32:14.519  INFO [zuul-service,,,] 23895 --- [Thread-26] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-08 14:32:14.553 ERROR [zuul-service,,,] 23895 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.post(WebResource.java:570) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.register(AbstractJerseyEurekaHttpClient.java:56) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:829) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_172]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_172]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_172]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_172]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_172]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_172]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_172]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_172]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_172]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_172]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_172]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_172]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_172]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.6.jar:4.5.6]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 29 common frames omitted
+
+2019-01-08 14:32:14.570  WARN [zuul-service,,,] 23895 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2019-01-08 14:32:14.574 ERROR [zuul-service,,,] 23895 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.post(WebResource.java:570) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.register(AbstractJerseyEurekaHttpClient.java:56) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:829) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_172]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_172]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_172]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_172]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_172]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_172]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_172]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_172]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_172]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_172]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_172]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_172]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_172]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.6.jar:4.5.6]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 30 common frames omitted
+
+2019-01-08 14:32:14.579  WARN [zuul-service,,,] 23895 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2019-01-08 14:32:14.581  WARN [zuul-service,,,] 23895 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ZUUL-SERVICE/172.28.23.92:zuul-service:5555 - registration failed Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:829) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_172]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_172]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_172]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_172]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_172]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_172]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_172]
+
+2019-01-08 14:32:14.582  WARN [zuul-service,,,] 23895 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:829) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) [eureka-client-1.9.8.jar:1.9.8]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_172]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_172]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_172]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_172]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_172]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_172]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_172]
+
+2019-01-08 14:32:17.771 ERROR [zuul-service,,,] 23895 --- [Thread-26] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.delete(WebResource.java:591) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.cancel(AbstractJerseyEurekaHttpClient.java:76) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:923) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:901) [eureka-client-1.9.8.jar:1.9.8]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_172]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_172]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_172]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_172]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:321) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:156) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:240) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:233) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:404) [spring-cloud-context-2.1.0.RC2.jar:2.1.0.RC2]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:139) [spring-cloud-context-2.1.0.RC2.jar:2.1.0.RC2]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:256) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1052) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1059) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1035) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1011) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:931) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_172]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_172]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_172]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_172]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_172]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_172]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.6.jar:4.5.6]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.6.jar:4.5.6]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 42 common frames omitted
+
+2019-01-08 14:32:17.772  WARN [zuul-service,,,] 23895 --- [Thread-26] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2019-01-08 14:32:17.773 ERROR [zuul-service,,,] 23895 --- [Thread-26] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ZUUL-SERVICE/172.28.23.92:zuul-service:5555 - de-registration failedCannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:923) [eureka-client-1.9.8.jar:1.9.8]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:901) [eureka-client-1.9.8.jar:1.9.8]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_172]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_172]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_172]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_172]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:321) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:156) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:240) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:233) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:404) [spring-cloud-context-2.1.0.RC2.jar:2.1.0.RC2]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:139) [spring-cloud-context-2.1.0.RC2.jar:2.1.0.RC2]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:256) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1052) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1059) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1035) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1011) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:931) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+
