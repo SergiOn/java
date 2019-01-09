@@ -1,72 +1,72 @@
-spring:
-  application:
-    name: "greeting-service"
-  profiles:
-    active: "default"
-  cloud:
-    config:
-      uri: "http://localhost:8888"
-
-
 #spring:
 #  application:
 #    name: "greeting-service"
-#  jpa:
-#    hibernate:
-##      ddl-auto: update
-#      ddl-auto: none
-#    show-sql: true
-#    properties:
-#      hibernate:
-##        dialect: "org.hibernate.dialect.MySQL5Dialect"
-#        dialect: "org.hibernate.dialect.MySQL5InnoDBDialect"
-#  database:
-#    driver-class-name: "com.mysql.jdbc.Driver"
-#  datasource:
-#    url: "jdbc:mysql://localhost:3306/greetingdatabase"
-#    username: "root"
-#    password: "root"
-#    test-while-idle: true
-#    validation-query: "SELECT 1"
-#  liquibase:
-#    change-log: "classpath:db-changelog.xml"
-#  sleuth:
-#    sampler:
-#      probability: 1.0
-#  zipkin:
-#    base-url: "http://localhost:9411"
-#
-#eureka:
-#  instance:
-#    prefer-ip-address: true
-#  client:
-#    register-with-eureka: true
-#    fetch-registry: true
-#    service-url:
-#      default-zone: "http://localhost:8761/eureka/"
-#
-## Prometheus
-#management:
-#  endpoint:
-#    metrics:
-#      enabled: true
-#    prometheus:
-#      enabled: true
-#  endpoints:
-#    web:
-#      exposure:
-#        include: "*"
-#  metrics:
-#    export:
-#      prometheus:
-#        enabled: true
-#
-#server:
-#  port: 8103
-#
-#logging:
-#  file: "greetingservice/logs/greetingservice.log"
-#  level:
-#    com.netflix: WARN
-#    org.springframework.web: WARN
-#    com.springliquibase: DEBUG
+#  profiles:
+#    active: "default"
+#  cloud:
+#    config:
+#      uri: "http://localhost:8888"
+
+
+spring:
+  application:
+    name: "greeting-service"
+  jpa:
+    hibernate:
+#      ddl-auto: update
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+#        dialect: "org.hibernate.dialect.MySQL5Dialect"
+        dialect: "org.hibernate.dialect.MySQL5InnoDBDialect"
+  database:
+    driver-class-name: "com.mysql.jdbc.Driver"
+  datasource:
+    url: "jdbc:mysql://localhost:3306/greetingdatabase"
+    username: "root"
+    password: "root"
+    test-while-idle: true
+    validation-query: "SELECT 1"
+  liquibase:
+    change-log: "classpath:db-changelog.xml"
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: "http://localhost:9411"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone: "http://localhost:8761/eureka/"
+
+# Prometheus
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+server:
+  port: 8103
+
+logging:
+  file: "greetingservice/logs/greetingservice.log"
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.springliquibase: DEBUG
