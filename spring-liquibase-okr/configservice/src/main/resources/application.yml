@@ -6,13 +6,15 @@ spring:
     config:
       server:
         git:
-#          uri: https://github.com/SergiOn/java
+          uri: https://github.com/SergiOn/configuration
           search-paths:
-            #            - userservice
-            #            - itemservice
-#            - Learn-Microservices-with-Spring-Boot-and-Spring-Cloud/config-repo/userservice
-#            - Learn-Microservices-with-Spring-Boot-and-Spring-Cloud/config-repo/itemservice
-#          default-label: 9-learn-microservices-spring-boot-spring-cloud
+            - java/spring-liquibase-okr/authorizationservice
+            - java/spring-liquibase-okr/detailservice
+            - java/spring-liquibase-okr/eurekaservice
+            - java/spring-liquibase-okr/greetingservice
+            - java/spring-liquibase-okr/zipkinservice
+            - java/spring-liquibase-okr/zuulservice
+#          default-label: master
         encrypt:
           enabled: false
 
