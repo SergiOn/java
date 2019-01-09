@@ -1,40 +1,50 @@
 spring:
   application:
     name: "zuul-service"
-  sleuth:
-    sampler:
-      probability: 1.0
-  zipkin:
-    base-url: "http://localhost:9411"
+  profiles:
+    active: "default"
+  cloud:
+    config:
+      uri: "http://localhost:8888"
 
-zuul:
-  routes:
-    detail-service: /detail/**
-    greeting-service: /greeting/**
-    authorization-service: /auth/**
-  ignored-services: '*'
-  prefix: /api
-  sensitive-headers: Cookie, Set-Cookie
 
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      default-zone: "http://localhost:8761/eureka/"
-
-oauth2:
-  signing:
-    key: "345345fsdgsf5345"
-
-server:
-  port: 5555
-
-logging:
-  file: "zuulservice/logs/zuulservice.log"
-  level:
-    com.netflix: WARN
-    org.springframework.web: WARN
-    com.springliquibase: DEBUG
+#spring:
+#  application:
+#    name: "zuul-service"
+#  sleuth:
+#    sampler:
+#      probability: 1.0
+#  zipkin:
+#    base-url: "http://localhost:9411"
+#
+#zuul:
+#  routes:
+#    detail-service: /detail/**
+#    greeting-service: /greeting/**
+#    authorization-service: /auth/**
+#  ignored-services: '*'
+#  prefix: /api
+#  sensitive-headers: Cookie, Set-Cookie
+#
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      default-zone: "http://localhost:8761/eureka/"
+#
+#oauth2:
+#  signing:
+#    key: "345345fsdgsf5345"
+#
+#server:
+#  port: 5555
+#
+#logging:
+#  file: "zuulservice/logs/zuulservice.log"
+#  level:
+#    com.netflix: WARN
+#    org.springframework.web: WARN
+#    com.springliquibase: DEBUG

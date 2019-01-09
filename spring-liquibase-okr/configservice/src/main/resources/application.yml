@@ -8,12 +8,12 @@ spring:
         git:
           uri: https://github.com/SergiOn/configuration
           search-paths:
-            - java/spring-liquibase-okr/authorizationservice
-            - java/spring-liquibase-okr/detailservice
-            - java/spring-liquibase-okr/eurekaservice
-            - java/spring-liquibase-okr/greetingservice
-            - java/spring-liquibase-okr/zipkinservice
-            - java/spring-liquibase-okr/zuulservice
+            - java/spring-liquibase-okr/authorization-service
+            - java/spring-liquibase-okr/detail-service
+            - java/spring-liquibase-okr/eureka-service
+            - java/spring-liquibase-okr/greeting-service
+            - java/spring-liquibase-okr/zipkin-service
+            - java/spring-liquibase-okr/zuul-service
 #          default-label: master
         encrypt:
           enabled: false

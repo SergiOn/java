@@ -1,21 +1,31 @@
 spring:
   application:
     name: "eureka-service"
+  profiles:
+    active: "default"
+  cloud:
+    config:
+      uri: "http://localhost:8888"
 
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-  server:
-    registry-sync-retry-wait-ms: 5
-    wait-time-in-ms-when-sync-empty: 5
 
-server:
-  port: 8761
-
-logging:
-  file: "eurekaservice/logs/eurekaservice.log"
-  level:
-    com.netflix: WARN
-    org.springframework.web: WARN
-    com.springliquibase: DEBUG
+#spring:
+#  application:
+#    name: "eureka-service"
+#
+#eureka:
+#  client:
+#    register-with-eureka: false
+#    fetch-registry: false
+#  server:
+#    registry-sync-retry-wait-ms: 5
+#    wait-time-in-ms-when-sync-empty: 5
+#
+#server:
+#  port: 8761
+#
+#logging:
+#  file: "eurekaservice/logs/eurekaservice.log"
+#  level:
+#    com.netflix: WARN
+#    org.springframework.web: WARN
+#    com.springliquibase: DEBUG
