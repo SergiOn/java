@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping({"/registration", "sign-up"})
+@RequestMapping({"/registration", "/sign-up"})
 @AllArgsConstructor
 public class RegistrationController {
 
     private UserService userService;
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = { RequestMethod.POST, RequestMethod.PUT })
     public ResponseEntity<?> login(@Valid @RequestBody User user) {
         boolean isUserNotExist = userService.isUserNotExist(user);
 

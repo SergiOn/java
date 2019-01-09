@@ -15,16 +15,19 @@ public class GreetingController {
 
     private final GreetingService greetingService;
 
-    @RequestMapping
+//    @GetMapping
+    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<?> helloByQuery(@RequestParam("name") String name) {
         return ResponseEntity.ok(greetingService.getAllGreetingsWithName(name));
     }
 
-    @RequestMapping("/{name}")
+//    @GetMapping("/{name}")
+    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
     public ResponseEntity<?> helloByPath(@PathVariable String name) {
         return ResponseEntity.ok(greetingService.getAllGreetingsWithName(name));
     }
 
+//    @PostMapping
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> helloByBody(@Valid @RequestBody GreetingRequest greetingRequest) {
         return ResponseEntity.ok(greetingService.getAllGreetingsWithName(greetingRequest.getName()));
