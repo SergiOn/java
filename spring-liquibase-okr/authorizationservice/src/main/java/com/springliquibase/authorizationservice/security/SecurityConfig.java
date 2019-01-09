@@ -8,17 +8,16 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 public class SecurityConfig extends ResourceServerConfigurerAdapter {
 
     private static final String[] PUBLIC_MATCHERS = {
-            "/sign-in",
-            "/sign-up",
-            "/sign-out",
             "/login",
+            "/sign-in",
             "/registration",
-            "/logout"
+            "/sign-up"
     };
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http.csrf().disable().logout().disable()
+            .authorizeRequests()
                 .antMatchers(PUBLIC_MATCHERS)
                 .permitAll()
                 .anyRequest()
