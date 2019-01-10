@@ -15,7 +15,8 @@ public class SecurityConfig extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http.logout().disable()
+            .authorizeRequests()
                 .antMatchers(PUBLIC_MATCHERS)
                 .permitAll()
                 .anyRequest()
