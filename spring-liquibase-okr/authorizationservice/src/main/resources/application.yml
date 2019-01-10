@@ -30,6 +30,10 @@ spring:
     validation-query: "SELECT 1"
   liquibase:
     change-log: "classpath:db-changelog.xml"
+  redis:
+    host: "localhost"
+    password: "root"
+    port: 6379
   sleuth:
     sampler:
       probability: 1.0

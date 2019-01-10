@@ -135,6 +135,21 @@ System CPU Usage
 ```
 
 
+## Docker (Redis)
+
+```bash
+docker run --name spring-liquibase-okr-redis -p 6379:6379 -d redis --requirepass "root"
+```
+
+```bash
+docker start spring-liquibase-okr-redis
+```
+
+```bash
+docker stop spring-liquibase-okr-redis
+```
+
+
 
 #### Links
 
