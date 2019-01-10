@@ -1,5 +1,6 @@
 package com.springliquibase.authorizationservice.service.impl;
 
+import com.springliquibase.authorizationservice.message.request.LoginRequest;
 import com.springliquibase.authorizationservice.model.User;
 import com.springliquibase.authorizationservice.repository.UserRepository;
 import com.springliquibase.authorizationservice.security.SecurityUtility;
@@ -23,6 +24,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean isUserNotExist(User user) {
         return userRepository.findByUsernameOrEmail(user.getUsername(), user.getEmail()).isEmpty();
+    }
+
+    @Override
+    public boolean isLoginSuccess(LoginRequest user) {
+        return userRepository.findByUsernameAndEmail(user.getUsername(), user.getEmail())
+                .map(userDB -> SecurityUtility.passwordEncoder().matches(user.getPassword(), userDB.getPassword()))
+                .orElse(false);
     }
 
     @Override
