@@ -27,9 +27,9 @@ import java.util.Set;
 @AllArgsConstructor
 public class LoginController {
 
-    private DefaultTokenServices defaultTokenServices;
-    private JwtAccessTokenConverter tokenConverter;
-    private UserService userService;
+    private final DefaultTokenServices defaultTokenServices;
+    private final JwtAccessTokenConverter tokenConverter;
+    private final UserService userService;
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> login(@Valid @RequestBody LoginRequest user) {

@@ -4,12 +4,10 @@ import com.springliquibase.authorizationservice.message.request.LogoutRequest;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.oauth2.common.OAuth2AccessToken;
-import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
-import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
-import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
@@ -19,25 +17,20 @@ import javax.validation.Valid;
 @Slf4j
 public class LogoutController {
 
-    private TokenStore tokenStore;
-    private DefaultTokenServices defaultTokenServices;
-    private ConsumerTokenServices consumerTokenServices;
-    private JwtTokenStore jwtTokenStore;
-
-    @RequestMapping(value = "/param", method = { RequestMethod.DELETE, RequestMethod.POST })
-    public ResponseEntity<?> logoutByParam(@RequestParam("token") String token) {
-        OAuth2AccessToken accessToken = tokenStore.readAccessToken(token);
-        tokenStore.removeAccessToken(accessToken);
-
-        return ResponseEntity.ok("The token was removed.");
-    }
-
-    @RequestMapping(value = "/path/{token}", method = { RequestMethod.DELETE, RequestMethod.POST })
-    public ResponseEntity<?> logoutByPath(@PathVariable String token) {
-        OAuth2AccessToken accessToken = tokenStore.readAccessToken(token);
-        tokenStore.removeAccessToken(accessToken);
-        return ResponseEntity.ok("The token was removed.");
-    }
+//    @RequestMapping(value = "/param", method = { RequestMethod.DELETE, RequestMethod.POST })
+//    public ResponseEntity<?> logoutByParam(@RequestParam("token") String token) {
+//        OAuth2AccessToken accessToken = tokenStore.readAccessToken(token);
+//        tokenStore.removeAccessToken(accessToken);
+//
+//        return ResponseEntity.ok("The token was removed.");
+//    }
+//
+//    @RequestMapping(value = "/path/{token}", method = { RequestMethod.DELETE, RequestMethod.POST })
+//    public ResponseEntity<?> logoutByPath(@PathVariable String token) {
+//        OAuth2AccessToken accessToken = tokenStore.readAccessToken(token);
+//        tokenStore.removeAccessToken(accessToken);
+//        return ResponseEntity.ok("The token was removed.");
+//    }
 
     @RequestMapping(method = { RequestMethod.DELETE, RequestMethod.POST })
     public ResponseEntity<?> logoutByBody(@Valid @RequestBody LogoutRequest logoutRequest) {
@@ -45,19 +38,31 @@ public class LogoutController {
 
         log.debug("Token value: {}", token);
 
-        OAuth2AccessToken accessToken = tokenStore.readAccessToken(token);
-        tokenStore.removeAccessToken(accessToken);
+//        tokenConverter.extractAccessToken(token, new HashMap<>());
 
-        log.debug("AccessToken value: {}", accessToken);
+//        OAuth2RefreshToken accessToken = tokenStore.readRefreshToken(token);
+//        OAuth2RefreshToken accessToken2 = jwtTokenStore.readRefreshToken(token);
+//
+//        tokenStore.removeRefreshToken(accessToken);
+//        jwtTokenStore.removeRefreshToken(accessToken);
+//
+//        log.debug("AccessToken value: {}", accessToken);
+//        log.debug("AccessToken2 value: {}", accessToken2);
 
-        boolean result = defaultTokenServices.revokeToken(token);
-        boolean result2 = consumerTokenServices.revokeToken(token);
-        jwtTokenStore.removeAccessToken(accessToken);
+//        boolean result = defaultTokenServices.revokeToken(token);
+//        boolean result2 = consumerTokenServices.revokeToken(token);
+//        jwtTokenStore.removeAccessToken(accessToken);
 
-        log.debug("Delete token result: {}", result);
-        log.debug("Delete token result2: {}", result2);
-
+//        log.debug("Delete token result: {}", result);
+//        log.debug("Delete token result2: {}", result2);
         return ResponseEntity.ok("The token was removed.");
     }
 
 }
+
+/*
+The default implementation of a JWT is stateless.
+That means you don't hold any information regarding the individual token
+in any form of storage (files, databases, memory, etc.).
+You're relying on the signature of the JWT to validate that you have issued this token.
+*/

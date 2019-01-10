@@ -1,64 +1,119 @@
-2019-01-08 00:54:38.388  INFO 20375 --- [Thread-23] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVICE with eureka with status DOWN
-2019-01-08 00:54:38.393  INFO 20375 --- [Thread-23] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-01-08 01:26:45.703  INFO 21374 --- [main] c.s.e.EurekaserviceApplication           : No active profile set, falling back to default profiles: default
-2019-01-08 01:26:46.312  WARN 21374 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2019-01-08 01:26:46.597  INFO 21374 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7552ba5a-3420-3280-988f-bd76dc5c1fbd
-2019-01-08 01:26:46.663  INFO 21374 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b75434c9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-01-08 01:26:46.858  INFO 21374 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
-2019-01-08 01:26:46.874  INFO 21374 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-01-08 01:26:46.875  INFO 21374 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2019-01-08 01:26:46.880  INFO 21374 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/serhii/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-2019-01-08 01:26:46.981  INFO 21374 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-01-08 01:26:47.046  WARN 21374 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-01-08 01:26:47.534  INFO 21374 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
-2019-01-08 01:26:47.903  WARN 21374 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-01-08 01:26:48.019  INFO 21374 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-01-08 01:26:48.359  INFO 21374 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-01-08 01:26:48.638  INFO 21374 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-01-08 01:26:48.706  INFO 21374 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVICE with eureka with status UP
-2019-01-08 01:26:48.708  INFO 21374 --- [Thread-21] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
-2019-01-08 01:26:48.708  INFO 21374 --- [Thread-21] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
-2019-01-08 01:26:48.709  INFO 21374 --- [Thread-21] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
-2019-01-08 01:26:48.721  INFO 21374 --- [Thread-21] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2019-01-08 01:26:48.721  INFO 21374 --- [Thread-21] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2019-01-08 01:26:48.729  INFO 21374 --- [Thread-21] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2019-01-08 01:26:48.748  INFO 21374 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8761 (http) with context path ''
-2019-01-08 01:26:48.749  INFO 21374 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
-2019-01-08 01:26:48.751  INFO 21374 --- [main] c.s.e.EurekaserviceApplication           : Started EurekaserviceApplication in 4.171 seconds (JVM running for 5.162)
-2019-01-08 01:26:48.814  INFO 21374 --- [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-01-08 01:36:06.222  WARN 21374 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
-2019-01-08 01:36:06.224  WARN 21374 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
-2019-01-08 01:36:06.224  WARN 21374 --- [TaskBatchingWorker-target_localhost-10] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
-2019-01-08 01:45:15.894  WARN 21374 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
-2019-01-08 01:45:15.896  WARN 21374 --- [TaskBatchingWorker-target_localhost-6] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
-2019-01-08 01:45:15.896  WARN 21374 --- [TaskBatchingWorker-target_localhost-6] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
-2019-01-08 02:01:55.739  INFO 21374 --- [Thread-23] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVICE with eureka with status DOWN
-2019-01-08 02:01:55.751  INFO 21374 --- [Thread-23] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-01-08 12:39:50.893  INFO 23846 --- [main] c.s.e.EurekaserviceApplication           : No active profile set, falling back to default profiles: default
-2019-01-08 12:39:51.630  WARN 23846 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2019-01-08 12:39:51.811  INFO 23846 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7552ba5a-3420-3280-988f-bd76dc5c1fbd
-2019-01-08 12:39:51.933  INFO 23846 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f19b3d5f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-01-08 12:39:52.249  INFO 23846 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
-2019-01-08 12:39:52.276  INFO 23846 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-01-08 12:39:52.277  INFO 23846 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2019-01-08 12:39:52.284  INFO 23846 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/work/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-2019-01-08 12:39:52.416  INFO 23846 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-01-08 12:39:52.525  WARN 23846 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-01-08 12:39:53.247  INFO 23846 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
-2019-01-08 12:39:54.087  WARN 23846 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-01-08 12:39:54.405  INFO 23846 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-01-08 12:39:54.873  INFO 23846 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-01-08 12:39:55.429  INFO 23846 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-01-08 12:39:55.491  INFO 23846 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVICE with eureka with status UP
-2019-01-08 12:39:55.493  INFO 23846 --- [Thread-24] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
-2019-01-08 12:39:55.493  INFO 23846 --- [Thread-24] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
-2019-01-08 12:39:55.494  INFO 23846 --- [Thread-24] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
-2019-01-08 12:39:55.503  INFO 23846 --- [Thread-24] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2019-01-08 12:39:55.503  INFO 23846 --- [Thread-24] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2019-01-08 12:39:55.512  INFO 23846 --- [Thread-24] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2019-01-08 12:39:55.546  INFO 23846 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8761 (http) with context path ''
-2019-01-08 12:39:55.547  INFO 23846 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
-2019-01-08 12:39:55.549  INFO 23846 --- [main] c.s.e.EurekaserviceApplication           : Started EurekaserviceApplication in 5.697 seconds (JVM running for 6.787)
-2019-01-08 12:39:55.806  INFO 23846 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-01-08 14:32:14.271  INFO 23846 --- [Thread-26] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVICE with eureka with status DOWN
-2019-01-08 14:32:14.286  INFO 23846 --- [Thread-26] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-10 00:28:40.817  INFO 56533 --- [Thread-25] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVICE with eureka with status DOWN
+2019-01-10 00:28:40.841  INFO 56533 --- [Thread-25] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-10 00:37:40.774  INFO 58159 --- [main] c.s.e.EurekaserviceApplication           : The following profiles are active: default
+2019-01-10 00:37:41.270  WARN 58159 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-01-10 00:37:41.414  INFO 58159 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=15a963c7-43da-39a5-8f15-afaac3a5f55a
+2019-01-10 00:37:41.474  INFO 58159 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1262a114] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-10 00:37:41.781  INFO 58159 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
+2019-01-10 00:37:41.795  INFO 58159 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-10 00:37:41.796  INFO 58159 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-10 00:37:41.800  INFO 58159 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/serhii/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-10 00:37:41.868  INFO 58159 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-10 00:37:41.940  WARN 58159 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-10 00:37:42.359  INFO 58159 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
+2019-01-10 00:37:42.728  WARN 58159 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-10 00:37:42.876  INFO 58159 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-10 00:37:43.255  INFO 58159 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-01-10 00:37:43.515  INFO 58159 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-01-10 00:37:43.572  INFO 58159 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVICE with eureka with status UP
+2019-01-10 00:37:43.575  INFO 58159 --- [Thread-22] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
+2019-01-10 00:37:43.575  INFO 58159 --- [Thread-22] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
+2019-01-10 00:37:43.576  INFO 58159 --- [Thread-22] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
+2019-01-10 00:37:43.582  INFO 58159 --- [Thread-22] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2019-01-10 00:37:43.582  INFO 58159 --- [Thread-22] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2019-01-10 00:37:43.594  INFO 58159 --- [Thread-22] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2019-01-10 00:37:43.620  INFO 58159 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8761 (http) with context path ''
+2019-01-10 00:37:43.621  INFO 58159 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+2019-01-10 00:37:43.623  INFO 58159 --- [main] c.s.e.EurekaserviceApplication           : Started EurekaserviceApplication in 4.478 seconds (JVM running for 5.135)
+2019-01-10 00:37:44.169  INFO 58159 --- [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-10 00:37:44.173  INFO 58159 --- [RMI TCP Connection(2)-127.0.0.1] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-01-10 00:37:44.708  INFO 58159 --- [RMI TCP Connection(2)-127.0.0.1] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=eureka-service, profiles=[default], label=null, version=bd8d4121cd6fe143fb5b372146b9ef25e30bf10a, state=null
+2019-01-10 00:41:45.855  INFO 58159 --- [Thread-24] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVICE with eureka with status DOWN
+2019-01-10 00:41:45.866  INFO 58159 --- [Thread-24] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-10 00:55:39.145  INFO 58367 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-01-10 00:55:39.223  INFO 58367 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2019-01-10 00:55:39.224  WARN 58367 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/eureka-service/default": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+2019-01-10 00:55:39.225  INFO 58367 --- [main] c.s.e.EurekaserviceApplication           : No active profile set, falling back to default profiles: default
+2019-01-10 00:55:39.757  WARN 58367 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-01-10 00:55:39.902  INFO 58367 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=15a963c7-43da-39a5-8f15-afaac3a5f55a
+2019-01-10 00:55:39.963  INFO 58367 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$3405d00e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-10 00:55:40.234  INFO 58367 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
+2019-01-10 00:55:40.248  INFO 58367 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-10 00:55:40.248  INFO 58367 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-10 00:55:40.304  INFO 58367 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/serhii/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-10 00:55:40.382  INFO 58367 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-10 00:55:40.472  WARN 58367 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-10 00:55:40.912  INFO 58367 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
+2019-01-10 00:55:41.465  WARN 58367 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-10 00:55:41.693  INFO 58367 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-10 00:55:42.260  INFO 58367 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-01-10 00:55:42.710  INFO 58367 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-01-10 00:55:42.845  INFO 58367 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVICE with eureka with status UP
+2019-01-10 00:55:42.853  INFO 58367 --- [Thread-23] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
+2019-01-10 00:55:42.854  INFO 58367 --- [Thread-23] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
+2019-01-10 00:55:42.855  INFO 58367 --- [Thread-23] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
+2019-01-10 00:55:42.869  INFO 58367 --- [Thread-23] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2019-01-10 00:55:42.869  INFO 58367 --- [Thread-23] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2019-01-10 00:55:42.881  INFO 58367 --- [Thread-23] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2019-01-10 00:55:42.936  INFO 58367 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8761 (http) with context path ''
+2019-01-10 00:55:42.936  INFO 58367 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+2019-01-10 00:55:42.940  INFO 58367 --- [main] c.s.e.EurekaserviceApplication           : Started EurekaserviceApplication in 4.894 seconds (JVM running for 5.635)
+2019-01-10 00:55:43.161  INFO 58367 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-10 00:55:43.166  INFO 58367 --- [RMI TCP Connection(4)-127.0.0.1] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-01-10 00:55:43.174  INFO 58367 --- [RMI TCP Connection(4)-127.0.0.1] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2019-01-10 00:55:43.174  WARN 58367 --- [RMI TCP Connection(4)-127.0.0.1] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/eureka-service/default": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+2019-01-10 00:58:32.827  WARN 58367 --- [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 00:58:32.829  WARN 58367 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 00:58:32.829  WARN 58367 --- [TaskBatchingWorker-target_localhost-15] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 00:59:47.198  WARN 58367 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 00:59:47.199  WARN 58367 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 00:59:47.199  WARN 58367 --- [TaskBatchingWorker-target_localhost-16] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 01:01:31.587  WARN 58367 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: AUTHORIZATION-SERVICE - 192.168.31.90:authorization-service:8101
+2019-01-10 01:01:31.587  WARN 58367 --- [http-nio-8761-exec-3] c.n.eureka.resources.InstanceResource    : Not Found (Renew): AUTHORIZATION-SERVICE - 192.168.31.90:authorization-service:8101
+2019-01-10 01:01:31.588  WARN 58367 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 01:01:31.589  WARN 58367 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Heartbeat@localhost failed with response code 404
+2019-01-10 01:01:31.589  WARN 58367 --- [TaskBatchingWorker-target_localhost-1] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Heartbeat@localhost: missing entry.
+2019-01-10 01:01:31.589  WARN 58367 --- [TaskBatchingWorker-target_localhost-1] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Heartbeat@localhost: cannot find instance id 192.168.31.90:authorization-service:8101 and hence replicating the instance with status DOWN
+2019-01-10 01:01:31.589  WARN 58367 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 01:01:31.589  WARN 58367 --- [TaskBatchingWorker-target_localhost-1] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 01:02:01.236  WARN 58367 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 01:02:01.240  WARN 58367 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 01:02:01.240  WARN 58367 --- [TaskBatchingWorker-target_localhost-12] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 01:03:30.792  WARN 58367 --- [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 01:03:30.793  WARN 58367 --- [TaskBatchingWorker-target_localhost-5] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 01:03:30.793  WARN 58367 --- [TaskBatchingWorker-target_localhost-5] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 01:05:41.902  WARN 58367 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 01:05:41.903  WARN 58367 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 01:05:41.903  WARN 58367 --- [TaskBatchingWorker-target_localhost-3] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 01:12:30.972  WARN 58367 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 01:12:30.973  WARN 58367 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 01:12:30.974  WARN 58367 --- [TaskBatchingWorker-target_localhost-18] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 01:18:41.926  WARN 58367 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 01:18:41.928  WARN 58367 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 01:18:41.928  WARN 58367 --- [TaskBatchingWorker-target_localhost-15] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 01:24:31.791  WARN 58367 --- [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 01:24:31.794  WARN 58367 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 01:24:31.794  WARN 58367 --- [TaskBatchingWorker-target_localhost-16] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 01:38:50.368  WARN 58367 --- [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 01:38:50.370  WARN 58367 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 01:38:50.370  WARN 58367 --- [TaskBatchingWorker-target_localhost-18] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 01:43:25.854  WARN 58367 --- [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 01:43:25.856  WARN 58367 --- [TaskBatchingWorker-target_localhost-6] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 01:43:25.856  WARN 58367 --- [TaskBatchingWorker-target_localhost-6] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 01:45:53.185  WARN 58367 --- [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 01:45:53.187  WARN 58367 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 01:45:53.188  WARN 58367 --- [TaskBatchingWorker-target_localhost-13] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 01:52:07.661  WARN 58367 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 01:52:07.662  WARN 58367 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 01:52:07.662  WARN 58367 --- [TaskBatchingWorker-target_localhost-1] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 01:56:47.384  WARN 58367 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 01:56:47.385  WARN 58367 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 01:56:47.385  WARN 58367 --- [TaskBatchingWorker-target_localhost-0] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 01:59:27.270  WARN 58367 --- [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 01:59:27.270  WARN 58367 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 01:59:27.271  WARN 58367 --- [TaskBatchingWorker-target_localhost-12] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 02:00:26.968  WARN 58367 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101
+2019-01-10 02:00:26.969  WARN 58367 --- [TaskBatchingWorker-target_localhost-7] c.n.eureka.cluster.ReplicationTask       : The replication of task AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost failed with response code 404
+2019-01-10 02:00:26.969  WARN 58367 --- [TaskBatchingWorker-target_localhost-7] c.netflix.eureka.cluster.PeerEurekaNode  : AUTHORIZATION-SERVICE/192.168.31.90:authorization-service:8101:Cancel@localhost: missing entry.
+2019-01-10 02:06:57.038  INFO 58367 --- [Thread-25] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVICE with eureka with status DOWN
+2019-01-10 02:06:57.047  INFO 58367 --- [Thread-25] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

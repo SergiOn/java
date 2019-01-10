@@ -16,7 +16,7 @@ import javax.validation.Valid;
 @AllArgsConstructor
 public class RegistrationController {
 
-    private UserService userService;
+    private final UserService userService;
 
     @RequestMapping(method = { RequestMethod.POST, RequestMethod.PUT })
     public ResponseEntity<?> login(@Valid @RequestBody User user) {

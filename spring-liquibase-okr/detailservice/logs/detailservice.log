@@ -1,57 +1,159 @@
-2019-01-08 01:48:59.557  INFO [detail-service,,,] 21680 --- [restartedMain] c.s.d.DetailserviceApplication           : No active profile set, falling back to default profiles: default
-2019-01-08 01:49:00.946  WARN [detail-service,,,] 21680 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2019-01-08 01:49:01.032  WARN [detail-service,,,] 21680 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
-2019-01-08 01:49:01.460  INFO [detail-service,,,] 21680 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9b2e0fe4-fc8f-3b7b-9951-37905160a0b3
-2019-01-08 01:49:01.786  INFO [detail-service,,,] 21680 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$c3ce700] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-01-08 01:49:02.934  INFO [detail-service,,,] 21680 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8102 (http)
-2019-01-08 01:49:02.980  INFO [detail-service,,,] 21680 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-01-08 01:49:02.982  INFO [detail-service,,,] 21680 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2019-01-08 01:49:02.991  INFO [detail-service,,,] 21680 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/serhii/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-2019-01-08 01:49:03.260  INFO [detail-service,,,] 21680 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-01-08 01:49:03.477  WARN [detail-service,,,] 21680 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-01-08 01:49:05.197 DEBUG [detail-service,,,] 21680 --- [restartedMain] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> init
-2019-01-08 01:49:05.549  WARN [detail-service,,,] 21680 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2019-01-08 01:49:05.720  WARN [detail-service,,,] 21680 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-01-08 01:49:06.072  INFO [detail-service,,,] 21680 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-01-08 01:49:07.513  INFO [detail-service,,,] 21680 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-01-08 01:49:07.659  INFO [detail-service,,,] 21680 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-01-08 01:49:08.667  INFO [detail-service,,,] 21680 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DETAIL-SERVICE with eureka with status UP
-2019-01-08 01:49:08.741  INFO [detail-service,,,] 21680 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8102 (http) with context path ''
-2019-01-08 01:49:08.742  INFO [detail-service,,,] 21680 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8102
-2019-01-08 01:49:08.745  INFO [detail-service,,,] 21680 --- [restartedMain] c.s.d.DetailserviceApplication           : Started DetailserviceApplication in 10.531 seconds (JVM running for 11.344)
-2019-01-08 01:49:09.220  INFO [detail-service,,,] 21680 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-01-08 01:49:58.257 DEBUG [detail-service,c8565ea576b3514c,09efdf5f16a2cf0f,true] 21680 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter
-2019-01-08 01:49:58.261 DEBUG [detail-service,c8565ea576b3514c,09efdf5f16a2cf0f,true] 21680 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId 18445715-f384-4ae4-8ced-f09d31f0d48e
-2019-01-08 01:49:58.262 DEBUG [detail-service,c8565ea576b3514c,09efdf5f16a2cf0f,true] 21680 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId exist: 18445715-f384-4ae4-8ced-f09d31f0d48e
-2019-01-08 01:49:58.262 DEBUG [detail-service,c8565ea576b3514c,09efdf5f16a2cf0f,true] 21680 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: request correlationId: 18445715-f384-4ae4-8ced-f09d31f0d48e
-2019-01-08 01:49:58.262 DEBUG [detail-service,c8565ea576b3514c,09efdf5f16a2cf0f,true] 21680 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId: 18445715-f384-4ae4-8ced-f09d31f0d48e
-2019-01-08 01:49:58.262 DEBUG [detail-service,c8565ea576b3514c,09efdf5f16a2cf0f,true] 21680 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: requestURI: /hello/Serhii
-2019-01-08 01:49:58.269 DEBUG [detail-service,c8565ea576b3514c,09efdf5f16a2cf0f,true] 21680 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle
-2019-01-08 01:49:58.270 DEBUG [detail-service,c8565ea576b3514c,09efdf5f16a2cf0f,true] 21680 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle: correlationId: 18445715-f384-4ae4-8ced-f09d31f0d48e
-2019-01-08 01:49:58.282 DEBUG [detail-service,c8565ea576b3514c,09efdf5f16a2cf0f,true] 21680 --- [http-nio-8102-exec-1] c.s.d.controller.GreetingController      : GreetingController -> helloByPath
-2019-01-08 01:49:58.436 DEBUG [detail-service,c8565ea576b3514c,09efdf5f16a2cf0f,true] 21680 --- [http-nio-8102-exec-1] c.s.d.service.GreetingServiceImpl        : GreetingServiceImpl -> getAllGreetingsByPathWithName
-2019-01-08 01:49:58.436 DEBUG [detail-service,c8565ea576b3514c,09efdf5f16a2cf0f,true] 21680 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply
-2019-01-08 01:49:58.437 DEBUG [detail-service,c8565ea576b3514c,09efdf5f16a2cf0f,true] 21680 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply: correlationId: 18445715-f384-4ae4-8ced-f09d31f0d48e
-2019-01-08 01:49:59.003 DEBUG [detail-service,c8565ea576b3514c,09efdf5f16a2cf0f,true] 21680 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> postHandle
-2019-01-08 01:49:59.004 DEBUG [detail-service,c8565ea576b3514c,09efdf5f16a2cf0f,true] 21680 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> afterCompletion
-2019-01-08 01:50:06.681 DEBUG [detail-service,cbbb5667a78ffc94,dad41e63e37d42c3,true] 21680 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter
-2019-01-08 01:50:06.681 DEBUG [detail-service,cbbb5667a78ffc94,dad41e63e37d42c3,true] 21680 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId ce1d46b2-9728-45c9-9ba8-8f65b6955329
-2019-01-08 01:50:06.682 DEBUG [detail-service,cbbb5667a78ffc94,dad41e63e37d42c3,true] 21680 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId exist: ce1d46b2-9728-45c9-9ba8-8f65b6955329
-2019-01-08 01:50:06.682 DEBUG [detail-service,cbbb5667a78ffc94,dad41e63e37d42c3,true] 21680 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: request correlationId: ce1d46b2-9728-45c9-9ba8-8f65b6955329
-2019-01-08 01:50:06.682 DEBUG [detail-service,cbbb5667a78ffc94,dad41e63e37d42c3,true] 21680 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId: ce1d46b2-9728-45c9-9ba8-8f65b6955329
-2019-01-08 01:50:06.682 DEBUG [detail-service,cbbb5667a78ffc94,dad41e63e37d42c3,true] 21680 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: requestURI: /hello/Serhii
-2019-01-08 01:50:06.684 DEBUG [detail-service,cbbb5667a78ffc94,dad41e63e37d42c3,true] 21680 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle
-2019-01-08 01:50:06.684 DEBUG [detail-service,cbbb5667a78ffc94,dad41e63e37d42c3,true] 21680 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle: correlationId: ce1d46b2-9728-45c9-9ba8-8f65b6955329
-2019-01-08 01:50:06.684 DEBUG [detail-service,cbbb5667a78ffc94,dad41e63e37d42c3,true] 21680 --- [http-nio-8102-exec-2] c.s.d.controller.GreetingController      : GreetingController -> helloByPath
-2019-01-08 01:50:06.686 DEBUG [detail-service,cbbb5667a78ffc94,dad41e63e37d42c3,true] 21680 --- [http-nio-8102-exec-2] c.s.d.service.GreetingServiceImpl        : GreetingServiceImpl -> getAllGreetingsByPathWithName
-2019-01-08 01:50:06.686 DEBUG [detail-service,cbbb5667a78ffc94,dad41e63e37d42c3,true] 21680 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply
-2019-01-08 01:50:06.686 DEBUG [detail-service,cbbb5667a78ffc94,dad41e63e37d42c3,true] 21680 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply: correlationId: ce1d46b2-9728-45c9-9ba8-8f65b6955329
-2019-01-08 01:50:06.735 DEBUG [detail-service,cbbb5667a78ffc94,dad41e63e37d42c3,true] 21680 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> postHandle
-2019-01-08 01:50:06.735 DEBUG [detail-service,cbbb5667a78ffc94,dad41e63e37d42c3,true] 21680 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> afterCompletion
-2019-01-08 02:01:55.701  INFO [detail-service,,,] 21680 --- [Thread-34] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application DETAIL-SERVICE with eureka with status DOWN
-2019-01-08 02:01:55.702  WARN [detail-service,,,] 21680 --- [Thread-34] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1546905715702, current=DOWN, previous=UP]
-2019-01-08 02:01:55.705  INFO [detail-service,,,] 21680 --- [Thread-34] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-01-08 02:01:58.854 ERROR [detail-service,,,] 21680 --- [Thread-34] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+2019-01-10 00:38:12.894  INFO [detail-service,,,] 58172 --- [restartedMain] c.s.d.DetailserviceApplication           : The following profiles are active: default
+2019-01-10 00:38:14.210  WARN [detail-service,,,] 58172 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-01-10 00:38:14.323  WARN [detail-service,,,] 58172 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-01-10 00:38:14.890  INFO [detail-service,,,] 58172 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3295a186-741a-304e-a597-96280e846331
+2019-01-10 00:38:15.304  INFO [detail-service,,,] 58172 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bb5baf33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-10 00:38:16.937  INFO [detail-service,,,] 58172 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8102 (http)
+2019-01-10 00:38:16.994  INFO [detail-service,,,] 58172 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-10 00:38:16.997  INFO [detail-service,,,] 58172 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-10 00:38:17.023  INFO [detail-service,,,] 58172 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/serhii/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-01-10 00:38:17.264  INFO [detail-service,,,] 58172 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-10 00:38:17.856  WARN [detail-service,,,] 58172 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-10 00:38:20.995 DEBUG [detail-service,,,] 58172 --- [restartedMain] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> init
+2019-01-10 00:38:21.216  WARN [detail-service,,,] 58172 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2019-01-10 00:38:21.370  WARN [detail-service,,,] 58172 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-01-10 00:38:21.849  INFO [detail-service,,,] 58172 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-10 00:38:23.354  INFO [detail-service,,,] 58172 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-01-10 00:38:23.572  INFO [detail-service,,,] 58172 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-01-10 00:38:24.913  INFO [detail-service,,,] 58172 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DETAIL-SERVICE with eureka with status UP
+2019-01-10 00:38:24.992  INFO [detail-service,,,] 58172 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8102 (http) with context path ''
+2019-01-10 00:38:24.993  INFO [detail-service,,,] 58172 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8102
+2019-01-10 00:38:24.996  INFO [detail-service,,,] 58172 --- [restartedMain] c.s.d.DetailserviceApplication           : Started DetailserviceApplication in 14.633 seconds (JVM running for 15.572)
+2019-01-10 00:38:25.472  INFO [detail-service,,,] 58172 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-10 00:38:25.479  INFO [detail-service,,,] 58172 --- [RMI TCP Connection(4)-127.0.0.1] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-01-10 00:38:26.139  INFO [detail-service,,,] 58172 --- [RMI TCP Connection(4)-127.0.0.1] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=detail-service, profiles=[default], label=null, version=bd8d4121cd6fe143fb5b372146b9ef25e30bf10a, state=null
+2019-01-10 00:39:35.510 DEBUG [detail-service,0d9a9095946ad335,3aac4592674d9f19,true] 58172 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter
+2019-01-10 00:39:35.512 DEBUG [detail-service,0d9a9095946ad335,3aac4592674d9f19,true] 58172 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId bcd3f56c-1b75-4554-aea7-ee5730569e5b
+2019-01-10 00:39:35.513 DEBUG [detail-service,0d9a9095946ad335,3aac4592674d9f19,true] 58172 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId exist: bcd3f56c-1b75-4554-aea7-ee5730569e5b
+2019-01-10 00:39:35.513 DEBUG [detail-service,0d9a9095946ad335,3aac4592674d9f19,true] 58172 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: request correlationId: bcd3f56c-1b75-4554-aea7-ee5730569e5b
+2019-01-10 00:39:35.514 DEBUG [detail-service,0d9a9095946ad335,3aac4592674d9f19,true] 58172 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId: bcd3f56c-1b75-4554-aea7-ee5730569e5b
+2019-01-10 00:39:35.514 DEBUG [detail-service,0d9a9095946ad335,3aac4592674d9f19,true] 58172 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: requestURI: /hello/Serhii
+2019-01-10 00:39:35.523 DEBUG [detail-service,0d9a9095946ad335,3aac4592674d9f19,true] 58172 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle
+2019-01-10 00:39:35.523 DEBUG [detail-service,0d9a9095946ad335,3aac4592674d9f19,true] 58172 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle: correlationId: bcd3f56c-1b75-4554-aea7-ee5730569e5b
+2019-01-10 00:39:35.537 DEBUG [detail-service,0d9a9095946ad335,3aac4592674d9f19,true] 58172 --- [http-nio-8102-exec-1] c.s.d.controller.GreetingController      : GreetingController -> helloByPath
+2019-01-10 00:39:35.958 DEBUG [detail-service,0d9a9095946ad335,3aac4592674d9f19,true] 58172 --- [http-nio-8102-exec-1] c.s.d.service.GreetingServiceImpl        : GreetingServiceImpl -> getAllGreetingsByPathWithName
+2019-01-10 00:39:35.960 DEBUG [detail-service,0d9a9095946ad335,3aac4592674d9f19,true] 58172 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply
+2019-01-10 00:39:35.960 DEBUG [detail-service,0d9a9095946ad335,3aac4592674d9f19,true] 58172 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply: correlationId: bcd3f56c-1b75-4554-aea7-ee5730569e5b
+2019-01-10 00:39:36.690 DEBUG [detail-service,0d9a9095946ad335,3aac4592674d9f19,true] 58172 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> afterCompletion
+2019-01-10 00:39:36.707 ERROR [detail-service,0d9a9095946ad335,3aac4592674d9f19,true] 58172 --- [http-nio-8102-exec-1] o.s.c.s.i.web.ExceptionLoggingFilter     : Uncaught exception thrown
+
+org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken pipe
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:298) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:261) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:118) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1100) ~[jackson-core-2.9.7.jar:2.9.7]
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:915) ~[jackson-databind-2.9.7.jar:2.9.7]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:287) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:103) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:289) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:223) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:119) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at com.springliquibase.detailservice.util.filter.HeaderContextFilter.doFilter(HeaderContextFilter.java:47) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90) ~[spring-boot-actuator-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.cloud.sleuth.instrument.web.ExceptionLoggingFilter.doFilter(ExceptionLoggingFilter.java:50) ~[spring-cloud-sleuth-core-2.1.0.RC3.jar:2.1.0.RC3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at brave.servlet.TracingFilter.doFilter(TracingFilter.java:86) [brave-instrumentation-servlet-5.6.0.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117) [spring-boot-actuator-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106) [spring-boot-actuator-2.1.1.RELEASE.jar:2.1.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:791) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_172]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_172]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_172]
+Caused by: java.io.IOException: Broken pipe
+	at sun.nio.ch.FileDispatcherImpl.write0(Native Method) ~[na:1.8.0_172]
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47) ~[na:1.8.0_172]
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93) ~[na:1.8.0_172]
+	at sun.nio.ch.IOUtil.write(IOUtil.java:65) ~[na:1.8.0_172]
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471) ~[na:1.8.0_172]
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:134) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.tomcat.util.net.NioBlockingSelector.write(NioBlockingSelector.java:101) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.tomcat.util.net.NioSelectorPool.write(NioSelectorPool.java:157) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1225) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:743) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:696) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:686) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:553) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.coyote.http11.filters.ChunkedOutputFilter.flush(ChunkedOutputFilter.java:157) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:216) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1149) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:394) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.coyote.Response.action(Response.java:209) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:294) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	... 75 common frames omitted
+
+2019-01-10 00:39:50.199 DEBUG [detail-service,4fdff0eb02f211b0,ce4c287158dbe2d3,true] 58172 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter
+2019-01-10 00:39:50.200 DEBUG [detail-service,4fdff0eb02f211b0,ce4c287158dbe2d3,true] 58172 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId 749b8f63-dbe3-4222-9664-25cfc75b3433
+2019-01-10 00:39:50.200 DEBUG [detail-service,4fdff0eb02f211b0,ce4c287158dbe2d3,true] 58172 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId exist: 749b8f63-dbe3-4222-9664-25cfc75b3433
+2019-01-10 00:39:50.200 DEBUG [detail-service,4fdff0eb02f211b0,ce4c287158dbe2d3,true] 58172 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: request correlationId: 749b8f63-dbe3-4222-9664-25cfc75b3433
+2019-01-10 00:39:50.200 DEBUG [detail-service,4fdff0eb02f211b0,ce4c287158dbe2d3,true] 58172 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId: 749b8f63-dbe3-4222-9664-25cfc75b3433
+2019-01-10 00:39:50.200 DEBUG [detail-service,4fdff0eb02f211b0,ce4c287158dbe2d3,true] 58172 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: requestURI: /hello/Serhii
+2019-01-10 00:39:50.202 DEBUG [detail-service,4fdff0eb02f211b0,ce4c287158dbe2d3,true] 58172 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle
+2019-01-10 00:39:50.202 DEBUG [detail-service,4fdff0eb02f211b0,ce4c287158dbe2d3,true] 58172 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle: correlationId: 749b8f63-dbe3-4222-9664-25cfc75b3433
+2019-01-10 00:39:50.202 DEBUG [detail-service,4fdff0eb02f211b0,ce4c287158dbe2d3,true] 58172 --- [http-nio-8102-exec-2] c.s.d.controller.GreetingController      : GreetingController -> helloByPath
+2019-01-10 00:39:50.203 DEBUG [detail-service,4fdff0eb02f211b0,ce4c287158dbe2d3,true] 58172 --- [http-nio-8102-exec-2] c.s.d.service.GreetingServiceImpl        : GreetingServiceImpl -> getAllGreetingsByPathWithName
+2019-01-10 00:39:50.204 DEBUG [detail-service,4fdff0eb02f211b0,ce4c287158dbe2d3,true] 58172 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply
+2019-01-10 00:39:50.204 DEBUG [detail-service,4fdff0eb02f211b0,ce4c287158dbe2d3,true] 58172 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply: correlationId: 749b8f63-dbe3-4222-9664-25cfc75b3433
+2019-01-10 00:39:50.239 DEBUG [detail-service,4fdff0eb02f211b0,ce4c287158dbe2d3,true] 58172 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> postHandle
+2019-01-10 00:39:50.239 DEBUG [detail-service,4fdff0eb02f211b0,ce4c287158dbe2d3,true] 58172 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> afterCompletion
+2019-01-10 00:41:45.816  INFO [detail-service,,,] 58172 --- [Thread-41] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application DETAIL-SERVICE with eureka with status DOWN
+2019-01-10 00:41:45.816  WARN [detail-service,,,] 58172 --- [Thread-41] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1547073705816, current=DOWN, previous=UP]
+2019-01-10 00:41:45.819  INFO [detail-service,,,] 58172 --- [Thread-41] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-10 00:41:49.773 ERROR [detail-service,,,] 58172 --- [Thread-41] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
 
 com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
@@ -115,8 +217,8 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
 	... 41 common frames omitted
 
-2019-01-08 02:01:58.855  WARN [detail-service,,,] 21680 --- [Thread-34] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
-2019-01-08 02:01:58.856 ERROR [detail-service,,,] 21680 --- [Thread-34] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
+2019-01-10 00:41:49.774  WARN [detail-service,,,] 58172 --- [Thread-41] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2019-01-10 00:41:49.776 ERROR [detail-service,,,] 58172 --- [Thread-41] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
 
 com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
@@ -181,8 +283,8 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
 	... 42 common frames omitted
 
-2019-01-08 02:01:58.857  WARN [detail-service,,,] 21680 --- [Thread-34] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
-2019-01-08 02:01:58.857 ERROR [detail-service,,,] 21680 --- [Thread-34] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DETAIL-SERVICE/192.168.31.90:detail-service:8102 - de-registration failedCannot execute request on any known server
+2019-01-10 00:41:49.776  WARN [detail-service,,,] 58172 --- [Thread-41] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2019-01-10 00:41:49.777 ERROR [detail-service,,,] 58172 --- [Thread-41] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DETAIL-SERVICE/192.168.31.90:detail-service:8102 - de-registration failedCannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
@@ -213,291 +315,4 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1011) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:931) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
 
-2019-01-08 02:01:58.876 DEBUG [detail-service,,,] 21680 --- [Thread-34] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> destroy
-2019-01-08 12:40:50.487  INFO [detail-service,,,] 23852 --- [restartedMain] c.s.d.DetailserviceApplication           : No active profile set, falling back to default profiles: default
-2019-01-08 12:40:51.452  WARN [detail-service,,,] 23852 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2019-01-08 12:40:51.507  WARN [detail-service,,,] 23852 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
-2019-01-08 12:40:51.732  INFO [detail-service,,,] 23852 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9b2e0fe4-fc8f-3b7b-9951-37905160a0b3
-2019-01-08 12:40:51.957  INFO [detail-service,,,] 23852 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$5e2093c1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-01-08 12:40:52.550  INFO [detail-service,,,] 23852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8102 (http)
-2019-01-08 12:40:52.570  INFO [detail-service,,,] 23852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-01-08 12:40:52.570  INFO [detail-service,,,] 23852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2019-01-08 12:40:52.575  INFO [detail-service,,,] 23852 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/work/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-2019-01-08 12:40:52.658  INFO [detail-service,,,] 23852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-01-08 12:40:52.793  WARN [detail-service,,,] 23852 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-01-08 12:40:53.678 DEBUG [detail-service,,,] 23852 --- [restartedMain] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> init
-2019-01-08 12:40:53.964  WARN [detail-service,,,] 23852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2019-01-08 12:40:54.114  WARN [detail-service,,,] 23852 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-01-08 12:40:54.356  INFO [detail-service,,,] 23852 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-01-08 12:40:55.176  INFO [detail-service,,,] 23852 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-01-08 12:40:55.296  INFO [detail-service,,,] 23852 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-01-08 12:40:55.899  INFO [detail-service,,,] 23852 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DETAIL-SERVICE with eureka with status UP
-2019-01-08 12:40:55.956  INFO [detail-service,,,] 23852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8102 (http) with context path ''
-2019-01-08 12:40:55.956  INFO [detail-service,,,] 23852 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8102
-2019-01-08 12:40:55.959  INFO [detail-service,,,] 23852 --- [restartedMain] c.s.d.DetailserviceApplication           : Started DetailserviceApplication in 7.307 seconds (JVM running for 8.761)
-2019-01-08 12:40:56.023  INFO [detail-service,,,] 23852 --- [RMI TCP Connection(5)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-01-08 12:46:12.231 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter
-2019-01-08 12:46:12.234 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId 9349912c-b276-408c-a555-c0fe5992cc7a
-2019-01-08 12:46:12.235 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId exist: 9349912c-b276-408c-a555-c0fe5992cc7a
-2019-01-08 12:46:12.235 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: request correlationId: 9349912c-b276-408c-a555-c0fe5992cc7a
-2019-01-08 12:46:12.236 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId: 9349912c-b276-408c-a555-c0fe5992cc7a
-2019-01-08 12:46:12.236 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: requestURI: /hello/Serhii
-2019-01-08 12:46:12.242 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle
-2019-01-08 12:46:12.242 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle: correlationId: 9349912c-b276-408c-a555-c0fe5992cc7a
-2019-01-08 12:46:12.254 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.controller.GreetingController      : GreetingController -> helloByPath
-2019-01-08 12:46:12.425 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.service.GreetingServiceImpl        : GreetingServiceImpl -> getAllGreetingsByPathWithName
-2019-01-08 12:46:12.426 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply
-2019-01-08 12:46:12.426 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply: correlationId: 9349912c-b276-408c-a555-c0fe5992cc7a
-2019-01-08 12:46:12.836 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.service.GreetingServiceImpl        : GreetingServiceImpl -> getAllGreetingsFallback
-2019-01-08 12:46:12.855 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> postHandle
-2019-01-08 12:46:12.856 DEBUG [detail-service,7c779d9546d5cbeb,58daba2458d5504f,true] 23852 --- [http-nio-8102-exec-1] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> afterCompletion
-2019-01-08 12:47:33.116 DEBUG [detail-service,545899f6f7ee574a,6e115cab63485fcb,true] 23852 --- [http-nio-8102-exec-3] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter
-2019-01-08 12:47:33.117 DEBUG [detail-service,545899f6f7ee574a,6e115cab63485fcb,true] 23852 --- [http-nio-8102-exec-3] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId a4d6bd2c-43a0-44ad-898a-663265918662
-2019-01-08 12:47:33.117 DEBUG [detail-service,545899f6f7ee574a,6e115cab63485fcb,true] 23852 --- [http-nio-8102-exec-3] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId exist: a4d6bd2c-43a0-44ad-898a-663265918662
-2019-01-08 12:47:33.117 DEBUG [detail-service,545899f6f7ee574a,6e115cab63485fcb,true] 23852 --- [http-nio-8102-exec-3] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: request correlationId: a4d6bd2c-43a0-44ad-898a-663265918662
-2019-01-08 12:47:33.118 DEBUG [detail-service,545899f6f7ee574a,6e115cab63485fcb,true] 23852 --- [http-nio-8102-exec-3] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId: a4d6bd2c-43a0-44ad-898a-663265918662
-2019-01-08 12:47:33.118 DEBUG [detail-service,545899f6f7ee574a,6e115cab63485fcb,true] 23852 --- [http-nio-8102-exec-3] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: requestURI: /hello/Serhii
-2019-01-08 12:47:33.119 DEBUG [detail-service,545899f6f7ee574a,6e115cab63485fcb,true] 23852 --- [http-nio-8102-exec-3] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle
-2019-01-08 12:47:33.119 DEBUG [detail-service,545899f6f7ee574a,6e115cab63485fcb,true] 23852 --- [http-nio-8102-exec-3] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle: correlationId: a4d6bd2c-43a0-44ad-898a-663265918662
-2019-01-08 12:47:33.120 DEBUG [detail-service,545899f6f7ee574a,6e115cab63485fcb,true] 23852 --- [http-nio-8102-exec-3] c.s.d.controller.GreetingController      : GreetingController -> helloByPath
-2019-01-08 12:47:33.121 DEBUG [detail-service,545899f6f7ee574a,6e115cab63485fcb,true] 23852 --- [http-nio-8102-exec-3] c.s.d.service.GreetingServiceImpl        : GreetingServiceImpl -> getAllGreetingsByPathWithName
-2019-01-08 12:47:33.121 DEBUG [detail-service,545899f6f7ee574a,6e115cab63485fcb,true] 23852 --- [http-nio-8102-exec-3] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply
-2019-01-08 12:47:33.121 DEBUG [detail-service,545899f6f7ee574a,6e115cab63485fcb,true] 23852 --- [http-nio-8102-exec-3] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply: correlationId: a4d6bd2c-43a0-44ad-898a-663265918662
-2019-01-08 12:47:33.182 DEBUG [detail-service,545899f6f7ee574a,6e115cab63485fcb,true] 23852 --- [http-nio-8102-exec-3] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> postHandle
-2019-01-08 12:47:33.183 DEBUG [detail-service,545899f6f7ee574a,6e115cab63485fcb,true] 23852 --- [http-nio-8102-exec-3] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> afterCompletion
-2019-01-08 13:37:53.645 DEBUG [detail-service,93b89ca05f188b4a,8674287ce6fa34e1,true] 23852 --- [http-nio-8102-exec-5] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter
-2019-01-08 13:37:53.647 DEBUG [detail-service,93b89ca05f188b4a,8674287ce6fa34e1,true] 23852 --- [http-nio-8102-exec-5] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId e3ab6c5a-8a1c-44b0-bdae-e7e1ac698829
-2019-01-08 13:37:53.648 DEBUG [detail-service,93b89ca05f188b4a,8674287ce6fa34e1,true] 23852 --- [http-nio-8102-exec-5] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId exist: e3ab6c5a-8a1c-44b0-bdae-e7e1ac698829
-2019-01-08 13:37:53.648 DEBUG [detail-service,93b89ca05f188b4a,8674287ce6fa34e1,true] 23852 --- [http-nio-8102-exec-5] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: request correlationId: e3ab6c5a-8a1c-44b0-bdae-e7e1ac698829
-2019-01-08 13:37:53.648 DEBUG [detail-service,93b89ca05f188b4a,8674287ce6fa34e1,true] 23852 --- [http-nio-8102-exec-5] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId: e3ab6c5a-8a1c-44b0-bdae-e7e1ac698829
-2019-01-08 13:37:53.648 DEBUG [detail-service,93b89ca05f188b4a,8674287ce6fa34e1,true] 23852 --- [http-nio-8102-exec-5] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: requestURI: /hello/Serhii
-2019-01-08 13:37:53.653 DEBUG [detail-service,93b89ca05f188b4a,8674287ce6fa34e1,true] 23852 --- [http-nio-8102-exec-5] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle
-2019-01-08 13:37:53.653 DEBUG [detail-service,93b89ca05f188b4a,8674287ce6fa34e1,true] 23852 --- [http-nio-8102-exec-5] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle: correlationId: e3ab6c5a-8a1c-44b0-bdae-e7e1ac698829
-2019-01-08 13:37:53.656 DEBUG [detail-service,93b89ca05f188b4a,8674287ce6fa34e1,true] 23852 --- [http-nio-8102-exec-5] c.s.d.controller.GreetingController      : GreetingController -> helloByPath
-2019-01-08 13:37:53.663 DEBUG [detail-service,93b89ca05f188b4a,8674287ce6fa34e1,true] 23852 --- [http-nio-8102-exec-5] c.s.d.service.GreetingServiceImpl        : GreetingServiceImpl -> getAllGreetingsByPathWithName
-2019-01-08 13:37:53.664 DEBUG [detail-service,93b89ca05f188b4a,8674287ce6fa34e1,true] 23852 --- [http-nio-8102-exec-5] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply
-2019-01-08 13:37:53.665 DEBUG [detail-service,93b89ca05f188b4a,8674287ce6fa34e1,true] 23852 --- [http-nio-8102-exec-5] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply: correlationId: e3ab6c5a-8a1c-44b0-bdae-e7e1ac698829
-2019-01-08 13:37:53.739 DEBUG [detail-service,93b89ca05f188b4a,8674287ce6fa34e1,true] 23852 --- [http-nio-8102-exec-5] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> postHandle
-2019-01-08 13:37:53.740 DEBUG [detail-service,93b89ca05f188b4a,8674287ce6fa34e1,true] 23852 --- [http-nio-8102-exec-5] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> afterCompletion
-2019-01-08 13:39:10.381 DEBUG [detail-service,3b5398a2f6c3b18b,7168ea82ee4aa7b7,true] 23852 --- [http-nio-8102-exec-7] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter
-2019-01-08 13:39:10.381 DEBUG [detail-service,3b5398a2f6c3b18b,7168ea82ee4aa7b7,true] 23852 --- [http-nio-8102-exec-7] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId 417f6420-7a3b-4ed9-a3d9-3d95f6182e57
-2019-01-08 13:39:10.381 DEBUG [detail-service,3b5398a2f6c3b18b,7168ea82ee4aa7b7,true] 23852 --- [http-nio-8102-exec-7] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId exist: 417f6420-7a3b-4ed9-a3d9-3d95f6182e57
-2019-01-08 13:39:10.381 DEBUG [detail-service,3b5398a2f6c3b18b,7168ea82ee4aa7b7,true] 23852 --- [http-nio-8102-exec-7] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: request correlationId: 417f6420-7a3b-4ed9-a3d9-3d95f6182e57
-2019-01-08 13:39:10.381 DEBUG [detail-service,3b5398a2f6c3b18b,7168ea82ee4aa7b7,true] 23852 --- [http-nio-8102-exec-7] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId: 417f6420-7a3b-4ed9-a3d9-3d95f6182e57
-2019-01-08 13:39:10.382 DEBUG [detail-service,3b5398a2f6c3b18b,7168ea82ee4aa7b7,true] 23852 --- [http-nio-8102-exec-7] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: requestURI: /hello/serhii
-2019-01-08 13:39:10.384 DEBUG [detail-service,3b5398a2f6c3b18b,7168ea82ee4aa7b7,true] 23852 --- [http-nio-8102-exec-7] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle
-2019-01-08 13:39:10.385 DEBUG [detail-service,3b5398a2f6c3b18b,7168ea82ee4aa7b7,true] 23852 --- [http-nio-8102-exec-7] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle: correlationId: 417f6420-7a3b-4ed9-a3d9-3d95f6182e57
-2019-01-08 13:39:10.385 DEBUG [detail-service,3b5398a2f6c3b18b,7168ea82ee4aa7b7,true] 23852 --- [http-nio-8102-exec-7] c.s.d.controller.GreetingController      : GreetingController -> helloByPath
-2019-01-08 13:39:10.386 DEBUG [detail-service,3b5398a2f6c3b18b,7168ea82ee4aa7b7,true] 23852 --- [http-nio-8102-exec-7] c.s.d.service.GreetingServiceImpl        : GreetingServiceImpl -> getAllGreetingsByPathWithName
-2019-01-08 13:39:10.386 DEBUG [detail-service,3b5398a2f6c3b18b,7168ea82ee4aa7b7,true] 23852 --- [http-nio-8102-exec-7] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply
-2019-01-08 13:39:10.387 DEBUG [detail-service,3b5398a2f6c3b18b,7168ea82ee4aa7b7,true] 23852 --- [http-nio-8102-exec-7] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply: correlationId: 417f6420-7a3b-4ed9-a3d9-3d95f6182e57
-2019-01-08 13:39:10.421 DEBUG [detail-service,3b5398a2f6c3b18b,7168ea82ee4aa7b7,true] 23852 --- [http-nio-8102-exec-7] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> postHandle
-2019-01-08 13:39:10.421 DEBUG [detail-service,3b5398a2f6c3b18b,7168ea82ee4aa7b7,true] 23852 --- [http-nio-8102-exec-7] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> afterCompletion
-2019-01-08 13:39:21.826 DEBUG [detail-service,660c466a57a0b774,ff79bd1fdd872493,true] 23852 --- [http-nio-8102-exec-8] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter
-2019-01-08 13:39:21.826 DEBUG [detail-service,660c466a57a0b774,ff79bd1fdd872493,true] 23852 --- [http-nio-8102-exec-8] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId 032a6067-c17c-4aa7-b2d2-99393f5d4b2c
-2019-01-08 13:39:21.826 DEBUG [detail-service,660c466a57a0b774,ff79bd1fdd872493,true] 23852 --- [http-nio-8102-exec-8] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId exist: 032a6067-c17c-4aa7-b2d2-99393f5d4b2c
-2019-01-08 13:39:21.826 DEBUG [detail-service,660c466a57a0b774,ff79bd1fdd872493,true] 23852 --- [http-nio-8102-exec-8] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: request correlationId: 032a6067-c17c-4aa7-b2d2-99393f5d4b2c
-2019-01-08 13:39:21.827 DEBUG [detail-service,660c466a57a0b774,ff79bd1fdd872493,true] 23852 --- [http-nio-8102-exec-8] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId: 032a6067-c17c-4aa7-b2d2-99393f5d4b2c
-2019-01-08 13:39:21.827 DEBUG [detail-service,660c466a57a0b774,ff79bd1fdd872493,true] 23852 --- [http-nio-8102-exec-8] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: requestURI: /hello/Serhii
-2019-01-08 13:39:21.829 DEBUG [detail-service,660c466a57a0b774,ff79bd1fdd872493,true] 23852 --- [http-nio-8102-exec-8] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle
-2019-01-08 13:39:21.830 DEBUG [detail-service,660c466a57a0b774,ff79bd1fdd872493,true] 23852 --- [http-nio-8102-exec-8] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle: correlationId: 032a6067-c17c-4aa7-b2d2-99393f5d4b2c
-2019-01-08 13:39:21.830 DEBUG [detail-service,660c466a57a0b774,ff79bd1fdd872493,true] 23852 --- [http-nio-8102-exec-8] c.s.d.controller.GreetingController      : GreetingController -> helloByPath
-2019-01-08 13:39:21.831 DEBUG [detail-service,660c466a57a0b774,ff79bd1fdd872493,true] 23852 --- [http-nio-8102-exec-8] c.s.d.service.GreetingServiceImpl        : GreetingServiceImpl -> getAllGreetingsByPathWithName
-2019-01-08 13:39:21.831 DEBUG [detail-service,660c466a57a0b774,ff79bd1fdd872493,true] 23852 --- [http-nio-8102-exec-8] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply
-2019-01-08 13:39:21.832 DEBUG [detail-service,660c466a57a0b774,ff79bd1fdd872493,true] 23852 --- [http-nio-8102-exec-8] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply: correlationId: 032a6067-c17c-4aa7-b2d2-99393f5d4b2c
-2019-01-08 13:39:21.867 DEBUG [detail-service,660c466a57a0b774,ff79bd1fdd872493,true] 23852 --- [http-nio-8102-exec-8] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> postHandle
-2019-01-08 13:39:21.867 DEBUG [detail-service,660c466a57a0b774,ff79bd1fdd872493,true] 23852 --- [http-nio-8102-exec-8] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> afterCompletion
-2019-01-08 14:19:52.092 DEBUG [detail-service,41262f042b8fef9a,c8143551ecfb9ea1,true] 23852 --- [http-nio-8102-exec-10] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter
-2019-01-08 14:19:52.095 DEBUG [detail-service,41262f042b8fef9a,c8143551ecfb9ea1,true] 23852 --- [http-nio-8102-exec-10] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId 8cf2f1af-1625-460c-8364-245ce0186f60
-2019-01-08 14:19:52.095 DEBUG [detail-service,41262f042b8fef9a,c8143551ecfb9ea1,true] 23852 --- [http-nio-8102-exec-10] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId exist: 8cf2f1af-1625-460c-8364-245ce0186f60
-2019-01-08 14:19:52.095 DEBUG [detail-service,41262f042b8fef9a,c8143551ecfb9ea1,true] 23852 --- [http-nio-8102-exec-10] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: request correlationId: 8cf2f1af-1625-460c-8364-245ce0186f60
-2019-01-08 14:19:52.096 DEBUG [detail-service,41262f042b8fef9a,c8143551ecfb9ea1,true] 23852 --- [http-nio-8102-exec-10] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId: 8cf2f1af-1625-460c-8364-245ce0186f60
-2019-01-08 14:19:52.096 DEBUG [detail-service,41262f042b8fef9a,c8143551ecfb9ea1,true] 23852 --- [http-nio-8102-exec-10] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: requestURI: /hello/Serhii
-2019-01-08 14:19:52.103 DEBUG [detail-service,41262f042b8fef9a,c8143551ecfb9ea1,true] 23852 --- [http-nio-8102-exec-10] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle
-2019-01-08 14:19:52.103 DEBUG [detail-service,41262f042b8fef9a,c8143551ecfb9ea1,true] 23852 --- [http-nio-8102-exec-10] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle: correlationId: 8cf2f1af-1625-460c-8364-245ce0186f60
-2019-01-08 14:19:52.105 DEBUG [detail-service,41262f042b8fef9a,c8143551ecfb9ea1,true] 23852 --- [http-nio-8102-exec-10] c.s.d.controller.GreetingController      : GreetingController -> helloByPath
-2019-01-08 14:19:52.112 DEBUG [detail-service,41262f042b8fef9a,c8143551ecfb9ea1,true] 23852 --- [http-nio-8102-exec-10] c.s.d.service.GreetingServiceImpl        : GreetingServiceImpl -> getAllGreetingsByPathWithName
-2019-01-08 14:19:52.115 DEBUG [detail-service,41262f042b8fef9a,c8143551ecfb9ea1,true] 23852 --- [http-nio-8102-exec-10] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply
-2019-01-08 14:19:52.115 DEBUG [detail-service,41262f042b8fef9a,c8143551ecfb9ea1,true] 23852 --- [http-nio-8102-exec-10] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply: correlationId: 8cf2f1af-1625-460c-8364-245ce0186f60
-2019-01-08 14:19:52.154 DEBUG [detail-service,41262f042b8fef9a,c8143551ecfb9ea1,true] 23852 --- [http-nio-8102-exec-10] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> postHandle
-2019-01-08 14:19:52.154 DEBUG [detail-service,41262f042b8fef9a,c8143551ecfb9ea1,true] 23852 --- [http-nio-8102-exec-10] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> afterCompletion
-2019-01-08 14:23:10.318 DEBUG [detail-service,a8b0dae537432f6a,b2c90886f5073384,true] 23852 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter
-2019-01-08 14:23:10.318 DEBUG [detail-service,a8b0dae537432f6a,b2c90886f5073384,true] 23852 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId 442c05e9-1950-49db-be45-a886e26dbc7e
-2019-01-08 14:23:10.318 DEBUG [detail-service,a8b0dae537432f6a,b2c90886f5073384,true] 23852 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId exist: 442c05e9-1950-49db-be45-a886e26dbc7e
-2019-01-08 14:23:10.319 DEBUG [detail-service,a8b0dae537432f6a,b2c90886f5073384,true] 23852 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: request correlationId: 442c05e9-1950-49db-be45-a886e26dbc7e
-2019-01-08 14:23:10.319 DEBUG [detail-service,a8b0dae537432f6a,b2c90886f5073384,true] 23852 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: correlationId: 442c05e9-1950-49db-be45-a886e26dbc7e
-2019-01-08 14:23:10.319 DEBUG [detail-service,a8b0dae537432f6a,b2c90886f5073384,true] 23852 --- [http-nio-8102-exec-2] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> doFilter: requestURI: /hello/Serhii
-2019-01-08 14:23:10.320 DEBUG [detail-service,a8b0dae537432f6a,b2c90886f5073384,true] 23852 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle
-2019-01-08 14:23:10.320 DEBUG [detail-service,a8b0dae537432f6a,b2c90886f5073384,true] 23852 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> preHandle: correlationId: 442c05e9-1950-49db-be45-a886e26dbc7e
-2019-01-08 14:23:10.324 DEBUG [detail-service,a8b0dae537432f6a,b2c90886f5073384,true] 23852 --- [http-nio-8102-exec-2] c.s.d.controller.GreetingController      : GreetingController -> helloByPath
-2019-01-08 14:23:10.324 DEBUG [detail-service,a8b0dae537432f6a,b2c90886f5073384,true] 23852 --- [http-nio-8102-exec-2] c.s.d.service.GreetingServiceImpl        : GreetingServiceImpl -> getAllGreetingsByPathWithName
-2019-01-08 14:23:10.325 DEBUG [detail-service,a8b0dae537432f6a,b2c90886f5073384,true] 23852 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply
-2019-01-08 14:23:10.325 DEBUG [detail-service,a8b0dae537432f6a,b2c90886f5073384,true] 23852 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextFeignInterceptor  : HeaderContextFeignInterceptor -> apply: correlationId: 442c05e9-1950-49db-be45-a886e26dbc7e
-2019-01-08 14:23:10.352 DEBUG [detail-service,a8b0dae537432f6a,b2c90886f5073384,true] 23852 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> postHandle
-2019-01-08 14:23:10.352 DEBUG [detail-service,a8b0dae537432f6a,b2c90886f5073384,true] 23852 --- [http-nio-8102-exec-2] c.s.d.u.i.HeaderContextInterceptor       : HeaderContextInterceptor -> afterCompletion
-2019-01-08 14:32:14.234  INFO [detail-service,,,] 23852 --- [Thread-26] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application DETAIL-SERVICE with eureka with status DOWN
-2019-01-08 14:32:14.234  WARN [detail-service,,,] 23852 --- [Thread-26] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1546950734234, current=DOWN, previous=UP]
-2019-01-08 14:32:14.280  INFO [detail-service,,,] 23852 --- [Thread-26] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-01-08 14:32:17.785 ERROR [detail-service,,,] 23852 --- [Thread-26] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
-
-com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
-	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
-	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
-	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
-	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
-	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
-	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
-	at com.sun.jersey.api.client.WebResource$Builder.delete(WebResource.java:591) ~[jersey-client-1.19.1.jar:1.19.1]
-	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.cancel(AbstractJerseyEurekaHttpClient.java:76) ~[eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:89) ~[eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:923) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:901) [eureka-client-1.9.8.jar:1.9.8]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_172]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_172]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_172]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_172]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:321) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:156) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:240) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:233) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:404) [spring-cloud-context-2.1.0.RC2.jar:2.1.0.RC2]
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:139) [spring-cloud-context-2.1.0.RC2.jar:2.1.0.RC2]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:256) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1052) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1059) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1035) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1011) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:931) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_172]
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_172]
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_172]
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_172]
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_172]
-	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_172]
-	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.6.jar:4.5.6]
-	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
-	... 41 common frames omitted
-
-2019-01-08 14:32:17.786  WARN [detail-service,,,] 23852 --- [Thread-26] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
-2019-01-08 14:32:17.788 ERROR [detail-service,,,] 23852 --- [Thread-26] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}
-
-com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
-	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
-	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
-	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.8.jar:1.9.8]
-	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
-	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
-	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
-	at com.sun.jersey.api.client.WebResource$Builder.delete(WebResource.java:591) ~[jersey-client-1.19.1.jar:1.19.1]
-	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.cancel(AbstractJerseyEurekaHttpClient.java:76) ~[eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:923) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:901) [eureka-client-1.9.8.jar:1.9.8]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_172]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_172]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_172]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_172]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:321) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:156) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:240) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:233) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:404) [spring-cloud-context-2.1.0.RC2.jar:2.1.0.RC2]
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:139) [spring-cloud-context-2.1.0.RC2.jar:2.1.0.RC2]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:256) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1052) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1059) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1035) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1011) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:931) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-Caused by: java.net.ConnectException: Connection refused (Connection refused)
-	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_172]
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_172]
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_172]
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_172]
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_172]
-	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_172]
-	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.6.jar:4.5.6]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.6.jar:4.5.6]
-	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
-	... 42 common frames omitted
-
-2019-01-08 14:32:17.790  WARN [detail-service,,,] 23852 --- [Thread-26] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
-2019-01-08 14:32:17.791 ERROR [detail-service,,,] 23852 --- [Thread-26] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DETAIL-SERVICE/172.28.23.92:detail-service:8102 - de-registration failedCannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:923) [eureka-client-1.9.8.jar:1.9.8]
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:901) [eureka-client-1.9.8.jar:1.9.8]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_172]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_172]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_172]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_172]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:321) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:156) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:240) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:233) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:404) [spring-cloud-context-2.1.0.RC2.jar:2.1.0.RC2]
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:139) [spring-cloud-context-2.1.0.RC2.jar:2.1.0.RC2]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:256) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1052) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1059) [spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1035) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1011) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:931) [spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-
-2019-01-08 14:32:17.835 DEBUG [detail-service,,,] 23852 --- [Thread-26] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> destroy
+2019-01-10 00:41:49.793 DEBUG [detail-service,,,] 58172 --- [Thread-41] c.s.d.util.filter.HeaderContextFilter    : HeaderContextFilter -> destroy
