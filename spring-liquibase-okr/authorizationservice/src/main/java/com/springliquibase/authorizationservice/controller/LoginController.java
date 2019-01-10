@@ -9,6 +9,7 @@ import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.OAuth2Request;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +28,7 @@ import java.util.Set;
 public class LoginController {
 
     private DefaultTokenServices defaultTokenServices;
+    private JwtAccessTokenConverter tokenConverter;
     private UserService userService;
 
     @RequestMapping(method = RequestMethod.POST)
@@ -51,7 +53,8 @@ public class LoginController {
 
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user, null, null);
         OAuth2Authentication auth = new OAuth2Authentication(oAuth2Request, authenticationToken);
-        OAuth2AccessToken token = defaultTokenServices.createAccessToken(auth);
+        OAuth2AccessToken oAuth2AccessToken = defaultTokenServices.createAccessToken(auth);
+        OAuth2AccessToken token = tokenConverter.enhance(oAuth2AccessToken, auth);
 
         return ResponseEntity.ok(token);
     }
