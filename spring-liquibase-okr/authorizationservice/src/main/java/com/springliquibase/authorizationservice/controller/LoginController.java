@@ -27,7 +27,7 @@ import java.util.Set;
 @AllArgsConstructor
 public class LoginController {
 
-    private final DefaultTokenServices defaultTokenServices;
+    private final DefaultTokenServices tokenServices;
     private final JwtAccessTokenConverter tokenConverter;
     private final UserService userService;
 
@@ -53,7 +53,7 @@ public class LoginController {
 
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user, null, null);
         OAuth2Authentication auth = new OAuth2Authentication(oAuth2Request, authenticationToken);
-        OAuth2AccessToken oAuth2AccessToken = defaultTokenServices.createAccessToken(auth);
+        OAuth2AccessToken oAuth2AccessToken = tokenServices.createAccessToken(auth);
         OAuth2AccessToken token = tokenConverter.enhance(oAuth2AccessToken, auth);
 
         return ResponseEntity.ok(token);

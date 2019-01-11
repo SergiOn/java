@@ -1,29 +1,26 @@
 package com.springliquibase.authorizationservice.security;
 
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
-import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
+import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 @Configuration
-@AllArgsConstructor
 public class JWTTokenStoreConfig {
 
     @Value("${oauth2.signing.key}")
     private String jwtSigningKey;
 
-    private final RedisConnectionFactory redisConnectionFactory;
+//    private final RedisConnectionFactory redisConnectionFactory;
 
     @Bean
     public TokenStore tokenStore() {
-//        return new JwtTokenStore(jwtAccessTokenConverter());
-        return new RedisTokenStore(redisConnectionFactory);
+        return new JwtTokenStore(jwtAccessTokenConverter());
+//        return new RedisTokenStore(redisConnectionFactory);
     }
 
     @Bean

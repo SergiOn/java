@@ -4,6 +4,9 @@ import com.springliquibase.authorizationservice.message.request.LogoutRequest;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.common.OAuth2AccessToken;
+import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
+import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,20 +20,8 @@ import javax.validation.Valid;
 @Slf4j
 public class LogoutController {
 
-//    @RequestMapping(value = "/param", method = { RequestMethod.DELETE, RequestMethod.POST })
-//    public ResponseEntity<?> logoutByParam(@RequestParam("token") String token) {
-//        OAuth2AccessToken accessToken = tokenStore.readAccessToken(token);
-//        tokenStore.removeAccessToken(accessToken);
-//
-//        return ResponseEntity.ok("The token was removed.");
-//    }
-//
-//    @RequestMapping(value = "/path/{token}", method = { RequestMethod.DELETE, RequestMethod.POST })
-//    public ResponseEntity<?> logoutByPath(@PathVariable String token) {
-//        OAuth2AccessToken accessToken = tokenStore.readAccessToken(token);
-//        tokenStore.removeAccessToken(accessToken);
-//        return ResponseEntity.ok("The token was removed.");
-//    }
+    private final TokenStore tokenStore;
+    private final DefaultTokenServices tokenServices;
 
     @RequestMapping(method = { RequestMethod.DELETE, RequestMethod.POST })
     public ResponseEntity<?> logoutByBody(@Valid @RequestBody LogoutRequest logoutRequest) {
@@ -38,23 +29,13 @@ public class LogoutController {
 
         log.debug("Token value: {}", token);
 
-//        tokenConverter.extractAccessToken(token, new HashMap<>());
+        OAuth2AccessToken accessToken = tokenStore.readAccessToken(token);
 
-//        OAuth2RefreshToken accessToken = tokenStore.readRefreshToken(token);
-//        OAuth2RefreshToken accessToken2 = jwtTokenStore.readRefreshToken(token);
-//
-//        tokenStore.removeRefreshToken(accessToken);
-//        jwtTokenStore.removeRefreshToken(accessToken);
-//
-//        log.debug("AccessToken value: {}", accessToken);
-//        log.debug("AccessToken2 value: {}", accessToken2);
+        log.debug("AccessToken value: {}", accessToken);
 
-//        boolean result = defaultTokenServices.revokeToken(token);
-//        boolean result2 = consumerTokenServices.revokeToken(token);
-//        jwtTokenStore.removeAccessToken(accessToken);
+        tokenStore.removeAccessToken(accessToken);
+        tokenServices.revokeToken(token);
 
-//        log.debug("Delete token result: {}", result);
-//        log.debug("Delete token result2: {}", result2);
         return ResponseEntity.ok("The token was removed.");
     }
 
