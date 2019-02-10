@@ -1,3 +1,29 @@
+# About project
+
+### Greeting service
+Service works with "greeting" database, uses elk, prometheus, grafana
+
+### Detail service
+Service calls to "greeting service", has fallback logic if service is unavailable, uses elk
+
+### Authorization service
+Service works with "authorization" database, responsible for security, registering, gives access jwt token, uses elk
+
+### Zuul service
+Gateway proxy for "greeting", "detail", "authorization" services, uses elk
+
+### Eureka service
+Service discovery, shows the availability of services, uses elk
+
+### Zipkin service
+Shows request/response tracing between microservices, uses elk
+
+### Config service
+Provides application config for all microservices, uses elk
+
+
+# Docker
+
 ## Docker (MySQL)
 
 ```bash
@@ -151,7 +177,7 @@ docker stop spring-liquibase-okr-redis
 
 
 
-#### Links
+### Links
 
 http://pocketcultures.com/2008/10/30/say-hello-in-20-languages/
 
