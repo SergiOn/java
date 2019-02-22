@@ -93,3 +93,12 @@ A Hands-on Guide on Spring and Microservices
 Project includes Spring Boot, Liquibase, Spring Cloud dependencies and similar staff.
 
 The idea is use: Spring boot, Spring Cloud, Liquibase, MySQL, Hibernate, Eureka, Zuul, Oauth2, Jwt, Zipkin, Sleuth, Elasticsearch, Kibana, Logstash, Configuration server, Redis, Feign, Hystrix, Prometheus, Grafana, Docker, Kubernetes, AWS.
+
+
+## Data Structures and Algorithms Bootcamp
+
+https://www.udemy.com/data-structures-and-algorithms-bootcamp/
+
+##### About this course
+
+How to ace your Silicon Valley style coding interview
