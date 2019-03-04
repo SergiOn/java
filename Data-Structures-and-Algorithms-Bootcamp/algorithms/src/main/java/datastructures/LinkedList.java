@@ -142,4 +142,35 @@ public class LinkedList<T> {
         size = 0;
     }
 
+    public void deleteValue(T data) {
+
+        // if head
+        if (head == null) {
+            return;
+        }
+
+        if (head.data == data) {
+            head = head.next;
+            return;
+        }
+
+        // else walk the list
+        Node current = head;
+
+        while (current.next != null) {
+
+            if (current.next.data == data) {
+                current.next = current.next.next;
+
+                if (current.next == null) {
+                    tail = current;
+                }
+
+                return;
+            }
+
+            current = current.next;
+        }
+    }
+
 }
