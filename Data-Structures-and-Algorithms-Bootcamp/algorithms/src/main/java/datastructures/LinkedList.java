@@ -13,7 +13,7 @@ public class LinkedList<T> {
 
     private Node head;
     private Node tail;
-    private int size;
+    private int size = 0;
 
     public void addFront(T data) {
 
@@ -124,6 +124,22 @@ public class LinkedList<T> {
 
         return count;
 //        return size;
+    }
+
+    public void clear() {
+        Node current = head;
+        Node next;
+
+        while (current != null) {
+            next = current.next;
+            current.data = null;
+            current.next = null;
+            current = next;
+        }
+
+        head = null;
+        tail = null;
+        size = 0;
     }
 
 }

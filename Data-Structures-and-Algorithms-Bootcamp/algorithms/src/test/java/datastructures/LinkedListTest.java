@@ -59,6 +59,13 @@ public class LinkedListTest {
 
     @Test
     public void Clear() {
+        linkedList.addBack(1);
+        linkedList.addBack(2);
+        linkedList.addBack(3);
+
+        linkedList.clear();
+
+        Assert.assertEquals(0, linkedList.size());
     }
 
     @Test
