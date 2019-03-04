@@ -40,6 +40,12 @@ public class LinkedListTest {
 
     @Test
     public void AddBack() {
+        linkedList.addBack(1);
+        linkedList.addBack(2);
+        linkedList.addBack(3);
+
+        Assert.assertEquals(1, linkedList.getFirst());
+        Assert.assertEquals(3, linkedList.getLast());
     }
 
     @Test

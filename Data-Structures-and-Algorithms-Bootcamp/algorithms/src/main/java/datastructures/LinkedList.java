@@ -64,4 +64,41 @@ public class LinkedList<T> {
         return tail.data;
     }
 
+    public void addBack(T data) {
+//        Node newNode = new Node(data);
+//
+//        // if head... set and return
+//        if (head == null) {
+//            head = newNode;
+//            return;
+//        }
+//
+//        // Else starting at head...
+//        Node current = head;
+//
+//        // Walk until to hit tail
+//        while (current.next != null) {
+//            current = current.next;
+//        }
+//
+//        // Set current node to equal newNode
+//        current.next = newNode;
+
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        if (tail == null) {
+            tail = newNode;
+            head.next = tail;
+            return;
+        }
+
+        tail.next = newNode;
+        tail = newNode;
+    }
+
 }
