@@ -12,6 +12,7 @@ public class LinkedList<T> {
     }
 
     private Node head;
+    private Node tail;
 
     public void addFront(T data) {
 
@@ -24,6 +25,13 @@ public class LinkedList<T> {
             return;
         }
 
+        if (tail == null) {
+            tail = head;
+            newNode.next = tail;
+            head = newNode;
+            return;
+        }
+
         // Set it's next to current head
         newNode.next = head;
 
@@ -31,5 +39,29 @@ public class LinkedList<T> {
         head = newNode;
     }
 
+    public T getFirst() {
+        return head.data;
+    }
+
+    public T getLast() {
+//        if (head == null) {
+//            throw new IllegalStateException("Empty list!");
+//        }
+//
+//        Node current = head;
+//
+//        // while we are not at the tail
+//        while (current.next != null) {
+//            current = current.next; // O(n)
+//        }
+//
+//        // We are at the tail
+//        return current.data;
+
+        if (tail == null) {
+            return head.data;
+        }
+        return tail.data;
+    }
 
 }

@@ -10,7 +10,7 @@ public class LinkedListTest {
 
     @Before
     public void SetUp() throws Exception {
-        linkedList = new LinkedList();
+        linkedList = new LinkedList<Integer>();
     }
 
     @Test
@@ -19,16 +19,23 @@ public class LinkedListTest {
         linkedList.addFront(2);
         linkedList.addFront(3);
 
-//        Assert.assertEquals(3, linkedList.getFirst());
-//        Assert.assertEquals(1, linkedList.getLast());
+        Assert.assertEquals(3, linkedList.getFirst());
+        Assert.assertEquals(1, linkedList.getLast());
     }
 
     @Test
     public void GetFirst() {
+        linkedList.addFront(1);
+        Assert.assertEquals(1, linkedList.getFirst());
     }
 
     @Test
     public void GetLast() {
+        linkedList.addFront(1);
+        linkedList.addFront(2);
+        linkedList.addFront(3);
+
+        Assert.assertEquals(1, linkedList.getLast());
     }
 
     @Test
