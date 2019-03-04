@@ -50,6 +50,11 @@ public class LinkedListTest {
 
     @Test
     public void Size() {
+        Assert.assertEquals(0, linkedList.size());
+        linkedList.addBack(1);
+        Assert.assertEquals(1, linkedList.size());
+        linkedList.addBack(2);
+        Assert.assertEquals(2, linkedList.size());
     }
 
     @Test

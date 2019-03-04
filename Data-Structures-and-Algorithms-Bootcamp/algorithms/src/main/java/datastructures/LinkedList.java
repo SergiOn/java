@@ -13,6 +13,7 @@ public class LinkedList<T> {
 
     private Node head;
     private Node tail;
+    private int size;
 
     public void addFront(T data) {
 
@@ -22,6 +23,7 @@ public class LinkedList<T> {
         // if head...
         if (head == null) {
             head = newNode;
+            size++;
             return;
         }
 
@@ -29,6 +31,7 @@ public class LinkedList<T> {
             tail = head;
             newNode.next = tail;
             head = newNode;
+            size++;
             return;
         }
 
@@ -37,6 +40,8 @@ public class LinkedList<T> {
 
         // Set current head equal to this new head
         head = newNode;
+
+        size++;
     }
 
     public T getFirst() {
@@ -88,17 +93,37 @@ public class LinkedList<T> {
 
         if (head == null) {
             head = newNode;
+            size++;
             return;
         }
 
         if (tail == null) {
             tail = newNode;
             head.next = tail;
+            size++;
             return;
         }
 
         tail.next = newNode;
         tail = newNode;
+        size++;
+    }
+
+    public int size() {
+        if (head == null) {
+            return 0;
+        }
+
+        int count = 1;
+        Node current = head;
+
+        while (current.next != null) {
+            current = current.next;
+            count++;
+        }
+
+        return count;
+//        return size;
     }
 
 }
