@@ -29,19 +29,23 @@ public class DynamicArray<T> {
     }
 
     public void insert(int index, T value) {
+        // Check size
         if (size == initialCapacity) {
             resize();
         }
 
+        // Copy up
         for (int i = size; i > index; i--) {
             data[i] = data[i - 1];
         }
 
+        // Insert
         data[index] = value;
         size++;
     }
 
     public void delete(int index) {
+        // Copy down
         for (int i = index; i < size - 1; i++) {
             data[i] = data[i + 1];
         }
