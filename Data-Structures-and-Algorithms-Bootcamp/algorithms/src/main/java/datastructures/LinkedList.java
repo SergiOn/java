@@ -1,176 +1,167 @@
 package datastructures;
 
-public class LinkedList<T> {
+public class LinkedList {
 
-    private class Node {
-        T data;
+    public class Node {
+        int data;
         Node next;
 
-        public Node(T data) {
+        public Node(int data) {
             this.data = data;
+            // O(1)
         }
+
+        // O(1)
     }
 
-    private Node head;
-    private Node tail;
-    private int size = 0;
+    public Node head;
 
-    public void addFront(T data) {
+    public void addFront(int data) {
 
         // Create new node
         Node newNode = new Node(data);
+        // O(1)
 
         // if head...
         if (head == null) {
             head = newNode;
-            size++;
             return;
-        }
-
-        if (tail == null) {
-            tail = head;
-            newNode.next = tail;
-            head = newNode;
-            size++;
-            return;
+            // O(1)
         }
 
         // Set it's next to current head
         newNode.next = head;
+        // O(1)
 
         // Set current head equal to this new head
         head = newNode;
+        // O(1)
 
-        size++;
+        // O(1)
     }
 
-    public T getFirst() {
+    public int getFirst() {
         return head.data;
+        // O(1)
     }
 
-    public T getLast() {
-//        if (head == null) {
-//            throw new IllegalStateException("Empty list!");
-//        }
-//
-//        Node current = head;
-//
-//        // while we are not at the tail
-//        while (current.next != null) {
-//            current = current.next; // O(n)
-//        }
-//
-//        // We are at the tail
-//        return current.data;
-
-        if (tail == null) {
-            return head.data;
+    public int getLast() {
+        if (head == null) {
+            throw new IllegalStateException("Empty list!");
+            // O(1)
         }
-        return tail.data;
+
+        Node current = head;
+        // O(1)
+
+        // while we are not at the tail
+        while (current.next != null) {
+            current = current.next;
+            // O(n)
+        }
+
+        // We are at the tail
+        return current.data;
+        // O(1)
+
+        // O(n)
     }
 
-    public void addBack(T data) {
-//        Node newNode = new Node(data);
-//
-//        // if head... set and return
-//        if (head == null) {
-//            head = newNode;
-//            return;
-//        }
-//
-//        // Else starting at head...
-//        Node current = head;
-//
-//        // Walk until to hit tail
-//        while (current.next != null) {
-//            current = current.next;
-//        }
-//
-//        // Set current node to equal newNode
-//        current.next = newNode;
-
+    public void addBack(int data) {
         Node newNode = new Node(data);
+        // O(1)
 
+        // if head... set and return
         if (head == null) {
             head = newNode;
-            size++;
             return;
+            // O(1)
         }
 
-        if (tail == null) {
-            tail = newNode;
-            head.next = tail;
-            size++;
-            return;
+        // Else starting at head...
+        Node current = head;
+        // O(1)
+
+        // Walk until to hit tail
+        while (current.next != null) {
+            current = current.next;
+            // O(n)
         }
 
-        tail.next = newNode;
-        tail = newNode;
-        size++;
+        // Set current node to equal newNode
+        current.next = newNode;
+        // O(1)
+
+        // O(n)
     }
 
     public int size() {
+
         if (head == null) {
             return 0;
+            // O(1)
         }
 
         int count = 1;
         Node current = head;
+        // O(1)
 
         while (current.next != null) {
             current = current.next;
             count++;
+            // O(n)
         }
 
         return count;
-//        return size;
+
+        // O(n)
     }
 
     public void clear() {
-        Node current = head;
-        Node next;
-
-        while (current != null) {
-            next = current.next;
-            current.data = null;
-            current.next = null;
-            current = next;
-        }
-
         head = null;
-        tail = null;
-        size = 0;
+        // O(1)
     }
 
-    public void deleteValue(T data) {
+    public void deleteValue(int data) {
 
         // if head
         if (head == null) {
             return;
+            // O(1)
         }
-
         if (head.data == data) {
             head = head.next;
             return;
+            // O(1)
         }
 
         // else walk the list
         Node current = head;
+        // O(1)
 
         while (current.next != null) {
-
+            // O(n)
             if (current.next.data == data) {
                 current.next = current.next.next;
-
-                if (current.next == null) {
-                    tail = current;
-                }
-
                 return;
+                // O(1)
             }
+            current = current.next;
+            // O(1)
 
+            // O(n)
+        }
+
+        // O(n)
+    }
+
+    public void print() {
+        Node current = head;
+        while (current != null) {
+            System.out.println(current.data);
             current = current.next;
         }
+        System.out.println("");
     }
 
 }

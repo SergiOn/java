@@ -1,16 +1,16 @@
 package datastructures;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class LinkedListTest {
+public class LinkedListTest2 {
 
-    private LinkedList linkedList;
+    private LinkedList2 linkedList;
 
     @Before
     public void SetUp() throws Exception {
-        linkedList = new LinkedList();
+        linkedList = new LinkedList2<Integer>();
     }
 
     @Test
@@ -80,16 +80,4 @@ public class LinkedListTest {
         Assert.assertEquals(1, linkedList.getFirst());
         Assert.assertEquals(3, linkedList.getLast());
     }
-
-    // TODO
-
-    // Size
-    // Clear
-    // Delete with value
-    // Remove front
-    // Remove back
-    // Contains
-
-    // What you need to know
-
 }
