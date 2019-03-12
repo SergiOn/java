@@ -15,6 +15,8 @@ public class BubbleSort {
             }
         }
 
+        // O(n^2)
+
         return arr;
     }
 }
