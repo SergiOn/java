@@ -6,4 +6,9 @@ public class FootballCoach implements Coach {
     public String getDailyWorkout() {
         return "Let's focus on winning the Champions League";
     }
+
+    @Override
+    public String getDailyFortune() {
+        return null;
+    }
 }
