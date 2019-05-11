@@ -13,8 +13,12 @@
 <!--		  class="com.luv2code.springdemo.TrackCoach">-->
 <!--	</bean>-->
 
+<!--    <bean id="myCoach"-->
+<!--          class="com.luv2code.springdemo.BaseballCoach">-->
+<!--    </bean>-->
+
     <bean id="myCoach"
-          class="com.luv2code.springdemo.BaseballCoach">
+          class="com.luv2code.springdemo.FootballCoach">
     </bean>
 
 
