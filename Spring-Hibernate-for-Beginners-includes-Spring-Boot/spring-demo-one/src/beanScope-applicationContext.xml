@@ -18,8 +18,12 @@
 
     <bean id="myCoach"
           class="com.luv2code.springdemo.TrackCoach"
+          init-method="doMyStartupStuff"
+          destroy-method="doMyCleanupStuff"
           scope="prototype">
 <!--          scope="singleton">-->
+
+<!--        For "prototype" scoped beans, Spring does not call the destroy method.  Gasp!-->
 
         <constructor-arg ref="myFortune"/>
     </bean>
