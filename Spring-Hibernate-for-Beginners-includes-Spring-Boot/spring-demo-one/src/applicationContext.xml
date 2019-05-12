@@ -41,4 +41,11 @@
         <constructor-arg ref="myFortune"/>
     </bean>
 
+    <bean id="myCricketCoach"
+          class="com.luv2code.springdemo.CricketCoach">
+
+<!--                 setFortuneService                 -->
+        <property name="fortuneService" ref="myFortune" />
+    </bean>
+
 </beans>
