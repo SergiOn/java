@@ -46,6 +46,9 @@
 
 <!--                 setFortuneService                 -->
         <property name="fortuneService" ref="myFortune" />
+
+        <property name="emailAddress" value="thebestcoach@luv2code.com" />
+        <property name="team" value="Sunrisers Hyderabad" />
     </bean>
 
 </beans>
