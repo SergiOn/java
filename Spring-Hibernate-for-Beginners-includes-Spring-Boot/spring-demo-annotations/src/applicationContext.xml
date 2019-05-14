@@ -7,11 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="myLoggerConfig" class="com.luv2code.springdemo.MyLoggerConfig" init-method="initLogger">
-        <property name="rootLoggerLevel" value="FINE" />
-        <property name="printedLoggerLevel" value="FINE"/>
-    </bean>
+	<!-- add entry to enable component scanning -->
 
-    <context:component-scan base-package="com.luv2code.springdemo" />
+	<context:component-scan base-package="com.luv2code.springdemo" />
 
 </beans>
