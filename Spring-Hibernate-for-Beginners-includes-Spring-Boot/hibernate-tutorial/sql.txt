@@ -1,0 +1,7 @@
+Auto Increment
+
+# Set
+ALTER TABLE hb_student_tracker.student AUTO_INCREMENT=3000
+
+#Reset
+truncate hb_student_tracker.student
