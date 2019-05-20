@@ -33,6 +33,21 @@ public class QueryStudentDemo {
                 System.out.println("Student, Doe: " + student);
             }
 
+//            theStudents = session.createQuery("from Student s where s.firstName = 'Daffy' OR s.lastName = 'Wall'").getResultList();
+
+            theStudents = session.createQuery("from Student s where s.firstName = 'Daffy' OR s.firstName = 'Bonita-3'").getResultList();
+
+            for (Student student : theStudents) {
+                System.out.println("Student, Doe: " + student);
+            }
+
+//            theStudents = session.createQuery("from Student s where s.firstName LIKE '%Mary'").getResultList();
+            theStudents = session.createQuery("from Student s where s.firstName LIKE 'Mary%'").getResultList();
+
+            for (Student student : theStudents) {
+                System.out.println("Student, Doe: " + student);
+            }
+
             session.getTransaction().commit();
 
         } finally {
