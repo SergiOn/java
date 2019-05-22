@@ -27,7 +27,7 @@ public class Instructor {
     public Instructor() {
     }
 
-    public Instructor(String firstName, String lastName, String email, InstructorDetail instructorDetail) {
+    public Instructor(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
