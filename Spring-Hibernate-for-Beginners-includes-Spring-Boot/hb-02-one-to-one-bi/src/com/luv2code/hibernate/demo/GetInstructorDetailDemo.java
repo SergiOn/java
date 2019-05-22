@@ -22,14 +22,17 @@ public class GetInstructorDetailDemo {
 
             session.beginTransaction();
 
-            InstructorDetail tempInstructorDetail = session.get(InstructorDetail.class, 1);
+            InstructorDetail tempInstructorDetail = session.get(InstructorDetail.class, 11);
 
             System.out.println("tempInstructor: " + tempInstructorDetail);
             System.out.println("tempInstructor, instructor: " + tempInstructorDetail.getInstructor());
 
             session.getTransaction().commit();
 
+        } catch (Exception exc){
+            exc.printStackTrace();
         } finally {
+            session.close();
             factory.close();
         }
     }
