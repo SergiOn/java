@@ -15,7 +15,7 @@ public class DeleteInstructorDetailDemo {
                                     .configure("hibernate.cfg.xml")
                                     .addAnnotatedClass(Instructor.class)
                                     .addAnnotatedClass(InstructorDetail.class)
-                                    .addAnnotatedClass(InstructorDetailAlone.class)
+//                                    .addAnnotatedClass(InstructorDetailAlone.class)
                                     .buildSessionFactory();
 
         Session session = factory.getCurrentSession();
@@ -25,10 +25,12 @@ public class DeleteInstructorDetailDemo {
             session.beginTransaction();
 
 //            InstructorDetail tempInstructorDetail = session.get(InstructorDetail.class, 4);
-            InstructorDetail tempInstructorDetail = session.get(InstructorDetail.class, 6);
+            InstructorDetail tempInstructorDetail = session.get(InstructorDetail.class, 8);
 
             System.out.println("tempInstructor: " + tempInstructorDetail);
             System.out.println("tempInstructor, instructor: " + tempInstructorDetail.getInstructor());
+
+            tempInstructorDetail.getInstructor().setInstructorDetail(null);
 
             session.delete(tempInstructorDetail);
 
