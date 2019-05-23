@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "instructor")
-public class Instructor {
+public class Instructor2 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,17 +22,10 @@ public class Instructor {
     @Column(name = "email")
     private String email;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "instructor_detail_id")
-    private InstructorDetail instructorDetail;
-
-    @OneToMany(mappedBy = "instructor", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    private List<Course> courses;
-
-    public Instructor() {
+    public Instructor2() {
     }
 
-    public Instructor(String firstName, String lastName, String email) {
+    public Instructor2(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -70,33 +63,6 @@ public class Instructor {
         this.email = email;
     }
 
-    public InstructorDetail getInstructorDetail() {
-        return instructorDetail;
-    }
-
-    public void setInstructorDetail(InstructorDetail instructorDetail) {
-        this.instructorDetail = instructorDetail;
-    }
-
-    public List<Course> getCourses() {
-        return courses;
-    }
-
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
-    }
-
-    public void add(Course tempCourse) {
-
-        if (courses == null) {
-            courses = new ArrayList<>();
-        }
-
-        courses.add(tempCourse);
-
-        tempCourse.setInstructor(this);
-    }
-
     @Override
     public String toString() {
         return "Instructor{" +
@@ -104,7 +70,6 @@ public class Instructor {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                ", instructorDetail=" + instructorDetail +
                 '}';
     }
 }
