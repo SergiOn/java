@@ -29,6 +29,15 @@ public class AddCoursesForMarryDemo {
             System.out.println("Loaded Student: " + tempStudent);
             System.out.println("Courses:  " + tempStudent.getCourses());
 
+            Course tempCourse1 = new Course("Rubik's cube");
+            Course tempCourse2 = new Course("Go");
+
+            tempCourse1.addStudent(tempStudent);
+            tempCourse2.addStudent(tempStudent);
+
+            session.save(tempCourse1);
+            session.save(tempCourse2);
+
             session.getTransaction().commit();
 
         } finally {
