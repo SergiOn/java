@@ -1,12 +1,14 @@
 package com.luv2code.hibernate.demo;
 
+import com.luv2code.hibernate.demo.entity.Course;
 import com.luv2code.hibernate.demo.entity.Instructor;
 import com.luv2code.hibernate.demo.entity.InstructorDetail;
+import com.luv2code.hibernate.demo.entity.Review;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class GetInstructorDetailDemo {
+public class CreateCourseAndReviewDemo {
 
     public static void main(String[] args) {
 
@@ -14,6 +16,8 @@ public class GetInstructorDetailDemo {
                                     .configure("hibernate.cfg.xml")
                                     .addAnnotatedClass(Instructor.class)
                                     .addAnnotatedClass(InstructorDetail.class)
+                                    .addAnnotatedClass(Course.class)
+                                    .addAnnotatedClass(Review.class)
                                     .buildSessionFactory();
 
         Session session = factory.getCurrentSession();
@@ -22,15 +26,23 @@ public class GetInstructorDetailDemo {
 
             session.beginTransaction();
 
-            InstructorDetail tempInstructorDetail = session.get(InstructorDetail.class, 11);
+            Course tempCourse = new Course("Pacman");
 
-            System.out.println("tempInstructor: " + tempInstructorDetail);
-            System.out.println("tempInstructor, instructor: " + tempInstructorDetail.getInstructor());
+            Review review1 = new Review("Great course");
+            Review review2 = new Review("Great course, job well done");
+            Review review3 = new Review("What a dumb course");
+
+            tempCourse.arrReview(review1);
+            tempCourse.arrReview(review2);
+            tempCourse.arrReview(review3);
+
+            System.out.println("Course: " + tempCourse);
+            System.out.println("Reviews: " + tempCourse.getReviews());
+
+            session.save(tempCourse);
 
             session.getTransaction().commit();
 
-        } catch (Exception exc){
-            exc.printStackTrace();
         } finally {
             session.close();
             factory.close();
