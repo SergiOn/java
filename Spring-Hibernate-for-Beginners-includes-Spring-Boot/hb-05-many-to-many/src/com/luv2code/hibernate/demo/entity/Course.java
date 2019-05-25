@@ -73,7 +73,7 @@ public class Course {
         this.reviews = reviews;
     }
 
-    public void arrReview(Review theReview) {
+    public void addReview(Review theReview) {
 
         if (reviews == null) {
             reviews = new ArrayList<>();

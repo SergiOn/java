@@ -1,14 +1,11 @@
 package com.luv2code.hibernate.demo;
 
-import com.luv2code.hibernate.demo.entity.Course;
-import com.luv2code.hibernate.demo.entity.Instructor;
-import com.luv2code.hibernate.demo.entity.InstructorDetail;
-import com.luv2code.hibernate.demo.entity.Review;
+import com.luv2code.hibernate.demo.entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class CreateCourseAndReviewDemo {
+public class CreateCourseAndStudentsDemo {
 
     public static void main(String[] args) {
 
@@ -18,6 +15,7 @@ public class CreateCourseAndReviewDemo {
                                     .addAnnotatedClass(InstructorDetail.class)
                                     .addAnnotatedClass(Course.class)
                                     .addAnnotatedClass(Review.class)
+                                    .addAnnotatedClass(Student.class)
                                     .buildSessionFactory();
 
         Session session = factory.getCurrentSession();
@@ -30,19 +28,20 @@ public class CreateCourseAndReviewDemo {
 //            Course tempCourse = new Course("Java, Spring");
             Course tempCourse = new Course("Java, Spring, Hibernate");
 
-
-            Review review1 = new Review("Great course");
-            Review review2 = new Review("Great course, job well done");
-            Review review3 = new Review("What a dumb course");
-
-            tempCourse.arrReview(review1);
-            tempCourse.arrReview(review2);
-            tempCourse.arrReview(review3);
-
-            System.out.println("Course: " + tempCourse);
-            System.out.println("Reviews: " + tempCourse.getReviews());
+            System.out.println("Saving the Course: " + tempCourse);
 
             session.save(tempCourse);
+
+            Student tempStudent1 = new Student("John", "Doe", "john.doe@mail.com");
+            Student tempStudent2 = new Student("Marry", "Doe", "john.doe@mail.com");
+
+            tempCourse.addStudent(tempStudent1);
+            tempCourse.addStudent(tempStudent2);
+
+            session.save(tempStudent1);
+            session.save(tempStudent2);
+
+            System.out.println("Saved Students: " + tempCourse.getStudents());
 
             session.getTransaction().commit();
 
