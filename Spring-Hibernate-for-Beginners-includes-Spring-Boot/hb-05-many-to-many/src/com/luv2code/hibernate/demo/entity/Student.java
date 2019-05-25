@@ -22,6 +22,13 @@ public class Student {
     @Column(name = "email")
     private String email;
 
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinTable(
+            name = "course_student",
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id")
+    )
     private List<Course> courses;
 
     public Student() {
@@ -71,15 +78,6 @@ public class Student {
 
     public void setCourses(List<Course> courses) {
         this.courses = courses;
-    }
-
-    public void addCourses(Course theCourse) {
-
-        if (courses == null) {
-            courses = new ArrayList<>();
-        }
-
-        courses.add(theCourse);
     }
 
     @Override
