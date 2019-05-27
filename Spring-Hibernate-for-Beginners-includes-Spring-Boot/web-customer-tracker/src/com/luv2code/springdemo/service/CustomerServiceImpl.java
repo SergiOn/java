@@ -15,22 +15,24 @@ public class CustomerServiceImpl implements CustomerService {
 	// need to inject customer dao
 	@Autowired
 	private CustomerDAO customerDAO;
-	
+
 	@Override
 	@Transactional
 	public List<Customer> getCustomers() {
-		/*
-		 * With @Transactional
-		 * No need: session.beginTransaction()
-		 * And no need: session.getTransaction().commit()
-		 * */
-
 		return customerDAO.getCustomers();
 	}
 
 	@Override
 	@Transactional
 	public void saveCustomer(Customer theCustomer) {
+
 		customerDAO.saveCustomer(theCustomer);
+	}
+
+	@Override
+	@Transactional
+	public Customer getCustomer(int theId) {
+
+		return customerDAO.getCustomer(theId);
 	}
 }
