@@ -51,10 +51,3 @@ public class TestDbServlet extends HttpServlet {
 	}
 
 }
-
-
-
-
-
-
-

@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+//import org.springframework.transaction.annotation.Transactional;
 
 import com.luv2code.springdemo.entity.Customer;
 
@@ -19,15 +19,8 @@ public class CustomerDAOImpl implements CustomerDAO {
 	private SessionFactory sessionFactory;
 			
 	@Override
-	@Transactional
 	public List<Customer> getCustomers() {
 
-		/*
-		* With @Transactional
-		* No need: session.beginTransaction()
-		* And no need: session.getTransaction().commit()
-		* */
-		
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 				
