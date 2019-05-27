@@ -49,7 +49,7 @@ public class CustomerController {
 	public String saveCustomer(@ModelAttribute("customer") Customer theCustomer) {
 
 		// save the customer using our service
-		customerService.saveCustomer(theCustomer);	
+		customerService.saveCustomer(theCustomer);
 
 		return "redirect:/customer/list";
 	}
@@ -59,7 +59,7 @@ public class CustomerController {
 									Model theModel) {
 
 		// get the customer from our service
-		Customer theCustomer = customerService.getCustomer(theId);	
+		Customer theCustomer = customerService.getCustomer(theId);
 
 		// set customer as a model attribute to pre-populate the form
 		theModel.addAttribute("customer", theCustomer);
@@ -75,5 +75,18 @@ public class CustomerController {
 		customerService.deleteCustomer(theId);
 
 		return "redirect:/customer/list";
+	}
+
+	@GetMapping("/search")
+	public String searchCustomers(@RequestParam("theSearchName") String theSearchName,
+								  Model theModel) {
+
+		// search customers from the service
+		List<Customer> theCustomers = customerService.searchCustomers(theSearchName);
+
+		// add the customers to the model
+		theModel.addAttribute("customers", theCustomers);
+
+		return "list-customers";
 	}
 }
