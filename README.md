@@ -124,3 +124,17 @@ https://repo.spring.io/release/org/springframework/spring/
 https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-introduction
 https://repo.maven.apache.org/maven2/
 https://www.mulesoft.com/tcat/tomcat-ssl
+
+
+## Spring Framework 5: Beginner to Guru
+
+https://www.udemy.com/course/spring-framework-5-beginner-to-guru/
+
+##### About this course
+
+Spring Framework 5: Learn Spring Framework 5, Spring Boot 2, Spring MVC, Spring Data JPA, Spring Data MongoDB, Hibernate
+
+#### Links
+
+https://github.com/springframeworkguru/spring5webapp
+https://github.com/spring-projects/spring-petclinic
