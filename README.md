@@ -151,3 +151,10 @@ https://github.com/springframeworkguru/spring5-mongo-recipe-app/tree/integration
 
 Reactive: <br>
 https://github.com/springframeworkguru/reactive-sandbox/tree/master/reactive-examples
+
+Swagger: <br>
+https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-config
+https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-ui
+https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-meta-data
+https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-endpoint-custom
+https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-ep-assn-review
