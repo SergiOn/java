@@ -138,3 +138,10 @@ Spring Framework 5: Learn Spring Framework 5, Spring Boot 2, Spring MVC, Spring 
 
 https://github.com/springframeworkguru/spring5webapp
 https://github.com/spring-projects/spring-petclinic
+
+Exception handler: <br>
+https://github.com/springframeworkguru/spring5-recipe-app/tree/response-status
+https://github.com/springframeworkguru/spring5-recipe-app/tree/exception-handler
+https://github.com/springframeworkguru/spring5-recipe-app/tree/display-error-data
+https://github.com/springframeworkguru/spring5-recipe-app/tree/assign-number-format-exception
+https://github.com/springframeworkguru/spring5-recipe-app/tree/controller-advice
