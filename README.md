@@ -158,3 +158,12 @@ https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-ui
 https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-meta-data
 https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-endpoint-custom
 https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-ep-assn-review
+
+
+## Java Spring Tutorial Masterclass - Learn Spring Framework 5
+
+https://www.udemy.com/course/java-spring-framework-masterclass/
+
+##### About this course
+
+Can't Find a good Spring Tutorial? Finally Understand Spring 5 With Spring Core, Spring MVC, Spring Boot 2 and more
