@@ -171,3 +171,12 @@ Can't Find a good Spring Tutorial? Finally Understand Spring 5 With Spring Core,
 #### Links
 Logback: <br>
 https://logback.qos.ch/manual/layouts.html#conversionWord
+
+
+## Java Database Connection: JDBC and MySQL
+
+https://www.udemy.com/how-to-connect-java-jdbc-to-mysql/
+
+##### About this course
+
+Learn how to connect to a MySQL database with Java JDBC
