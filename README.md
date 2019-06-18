@@ -180,3 +180,12 @@ https://www.udemy.com/how-to-connect-java-jdbc-to-mysql/
 ##### About this course
 
 Learn how to connect to a MySQL database with Java JDBC
+
+
+## Deploy Java Spring Apps Online to Amazon Cloud (AWS)
+
+https://www.udemy.com/deploy-java-spring-apps-online/
+
+##### About this course
+
+Learn how to deploy your Java Spring Apps online to showcase your Spring Skills! (Live Internet Access)
