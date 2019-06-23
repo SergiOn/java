@@ -228,3 +228,30 @@ https://www.udemy.com/deploy-java-spring-apps-online/
 ##### About this course
 
 Learn how to deploy your Java Spring Apps online to showcase your Spring Skills! (Live Internet Access)
+
+
+## Learn RabbitMQ: Asynchronous Messaging with Java and Spring
+
+https://www.udemy.com/learn-rabbitmq-asynchronous-messaging-with-java-and-spring/
+
+##### About this course
+
+Learn how to develop Queues, Exchanges, Routings and Listeners with Rabbit MQ using Java and Spring!
+
+#### Links
+
+http://localhost:15672
+<br>
+https://www.rabbitmq.com/install-standalone-mac.html
+
+#### Commands:
+
+rabbitmq-server
+<br>
+rabbitmq-server -detached
+<br>
+rabbitmqctl shutdown
+<br>
+rabbitmqctl stop
+<br>
+rabbitmqctl status
