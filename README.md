@@ -3,23 +3,43 @@
 ## Simple server
 **Links**
 
-[https://gist.github.com/gitawego/14e15456e4d36a26aac7695648565329](https://gist.github.com/gitawego/14e15456e4d36a26aac7695648565329)
+https://gist.github.com/gitawego/14e15456e4d36a26aac7695648565329
 
-[https://stackoverflow.com/questions/3732109/simple-http-server-in-java-using-only-java-se-api](https://stackoverflow.com/questions/3732109/simple-http-server-in-java-using-only-java-se-api)
+https://stackoverflow.com/questions/3732109/simple-http-server-in-java-using-only-java-se-api
 
-[http://www.javenue.info/post/java-http-server](http://www.javenue.info/post/java-http-server)
+http://www.javenue.info/post/java-http-server
 
 
 ## Learn Kubernetes in Under 3 Hours
 
-[https://github.com/rinormaloku/k8s-mastery](https://github.com/rinormaloku/k8s-mastery)
+https://github.com/rinormaloku/k8s-mastery
 
-[https://github.com/SergiOn/k8s-mastery](https://github.com/SergiOn/k8s-mastery)
+https://github.com/SergiOn/k8s-mastery
 
-[https://medium.freecodecamp.org/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882](https://medium.freecodecamp.org/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882)
+https://medium.freecodecamp.org/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882
 
-[https://rinormaloku.com/introduction-application-architecture/](https://rinormaloku.com/introduction-application-architecture/)
+https://rinormaloku.com/introduction-application-architecture/
 
+
+## Back to Microservices with Istio 
+
+https://github.com/SergiOn/istio-mastery
+
+https://github.com/rinormaloku/istio-mastery
+
+https://medium.com/google-cloud/back-to-microservices-with-istio-p1-827c872daa53
+<br>
+https://medium.com/google-cloud/back-to-microservices-with-istio-part-2-authentication-authorization-b079f77358ac
+
+https://habr.com/ru/company/flant/blog/438426/
+<br>
+https://habr.com/ru/company/flant/blog/440378/
+<br>
+https://habr.com/ru/company/flant/blog/443668/
+
+Examples:
+<br>
+https://github.com/SeriyBg/starwars-istio
 
 ## Build A Web App With Spring Framework and Angular 2
 
@@ -106,6 +126,7 @@ How to ace your Silicon Valley style coding interview
 #### Links
 
 http://bigocheatsheet.com/
+<br>
 http://www.mathcs.emory.edu/~cheung/Courses/171/Syllabus/9-BinTree/BST-delete2.html
 
 
@@ -120,9 +141,13 @@ Spring 5: Learn Spring 5 Core, AOP, Spring MVC, Spring Security, Spring REST, Sp
 #### Links
 
 https://wolfpaulus.com/mac/tomcat/
+<br>
 https://repo.spring.io/release/org/springframework/spring/
+<br>
 https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-introduction
+<br>
 https://repo.maven.apache.org/maven2/
+<br>
 https://www.mulesoft.com/tcat/tomcat-ssl
 
 
@@ -137,26 +162,39 @@ Spring Framework 5: Learn Spring Framework 5, Spring Boot 2, Spring MVC, Spring 
 #### Links
 
 https://github.com/springframeworkguru/spring5webapp
+<br>
 https://github.com/spring-projects/spring-petclinic
 
-Exception handler: <br>
+Exception handler:
+<br>
 https://github.com/springframeworkguru/spring5-recipe-app/tree/response-status
+<br>
 https://github.com/springframeworkguru/spring5-recipe-app/tree/exception-handler
+<br>
 https://github.com/springframeworkguru/spring5-recipe-app/tree/display-error-data
+<br>
 https://github.com/springframeworkguru/spring5-recipe-app/tree/assign-number-format-exception
+<br>
 https://github.com/springframeworkguru/spring5-recipe-app/tree/controller-advice
 
-Mongo DB: <br>
+Mongo DB:
+<br>
 https://github.com/springframeworkguru/spring5-mongo-recipe-app/tree/integration-testing-mongodb
 
-Reactive: <br>
+Reactive:
+<br>
 https://github.com/springframeworkguru/reactive-sandbox/tree/master/reactive-examples
 
-Swagger: <br>
+Swagger:
+<br>
 https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-config
+<br>
 https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-ui
+<br>
 https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-meta-data
+<br>
 https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-endpoint-custom
+<br>
 https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-ep-assn-review
 
 
@@ -169,7 +207,8 @@ https://www.udemy.com/course/java-spring-framework-masterclass/
 Can't Find a good Spring Tutorial? Finally Understand Spring 5 With Spring Core, Spring MVC, Spring Boot 2 and more
 
 #### Links
-Logback: <br>
+Logback:
+<br>
 https://logback.qos.ch/manual/layouts.html#conversionWord
 
 
