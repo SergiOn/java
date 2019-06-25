@@ -1,0 +1,25 @@
+1. Goals
+This lesson focuses on making the HATEOAS implementation easier with the help of the Spring HATEOAS project. 
+
+2. Lesson Notes
+Spring HATEOAS will help us wrap our existing Resources/DTOs and provide extra metadata back to the client of the API.
+
+The main type of metadata that we're going to set up is links (along with link relations).
+
+
+We start the implementation with a simple HATEOAS enabeld controller - the RoleHateoasControllerSimple. 
+And the fully implemented controller - RoleHateoasController - is the final point of the implementation. 
+
+Note that the codebase has been upgraded to a newer version of spring-hateoas (0.19.0.RELEASE) - which no longer returns an empty link array. Now, when no link is defined, the links array is simply not part of the response. 
+
+
+3. Resources
+- The Spring HATEOAS project - http://projects.spring.io/spring-hateoas/
+
+- Building a Hypermedia-Driven RESTful Web Service - https://spring.io/guides/gs/rest-hateoas/
+
+- Spring HATEOAS - Reference Documentation - http://docs.spring.io/spring-hateoas/docs/current/reference/html/
+
+- Link Relations on Wikipedia - https://en.wikipedia.org/wiki/Link_relation
+
+- Standard Link Relations - http://www.iana.org/assignments/link-relations/link-relations.xhtml

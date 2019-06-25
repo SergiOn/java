@@ -1,0 +1,27 @@
+1. Module 7 Overview
+The goal of this module is to teach you about making an API fully Hypermedia enabled and evolving it once it goes into production (with minimal impact to clients).
+
+Hypermedia and HATEOAS are foundational pieces of REST, and the tactics of API evolution are ultimately critical once the API starts to be used by third-party clients. This is what thismodule is focused on.
+
+
+2. Goals
+The goal of this lesson is to guide you through choosing the best way of documenting the API and then through a full Swagger setup within our Spring project implementation.
+
+Everything should be fully documented with the nice Swagger UI by the end. 
+
+3. Lesson Notes
+When deploying locally, here are the relevant URLs:
+
+http://localhost:8082/um-webapp/api/roles
+
+http://localhost:8082/um-webapp/api/swagger-resources
+
+http://localhost:8082/um-webapp/api/v2/api-docs
+
+http://localhost:8082/um-webapp/api/swagger-ui.html
+
+
+4. Resources
+- Swagger - http://swagger.io/
+- the Springfox project - https://github.com/springfox/springfox
+- the Springfox project documentation - http://springfox.github.io/springfox/docs/current/#introduction

@@ -1,0 +1,79 @@
+1. Goal
+The simple goal of this lesson is to introduce the new User Management application - that we're going to be building out throughout this entire course.
+
+
+3. Lesson Notes
+The Modules of the Project
+Now that we understand how to roll out a simple, single module project with Spring, we're going move to a multi-module project.
+
+The new project has 2 sub-modules:
+
+common
+um-webapp
+The common module simply contains abstract classes, utilities and other infrastructure related logic that is generic and not part of the domain model.
+
+The um-webapp module contains everything else that is specific to the domain model of the application.
+
+If you haven't worked with a multi-module project, spend some time building it from the parent, or just building each module. This is a good way to learn what a Maven project looks like beyond just a single module. 
+
+Persistence Setup
+By default, the project uses the H2 in-memory DB and - persistence-h2.properties.
+
+If you want to switch to - for example - MySQL - you'll need to specify a different property on startup:
+
+persistenceTarget=mysql
+If you are going to use MySQL, you'll of course need to run a MySQL instance locally and you'll need to either change the default credentials here, or create the following user/password in your local installation:
+
+jdbc.username=restUser
+jdbc.password=restmy5ql
+
+The Domain Model
+This project we're going to be using throughout the module has a simple domain model: Users, Roles and Privileges: 
+User *->* Role *->* Privilege
+
+
+Existing Data in the System
+When the system starts up, a simple setup runs creating some default Privileges, Roles and Users that will immediately be ready to use.
+
+You can go through that simple process in SecuritySetup.
+
+
+The Layers of the Application
+The project uses a standard tiered architecture with the following layers:
+
+The Persistence layer
+The Service layer
+The Web / API layer
+Note that the layers have their own individual packages and any layer can be fully bootstrapped into a working Spring context without the layer above it.
+
+
+The web.xml 
+We're going to start with a web.xml file and we're quickly going to phase that out to a preferred Java-only Servlet config. 
+The web.xml has the following, standard structure:
+
+the /api Servlet
+the Filter
+the child-parent context relation
+
+Maven
+The parent pom defines the versions of all dependencies and some default plugins and plugin configuration.
+
+The submodules inherit this config and define their own specific pom config in addition to it.
+
+Note how tests are configured to run - by default, only unit tests run; integration and live tests run in their own profiles and are skipped in the standard build.
+
+
+Interfaces
+The codebase is making use of interfaces to allow us to write more generic functionality.
+
+Here are a few of the interesting ones: 
+IDto, INameableDto - should be implemented by all DTOs in the application
+IEntity, INameableEntity - should be implemented by all the entities in the application
+IRawService, IService - should be implemented by all services in the system
+ISortingController - should be implemented by all controllers that support sorting
+IOperations - common set of operations, used by the service layer now (but it could potentially be used in other layers as well)
+IWithName, IWithId - used by both entities and DTOs to keep things simple and not repeat the definitions
+The main difference between these sets of interfaces is - the first one in the set is simple and only supports id while the second one also supports name. 
+
+3. Resources
+- The REST With Spring project on Github - https://github.com/eugenp/REST-With-Spring

@@ -1,0 +1,29 @@
+1. Goals
+In this lesson you'll learn how to provision a simple Ubuntu server to run Jenkins in AWS.
+
+
+2. Lesson Notes
+Configure Jenkins
+- Manage Jenkins -> Manage Plugins - update all plugins
+
+- Manage Jenkins - Configure System - define the JDK:
+
+JAVA_HOME = /usr/lib/jvm/java-8-oracle
+- Manage Jenkins - Configure System - define the Maven installation:
+
+MAVEN_HOME = /opt/maven/
+Install Jenkins Plugins
+- Manage Jenkins - Manage Plugins - install the Git Plugin
+Define the first Jenkins Job
+- we're using the Maven project job type
+
+- Source Code Management - Git:
+
+-- Repository URL: https://github.com/eugenp/REST-With-Spring.git
+- Build Triggers - Poll SCM - @hourly
+
+- Build - Goals and options - clean install
+
+
+3. Resources
+- Jenkins Git Plugin - https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin

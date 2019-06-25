@@ -1,0 +1,6 @@
+4. Resources
+- rest-assured library  - https://github.com/jayway/rest-assured
+
+- Testing RESTful Web Services made easy using the REST-assured Framework - http://www.hascode.com/2011/10/testing-restful-web-services-made-easy-using-the-rest-assured-framework/
+
+- The Module 5 Branch of the project on Github - https://github.com/eugenp/REST-With-Spring/tree/module5

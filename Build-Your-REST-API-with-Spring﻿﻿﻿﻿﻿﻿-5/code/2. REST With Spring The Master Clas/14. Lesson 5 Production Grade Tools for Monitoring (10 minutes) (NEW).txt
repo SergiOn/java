@@ -1,0 +1,23 @@
+1. Goals
+This lesson aims to give you a surface level understanding of some of the widely used production grade tools available for monitoring a web application. 
+
+2. Lesson Notes
+2.1. Free / Open Source Tools
+CollectD + Graphite (Graphana)
+
+This is a visualization tool for monitoring metrics in your application, with a very powerful querying API, but an old looking UI and some scaling issues.
+
+The ELK Stack = Elasticsearch + Logstash + Kibana
+This set of open source tools delivers search & analytics, logging, and visualization capabilities.
+
+The 3 components are built to integrate well together and can scale quite well.
+
+Kibana also has a very mature, flexible and modern looking UI.
+
+
+2.2. Paid Tools
+And on the paid side of things, we have 3 major players in the APM (Application Performance Monitoring) space:
+
+Appdynamics
+Newrelic
+Dynatrace

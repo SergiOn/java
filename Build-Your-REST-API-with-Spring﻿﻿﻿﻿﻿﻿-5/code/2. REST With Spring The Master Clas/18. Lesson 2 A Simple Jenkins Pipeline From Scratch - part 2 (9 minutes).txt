@@ -1,0 +1,42 @@
+1. Goals
+In this lesson you'll learn how to set up a simple Continuous Integration Jenkins pipeline for a REST API.
+
+
+2. Lesson Notes
+The Live Job
+Similar to the integration tests and the integration profile, we're going to use a separate live profile to run the suite of live tests.
+
+The surefire configuration will of course be similar as well - including the live tests by name and excluding everything else.
+
+The main difference in this live profile is that - in order to be able to run the live tests - we need a running server where the API is deployed.
+
+So - in order to achieve that, we'll use the Maven Cargo plugin to start up an embedded Tomcat 8 server in the pre-integration-test phase of the Maven build, and then to stop it in the post-integration-phase.
+
+This solution enables us to start the API before the live tests run, execute the suite of live tests, and then stop that server.
+
+
+
+Configuring Cargo and Surefire
+We need Cargo to start up the embedded server on different ports and not use the defaults:
+
+<cargo.servlet.port>8082</cargo.servlet.port>
+<cargo.tomcat.ajp.port>8010</cargo.tomcat.ajp.port>
+<cargo.rmi.port>8006</cargo.rmi.port>
+This is simply in case the defaults are already in use on that box - both on your local environment and on Jenkins itself, the default ports are likely already in use. 
+Then, we need to make sure that Surefire runs the live tests against the correct port - 8082 in this case. So, we're going to use the exact same mechanism as we did in the integration profile - setting a property:
+
+<webTarget>cargo</webTarget>
+That will simply configure the live tests to use `web-cargo.properties` - which is of course using the right port: 
+http.port=8082
+
+Chaining the Jobs
+Each job in the pipeline needs to be configured to trigger the execution of the next job (if stable): 
+A Job -> Configure -> Post Build Actions: 
+- Build other projects - select the next job in the pipeline (Trigger only if build is stable)
+
+
+Finally, note that the 2 failing tests we used to show how a failing test looks in the build are of course ignored in the codebase. 
+
+3. Resources
+- Cargo home - https://codehaus-cargo.github.io/cargo/Home.html
+- the Cargo Maven plugin - https://codehaus-cargo.github.io/cargo/Maven2+plugin.html

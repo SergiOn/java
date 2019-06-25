@@ -1,0 +1,43 @@
+1. Module 8 Overview
+This module is all about monitoring your API and tracking good, useful metrics from the start.
+
+It's also a Spring Boot heavy lesson - mainly because the framework makes the Ops story a lot better and saves us time and effort in having to implement this low level support ourselves. And while this isn't a Spring Boot focused module, we do want to use the best tool for the job.
+
+
+2. Goals
+Learn how Spring Boot makes monitoring and tracking the metrics of a Spring API very easy. 
+
+3. Lesson Notes
+We are going to use Spring Boot actuators to start tracking metrics and expose these via several endpoints:
+
+/info
+/health
+/metrics
+We are also going to configure these endpoints via application.properties:
+
+- "endpoints.{endpointname}.{option}" - with the following options:
+
+id
+sensitive
+enabled
+- ex: endpoints.health.sensitive=false
+- other endpoint related options can be configured as well: 
+management.context-path = actuators
+management.port = 8081
+/info endpoint configuration
+info.app.name = My App
+info.build.version = @project.version@ 
+Note how we are using the @@ syntax here to get the value of the property from the pom of the parent (after maven runs package)
+URLs for a local deployment
+http://localhost:8081/api/management/info
+
+http://localhost:8081/api/management/metrics
+
+Note that the assumptions here is that the deployment happens via Spring Boot (where the port is already configured to 8081 and the app will be deployed at the root). If deployment happens in a standard Tomcat server, then these URLs will be slightly different. 
+
+4. Resources
+- Spring Boot Actuator: Production-ready features (the reference) - http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#production-ready
+- Building a RESTful Web Service with Spring Boot Actuator (official guide) - https://spring.io/guides/gs/actuator-service/
+- Spring Boot Actuator (my article) - http://www.baeldung.com/spring-boot-actuators
+
+- The Module 8 Branch of the project on Github - https://github.com/eugenp/REST-With-Spring/tree/module8

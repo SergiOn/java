@@ -1,0 +1,23 @@
+1. Goals
+The goal of this lesson is simple - to take you through the basics of profiling your running API and reading the JMX data it exposes. 
+
+2. Lesson Notes
+To prepare your VisualVM installation, install the VisualVM-MBeans plugin.
+
+Here are some interesting MBeans on your Tomcat system:
+
+in the Spring Boot package - we have an MBean for each endpoint
+in Catalina -> ThreadPool (connectionCount, currentThreadCount, currentThreadBusy, keepAliceCount)
+in Catalina -> GlobalRequestProcessor
+in Catalina -> Manager -> localhost
+in Catalina -> ProtocolHandler - 8082 (connection count)
+in Catalina -> Servlet -> dispatcherServlet
+Note: you can double click on bolder values to get a nice graph representation
+
+3. Resources
+- The VisualVM Homepage - https://visualvm.java.net/
+- VisualVM - MBeans - https://visualvm.java.net/mbeans_tab.html
+
+- VisualVM - JMX Connections - https://visualvm.java.net/jmx_connections.html
+
+- Monitoring and management over JMX - https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-jmx.html

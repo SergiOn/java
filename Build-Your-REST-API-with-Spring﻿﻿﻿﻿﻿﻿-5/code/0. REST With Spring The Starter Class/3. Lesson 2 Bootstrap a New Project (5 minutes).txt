@@ -1,0 +1,16 @@
+1. Goal
+Create a working Spring application from scratch and learn how to do a simple IDE deployment of this new application.
+
+
+2. Lesson Notes
+Before we start using our main course codebase, let's first take a few minutes to understand how to bootstrap a new project from scratch. 
+Even though this isn't going to be our main codebase here, it's still important to be able to set up a new project quickly using Spring Initializr.
+
+
+Define a Server in Eclipse
+
+Window -> Preferences -> Server - Runtime Environments
+
+
+3. Resources
+- Spring Initializr - Bootstrap your application now - https://start.spring.io/

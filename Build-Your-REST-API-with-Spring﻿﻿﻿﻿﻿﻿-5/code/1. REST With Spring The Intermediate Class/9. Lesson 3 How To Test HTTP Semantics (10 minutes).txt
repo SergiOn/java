@@ -1,0 +1,8 @@
+1. Goals
+Continue building out a comprehensive test suite for the API.
+
+
+2. Lesson Notes
+Besides building out the API tests for the Role resource, we're also preparing the tests for becoming applicable to any other resource. 
+3. Resources
+- HTTP Status Codes - http://www.restapitutorial.com/httpstatuscodes.html

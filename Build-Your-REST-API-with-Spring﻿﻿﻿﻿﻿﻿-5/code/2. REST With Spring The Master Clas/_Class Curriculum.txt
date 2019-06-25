@@ -1,0 +1,64 @@
+Module 7: Document, Discover and Evolve the REST API (55 minutes)
+ 
+Start  The Master Class Introduction
+ 
+Start  Lesson 1: Document the API with Swagger (11 minutes)
+ 
+Start  Lesson 2: The Basics of HATEOAS - part 1 (7 minutes)
+ 
+Start  Lesson 2: The Basics of HATEOAS - part 2 (7 minutes)
+ 
+Start  Lesson 3: Advanced Scenarios with Spring HATEOAS (10 minutes)
+ 
+Start  Lesson 4: How To Evolve the API without Breaking Clients - part 1 (7 minutes)
+ 
+Start  Lesson 4: How To Evolve the API without Breaking Clients - part 2 (9 minutes)
+ 
+Start  Lesson 4: How To Evolve the API without Breaking Clients - part 3 (4 minutes)
+ 
+Start  Lesson 5: Versioning - The Last Resort (Bonus Material - To Be Released)
+Module 8: Monitoring and API Metrics (64 minutes)
+ 
+Start  Lesson 1: Fundamentals of Monitoring with Boot (10 minutes)
+ 
+Start  Lesson 2: Custom Metrics for the API (11 minutes)
+ 
+Start  Lesson 3: Monitoring Data over JMX - part 1 (11 minutes)
+ 
+Start  Lesson 3: Monitoring Data over JMX - part 2 (11 minutes)
+ 
+Start  Lesson 4: Displaying Metrics over HTTP (11 minutes) (NEW)
+ 
+Start  Lesson 5: Production Grade Tools for Monitoring (10 minutes) (NEW)
+Module 9: CI and CD Pipelines for the API (67 minutes)
+ 
+Start  Lesson 1: Setting Up Jenkins and The First Job - part 1 (7 minutes)
+ 
+Start  Lesson 1: Setting Up Jenkins and The First Job - part 2 (8 minutes)
+ 
+Start  Lesson 2: A Simple Jenkins Pipeline From Scratch - part 1 (6 minutes)
+ 
+Start  Lesson 2: A Simple Jenkins Pipeline From Scratch - part 2 (9 minutes)
+ 
+Start  Lesson 3: Remote Deployment for the API (10 minutes)
+ 
+Start  Lesson 4: From Continuous Integration to Continuous Deployment - part 1 (11 minutes)
+ 
+Start  Lesson 4: From Continuous Integration to Continuous Deployment - part 2 (6 minutes)
+ 
+Start  Lesson 5: Load Balance the REST API on EC2 (10 min) (NEW) (9:41)
+Module 10: Advanced API Tactics (48 minutes) (NEW)
+ 
+Start  Lesson 1: ETags in REST (13 minutes) (13:03)
+ 
+Start  Lesson 2: A Simple API Rate Limiting Implementation (8 minutes) (8:25)
+ 
+Start  Lesson 3: Binary Data Formats in a Spring REST API (7 minutes) (7:12)
+ 
+Start  Lesson 4: REST, Async and Long Running Requests - part 1 (13 minutes) (12:58)
+ 
+Start  Lesson 4: REST, Async and Long Running Requests - part 2 (7 minutes) (6:57)
+ 
+Start  REST With Spring - Outro
+ 
+Start  The Learn Spring Security Course

@@ -1,0 +1,80 @@
+1. Module 1 Overview
+The goal of the first module is to teach you how to build a simple, CRUD API. What's important here is a working project, and the basic mechanics of configuring and deploying that project.
+
+The finer points of REST, HTTP semantics and Hypermedia are the focus of the next modules - this is just CRUD.
+
+
+2. Goal of this Lesson
+Learn the foundational aspects of REST and understand what the REST architectural constraints are.
+
+
+3. Lesson Notes
+What is REST
+REST (Representational State Transfer) is an architectural style for designing network applications, driven by a set of constraints and inspired from the architecture of the Web.
+
+
+REST and HTTP
+In theory, REST is entirely separate from the HTTP protocol, but in practice we're primarily building APIs on top of HTTP. So the goal is to leverage the full semantics of the protocol and use it as an application protocol (rather than just transport).
+
+
+Constraint 1 - Client-Server
+This fundamental constraint enforces a separation of concerns and enables independent evolution of the Client and the Server.
+
+
+Constraint 2 - Stateless
+The communication between Client and Server must be stateless between requests.
+
+First - the obvious part: each request from a client should contain all the necessary information for the service to complete the request.
+
+Then, the more non-obvious part: all session state data should then be returned to the client at the end of each request.
+
+
+Constraint 3 - Cache
+All responses from the Server should be explicitly labeled as cacheable or non-cacheable.
+
+Requests should pass through a Cache Component - which can partially or fully eliminate some interactions with the Server.
+
+The results are improved efficiency and scalability by matching and utilizing the already available huge infrastructure of the Web.
+
+
+Constraint 4 - Interface / Uniform Contract
+The Service and all Clients must share a single uniform technical interface.
+
+In order for that interface to be reusable by a wide range of Clients, it needs to provide generic, high-level capabilities that are abstract enough to accommodate a broad range of interactions.
+
+
+Constraint 5 - Layered System
+This constraint builds on Client-Server Constraint to allow for Intermediaries / Middleware.
+
+These intermediaries must be fully transparent for the Client.
+
+The interaction between a Service and a Client should be consistent, regardless if the Client is communicating directly with the ultimate receiver of a message or not. Similarly, the Service does not need to be aware of whether the Client is itself acting as a service for other Clients or if it's the actual origin.
+
+This kind of information hiding greatly simplifies the distributed architecture of the system and allows individual architectural layers to be deployed and evolved independently of specific services and consumers.
+
+
+Terminology - Resource
+The Resource is the key abstraction of information in REST.
+
+Any information that can be named / identified via a unique, global id (the URI) - is a Resource.
+
+
+Terminology - Representation
+Any given Resource can have multiple Representations; these capture the current state of the Resource in a specific format.
+
+At the lowest level, the Representation is "a sequence of bytes, plus representation metadata to describe these bytes".
+
+
+Terminology - Hypermedia Types
+There are several Hypermedia types we can use for our Representations, and we can build our own if we need to.
+
+Important: JSON is not a Hypermedia
+
+
+4. Resources
+- REST on Wikipedia - https://en.wikipedia.org/wiki/Representational_state_transfer
+
+- What is REST - http://whatisrest.com/rest_constraints/index
+
+
+- The Module 1 Branch of the project on Github - https://github.com/eugenp/REST-With-Spring/tree/module1

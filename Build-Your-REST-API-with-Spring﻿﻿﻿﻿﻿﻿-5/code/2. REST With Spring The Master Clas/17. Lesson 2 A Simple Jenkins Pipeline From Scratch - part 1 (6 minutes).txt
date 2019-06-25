@@ -1,0 +1,33 @@
+1. Goals
+In this lesson you'll learn how to set up a simple Continuous Integration Jenkins pipeline for a REST API.
+
+
+2. Lesson Notes
+The Build and Unit Test Job
+By default, the maven configuration - specifically the Surefire plugin - is configured to only run unit tests (integration and live tests are skipped in the default run).
+
+Tests can be easily identified by name when the follow a very simple naming convention:
+
+unit tests: ...UnitTest.java
+integration tests: ...IntegrationTest.java
+live tests: ...LiveTest.java
+As a result, the first Jenkins job executes the build and the Unit tests.
+
+A quick final note here is that - the granularity of jobs is very important in a pipeline.
+
+A general rule of thumb is that jobs should be fine-grained and focus on one thing. This initial job doesn't exactly adhere to that rule - because it's doing 2 things - the build, and running the unit tests. That's because our codebase is still quite simple - but in a more complex codebase, you can separate these into 2 separate jobs. 
+
+The Integration Job
+The suite of integration tests is separated into a Maven profile, where the Surefire plugin is configured to include these tests.
+
+The Surefire plugin also allows us to set a system property for that run:
+
+<persistenceTarget>test</persistenceTarget>
+That allows us to select another `persistence-${persistenceTarget}.properties` file for this run (persistence-test.properties) - which uses the H2 in memory database instead of the default MySQL. 
+
+3. Resources
+- Introduction to Build Profiles - http://maven.apache.org/guides/introduction/introduction-to-profiles.html
+
+- Maven Surefire - Using System Properties - http://maven.apache.org/surefire/maven-surefire-plugin/examples/system-properties.html
+
+- The H2 Database - http://www.h2database.com/html/main.html

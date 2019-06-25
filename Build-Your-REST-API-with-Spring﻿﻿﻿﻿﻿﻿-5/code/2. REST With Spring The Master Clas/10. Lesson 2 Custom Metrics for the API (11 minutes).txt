@@ -1,0 +1,48 @@
+1. Goals
+The goal of this lesson is to go deeper into Actuators and Spring Boot, and learn how to customize things.
+
+We are going to implement a custom health check for the /health endpoint and we are going to track custom metrics, for the /metrics endpoint. 
+
+2. Lesson Notes
+2.1. A Custom Health-Check
+A custom health-check is implemented as an ordinary bean (@Component) implementing the HealthIndicator interface.
+
+To construct the Health response, we can use the simple, fluent API; here are a few examples:
+
+Health.up().build()
+
+Health.down().build()
+
+Health.down().outOfService().build()
+
+
+2.2. Track Custom Metrics
+To track a custom metric, we'll need to inject the CounterService out of Spring Boot and simply use it to increment the reading of the metrics we're tracking (by key).
+
+Here's a simple example:
+
+counterService.increment("service.privilege.findByName");
+
+2.3. Export Metrics
+Accessing the metrics of the system via the /metrics endpoint is a good place to start, but - for a production system - it's really not enough.
+
+We need to export these internal metrics to a third-party metrics system - that's specifically build to track and work with metric data, and that is entirely independent of the main API application (such as the ELK stack - Elasticsearch, Logstack, Kibana)
+
+To build a Metrics exported - we'll simply use the @Scheduled support from Spring and export our data on a given cadence, from a MetricRepository bean that we can simply inject and use.
+
+
+2.4. Metrics from Dropwizard
+The Metrics library from Dropwizard is very well integrated into Spring Boot, so it's using the Spring Boot metrics support isn't enough for a mode advanced usecase. 
+
+2.4. Spring Boot Version
+Note that the lesson is using Spring Boot 1.2.x.
+
+If you're planning to use a later version, there are a few changes that you should be aware of: 
+in MetricsExporter.java, replace the autowired MetricRepository with BufferMetricReader and inject the CounterService to reset the metrics
+BufferMetricReader conflicts with Dropwizard's MetricRegistry; remove the injection of BufferMetricReader
+
+3. Resources
+- Spring Boot Actuator (my article) - http://www.baeldung.com/spring-boot-actuators
+
+- Application Metrics With Spring Boot Actuator - http://kielczewski.eu/2015/01/application-metrics-with-spring-boot-actuator/
+- The Metrics Library - https://dropwizard.github.io/metrics/3.1.0/

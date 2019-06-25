@@ -1,0 +1,43 @@
+Module 4: Consuming the API from AngularJS (42 minutes)
+ 
+ The Intermediate Class Introduction
+ 
+ Lesson 1: The UI Project and Basic REST from AngularJS (11 minutes)
+ 
+ Lesson 2: Dealing with CORS - part 1 (10 minutes)
+ 
+ Lesson 2: Dealing with CORS - part 2 (7 minutes)
+ 
+ Lesson 3: Working with OAuth2 and Tokens from AngularJS (14 minutes) (same as Module 6 - Lesson 5)
+Module 5: Testing the API (70 minutes)
+ 
+ Lesson 1: The First Live API Tests - Introducing rest-assured - part 1 (9 minutes)
+ 
+ Lesson 1: The First Live API Tests - Introducing rest-assured - part 2 (7 minutes)
+ 
+ Lesson 2: How To Build a Client for the API - part 1 (9 minutes)
+ 
+ Lesson 2: How To Build a Client for the API - part 2 (9 minutes)
+ 
+ Lesson 3: How To Test HTTP Semantics (10 minutes)
+ 
+ Lesson 4: A Good Base API Tests for Any Resource (12 minutes)
+ 
+ Lesson 5: Contract Testing - A Special Kind Of Test (14 minutes) (NEW)
+Module 6: Advanced API Security (48 minutes)
+ 
+ Lesson 1: How OAuth2 Works for REST - part 1 (7 minutes)
+ 
+ Lesson 1: How OAuth2 Works for REST - part 2 (5 minutes)
+ 
+ Lesson 2: Set Up OAuth2 with Spring Security - part 1 (9 minutes)
+ 
+ Lesson 2: Set Up OAuth2 with Spring Security - part 2 (9 minutes)
+ 
+ Lesson 3: Tokens, OAuth2 and JWT (9 minutes)
+ 
+ Lesson 4: Refresh the Token (9 minutes)
+ 
+ Lesson 5: How To Do OAuth from the Front End (14 minutes) (same as Module 4 - Lesson 3)
+ 
+ Intermediate Class: Outro

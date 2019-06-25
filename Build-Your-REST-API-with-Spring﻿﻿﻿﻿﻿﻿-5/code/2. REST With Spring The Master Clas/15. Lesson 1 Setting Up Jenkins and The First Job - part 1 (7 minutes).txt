@@ -1,0 +1,86 @@
+1. Module 9 Overview
+The ninth and final module is focused on helping you go live with your API.
+
+Continuous Integration is a good first step, but definitely not enough if you're serious about automation. Continuous Deployment is what will ensure that you have a strong, reliable way of getting work out the door and used by clients.
+
+That's the focus on this module - setting up these pipelines with Jenkins and digging deep into all aspects of the automation process.
+
+
+2. Goals
+In this lesson you'll learn how to provision a simple Ubuntu server to run Jenkins in AWS. 
+
+3. Lesson Notes
+The starting point of this lesson is creating a new Ubuntu instance in EC2. Any Ubuntu instance after 14.04 should work fine, but - for reference - the type of instance we're using here is an:
+
+Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-d05e75b8
+Preparing the Ubuntu Server
+BASE_USER=ubuntu
+sudo chown -Rf $BASE_USER:$BASE_USER /opt/
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
+sudo apt-get install -y vim htop git libtool autoconf automake curl iotop sysstat nmap build-essential nethogs s3cmd htop unzip zip
+Install JDK 8
+sudo apt-get purge openjdk*
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install -y oracle-java8-installer
+Set Up Tomcat 8
+First, define some common vars: 
+BASE_USER=ubuntu
+USER=apache-tomcat
+GROUP=www-data
+TOMCAT_INSTALL_DIR=/opt
+LOG_DIR=/opt/logs
+TOMCAT_VERSION=apache-tomcat-8.0.30
+TOMCAT_URL=http://apache.javapipe.com/tomcat/tomcat-8/v8.0.39/bin/apache-tomcat-8.0.39.zip
+Then download and prepare Tomcat: 
+mkdir -p $TOMCAT_INSTALL_DIR
+cd $TOMCAT_INSTALL_DIR
+wget $TOMCAT_URL
+unzip -q $TOMCAT_VERSION.zip
+rm $TOMCAT_VERSION.zip
+mv $TOMCAT_VERSION tomcat
+chmod +x $TOMCAT_INSTALL_DIR/tomcat/bin/*.sh
+Configure Tomcat
+touch $TOMCAT_INSTALL_DIR/tomcat/bin/setenv.sh
+vim $TOMCAT_INSTALL_DIR/tomcat/bin/setenv.sh
+// 2GB memory available: 
+export JAVA_OPTS="-Xms512m -Xmx1024m"
+export JAVA_OPTIONS="-Xms512m -Xmx1024m"
+export CATALINA_OPTS="-Xms512m -Xmx1024m"
+// 4GB memory available: 
+export JAVA_OPTS="-Xms1024m -Xmx2048m"
+export JAVA_OPTIONS="-Xms1024m -Xmx2048m"
+export CATALINA_OPTS="-Xms1024m -Xmx2048m"
+Start Tomcat and tail the log
+$TOMCAT_INSTALL_DIR/tomcat/bin/catalina.sh start
+tail -100 $TOMCAT_INSTALL_DIR/tomcat/logs/catalina.out
+sudo netstat -tnlp
+Set Up Maven
+First, define some common vars: 
+BASE_USER=ubuntu
+MAVEN_INSTALL_DIR=/opt
+MAVEN_VERSION=apache-maven-3.3.9
+MAVEN_URL=http://mirrors.hostingromania.ro/apache.org/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip
+Then, download and prepare Maven:
+
+cd $MAVEN_INSTALL_DIR
+wget $MAVEN_URL
+unzip $MAVEN_VERSION-bin.zip
+rm $MAVEN_VERSION-bin.zip
+mv $MAVEN_VERSION maven
+Download the Jenkins war
+cd $TOMCAT_INSTALL_DIR/tomcat/webapps/
+wget http://mirrors.jenkins-ci.org/war-stable/latest/jenkins.war
+
+4. Resources
+- Amazon EC2 - Virtual Server Hosting - https://aws.amazon.com/ec2/
+
+- Tomcat 8 download - https://tomcat.apache.org/download-80.cgi
+
+- Maven 3 download - https://maven.apache.org/download.cgi
+
+- Jenkins homepage and download - https://jenkins-ci.org/
+
+- The Module 9 Branch of the project on Github - https://github.com/eugenp/REST-With-Spring/tree/module9

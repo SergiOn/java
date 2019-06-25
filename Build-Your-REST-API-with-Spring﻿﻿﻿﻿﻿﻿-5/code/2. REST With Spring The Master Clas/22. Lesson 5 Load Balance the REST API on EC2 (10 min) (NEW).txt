@@ -1,0 +1,48 @@
+1. Goal
+This is a quick and practical lesson, showing you how to manually run an API in a cluster, on EC2. 
+
+2. Lesson Notes
+2.1. Preparation and EC2
+
+We’re going to start with a single instance on EC2 - running the API - already set up.
+
+This is a bare-bones instance that only has the JDK and Maven installed - that’s enough to run the API - which is everything we need. 
+With this instance running, we're going to do a quick live test and hit the API through the elastic IP, and using our standard credentials: admin@fake.com / adminpass.
+
+We also have an image created from this instance, so we can run multiple instances of it without having to re-create everything from scratch.
+
+Let’s now create a second instance here. 
+OK, so at this point we have 2 instances of the API that are running.
+
+We're going to hit them independently and make sure they are actually fully operational. 
+
+2.2. The Load Balancer
+Now let’s start setting them up in a cluster, with a load balancer running in front of them.
+
+We’re going to create an Elastic Load Balancer in EC2.
+
+The first decision is - should the routing be decided at the transport layer, or application layer. And, given we’re running a REST API here, we’re going to naturally chose the HTTP layer. 
+
+We're going to set configure the port (8082) and the availability zones where the balancer is going to operate. 
+Next, we’re going to set up a health check. And because this is a Boot application, we can simply use the /health endpoint.
+
+
+Finally, we're going to register the actual instances into the load balancer.
+
+And we’re done.
+
+
+2.3. Hitting the Load Balancer
+We’re going to wait a few seconds for the instances to be checked and considered healthy.
+
+Once we're good to go, we can now simply pick up the DNS of our load balancer from the EC2 interface, and - instead of hitting the individual instances directly - hit the load balancer instead. 
+And - as we expect - the request will get routed to one of the instances. 
+
+
+2.4. Stateless / Stateful REST API
+
+The stateless of our API has a huge implication at this point - we can now trivially scale out the API to a number of nodes sitting behind a load balancer, without worrying about all the problems that would come with a stateful implementation.
+
+Of course if we do have a stateful system, there's an interesting feature of the target group that the load balancer uses is sticky sessions (a custom implementation).
+
+So, if we don’t have statelessness, we could potentially use this to make sure sessions are sticky and hit the same instance for the duration of the session.

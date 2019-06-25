@@ -1,0 +1,91 @@
+1. Goals
+The goal and focus of this lesson is to introduce you to the concept of ETags and how these help with your API implementation. 
+
+2. Lesson Notes
+2.1. Intro to ETags
+At a high level, ETags, or entity tags, are used for HTTP caching with "conditional" requests. 
+More concretely, the ETag is an response HTTP header that is - simply put - a hash of the response representation. 
+And so, any change in the response will change the ETag as well. 
+Here’s a simple example:
+
+curl -H "Accept: application/json" -i http://localhost:8080/api/foos/1
+
+HTTP/1.1 200 OK
+
+ETag: "f88dd058fe004909615a64f01be66a7"
+
+Content-Type: application/json;charset=UTF-8
+
+Content-Length: 52
+
+
+With the new ETag value, future requests can now use that value and start sending conditional requests.
+
+
+2.2. Conditional Requests
+Using an If-* header turns a standard GET request into a conditional GET. 
+The two If-* headers that are using with ETags are:
+
+If-None-Match and
+If-Match
+When a conditional request is sent, the API will determines if the ETag of the response is the same. If it is, it means the representation hasn’t changed - and so the API will simply to return a 304 Not Modified and skip returning the data in the body of the response. 
+Here’s a simple example:
+
+curl -H "Accept: application/json" -H 'If-None-Match: "f88dd058fe004909615a64f01be66a7"'
+
+-i http://localhost:8080/rest-sec/api/resources/1
+
+
+
+HTTP/1.1 304 Not Modified
+
+ETag: "f88dd058fe004909615a64f01be66a7"
+
+As you can immediately see, that can potentially yield huge bandwidth savings. 
+
+Beyond the conditional GET, we can also use ETags to do a conditional PUT and avoid the Lost Update problem (this would be a form of optimistic concurrency).
+
+
+2.3. The Two Implementations of ETags
+There are usually two ways of approaching the ETags implementation:
+
+a shallow implementation
+a deep implementation
+With the shallow approach - we simply intercept the HTTP response as it’s about to go out, we calculate the hash and simply make the change right there. 
+The disadvantage of this solution is that the system still does the full computation and generates the response. 
+But we still get a lot of the bandwidth savings - which can be very significant. 
+
+The deeper implementation on the other hand will make use of the ETag value sooner and - if the value is the same - skip calculating the response at all. 
+That would give us both the bandwidth savings, but also the computational savings. 
+The downside of that is that the implementation is a lot more complex.
+
+
+2.4. The Shallow Implementation
+In this lesson we're going to focus on the shallow implementation of ETags. 
+Spring provides out of the box support for this implementation - the ShallowEtagHeaderFilter - a filter that we can simply plug into our Servlet config and just start using. 
+Keep in mind that this is a standard filter, so you can set it up however you want to.
+
+We're going to be using the Spring Boot flavor of setup to do our configuration here:
+
+@Bean
+public FilterRegistrationBean someFilterRegistration() {
+    FilterRegistrationBean registration = new FilterRegistrationBean();
+    registration.setFilter(etagFilter());
+    registration.addUrlPatterns("/api/*");
+    registration.setName("etagFilter");
+    registration.setOrder(1);
+    return registration;
+}
+@Bean(name = "etagFilter")
+    public Filter etagFilter() {
+    return new ShallowEtagHeaderFilter();
+}
+And that is literally it. You can now see why we might prefer this implementation - it’s so very easy to plug in and use.
+
+
+3. Resources
+- ETags for REST with Spring - http://www.baeldung.com/2013/01/11/etags-for-rest-with-spring/
+
+- ShallowEtagHeaderFilter Javadoc  -http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/filter/ShallowEtagHeaderFilter.html
+
+- The Module 10 Branch of the project on Github - https://github.com/eugenp/REST-With-Spring/tree/module10

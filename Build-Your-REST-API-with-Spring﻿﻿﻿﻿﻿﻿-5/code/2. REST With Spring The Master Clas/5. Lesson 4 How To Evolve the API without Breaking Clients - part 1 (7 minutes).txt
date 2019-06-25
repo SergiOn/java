@@ -1,0 +1,40 @@
+1. Goals
+This lesson focuses on a critical aspect of a good REST API - evolving the API without breaking clients. 
+
+2. Lesson Notes
+Manage Change in REST
+- any and all APIs will - at some point - need to change
+
+- the bad: there aren’t a whole lot of options to manage change in REST
+
+- the good: not many things you have to worry about
+
+- the main goal - when considering any API change - is maintaining full backwards compatibility for existing client; after a new release, clients should work smoothly and without any changes, taking advantage of new features at their convenience
+
+Why not just version your API?
+- Versioning has a few downsides:
+
+leads to an explosion of the URL surface area of the API
+is disruptive to clients
+is complex to maintain long-term
+Anticipate Change
+- a very important tenant to communicate to all clients from day 1:
+
+Ignore any unexpected data in the interaction with the API
+
+- that means that clients can never assume that they have a complete picture of what they will find in a response from the API
+
+Types of Changes
+- Adding data to a Resource
+
+- Changing the Type of data in a Resource
+
+- Changing the Structure of a Field in a Resource
+
+- Removing data from a Resource
+
+- Splitting one Resource into two
+
+- Changing the URL of an existing Resource
+
+3. Resources

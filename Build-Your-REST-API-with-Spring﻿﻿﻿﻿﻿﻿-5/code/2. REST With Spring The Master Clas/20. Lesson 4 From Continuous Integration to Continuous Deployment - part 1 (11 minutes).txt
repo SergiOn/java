@@ -1,0 +1,34 @@
+1. Goals
+In this lesson you're going to learn how to take your existing, simple CI pipeline to the next level with a Continuous Delivery that can allow you to deploy to production. 
+
+2. Lesson Notes
+What else do we need on the CI pipeline
+Before we move on to Continuous Deployment, here are a few common and highly useful jobs you can have in a more flushed out CI pipeline:
+
+A Static Analysis job - have a look at Findbugs, Checkstyle or PMD
+A Live Contract testing job
+A Functional testing job - have a look at SoapUI or Cucumber
+
+What is a Continuous Deployment pipeline?
+Simply put - the goal of a CD pipeline is to deploy to production.
+
+A more nuanced goal is to make it technically possible to deploy to production, even though the actual deployment "go ahead" might need one or multiple "seals of approval" from different business stakeholders. 
+
+Ensuring reproducible builds
+One of the failings of the simple CI pipeline we built in the previous lessons is that it's not fully reproducible.
+
+The short of it is that each job is pulling the latest version of the code from the master branch - which of course means that, if a commit happens while the pipeline is running - later jobs in the pipelines will use it but earlier jobs will not.
+
+Let's solve that now with the use of the Parameterized Trigger Plugin. 
+Jenkins Job - Configure:
+
+- remove the Post Step - Trigger/call builds on other projects step
+
+- add a Post Build Action - Trigger parameterized build on other projects
+
+add a parameter - Pass-through Git Commit that was built
+This simple configuration will make sure that the next job in the pipeline will actually use the git commit that the pipeline started with (instead of the latest one).
+
+
+3. Resources
+- the Parameterized Trigger Plugin - https://wiki.jenkins-ci.org/display/JENKINS/Parameterized+Trigger+Plugin

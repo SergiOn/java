@@ -1,0 +1,52 @@
+The Master Class Introduction
+
+General Information
+This Master Class is organized in 3 different modules:
+
+Document, Discover and Evolve the REST API (7 lessons)
+Monitoring and Metrics for the API (5 lessons)
+CI and CD Pipelines for the API (6 lessons)
+Each Module is organized in several video Lessons - each containing lesson notes and resources. 
+The Lessons are meant to be experienced as video lessons, and the notes should be used as a reference not as comprehensive documentation.
+
+
+The Project Code And New Tech
+The user management project has 6 sub-modules in the Starter Class (in the later classes, it's going to have 5-6):
+
+common-client - holds common, generic infrastructure to build a client for the REST API
+common-test - holds common testing infrastructure that it not domain specific
+common - holds common, generic infrastructure (utilities, abstract classes, etc) that are not domain specific
+um-client - holds the actual domain-specific client logic
+um-ui - holds the simple front-end app (only exists in a few lessons)
+um-webapp - holds the actual, domain specific REST API
+
+Before we get started, let's have a quick look at the other technologies we're going to use in these final few modules (and haven't used in Modules 1-6).
+
+The main one is JPA Metamodels - https://docs.jboss.org/hibernate/orm/5.0/topical/html/metamodelgen/MetamodelGenerator.html . These are, simply put - helper classes that we can use alongside our entities, with JPA Criteria, to write queries easier.
+
+
+Resources
+- The main "REST With Spring" Introduction
+The code over on Github:
+
+- The Module 7 branch - https://github.com/eugenp/REST-With-Spring/tree/module7
+
+- The Module 8 branch - https://github.com/eugenp/REST-With-Spring/tree/module8
+
+- The Module 9 branch - https://github.com/eugenp/REST-With-Spring/tree/module9
+
+- The Module 10 branch - https://github.com/eugenp/REST-With-Spring/tree/module10
+
+
+Live Workshop
+API Discoverability and good use of Hypermedia are definitely the hallmarks of a mature, well designed API.
+
+This module - Module 7 - goes over the basics and explores some very useful examples and scenarios where HATEOAS really helps out a client of the API.
+
+But the Spring Hateoas and especially the Spring Data REST projects are really the way to go in the Spring ecosystem - so we definitely need to focus on implementing more advanced scenarios in the live workshop: 
+Advanced API Discoverability and HATEOAS - 2 Hour Live Workshop - https://gum.co/api-discoverability-workshop
+
+
+The Certification Class
+If you need the Certificate of Completion for the course, definitely have a look at the new Certification Class. 
+I introduced this class out of a number of conversations with students of the course, so I hope it's useful.

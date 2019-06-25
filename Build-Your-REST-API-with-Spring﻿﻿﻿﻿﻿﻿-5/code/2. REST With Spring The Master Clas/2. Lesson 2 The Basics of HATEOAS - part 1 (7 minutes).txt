@@ -1,0 +1,24 @@
+1. Goals
+This lesson is focused on a very interesting and often overlooked part of REST - Hypermedia and the HATEOAS constraint. 
+
+2. Lesson Notes
+What is HATEOAS
+- stands for "Hypermedia as the Engine of Application State"
+
+- HATEOAS is one of the architectural constraints in the REST architecture
+
+Theory vs Practice
+- in theory, a REST API should not need any documentation to be consumed by clients; that’s considered “out-of-band” information
+
+- however, the self-documenting API concept is making some assumption about the level of standardization and adoption in the market - which is not where it needs to be for a self-documenting API to be feasible in practice
+
+- does that mean that HATEOAS is not useful? no - it’s super useful, it just doesn’t replace documentation
+HATEOAS - The Manual Way
+Spring enables us to inject the HTTP Response in any method in the Controller layer.
+
+That theoretically enables us to adhere to the HATEOAS constraint with a fully manual implementation. 
+
+3. Resources
+- HATEOAS on Wikipedia - https://en.wikipedia.org/wiki/HATEOAS
+
+- HATEOAS in the Spring Docs - https://spring.io/understanding/HATEOAS

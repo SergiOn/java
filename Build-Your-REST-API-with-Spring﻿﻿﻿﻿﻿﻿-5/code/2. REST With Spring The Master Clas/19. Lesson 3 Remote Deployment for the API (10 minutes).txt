@@ -1,0 +1,34 @@
+1. Goals
+In this lesson you're going to learn how to set up a remote deployment process of the API into an external Tomcat server. 
+
+2. Lesson Notes
+We're going to define a new deploy Maven profile for this new Cargo configuration with support for remote deployments.
+
+There are two aspects to this configuration:
+
+The Cargo Maven configuration
+The external instance running the Tomcat Server
+And of course these two needs to match up. 
+2.1. The Cargo Maven configuration
+High level - here's what the Cargo configuration looks like:
+
+the container needs to be type = remote
+the runtime configuration needs to define the cargo.hostname, cargo.servlet.port etc - to match the remote Tomcat server
+the deployer needs to be type = remote
+and we need to explicitly define the deployable - the war that we're going to be remote deploying
+2.2. The External Tomcat Server
+We can set up the Tomcat server on a separate EC2 instance, just as we did with Jenkins.
+
+Of course most of that process - documented in Lesson 1 of this module - is identical - up until downloading the Jenkins war. 
+In addition to setting up the Tomcat server, we also need to configure some extra security now - to support the remote deployment:
+
+vim $TOMCAT_INSTALL_DIR/tomcat/conf/tomcat-users.xml
+And add in: 
+<role rolename="manager" />
+<user username="manager" password="manager" roles="manager-gui,manager-script,manager-jmx,manager-status" />
+A very quick note here is that manager/manager are - of course - just example credentials which you'll definitely want to change in practice. 
+
+3. Resources
+- Cargo - Deploy into a running container - https://codehaus-cargo.github.io/cargo/Deploying+to+a+running+container.html
+
+- Tomcat 8 - Configuring Manager Application Access - https://tomcat.apache.org/tomcat-8.0-doc/manager-howto.html#Configuring_Manager_Application_Access

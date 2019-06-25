@@ -1,0 +1,31 @@
+The Intermediate Class Introduction
+
+The Intermediate Class
+This Intermediate Class is organized in 3 different modules:
+
+Consuming the API from AngularJS (5 lessons)
+Testing the API (5 lessons)
+Advanced API Security (6 lessons)
+Each Module is organized in several video Lessons - each containing lesson notes and resources. 
+The Lessons are meant to be experienced as video lessons, and the notes should be used as a reference not as comprehensive documentation.
+
+
+The Project Code
+The user management project has 6 sub-lessons in the Starter Class (in the later classes, it's going to have 5-6):
+
+common-client - holds common, generic infrastructure to build a client for the REST API
+common-test - holds common testing infrastructure that it not domain specific
+common - holds common, generic infrastructure (utilities, abstract classes, etc) that are not domain specific
+um-client - holds the actual domain-specific client logic
+um-ui - holds the simple front-end app
+um-webapp - holds the actual, domain specific REST API
+
+Resources
+- The main "REST With Spring" Introduction
+The project code over on Github:
+
+- The Module 4 branch - https://github.com/eugenp/REST-With-Spring/tree/module4
+
+- The Module 5 branch - https://github.com/eugenp/REST-With-Spring/tree/module5
+
+- The Module 6 branch - https://github.com/eugenp/REST-With-Spring/tree/module6

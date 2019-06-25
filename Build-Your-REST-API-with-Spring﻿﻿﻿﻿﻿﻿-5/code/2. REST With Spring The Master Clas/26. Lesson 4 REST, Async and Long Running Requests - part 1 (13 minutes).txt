@@ -1,0 +1,97 @@
+1. Goals
+The goal of this lesson is to show you how to approach the implementation of an async REST API, for a long-running operation. 
+
+2. Lesson Notes
+2.1. Overview of the 3 Solutions
+
+The operation we’re going to use to test-drive this is the creation of a User resource. 
+There are several options we can use to do that:
+
+first, we’ll look at using the Callable functional interface to make the processing of the request async
+then we’ll have a quick look at DeferredResult - the Spring alternative to Callable
+and finally - we’ll have a look at a truly async implementation - using the @Async annotation
+
+First, let’s create (or simulate) our slow operation. We’re going to take our existing create user operation and add a sleep next to it:
+
+@Override
+public UserDto createSlow(final UserDto dto) {
+    try {
+        Thread.sleep(AsyncService.DELAY);
+        return create(dto);
+    } catch (InterruptedException e) {
+        throw new RuntimeException(e);
+    }
+}
+
+2.2. Using Callable
+First, let’s create the simple operation: 
+@RequestMapping(value = "/callable", method = RequestMethod.POST)
+@ResponseStatus(HttpStatus.CREATED)
+@ResponseBody
+public Callable<UserDto> createUserWithCallable(@RequestBody UserDto resource) {
+    return new Callable<UserDto>() {
+        @Override
+        public UserDto call() throws Exception {
+            return service.createSlow(resource);
+        }
+    };
+}
+Notice how the implementation is simply wrapping the actual service call in the Callable.
+
+Also notice we’re baking in a delay - the goal there is to simulate a longer running operation. 
+OK, so what happens when this API gets called: 
+first, it gets picked up by a Servlet container thread
+then, because the return value is Callable - Spring MVC will process that callable in a separate thread
+the Servlet container thread immediately exits and so it’s able to pick up a new request
+and the new new Spring MVC thread does our internal processing
+when that’s done - the result is going to be dispatched back to the container to finish and return to the client
+Note that this is all making use of the Async functionality in Servlet 3. 
+As you might have noticed already, this is indeed releasing the Servlet thread earlier and not keeping it blocked with a long running operation.
+
+But, the client is still blocked for the entire duration of the operation, just as if we had a fully synchronous operation. 
+Finally, let’s write a quick live test to see that in action: 
+@Test
+public void whenCreateUserAsyncUsingCallable_thenCreatedWithDelay() {
+    Response response = createRandomUser().post(getApi().getUri() + "/callable");
+    assertEquals(201, response.getStatusCode());
+    assertNotNull(response.jsonPath().get("name"));
+    assertTrue(response.time() > AsyncService.DELAY);
+}
+Notice the final assertion - and specifically the response time - we can clearly see that the client is going to wait more than the delay (10 seconds) the processing takes. 
+And so, there is clearly an internal advantage of using this pattern and using Callable to split the processing of a longer task - but from the POV of the client, the operation is still blocking
+
+
+2.3. Using DeferredResult
+The DeferredResult implementation has the same goal - to release the Servlet thread while a long-running operation is processing.
+
+So it’s important to understand that the operation will still be blocking for the client - just like our Callable example. 
+Let’s start with the API operation:
+
+@RequestMapping(value = "/deferred", method = RequestMethod.POST)
+@ResponseStatus(HttpStatus.CREATED)
+@ResponseBody
+public DeferredResult<UserDto> createUserWithDeferredResult(@RequestBody UserDto resource) {
+    DeferredResult<UserDto> result = new DeferredResult<UserDto>();
+    asyncService.scheduleCreateUser(resource, result);
+    return result;
+}
+Let's see exactly what's going on here:
+
+first, we create our deferred result
+and we pass that into the service
+then we simply return it - so that the container thread can exit right away
+The one key difference between this and our previous implementation with Callable is that - here - we have full control over setting the value on that deferred result.
+
+Let's now implement the service layer: 
+public void scheduleCreateUser(UserDto resource, DeferredResult<UserDto> deferredResult) {
+    CompletableFuture.supplyAsync(() -> userService.createSlow(resource))
+      .whenCompleteAsync((result, throwable) -> deferredResult.setResult(result));
+}
+This is definitely an interesting implementation.
+
+First - we’re using the very nice supplyAsync API to run our slow creation logic asynchronously.
+
+We’re then passing in an action that’s going to run when the logic finishes - and in that action, we're setting the result of the deferred result (remember we need to do that ourselves now)
+We can finally implement a live test that's very similar to the one we used previously. 
+
+Finally, we're going to discuss the third and final implementation - using the @Async annotation - in the next part of the lesson. 

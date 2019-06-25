@@ -1,0 +1,16 @@
+1. Goals
+The goal of this lesson is to explain a simple way of exposing some basic metrics from your web application.
+
+
+2. Lesson Notes
+First - the actual data collection and storage is done automatically by Spring Boot. 
+We're only adding a thin layer on top of the Boot APIs here, and exposing to the client - via a simple controller.
+
+Our thin service - the ActuatorMetricService - is a simple and in-memory implementation that gets the last minute of metrics from the Boot PublicMetrics API. 
+It creates a new list, filled with 0 values, each corresponding to an HTTP status code and fills in the values.
+
+Obviously this is an example implementation, with a few notable issues:
+
+memory leaks (the list of metrics isn't cleared at any point)
+no persistence (metrics are lost on restart)
+Despite the shortcomings (or because of them) - it's a very good place to start.

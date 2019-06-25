@@ -1,0 +1,21 @@
+1. Goal
+Learn about and understand the Same Origin Policy restriction of the browser, CORS and how to relax that restriction in Spring. 
+
+2. Lesson Notes
+The Same Origin Policy
+The Same Origin Policy is an important restriction implemented by all major browsers in order to not allow JS code from making requests against a different origin.
+
+An Origin:
+
+URI scheme
+Hostname
+Port Number
+
+3. Resources
+- Same Origin Policy - http://www.w3.org/Security/wiki/Same_Origin_Policy
+
+- Cross-origin resource sharing - https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
+- Understanding CORS - https://spring.io/understanding/CORS
+
+- Enable CORS - http://enable-cors.org/
+- CORS support in Spring Framework - https://spring.io/blog/2015/06/08/cors-support-in-spring-framework

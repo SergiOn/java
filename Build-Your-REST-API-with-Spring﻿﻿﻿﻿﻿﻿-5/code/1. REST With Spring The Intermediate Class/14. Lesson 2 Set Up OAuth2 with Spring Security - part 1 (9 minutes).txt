@@ -1,0 +1,23 @@
+1. Goals
+Implement a fully working OAuth2 flow with Spring Security.
+
+
+2. Lesson Notes
+The Authorization Server
+We're defining the Authorization Server configuration here, with the @EnableAuthorizationServer annotation and the standard configurer-adapter style of configuration. 
+We're going to go with the Password Flow because the first usecase for OAuth is going to be the suite of live tests - which is a trusted type of client.
+
+A quick note - the Authorization Server endpoint is itself secured via Basic Authentication with the client credentials - the client id and the secret.
+
+The Tokens endpoint for a local deployment: http://localhost:8082/um-webapp/oauth/token
+
+The Resource Server
+The Resource Server is effectively the API - so, the config for it will be our main security configuration.
+
+A quick side-note here is that this configuration is almost exactly the same with our previous config. The only few differences to get a full OAuth config are - we're no longer defining Basic Auth and we're using the @EnableResourceServer annotation and the corresponding configurer-adapter.
+
+
+3. Resources
+- Spring Security OAuth - http://projects.spring.io/spring-security-oauth/
+
+- OAuth 2 Developers Guide - http://projects.spring.io/spring-security-oauth/docs/oauth2.html

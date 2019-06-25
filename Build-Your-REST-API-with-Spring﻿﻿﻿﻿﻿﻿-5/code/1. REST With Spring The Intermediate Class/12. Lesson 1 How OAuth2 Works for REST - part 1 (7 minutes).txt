@@ -1,0 +1,45 @@
+1. Module 6 Overview
+The goal of the sixth module is to dive deeper into API Security and explore OAuth 2 primarily, but also a custom token security mechanism.
+
+
+2. Goals
+Learn about OAuth2 and get a solid understanding on how it works.
+
+
+3. Lesson Notes
+What is OAuth?
+Simply put, OAuth2 is a standard for authorization, more specifically, delegated authorization.
+
+A high level goal of OAuth is allowing a Resource Owner to give access to a third party in a limited way, without giving away the master key (the password). 
+
+The Roles / Actors in OAuth
+The Resource Owner (the user) is capable of granting access to a Resource.
+
+The Resource Server (the API) is the host of the protected Resources.
+
+The Authorization Server is capable of issuing Access Tokens to the Client. 
+The Client (the front end app) is capable of making requests on behalf of the Resource Owner.
+
+Confidential and Public Clients
+Confidential Clients are capable of maintaining the confidentiality of their credentials. For example - a server side client running on a secure server.
+
+Public Clients on the other hand cannot guarantee they're going to be able to maintain the confidentiality of their credentials. For example - a native Android application, or an AngularJS client. 
+
+A Simple High Level Flow
+- The Client asks for access from the Resource Owner - which grants it
+
+- The Client talks to the Authorization Server
+
+- The Auth Server gives the Client a key
+
+- With the Key, the Client talks to the Resource Server and can access the Resource
+
+Trust Zones
+The Resource Server and the Authorization Server belong to a trust zone. The Authorization Server knows the what Resources to be protected are. And the Resource Server knows how to validate the tokens coming out of the Auth Server. 
+Then, obviously the Resource Owner and the Resource Server have a trust relationship with each other. 
+The Client doesn’t (necessarily) belong to any trust zone. 
+
+4. Resources
+- About OAuth2 - http://oauth.net/2/
+- An Introduction to OAuth 2 - https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2
+- The Module 6 Branch of the project on Github - https://github.com/eugenp/REST-With-Spring/tree/module6

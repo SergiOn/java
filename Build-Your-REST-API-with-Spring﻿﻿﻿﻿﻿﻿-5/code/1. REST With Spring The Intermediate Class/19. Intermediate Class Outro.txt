@@ -1,0 +1,26 @@
+Intermediate Class: Outro
+
+
+Update:
+
+API Security is the one topic I get the most questions on - not only within the course, but in general, from all Baeldung readers.
+
+And the students of the course have also requested some advanced and definitely interesting topics as well. Things like:
+
+What's the right OAuth2 flow to use in a REST API and why?
+How do I set up a proxy and can that help with token storage and security?
+What about CORS and the single origin constraint? Is the Zuul proxy (from Netflix) a good solution for that?
+Can you show me some actual Cross-Site Request Forgery (CSRF) attacks and how the new CSRF Protection in Spring Security helps?
+What about a project template that already has a good proxy implementation and is ready to use?
+Lot's of good stuff here.
+
+So I'm pulling code out of a few client implementations and working on this 2 hour long live workshop - where I'm basically going to lay it all out there.
+
+I'm going to go through all of these and show you how to do the implementation of each.
+Here's the live workshop:
+
+The "Advanced API Security" Workshop ( 129$ )
+
+Cheers,
+
+Eugen. 

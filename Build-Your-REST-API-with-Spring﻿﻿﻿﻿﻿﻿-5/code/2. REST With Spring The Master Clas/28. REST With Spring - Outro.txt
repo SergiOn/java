@@ -1,0 +1,25 @@
+  REST With Spring - Outro
+
+First off - congrats for making it here and thank you for attending "REST With Spring".
+
+I hope you got a lot of value out of the material - both practical tactics that you can use in your own API implementation right now, as well as a higher level strategical understanding of REST, HTTP, Spring and really what it takes to build and go into production with an API. 
+APIs are becoming the standard - and that's not going to slow down any time soon. Most mature systems publish some form of an API - for example my site back-end (Wordpress) does, my email provider (Drip) does, my analytics platform (Google Analytics) does, my monitoring service (Pingdom) does, even my CDN (MaxCDN) does.
+
+You really can't have a public facing system that's worth it's salt and doesn't have an API. So, learning how to build one properly and having the toolset to put it out and into the hands of your clients is a fantastic skill to have - and that's what this whole course is all about.
+
+
+Next
+Finally - there's some cool stuff coming.
+
+I took all the feedback you've been sending me over the last three months and announced a few bonus lessons that I'll be working on and adding to the course in January and February - so keep an eye out for that - I'll be emailing you as these go live.
+
+I've also very recently announced the next two live workshops, focused on the most requested advanced REST API topics:
+
+The "Advanced API Security" Workshop ( 99$ )
+The "Advanced API Discoverability and HATEOAS" Workshop ( 99$ )
+The 25% off early-bird pricing is going away exactly one month before the live event.
+
+
+Cheers and definitely keep in touch,
+
+Eugen. 

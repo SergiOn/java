@@ -1,0 +1,12 @@
+The Learn Spring Security Course
+
+The course you've just finished - REST With Spring - was all about building a REST API with Spring. And security was, of course, a major focus when building the API.
+
+That might be enough, but if you want to dig a lot deeper into security and use Spring Security to its full potential, definitely have a look at the Learn Spring Security course.
+
+And since you're already a student, email me for the custom coupon of the bulk package.
+
+
+Cheers and keep in touch,
+
+Eugen. 

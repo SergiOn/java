@@ -1,0 +1,47 @@
+	Module 1: The Basics of REST with Spring (60 minutes)
+ 
+Course Introduction
+
+Lesson 1: The Anatomy of a REST API (12 minutes)
+
+Lesson 2: Bootstrap a New Project (5 minutes)
+
+Lesson 3: The User Management Project (10 minutes)
+
+Lesson 4: Application Startup (11 minutes)
+
+Lesson 5: Properties and Project Settings (12 minutes) (12:06)
+
+Lesson 6: The Web Configuration (10 minutes) (10:18)
+
+The Project in your IDE (NEW)
+
+	Module 2: REST and HTTP Semantics (90 minutes)
+ 
+Lesson 1: Exception Handling and Sane HTTP Status Codes - Part 1 (10 minutes)
+
+Lesson 1: Exception Handling and Sane HTTP Status Codes - Part 2 (12 minutes)
+
+Lesson 2: The Basics of Input Validation (7 minutes)
+
+Lesson 3: Good URI Practices (12 minutes)
+
+Lesson 4: Leverage HTTP Verbs and Semantics (17 minutes)
+
+Lesson 5: Support both XML and JSON (14 minutes)
+
+Lesson 6 - The Lifecycle of a Request (18 minutes) (NEW)
+
+	Module 3: Simple Security for REST (56 minutes)
+ 
+Lesson 1: Simple Spring Security for the API (14 minutes)
+
+Lesson 2: Global URL vs Method Level Authorization - Part 1 (9 minutes)
+
+Lesson 2: Global URL vs Method Level Authorization - Part 2 (9 minutes)
+
+Lesson 3: Cookies and The Session (8 minutes)
+
+Lesson 4: Certificates and HTTPS for Tomcat (7 minutes) (NEW)
+
+Lesson 5: The Topology of Roles and Privileges (9 minutes) (NEW) (9:10)

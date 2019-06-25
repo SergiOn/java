@@ -1,0 +1,33 @@
+1. Goals
+In this lesson you're going to learn how to take your existing, simple CI pipeline to the next level with a Continuous Delivery that can allow you to deploy to production.
+
+
+2. Lesson Notes
+What makes up a CD pipeline?
+Here are the common jobs that usually make up a CD pipeline:
+
+A UI testing job - only if the REST API is deployed alongside a UI application
+A Performance job - this might use JMeter or Gatling
+A Release job
+
+What are the next steps to production?
+Finally, there are a few aspects of building out a full, mature CD pipeline that we haven't touched on, but are definitely worth exploring:
+
+Parallelizing a set of jobs in the pipeline in conjunction with a join-point
+Recording fingerprints on build artifacts to then determine which artifacts were used by which jobs in the pipeline
+Setting up a manual approval process / gate before actually deploying to production
+Auditing job configuration changes
+Displaying the entire pipeline using a custom v
+
+3. Resources
+- Apache JMeter - http://jmeter.apache.org/
+
+- Gatling - http://gatling.io/#/
+
+- Jenkins - Promoted Builds Plugin - https://wiki.jenkins-ci.org/display/JENKINS/Promoted+Builds+Plugin
+
+- Jenkins - Build Pipeline Plugin - https://wiki.jenkins-ci.org/display/JENKINS/Build+Pipeline+Plugin
+
+- Jenkins - Delivery Pipeline Plugin  - https://wiki.jenkins-ci.org/display/JENKINS/Delivery+Pipeline+Plugin
+- Jenkins -JobConfigHistory Plugin - https://wiki.jenkins-ci.org/display/JENKINS/JobConfigHistory+Plugin
+- Jenkins - Audit Trail Plugin - https://wiki.jenkins-ci.org/display/JENKINS/Audit+Trail+Plugin

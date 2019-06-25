@@ -1,0 +1,2 @@
+1. Goals
+This lesson focuses on a critical aspect of a good REST API - evolving the API without breaking clients. 
