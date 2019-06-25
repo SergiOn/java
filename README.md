@@ -255,3 +255,12 @@ rabbitmqctl shutdown
 rabbitmqctl stop
 <br>
 rabbitmqctl status
+
+
+## Build Your REST API with Spring﻿﻿﻿﻿﻿﻿ 5
+
+https://www.baeldung.com/rest-with-spring-course
+
+##### About this course
+
+From HTTP fundamentals to API Mastery
