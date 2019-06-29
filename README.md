@@ -264,3 +264,12 @@ https://www.baeldung.com/rest-with-spring-course
 ##### About this course
 
 From HTTP fundamentals to API Mastery
+
+
+## Java Streams API Developer Guide
+
+https://www.udemy.com/java-streams/
+
+##### About this course
+
+Functional Programming with Java 8
