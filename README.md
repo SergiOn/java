@@ -273,3 +273,12 @@ https://www.udemy.com/java-streams/
 ##### About this course
 
 Functional Programming with Java 8
+
+
+## Java Multithreading
+
+https://www.udemy.com/java-multithreading/
+
+##### About this course
+
+Unveiling the mysteries of multithreading in Java. The ultimate Java multithreading course
