@@ -16,7 +16,15 @@ public class Lecture8 {
 
   @Test
   public void simpleGrouping() throws Exception {
+    List<Car> cars = MockData.getCars();
 
+    Map<String, List<Car>> grouping = cars.stream()
+            .collect(Collectors.groupingBy(Car::getMake));
+
+    grouping.forEach((make, car) -> {
+      System.out.println("Make: " + make);
+      System.out.println("Car: " + car);
+    });
   }
 
   @Test
@@ -34,7 +42,10 @@ public class Lecture8 {
             "Alex"
         );
 
+    Map<String, Long> counting = names.stream()
+            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
+    System.out.println("counting: " + counting);
   }
 
 }
