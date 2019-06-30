@@ -6,6 +6,7 @@ import beans.Person;
 
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,6 +23,35 @@ public class Lecture1 {
     // 1. Find people aged less or equal 18
     // 2. Then change implementation to find first 10 people
 
+    // 1
+    List<Person> people1 = new ArrayList<>();
+    for (Person person : people) {
+      if (person.getAge() <= 18) {
+        people1.add(person);
+      }
+    }
+    System.out.println("people: " + people.size());
+    System.out.println("people1: " + people1.size());
+
+    // 2
+    List<Person> people2 = new ArrayList<>();
+    for (int i = 0; i < 10; i++) {
+      people2.add(people.get(i));
+    }
+    System.out.println("people: " + people.size());
+    System.out.println("people2: " + people2.size());
+
+    // 1 + 2
+    List<Person> people3 = Lists.newArrayList();
+    for (int i = 0, j = 0, size = people.size(); i < size && j < 10; i++) {
+      Person person = people.get(i);
+      if (person.getAge() <= 18) {
+        people3.add(person);
+        j++;
+      }
+    }
+    System.out.println("people: " + people.size());
+    System.out.println("people3: " + people3.size());
   }
 
   @Test
