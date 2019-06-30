@@ -10,7 +10,12 @@ public class Lecture2 {
 
   @Test
   public void range() throws Exception {
+    for (int i = 0; i < 10; i++) {
+      System.out.println("i: " + i);
+    }
 
+    IntStream.range(0, 10).forEach(x -> System.out.println("IntStream.range i: " + x));
+    IntStream.rangeClosed(0, 10).forEach(x -> System.out.println("IntStream.rangeClosed i: " + x));
   }
 
   @Test
