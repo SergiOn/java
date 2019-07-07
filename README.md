@@ -282,3 +282,12 @@ https://www.udemy.com/java-multithreading/
 ##### About this course
 
 Unveiling the mysteries of multithreading in Java. The ultimate Java multithreading course
+
+
+## Java Multithreading, Concurrency & Performance Optimization
+
+https://www.udemy.com/java-multithreading-concurrency-performance-optimization/
+
+##### About this course
+
+Become an expert in Multithreading, Concurrency & Parallel programming in Java, with strong emphasis on high performance
