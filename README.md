@@ -291,3 +291,12 @@ https://www.udemy.com/java-multithreading-concurrency-performance-optimization/
 ##### About this course
 
 Become an expert in Multithreading, Concurrency & Parallel programming in Java, with strong emphasis on high performance
+
+
+## Multithreading and Parallel Computing in Java
+
+https://www.udemy.com/multithreading-and-parallel-computing-in-java/
+
+##### About this course
+
+Multithreading and Concurrent Programming, Parallel Computation and MapReduce in Java
