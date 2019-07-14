@@ -300,3 +300,12 @@ https://www.udemy.com/multithreading-and-parallel-computing-in-java/
 ##### About this course
 
 Multithreading and Concurrent Programming, Parallel Computation and MapReduce in Java
+
+
+## Efficient Java Multithreading with Executors
+
+https://www.udemy.com/efficient-java-multithreading-with-executors/
+
+##### About this course
+
+Learn how to use the modern Executors framework to do everything that you can do with the Threads API ... and more!
