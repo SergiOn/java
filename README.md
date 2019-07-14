@@ -309,3 +309,12 @@ https://www.udemy.com/efficient-java-multithreading-with-executors/
 ##### About this course
 
 Learn how to use the modern Executors framework to do everything that you can do with the Threads API ... and more!
+
+
+## Java Application Performance and Memory Management
+
+https://www.udemy.com/java-application-performance-and-memory-management/
+
+##### About this course
+
+Learn how to tune the JVM and make good coding choices to ensure your applications perform optimally.
