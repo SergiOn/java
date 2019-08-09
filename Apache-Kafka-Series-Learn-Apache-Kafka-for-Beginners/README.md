@@ -1,5 +1,12 @@
 # Apache Kafka Series - Learn Apache Kafka for Beginners
 
+## Repositories
+
+https://github.com/SergiOn/kafka-beginners-course
+
+https://github.com/simplesteph/kafka-beginners-course
+
+
 ## Commands
 
 kafka-topics.sh
