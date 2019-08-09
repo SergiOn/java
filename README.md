@@ -318,3 +318,12 @@ https://www.udemy.com/java-application-performance-and-memory-management/
 ##### About this course
 
 Learn how to tune the JVM and make good coding choices to ensure your applications perform optimally.
+
+
+## Apache Kafka Series - Learn Apache Kafka for Beginners v2
+
+https://www.udemy.com/course/apache-kafka/
+
+##### About this course
+
+START HERE: Learn Apache Kafka 2.0 Ecosystem, Core Concepts, Real World Java Producers/Consumers & Big Data Architecture
