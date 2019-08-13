@@ -37,3 +37,30 @@ cat $KAFKA_HOME/config/server.properties
 zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
 
 kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+
+### section 6, lecture 32
+
+zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+
+kafka-topics.sh
+
+[//]: <> (kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --create --partitions 3 --replication-factor 2)
+
+kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --create --partitions 3 --replication-factor 1
+
+kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --describe
+
+kafka-topics.sh --bootstrap-server localhost:9092 --topic second_topic --create --partitions 6 --replication-factor 1
+
+kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+kafka-topics.sh --bootstrap-server localhost:9092 --topic second_topic --delete
+
+kafka-topics.sh --bootstrap-server localhost:9092 --list
+
