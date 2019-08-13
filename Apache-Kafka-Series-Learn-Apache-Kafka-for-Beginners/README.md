@@ -64,3 +64,35 @@ kafka-topics.sh --bootstrap-server localhost:9092 --topic second_topic --delete
 
 kafka-topics.sh --bootstrap-server localhost:9092 --list
 
+
+### section 6, lecture 33
+
+zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+
+kafka-console-producer.sh
+
+kafka-console-producer.sh --broker-list localhost:9092 --topic first_topic
+
+kafka-console-producer.sh --broker-list localhost:9092 --topic first_topic --producer-property asks=all
+
+kafka-console-producer.sh --broker-list localhost:9092 --topic new_topic
+
+kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+kafka-topics.sh --bootstrap-server localhost:9092 --topic new_topic --describe
+
+
+nano $KAFKA_HOME/config/server.properties
+
+num.partitions=3
+
+
+kafka-console-producer.sh --broker-list localhost:9092 --topic new_topic_2
+
+kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+kafka-topics.sh --bootstrap-server localhost:9092 --topic new_topic_2 --describe
+
