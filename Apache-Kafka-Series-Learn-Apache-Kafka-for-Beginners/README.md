@@ -179,3 +179,14 @@ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-appl
 kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --shift-by -2 --execute --topic first_topic
 
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --group my-first-application
+
+
+### section 6, lecture 38
+
+kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic --property parse.key=true --property key.separator=,
+
+> key,value
+
+> another key,another value
+
+kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning --property print.key=true --property key.separator=,
