@@ -96,3 +96,19 @@ kafka-topics.sh --bootstrap-server localhost:9092 --list
 
 kafka-topics.sh --bootstrap-server localhost:9092 --topic new_topic_2 --describe
 
+
+### section 6, lecture 34
+
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+
+kafka-console-consumer.sh
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic
+
+kafka-console-producer.sh --broker-list localhost:9092 --topic first_topic
+
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --from-beginning
