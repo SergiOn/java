@@ -112,3 +112,20 @@ kafka-console-producer.sh --broker-list localhost:9092 --topic first_topic
 
 
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --from-beginning
+
+
+### section 6, lecture 35
+
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --group my-first-application
+
+kafka-console-producer.sh --broker-list localhost:9092 --topic first_topic
+
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --group my-second-application --from-beginning
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --group my-second-application
