@@ -153,3 +153,29 @@ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --group my-first-application
 
 kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
+
+
+### section 6, lecture 37
+
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --to-earliest
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --to-earliest --execute
+
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --to-earliest --execute --topic first_topic
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --group my-first-application
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
+
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --shift-by 2 --execute --topic first_topic
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --shift-by -2 --execute --topic first_topic
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --group my-first-application
