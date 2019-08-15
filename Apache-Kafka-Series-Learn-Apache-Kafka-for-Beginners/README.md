@@ -7,6 +7,11 @@ https://github.com/SergiOn/kafka-beginners-course
 https://github.com/simplesteph/kafka-beginners-course
 
 
+## Links
+
+https://kafka.apache.org/documentation/#producerconfigs
+
+
 ## Commands
 
 kafka-topics.sh
@@ -190,3 +195,14 @@ kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic --proper
 > another key,another value
 
 kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning --property print.key=true --property key.separator=,
+
+
+### section 7, lecture 45
+
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --group my-third-application
+
