@@ -4,9 +4,7 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
-import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,17 +12,15 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Properties;
-import java.util.stream.Collectors;
 
-public class ConsumerDemo {
+public class ConsumerDemoGroups {
 
     public static void main(String[] args) {
-//        System.out.println("hello word!");
 
-        Logger logger = LoggerFactory.getLogger(ConsumerDemo.class.getName());
+        Logger logger = LoggerFactory.getLogger(ConsumerDemoGroups.class.getName());
 
         final String bootstrapServers = "localhost:9092";
-        final String groupId = "my-fourth-application";
+        final String groupId = "my-fifth-application";
         final String topic = "first_topic";
 
         // create consumer config
@@ -39,10 +35,7 @@ public class ConsumerDemo {
         KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(properties);
 
         // subscribe consumer to our topic(s)
-//        consumer.subscribe(Collections.singleton(topic));
-//        consumer.subscribe(Arrays.asList(topic, "second_topic"));
         consumer.subscribe(Arrays.asList(topic));
-
 
         // poll for new data
         while (true) {
