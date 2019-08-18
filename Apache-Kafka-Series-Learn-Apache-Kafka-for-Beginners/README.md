@@ -228,3 +228,10 @@ kafka-server-start.sh $KAFKA_HOME/config/server.properties
 
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --group my-third-application
 
+
+### section 7, lecture 48
+
+zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
