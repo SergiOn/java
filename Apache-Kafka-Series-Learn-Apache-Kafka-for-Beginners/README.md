@@ -11,6 +11,8 @@ https://github.com/simplesteph/kafka-beginners-course
 
 https://kafka.apache.org/documentation/#producerconfigs
 
+https://stackoverflow.com/questions/33779127/loggerfactory-getloggerclassname-class-vs-loggerfactory-getloggerthis-getclas
+
 
 ## Commands
 
@@ -202,6 +204,16 @@ kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --f
 kafka-server-start.sh $KAFKA_HOME/config/server.properties
 
 zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --group my-third-application
+
+
+### section 7, lecture 46
+
+zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
 
 
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --group my-third-application
