@@ -13,6 +13,18 @@ https://kafka.apache.org/documentation/#producerconfigs
 
 https://stackoverflow.com/questions/33779127/loggerfactory-getloggerclassname-class-vs-loggerfactory-getloggerthis-getclas
 
+https://developer.twitter.com/en.html
+
+https://developer.twitter.com/en/apply-for-access
+
+https://developer.twitter.com/en/apps
+
+https://github.com/twitter/hbc
+
+https://www.elastic.co/guide/en/elasticsearch/client/java-rest/7.3/java-rest-high.html
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html
+
 
 ## Commands
 
