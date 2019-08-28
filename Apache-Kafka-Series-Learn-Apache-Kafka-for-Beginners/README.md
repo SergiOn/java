@@ -298,4 +298,13 @@ kafka-topics.sh --bootstrap-server localhost:9092 --list
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic twitter_tweets
 
 
+### section 9, lecture 70
+
+zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic twitter_tweets
+
 
