@@ -273,3 +273,23 @@ zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
 kafka-server-start.sh $KAFKA_HOME/config/server.properties
 
 
+### section 9, lecture 59
+
+zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+
+kafka-topics.sh --bootstrap-server localhost:9092 \
+                --create \
+                --topic twitter_tweets \
+                --partitions 6 \
+                --replication-factor 1
+
+kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic twitter_tweets
+
+
+
