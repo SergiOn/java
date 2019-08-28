@@ -33,6 +33,12 @@ https://issues.apache.org/jira/browse/KAFKA-5494
 Kafka compression
 https://blog.cloudflare.com/squeezing-the-firehose/
 
+https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html
+
+https://www.elastic.co/guide/en/elasticsearch/reference/master/removal-of-types.html
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-delete.html
+
 
 ## Commands
 
@@ -306,5 +312,83 @@ kafka-server-start.sh $KAFKA_HOME/config/server.properties
 
 
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic twitter_tweets
+
+
+### section 10, lecture 73
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home \
+    zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home \
+    kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home \
+    kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic twitter_tweets
+
+
+JAVA_HOME=/Library/Elasticsearch/elasticsearch/v7.3.1/jdk/Contents/Home elasticsearch
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home elasticsearch
+
+
+elasticsearch
+
+http://localhost:9200
+
+
+kibana
+
+http://localhost:5601/app/kibana#/dev_tools/console
+
+```bash
+GET /_cat/health?v
+
+GET /_cat/nodes?v
+
+GET /_cat/indices?v
+
+PUT /twitter
+
+GET /twitter
+
+GET /_cat/indices?v
+
+
+PUT /twitter/tweets/1
+{
+  "course": "Kafka for Beginners",
+  "instructor": "Stephane Maarek",
+  "module": "ElasticSearch"
+}
+
+GET /twitter/tweets/_search
+
+GET /twitter/_search
+
+DELETE /twitter/tweets/1
+
+PUT /twitter/_doc/1
+{
+  "course": "Kafka for Beginners",
+  "instructor": "Stephane Maarek",
+  "module": "ElasticSearch"
+}
+
+GET /twitter/_search
+
+GET /twitter/_doc/1
+
+DELETE /twitter/_doc/1
+
+GET /twitter/_doc/1
+
+GET /twitter
+
+DELETE /twitter
+
+GET /twitter
+
+```
 
 
