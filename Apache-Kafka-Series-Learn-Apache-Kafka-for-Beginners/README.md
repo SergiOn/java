@@ -30,6 +30,9 @@ https://developer.twitter.com/en/apps/16712902
 Idempotent producer
 https://issues.apache.org/jira/browse/KAFKA-5494
 
+Kafka compression
+https://blog.cloudflare.com/squeezing-the-firehose/
+
 
 ## Commands
 
