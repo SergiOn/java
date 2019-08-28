@@ -39,6 +39,12 @@ https://www.elastic.co/guide/en/elasticsearch/reference/master/removal-of-types.
 
 https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-delete.html
 
+https://www.elastic.co/guide/en/elasticsearch/client/java-rest/7.3/java-rest-high-getting-started-maven.html
+
+https://www.elastic.co/guide/en/elasticsearch/client/java-rest/7.3/java-rest-high-getting-started-initialization.html
+
+https://www.elastic.co/guide/en/elasticsearch/client/java-rest/7.3/java-rest-high-document-index.html
+
 
 ## Commands
 
@@ -335,6 +341,8 @@ JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home elastic
 elasticsearch
 
 http://localhost:9200
+
+http://localhost:9200/_cat/health?v
 
 
 kibana
