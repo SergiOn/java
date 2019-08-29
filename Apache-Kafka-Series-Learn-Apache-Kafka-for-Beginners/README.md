@@ -447,3 +447,33 @@ PUT twitter/_settings
 }
 ```
 
+
+### section 10, lecture 82
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home \
+    zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home \
+    kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+elasticsearch
+
+http://localhost:9200
+
+kibana
+
+http://localhost:5601/app/kibana#/dev_tools/console
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 \
+                         --group kafka-demo-elasticsearch \
+                         --reset-offsets \
+                         --execute \
+                         --to-earliest \
+                         --topic twitter_tweets
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group kafka-demo-elasticsearch --describe
+
+
+
+
+
