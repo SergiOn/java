@@ -49,6 +49,12 @@ https://stackoverflow.com/questions/8829468/elasticsearch-query-to-return-all-re
 
 https://www.elastic.co/guide/en/elasticsearch/reference/7.3/docs-delete-by-query.html
 
+https://www.confluent.io/hub/
+
+https://www.confluent.io/hub/jcustenborder/kafka-connect-twitter
+
+https://towardsdatascience.com/apache-kafka-platform-architecture-and-streaming-analysis-68ee8488561d
+
 
 ## Commands
 
