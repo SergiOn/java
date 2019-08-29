@@ -404,3 +404,46 @@ GET /twitter
 ```
 
 
+### section 10, lecture 79
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home \
+    zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home \
+    kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+elasticsearch
+
+http://localhost:9200
+
+kibana
+
+http://localhost:5601/app/kibana#/dev_tools/console
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group kafka-demo-elasticsearch --describe
+
+
+```bash
+GET /twitter/_doc/1166734368225800194
+
+GET /twitter/_search
+{
+  "size": "1000",
+  "query" : {
+      "match_all" : {}
+  }
+}
+
+POST /twitter/_delete_by_query
+{
+    "query" : { 
+        "match_all" : {}
+    }
+}
+
+PUT twitter/_settings
+{
+  "index.mapping.total_fields.limit": 5000
+}
+```
+

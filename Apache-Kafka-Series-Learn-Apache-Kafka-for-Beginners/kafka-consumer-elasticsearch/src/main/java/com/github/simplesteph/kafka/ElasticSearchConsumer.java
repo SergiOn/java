@@ -48,6 +48,8 @@ public class ElasticSearchConsumer {
         properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, groupId);
         properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest"); // "latest" / "earliest" / "none"
+        properties.setProperty(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "false"); // disable autocommit of offsets
+        properties.setProperty(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "10");
 
         // create consumer
         final KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
@@ -69,6 +71,8 @@ public class ElasticSearchConsumer {
         while (true) {
             final ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100)); // new in Kafka 2.0.0
 
+            logger.info("Received " + records.count() + " records");
+
             for (ConsumerRecord<String, String> record : records) {
 
                 // 2 strategies
@@ -82,10 +86,10 @@ public class ElasticSearchConsumer {
 //                final IndexRequest indexRequest = new IndexRequest(index).source(record.value(), XContentType.JSON)
                 final IndexRequest indexRequest = new IndexRequest(index).source(record.value(), XContentType.JSON).id(id);
                 final IndexResponse indexResponse = client.index(indexRequest, RequestOptions.DEFAULT);
-                logger.info(record.topic() + "_" + record.partition() + "_" + record.offset());
+//                logger.info(record.topic() + "_" + record.partition() + "_" + record.offset());
                 logger.info(id);
-                logger.info(indexResponse.getId());
-                logger.info(record.value());
+//                logger.info(indexResponse.getId());
+//                logger.info(record.value());
 
                 try {
                     // introduce a small delay
@@ -93,6 +97,17 @@ public class ElasticSearchConsumer {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+            }
+
+            logger.info("Committing offsets...");
+            consumer.commitSync();
+            logger.info("Offsets have been committed");
+
+            try {
+                // introduce a small delay
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
 
