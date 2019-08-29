@@ -1,5 +1,6 @@
 package com.github.simplesteph.kafka;
 
+import com.google.gson.JsonParser;
 import org.apache.http.HttpHost;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -22,6 +23,8 @@ import java.util.Collections;
 import java.util.Properties;
 
 public class ElasticSearchConsumer {
+
+    private final static JsonParser jsonParser = new JsonParser();
 
     private static RestHighLevelClient createClient() {
         final String protocol = "http";
@@ -67,11 +70,21 @@ public class ElasticSearchConsumer {
             final ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100)); // new in Kafka 2.0.0
 
             for (ConsumerRecord<String, String> record : records) {
+
+                // 2 strategies
+                // kafka generic id
+//                final String id = record.topic() + "_" + record.partition() + "_" + record.offset();
+
+                // twitter feed specific id
+                final String id = extractIdFromTweets(record.value());
+
                 // where we insert data to ElasticSearch
-                final IndexRequest indexRequest = new IndexRequest(index).source(record.value(), XContentType.JSON);
+//                final IndexRequest indexRequest = new IndexRequest(index).source(record.value(), XContentType.JSON)
+                final IndexRequest indexRequest = new IndexRequest(index).source(record.value(), XContentType.JSON).id(id);
                 final IndexResponse indexResponse = client.index(indexRequest, RequestOptions.DEFAULT);
-                final String id = indexResponse.getId();
+                logger.info(record.topic() + "_" + record.partition() + "_" + record.offset());
                 logger.info(id);
+                logger.info(indexResponse.getId());
                 logger.info(record.value());
 
                 try {
@@ -86,6 +99,14 @@ public class ElasticSearchConsumer {
         // close the client gracefully
         // client.close();
 
+    }
+
+    private static String extractIdFromTweets(String tweetJson) {
+        // gson library
+        return jsonParser.parse(tweetJson)
+                .getAsJsonObject()
+                .get("id_str")
+                .getAsString();
     }
 
 

@@ -45,6 +45,10 @@ https://www.elastic.co/guide/en/elasticsearch/client/java-rest/7.3/java-rest-hig
 
 https://www.elastic.co/guide/en/elasticsearch/client/java-rest/7.3/java-rest-high-document-index.html
 
+https://stackoverflow.com/questions/8829468/elasticsearch-query-to-return-all-records
+
+https://www.elastic.co/guide/en/elasticsearch/reference/7.3/docs-delete-by-query.html
+
 
 ## Commands
 
