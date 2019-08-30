@@ -55,6 +55,8 @@ https://www.confluent.io/hub/jcustenborder/kafka-connect-twitter
 
 https://towardsdatascience.com/apache-kafka-platform-architecture-and-streaming-analysis-68ee8488561d
 
+https://medium.com/@stephane.maarek/the-kafka-api-battle-producer-vs-consumer-vs-kafka-connect-vs-kafka-streams-vs-ksql-ef584274c1e
+
 
 ## Commands
 
