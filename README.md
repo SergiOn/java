@@ -327,3 +327,13 @@ https://www.udemy.com/course/apache-kafka/
 ##### About this course
 
 START HERE: Learn Apache Kafka 2.0 Ecosystem, Core Concepts, Real World Java Producers/Consumers & Big Data Architecture
+
+
+## Apache Kafka Series - Kafka Connect Hands-on Learning
+
+https://www.udemy.com/kafka-connect/
+
+##### About this course
+
+Kafka Connect - Learn How to Source Twitter Data, Store in Apache Kafka Topics & Sink in ElasticSearch and PostgreSQL
+
