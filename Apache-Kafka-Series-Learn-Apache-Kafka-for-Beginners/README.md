@@ -480,6 +480,46 @@ kafka-consumer-groups.sh --bootstrap-server localhost:9092 \
 kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group kafka-demo-elasticsearch --describe
 
 
+### section 12, lecture 88
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home \
+    zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home \
+    kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+elasticsearch
+
+http://localhost:9200
+
+kibana
+
+http://localhost:5601/app/kibana#/dev_tools/console
+
+
+### section 12, lecture 88
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home \
+    zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home \
+    kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+kafka-topics.sh --bootstrap-server localhost:9092 \
+                --create \
+                --topic important_tweets \
+                --partitions 3 \
+                --replication-factor 1
+
+kafka-topics.sh --bootstrap-server localhost:9092 --topic important_tweets --describe
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic important_tweets --from-beginning
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group demo-kafka-streams --describe
+
+
+
+
 
 
 
