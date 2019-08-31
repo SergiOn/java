@@ -26,3 +26,12 @@ docker-compose up kafka-cluster
 docker-compose down
 
 
+### section 6, lecture 23
+
+cd /Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-Kafka-Connect-Hands-on-Learning/kafka-connect
+
+docker-compose up kafka-cluster
+
+docker-compose down
+
+
