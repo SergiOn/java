@@ -78,3 +78,17 @@ docker run --rm -it --net=host landoop/fast-data-dev:2.3.0 bash
 
 kafka-console-consumer --topic demo-2-distributed --from-beginning --bootstrap-server 127.0.0.1:9092
 
+
+### section 6, lecture 28
+
+cd /Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-Kafka-Connect-Hands-on-Learning/kafka-connect
+
+docker-compose up kafka-cluster
+
+docker run --rm -it --net=host landoop/fast-data-dev:2.3.0 bash
+
+kafka-topics --create --topic demo-3-twitter --partitions 3 --replication-factor 1 --bootstrap-server 127.0.0.1:9092
+
+kafka-console-consumer --topic demo-3-twitter --bootstrap-server 127.0.0.1:9092
+
+
