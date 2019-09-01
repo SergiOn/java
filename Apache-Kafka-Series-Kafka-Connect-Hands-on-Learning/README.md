@@ -52,6 +52,29 @@ kafka-topics --bootstrap-server 127.0.0.1:9092 --list
 connect-standalone worker.properties file-stream-demo-standalone.properties
 
 
+### section 6, lecture 25
 
+cd /Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-Kafka-Connect-Hands-on-Learning/kafka-connect
 
+docker-compose up kafka-cluster
+
+docker run --rm -it --net=host landoop/fast-data-dev:2.3.0 bash
+
+kafka-topics --create --topic demo-2-distributed --partitions 3 --replication-factor 1 --bootstrap-server 127.0.0.1:9092
+
+docker ps
+
+docker exec -it <containerId> bash
+
+touch demo-file.txt
+
+echo "hi" >> demo-file.txt
+
+echo "hello" >> demo-file.txt
+
+echo "from the other side" >> demo-file.txt
+
+docker run --rm -it --net=host landoop/fast-data-dev:2.3.0 bash
+
+kafka-console-consumer --topic demo-2-distributed --from-beginning --bootstrap-server 127.0.0.1:9092
 
