@@ -337,3 +337,12 @@ https://www.udemy.com/kafka-connect/
 
 Kafka Connect - Learn How to Source Twitter Data, Store in Apache Kafka Topics & Sink in ElasticSearch and PostgreSQL
 
+
+## Apache Kafka Series - Confluent Schema Registry & REST Proxy
+
+https://www.udemy.com/confluent-schema-registry
+
+##### About this course
+
+Kafka - Master Avro, the Confluent Schema Registry and Kafka REST Proxy. Build Avro Producers/Consumers, Evolve Schemas
+
