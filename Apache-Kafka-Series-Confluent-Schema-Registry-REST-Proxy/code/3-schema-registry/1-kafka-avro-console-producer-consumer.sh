@@ -41,7 +41,7 @@ kafka-avro-console-producer \
     --property schema.registry.url=http://127.0.0.1:8081 \
     --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"},{"name": "f2", "type": "int", "default": 0}]}'
 
-{"f1": "evolution", "f2": 1 }
+{"f1": "evolution", "f2": 1}
 
 # Consume the records again from the beginning of the topic:
 kafka-avro-console-consumer --topic test-avro \
