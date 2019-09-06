@@ -9,9 +9,5 @@ https://github.com/simplesteph/kafka-avro-course
 
 https://courses.datacumulus.com/confluent-schema-registry-3r3
 
-
-## Commands
-
-
-### section -, lecture -
+https://www.confluent.io/blog/creating-data-pipeline-kafka-connect-api-architecture-operations/
 
