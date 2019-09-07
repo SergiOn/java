@@ -346,3 +346,12 @@ https://www.udemy.com/confluent-schema-registry
 
 Kafka - Master Avro, the Confluent Schema Registry and Kafka REST Proxy. Build Avro Producers/Consumers, Evolve Schemas
 
+
+## Apache Kafka Series - Kafka Cluster Setup & Administration
+
+https://www.udemy.com/kafka-cluster-setup/
+
+##### About this course
+
+Hands-On Training on ZooKeeper Quorum Setup, Kafka Cluster Setup and Administration in AWS.
+
