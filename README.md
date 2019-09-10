@@ -355,3 +355,12 @@ https://www.udemy.com/kafka-cluster-setup/
 
 Hands-On Training on ZooKeeper Quorum Setup, Kafka Cluster Setup and Administration in AWS.
 
+
+## Apache Kafka Series - Kafka Streams for Data Processing
+
+https://www.udemy.com/kafka-streams/
+
+##### About this course
+
+Learn the Kafka Streams API with Hands-On Examples, Learn Exactly Once, Build and Deploy Apps with Java 8
+
