@@ -364,3 +364,12 @@ https://www.udemy.com/kafka-streams/
 
 Learn the Kafka Streams API with Hands-On Examples, Learn Exactly Once, Build and Deploy Apps with Java 8
 
+
+## Apache Kafka Series - Kafka Security (SSL SASL Kerberos ACL)
+
+https://www.udemy.com/apache-kafka-security/
+
+##### About this course
+
+Hands-On Course - Kafka Security Setup in AWS with SSL Encryption & Authentication, SASL Kerberos, ACL in Zookeeper
+

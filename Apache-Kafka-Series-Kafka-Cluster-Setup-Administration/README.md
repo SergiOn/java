@@ -1,4 +1,4 @@
-# Apache Kafka Series - Confluent Schema Registry & REST Proxy
+# Apache Kafka Series - Kafka Cluster Setup & Administration
 
 ## Links
 
