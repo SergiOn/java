@@ -15,3 +15,5 @@ https://www.jamesward.com/2016/05/25/combining-reactive-streams-heroku-kafka-and
 
 https://www.confluent.io/blog/crossing-streams-joins-apache-kafka/
 
+https://kafka.apache.org/11/documentation/streams/developer-guide/testing.html
+
