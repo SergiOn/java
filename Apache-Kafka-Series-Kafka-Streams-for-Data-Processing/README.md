@@ -1,4 +1,4 @@
-# Apache Kafka Series - Confluent Schema Registry & REST Proxy
+# Apache Kafka Series - Kafka Streams for Data Processing
 
 ## Repositories
 
@@ -12,4 +12,6 @@ https://kafka.apache.org/0110/documentation/streams/
 https://www.quora.com/What-are-the-differences-and-similarities-between-Kafka-and-Spark-Streaming
 
 https://www.jamesward.com/2016/05/25/combining-reactive-streams-heroku-kafka-and-play-framework/
+
+https://www.confluent.io/blog/crossing-streams-joins-apache-kafka/
 
