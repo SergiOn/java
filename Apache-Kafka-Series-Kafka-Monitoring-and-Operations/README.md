@@ -1,7 +1,6 @@
 # Apache Kafka Series - Kafka Monitoring & Operations
 
-## Repositories
-
-
 ## Links
+
+https://courses.datacumulus.com/kafka-monitoring-b88
 
