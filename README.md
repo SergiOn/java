@@ -373,3 +373,12 @@ https://www.udemy.com/apache-kafka-security/
 
 Hands-On Course - Kafka Security Setup in AWS with SSL Encryption & Authentication, SASL Kerberos, ACL in Zookeeper
 
+
+## Apache Kafka Series - Kafka Monitoring & Operations
+
+https://www.udemy.com/course/kafka-monitoring-and-operations/
+
+##### About this course
+
+Kafka Monitoring Setup with Prometheus and Grafana, Kafka Operations and Kafka Cluster Upgrades Hands-On. Setup in AWS
+
