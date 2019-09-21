@@ -2,6 +2,8 @@
 
 ## Repositories
 
+https://courses.datacumulus.com/kafka-ksql-na2.html
+
 
 ## Links
 
