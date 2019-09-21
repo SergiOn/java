@@ -382,3 +382,12 @@ https://www.udemy.com/course/kafka-monitoring-and-operations/
 
 Kafka Monitoring Setup with Prometheus and Grafana, Kafka Operations and Kafka Cluster Upgrades Hands-On. Setup in AWS
 
+
+## Apache Kafka Series - KSQL for Stream Processing - Hands On!
+
+https://www.udemy.com/kafka-ksql/
+
+##### About this course
+
+Use SQL on Apache Kafka with Confluent KSQL! Build an entire taxi booking application based on KSQL stream processing
+
