@@ -19,8 +19,17 @@ https://stackoverflow.com/questions/18459945/how-to-solve-could-not-create-the-v
 
 https://docs.confluent.io/current/cli/installing.html
 
+https://stackoverflow.com/questions/35684649/how-can-i-find-kafka-config-file
+
+
+## Information
+
+Kafka config file: /Library/Kafka/confluent-5.3.1/etc/kafka
+
 
 ## Commands
+
+#### section 3, lecture 4
 
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
 
@@ -32,5 +41,48 @@ ksql
 ` ksql> `
 
 exit
+
+#### section 3, lecture 6
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+ksql
+
+`http://localhost:8088/info`
+
+`ksql>`
+list topics;
+
+kafka-topics --bootstrap-server localhost:9092 --create --partitions 1 --replication-factor 1 --topic USERS
+
+`ksql>`
+list topics;
+
+kafka-console-producer --broker-list localhost:9092 --topic USERS
+```
+Alice,US
+```
+
+`ksql>`
+print 'USERS';
+
+```
+Bob,GB
+Carole,AU
+Dan,US
+```
+
+control + c
+
+
+`ksql>`
+print 'USERS' from beginning;
+
+`ksql>`
+print 'USERS' from beginning limit 2;
+
+`ksql>`
+print 'USERS' from beginning interval 2 limit 2;
+
 
 
