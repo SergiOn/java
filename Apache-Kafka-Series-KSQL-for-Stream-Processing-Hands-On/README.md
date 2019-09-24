@@ -37,6 +37,12 @@ confluent local status
 
 confluent local stop
 
+ksql
+` ksql> `
+
+`ksql>`
+exit
+
 
 #### section 3, lecture 4
 
@@ -176,6 +182,79 @@ show streams;
 show topics;
 
 
+#### section 4, lecture 8
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+kafka-topics --bootstrap-server localhost:9092 --create --partitions 1 --replication-factor 1 --topic USERPROFILE
+
+kafka-topics --bootstrap-server localhost:9092 --list
+
+
+```json
+{"userid": 1000, "firstname":"Alison", "lastname":"Smith", "countrycode":"GB", "rating":4.7}
+```
+
+kafka-console-producer --broker-list localhost:9092 --topic USERPROFILE << EOF
+{"userid": 1000, "firstname":"Alison", "lastname":"Smith", "countrycode":"GB", "rating":4.7}
+EOF
+
+
+`ksql>`
+list topics;
+
+`ksql>`
+CREATE STREAM userprofile (userid INT, firstname VARCHAR, lastname VARCHAR, countrycode VARCHAR, rating DOUBLE)
+WITH (VALUE_FORMAT = 'JSON', KAFKA_TOPIC = 'USERPROFILE');
+
+
+`ksql>`
+list streams;
+
+```markdown
+ Stream Name         | Kafka Topic                 | Format 
+------------------------------------------------------------
+ KSQL_PROCESSING_LOG | default_ksql_processing_log | JSON   
+ USERPROFILE         | USERPROFILE                 | JSON   
+------------------------------------------------------------
+```
+
+`ksql>`
+describe userprofile;
+
+```markdown
+Name                 : USERPROFILE
+ Field       | Type                      
+-----------------------------------------
+ ROWTIME     | BIGINT           (system) 
+ ROWKEY      | VARCHAR(STRING)  (system) 
+ USERID      | INTEGER                   
+ FIRSTNAME   | VARCHAR(STRING)           
+ LASTNAME    | VARCHAR(STRING)           
+ COUNTRYCODE | VARCHAR(STRING)           
+ RATING      | DOUBLE                    
+-----------------------------------------
+For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
+```
+
+
+`ksql>`
+select firstname, lastname, countrycode, rating from userprofile;
+
+```markdown
+Alison | Smith | GB | 4.7
+```
+
+
+kafka-console-producer --broker-list localhost:9092 --topic USERPROFILE << EOF
+{"userid": 1001, "firstname":"Bob", "lastname":"Smith", "countrycode":"US", "rating":4.2}
+EOF
+
+
+```markdown
+Alison | Smith | GB | 4.7
+Bob | Smith | US | 4.2
+```
 
 
 
