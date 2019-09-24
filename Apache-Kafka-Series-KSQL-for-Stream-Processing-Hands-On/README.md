@@ -29,6 +29,15 @@ Kafka config file: /Library/Kafka/confluent-5.3.1/etc/kafka
 
 ## Commands
 
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+confluent local start ksql-server
+
+confluent local status
+
+confluent local stop
+
+
 #### section 3, lecture 4
 
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
@@ -83,6 +92,92 @@ print 'USERS' from beginning limit 2;
 
 `ksql>`
 print 'USERS' from beginning interval 2 limit 2;
+
+
+#### section 4, lecture 7
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+`ksql>`
+list topics;
+
+`ksql>`
+create stream users_stream (name VARCHAR, countrycode VARCHAR) WITH (KAFKA_TOPIC='USERS', VALUE_FORMAT='DELIMITED');
+
+`ksql>`
+list streams;
+
+```markdown
+ Stream Name         | Kafka Topic                 | Format    
+---------------------------------------------------------------
+ KSQL_PROCESSING_LOG | default_ksql_processing_log | JSON      
+ USERS_STREAM        | USERS                       | DELIMITED 
+---------------------------------------------------------------
+```
+
+`ksql>`
+select name, countrycode from users_stream;
+
+```
+Ed,GB
+```
+
+`ksql>`
+SET 'auto.offset.reset'='earliest';
+
+`ksql>`
+select name, countrycode from users_stream;
+
+```markdown
+Alice | US
+Bob | GB
+Carole | AU
+Dan | US
+Ed | GB
+```
+
+
+`ksql>`
+select name, countrycode from users_stream limit 4;
+
+```markdown
+Alice | US
+Bob | GB
+Carole | AU
+Dan | US
+Limit Reached
+Query terminated
+```
+
+
+`ksql>`
+select countrycode, count(*) from users_stream group by countrycode;
+
+```markdown
+AU | 1
+US | 2
+GB | 2
+```
+
+
+`ksql>`
+drop stream if exists users_stream delete topic;
+
+`ksql>`
+list streams;
+
+`ksql>`
+list topics;
+
+`ksql>`
+show streams;
+
+`ksql>`
+show topics;
+
+
+
+
 
 
 
