@@ -275,5 +275,40 @@ ksql-datagen schema=./userprofile.avro format=json topic=USERPROFILE key=userid 
 print 'USERPROFILE' interval 5;
 
 
+#### section 4, lecture 10
+
+`ksql>`
+describe userprofile;
+
+```markdown
+Name                 : USERPROFILE
+ Field       | Type                      
+-----------------------------------------
+ ROWTIME     | BIGINT           (system) 
+ ROWKEY      | VARCHAR(STRING)  (system) 
+ USERID      | INTEGER                   
+ FIRSTNAME   | VARCHAR(STRING)           
+ LASTNAME    | VARCHAR(STRING)           
+ COUNTRYCODE | VARCHAR(STRING)           
+ RATING      | DOUBLE                    
+-----------------------------------------
+```
+
+`ksql>`
+select rowtime, firstname from userprofile;
+
+`ksql>`
+SELECT TIMESTAMPTOSTRING(rowtime, 'dd/MMM HH:mm') as createtime, firstname from userprofile;
+
+`ksql>`
+select TIMESTAMPTOSTRING(rowtime, 'dd/MMM HH:mm') as createtime, firstname || ' ' || ucase(lastname) as full_name from userprofile;
+
+
+
+
+
+
+
+
 
 
