@@ -257,6 +257,23 @@ Bob | Smith | US | 4.2
 ```
 
 
+#### section 4, lecture 9
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+```bash
+cd /Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-KSQL-for-Stream-Processing-Hands-On/ksql-course-master
+
+cd datagen
+cat userprofile.avro
+```
+
+ksql-datagen schema=./userprofile.avro format=json topic=USERPROFILE key=userid maxInterval=5000 iterations=100
+
+
+`ksql>`
+print 'USERPROFILE' interval 5;
+
 
 
 
