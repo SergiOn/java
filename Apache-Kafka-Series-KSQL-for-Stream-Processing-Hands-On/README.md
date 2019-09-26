@@ -304,6 +304,153 @@ SELECT TIMESTAMPTOSTRING(rowtime, 'dd/MMM HH:mm') as createtime, firstname from 
 select TIMESTAMPTOSTRING(rowtime, 'dd/MMM HH:mm') as createtime, firstname || ' ' || ucase(lastname) as full_name from userprofile;
 
 
+#### section 4, lecture 11
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+`ksql>`
+list streams;
+
+```markdown
+ Stream Name         | Kafka Topic                 | Format 
+------------------------------------------------------------
+ KSQL_PROCESSING_LOG | default_ksql_processing_log | JSON   
+ USERPROFILE         | USERPROFILE                 | JSON   
+------------------------------------------------------------
+```
+
+`ksql>`
+describe userprofile;
+
+```markdown
+Name                 : USERPROFILE
+ Field       | Type                      
+-----------------------------------------
+ ROWTIME     | BIGINT           (system) 
+ ROWKEY      | VARCHAR(STRING)  (system) 
+ USERID      | INTEGER                   
+ FIRSTNAME   | VARCHAR(STRING)           
+ LASTNAME    | VARCHAR(STRING)           
+ COUNTRYCODE | VARCHAR(STRING)           
+ RATING      | DOUBLE                    
+-----------------------------------------
+```
+
+cd /Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-KSQL-for-Stream-Processing-Hands-On/ksql-course-master
+
+`ksql>`
+run script /Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-KSQL-for-Stream-Processing-Hands-On/ksql-course-master/user_profile_pretty.ksql;
+
+```markdown
+ Message                    
+----------------------------
+ Stream created and running 
+----------------------------
+```
+
+`ksql>`
+list streams;
+
+```markdown
+ Stream Name         | Kafka Topic                 | Format 
+------------------------------------------------------------
+ KSQL_PROCESSING_LOG | default_ksql_processing_log | JSON   
+ USERPROFILE         | USERPROFILE                 | JSON   
+ USER_PROFILE_PRETTY | USER_PROFILE_PRETTY         | JSON   
+------------------------------------------------------------
+```
+
+`ksql>`
+describe extended user_profile_pretty;
+
+```markdown
+Name                 : USER_PROFILE_PRETTY
+Type                 : STREAM
+Key field            : 
+Key format           : STRING
+Timestamp field      : Not set - using <ROWTIME>
+Value format         : JSON
+Kafka topic          : USER_PROFILE_PRETTY (partitions: 1, replication: 1)
+
+ Field       | Type                      
+-----------------------------------------
+ ROWTIME     | BIGINT           (system) 
+ ROWKEY      | VARCHAR(STRING)  (system) 
+ DESCRIPTION | VARCHAR(STRING)           
+-----------------------------------------
+
+Queries that write into this STREAM
+-----------------------------------
+CSAS_USER_PROFILE_PRETTY_0 : CREATE STREAM USER_PROFILE_PRETTY WITH (REPLICAS = 1, PARTITIONS = 1, KAFKA_TOPIC = 'USER_PROFILE_PRETTY') AS SELECT concat(concat(concat(concat(concat(concat(concat(concat(USERPROFILE.FIRSTNAME, ' '), UCASE(USERPROFILE.LASTNAME)), ' from '), USERPROFILE.COUNTRYCODE), ' has a rating of '), CAST(USERPROFILE.RATING AS STRING)), ' stars. '), (CASE WHEN (USERPROFILE.RATING < 2.5) THEN 'Poor' WHEN (USERPROFILE.RATING BETWEEN 2.5 AND 4.2) THEN 'Good' ELSE 'Excellent' END)) "DESCRIPTION"
+FROM USERPROFILE USERPROFILE;
+
+For query topology and execution plan please run: EXPLAIN <QueryId>
+
+Local runtime statistics
+------------------------
+messages-per-sec:         0   total-messages:       102     last-message: 2019-09-26T14:25:38.816Z
+
+(Statistics of the local KSQL server interaction with the Kafka topic USER_PROFILE_PRETTY)
+```
+
+`ksql>`
+select description from user_profile_pretty;
+
+
+ksql-datagen schema=./ksql-course-master/userprofile.avro format=json topic=USERPROFILE key=userid maxInterval=5000 iterations=100
+
+
+`ksql>`
+drop stream user_profile_pretty;
+
+```markdown
+Cannot drop USER_PROFILE_PRETTY.
+The following queries read from this source: [].
+The following queries write into this source: [CSAS_USER_PROFILE_PRETTY_0].
+You need to terminate them before dropping USER_PROFILE_PRETTY.
+```
+
+`ksql>`
+terminate query CSAS_USER_PROFILE_PRETTY_0;
+
+`ksql>`
+drop stream user_profile_pretty;
+
+```markdown
+ Message                                                              
+----------------------------------------------------------------------
+ Source USER_PROFILE_PRETTY (topic: USER_PROFILE_PRETTY) was dropped. 
+----------------------------------------------------------------------
+```
+
+`ksql>`
+list streams;
+
+```markdown
+ Stream Name         | Kafka Topic                 | Format 
+------------------------------------------------------------
+ KSQL_PROCESSING_LOG | default_ksql_processing_log | JSON   
+ USERPROFILE         | USERPROFILE                 | JSON   
+------------------------------------------------------------
+```
+
+`ksql>`
+drop stream IF EXISTS user_profile_pretty;
+
+```markdown
+ Message                                    
+--------------------------------------------
+ Source USER_PROFILE_PRETTY does not exist. 
+--------------------------------------------
+```
+
+`ksql>`
+drop stream IF EXISTS user_profile_pretty DELETE TOPIC;
+
+
+
+
+
 
 
 
