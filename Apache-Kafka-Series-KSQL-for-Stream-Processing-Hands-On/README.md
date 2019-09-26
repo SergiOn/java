@@ -448,9 +448,117 @@ drop stream IF EXISTS user_profile_pretty;
 drop stream IF EXISTS user_profile_pretty DELETE TOPIC;
 
 
+#### section 4, lecture 12
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+kafka-topics --bootstrap-server localhost:9092 --create --partitions 1 --replication-factor 1 --topic COUNTRY-CSV
+
+kafka-topics --bootstrap-server localhost:9092 --list
+
+kafka-console-producer --broker-list localhost:9092 --topic COUNTRY-CSV --property "parse.key=true" --property "key.separator=:"
+
+```markdown
+AU:AU,Australia
+IN:IN,India
+GB:GB,UK
+US:US,United States
+GB:GB,United Kingdom
+FR:FR,France
+```
 
 
+`ksql>`
+CREATE TABLE COUNTRYTABLE (countrycode VARCHAR, countryname VARCHAR) WITH (KAFKA_TOPIC='COUNTRY-CSV', VALUE_FORMAT='DELIMITED', KEY='countrycode');
 
+```markdown
+ Message       
+---------------
+ Table created 
+---------------
+```
+
+`ksql>`
+show tables;
+
+```markdown
+ Table Name   | Kafka Topic | Format    | Windowed 
+---------------------------------------------------
+ COUNTRYTABLE | COUNTRY-CSV | DELIMITED | false    
+---------------------------------------------------
+```
+
+`ksql>`
+describe COUNTRYTABLE;
+
+```markdown
+Name                 : COUNTRYTABLE
+ Field       | Type                      
+-----------------------------------------
+ ROWTIME     | BIGINT           (system) 
+ ROWKEY      | VARCHAR(STRING)  (system) 
+ COUNTRYCODE | VARCHAR(STRING)           
+ COUNTRYNAME | VARCHAR(STRING)           
+-----------------------------------------
+For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
+```
+
+`ksql>`
+describe extended COUNTRYTABLE;
+
+```markdown
+Name                 : COUNTRYTABLE
+Type                 : TABLE
+Key field            : COUNTRYCODE
+Key format           : STRING
+Timestamp field      : Not set - using <ROWTIME>
+Value format         : DELIMITED
+Kafka topic          : COUNTRY-CSV (partitions: 1, replication: 1)
+
+ Field       | Type                      
+-----------------------------------------
+ ROWTIME     | BIGINT           (system) 
+ ROWKEY      | VARCHAR(STRING)  (system) 
+ COUNTRYCODE | VARCHAR(STRING)           
+ COUNTRYNAME | VARCHAR(STRING)           
+-----------------------------------------
+
+Local runtime statistics
+------------------------
+
+
+(Statistics of the local KSQL server interaction with the Kafka topic COUNTRY-CSV)
+```
+
+`ksql>`
+SET 'auto.offset.reset'='earliest';
+
+```markdown
+Successfully changed local property 'auto.offset.reset' to 'earliest'. Use the UNSET command to revert your change.
+```
+
+`ksql>`
+select countrycode, countryname from countrytable;
+
+```markdown
+IN | India
+US | United States
+GB | United Kingdom
+FR | France
+AU | Australia
+```
+
+`ksql>`
+select countrycode, countryname from countrytable where countrycode='GB' limit 1;
+
+```markdown
+GB | United Kingdom
+Limit Reached
+Query terminated
+```
+
+`ksql>`
+select countrycode, countryname from countrytable where countrycode='FR';
 
 
 
