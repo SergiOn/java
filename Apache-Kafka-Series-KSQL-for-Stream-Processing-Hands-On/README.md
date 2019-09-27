@@ -805,6 +805,43 @@ doesn't work
 ```
 
 
+#### section 5, lecture 16
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+kafka-topics --bootstrap-server localhost:9092 --create --partitions 1 --replication-factor 1 --topic COMPLAINTS_JSON
+
+```markdown
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+```
+
+
+`ksql>`
+CREATE STREAM complaints_json (customer_name VARCHAR , complaint_type VARCHAR, trip_cost DOUBLE, new_customer BOOLEAN)
+WITH (VALUE_FORMAT = 'JSON', KAFKA_TOPIC = 'COMPLAINTS_JSON');
+
+```markdown
+ Message        
+----------------
+ Stream created 
+----------------
+```
+
+
+`ksql>`
+select * from complaints_json;
+
+
+kafka-console-producer --broker-list localhost:9092 --topic COMPLAINTS_JSON
+
+```json
+{"customer_name":"Alice, Bob and Carole", "complaint_type":"Bad driver", "trip_cost": 22.40, "new_customer": true}
+```
+
+```json
+{"customer_name":"Bad Data", "complaint_type":"Bad driver", "trip_cost": 22.40, "new_customer": ShouldBeABoolean}
+```
+
 
 
 
