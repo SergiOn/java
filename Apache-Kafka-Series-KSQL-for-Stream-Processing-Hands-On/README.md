@@ -561,6 +561,201 @@ Query terminated
 select countrycode, countryname from countrytable where countrycode='FR';
 
 
+#### section 5, lecture 13
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+`ksql>`
+SET 'auto.offset.reset'='earliest';
+
+```markdown
+Successfully changed local property 'auto.offset.reset' to 'earliest'. Use the UNSET command to revert your change.
+```
+
+`ksql>`
+select * from userprofile;
+
+```markdown
+1569508462153 | 1000 | 1000 | Bob | Jones | IN | 3.9
+1569508463564 | 1001 | 1001 | Bob | Smith | GB | 3.4
+1569508465313 | 1002 | 1002 | Grace | Dotty | IN | 3.9
+1569508466956 | 1003 | 1003 | Dan | Jones | US | 2.2
+1569508470352 | 1004 | 1004 | Frank | Smith | IN | 4.9
+1569508472067 | 1005 | 1005 | Bob | Jones | US | 4.9
+1569508473330 | 1006 | 1006 | Frank | Fawcett | GB | 4.4
+```
+
+
+`ksql>`
+describe userprofile;
+
+```markdown
+Name                 : USERPROFILE
+ Field       | Type                      
+-----------------------------------------
+ ROWTIME     | BIGINT           (system) 
+ ROWKEY      | VARCHAR(STRING)  (system) 
+ USERID      | INTEGER                   
+ FIRSTNAME   | VARCHAR(STRING)           
+ LASTNAME    | VARCHAR(STRING)           
+ COUNTRYCODE | VARCHAR(STRING)           
+ RATING      | DOUBLE                    
+-----------------------------------------
+For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
+
+```
+
+`ksql>`
+select * from countrytable;
+
+```markdown
+1569531410180 | IN | IN | India
+1569531451742 | US | US | United States
+1569531478654 | GB | GB | United Kingdom
+1569531492574 | FR | FR | France
+1569532536477 | AU | AU | Australia
+```
+
+
+`ksql>`
+describe countrytable;
+
+```markdown
+Name                 : COUNTRYTABLE
+ Field       | Type                      
+-----------------------------------------
+ ROWTIME     | BIGINT           (system) 
+ ROWKEY      | VARCHAR(STRING)  (system) 
+ COUNTRYCODE | VARCHAR(STRING)           
+ COUNTRYNAME | VARCHAR(STRING)           
+-----------------------------------------
+For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
+```
+
+
+`ksql>`
+select countrycode, countryname from countrytable;
+
+```markdown
+IN | India
+US | United States
+GB | United Kingdom
+FR | France
+AU | Australia
+```
+
+
+`ksql>`
+select firstname, lastname, countrycode, rating from userprofile;
+
+```markdown
+Bob | Jones | IN | 3.9
+Bob | Smith | GB | 3.4
+Grace | Dotty | IN | 3.9
+Dan | Jones | US | 2.2
+Frank | Smith | IN | 4.9
+Bob | Jones | US | 4.9
+Frank | Fawcett | GB | 4.4
+```
+
+
+`ksql>`
+select up.firstname, up.lastname, up.countrycode, ct.countryname
+from USERPROFILE up
+left join COUNTRYTABLE ct on ct.countrycode = up.countrycode;
+
+```markdown
+Bob | Jones | IN | India
+Bob | Smith | GB | United Kingdom
+Grace | Dotty | IN | India
+Dan | Jones | US | United States
+Frank | Smith | IN | India
+Bob | Jones | US | United States
+Frank | Fawcett | GB | United Kingdom
+```
+
+
+`ksql>`
+create stream up_joined as
+select up.firstname
+|| ' ' || ucase(up.lastname)
+|| ' from ' || ct.countryname
+|| ' has a rating of ' || cast(rating as varchar) || ' stars.' as description
+from USERPROFILE up
+left join COUNTRYTABLE ct on ct.countrycode = up.countrycode;
+
+```markdown
+ Message                    
+----------------------------
+ Stream created and running 
+----------------------------
+```
+
+
+`ksql>`
+describe up_joined;
+
+```markdown
+Name                 : UP_JOINED
+ Field       | Type                      
+-----------------------------------------
+ ROWTIME     | BIGINT           (system) 
+ ROWKEY      | VARCHAR(STRING)  (system) 
+ DESCRIPTION | VARCHAR(STRING)           
+-----------------------------------------
+For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
+```
+
+
+`ksql>`
+describe extended up_joined;
+
+```markdown
+Name                 : UP_JOINED
+Type                 : STREAM
+Key field            : 
+Key format           : STRING
+Timestamp field      : Not set - using <ROWTIME>
+Value format         : JSON
+Kafka topic          : UP_JOINED (partitions: 1, replication: 1)
+
+ Field       | Type                      
+-----------------------------------------
+ ROWTIME     | BIGINT           (system) 
+ ROWKEY      | VARCHAR(STRING)  (system) 
+ DESCRIPTION | VARCHAR(STRING)           
+-----------------------------------------
+
+Queries that write into this STREAM
+-----------------------------------
+CSAS_UP_JOINED_1 : CREATE STREAM UP_JOINED WITH (REPLICAS = 1, PARTITIONS = 1, KAFKA_TOPIC = 'UP_JOINED') AS SELECT concat(concat(concat(concat(concat(concat(concat(UP.FIRSTNAME, ' '), UCASE(UP.LASTNAME)), ' from '), CT.COUNTRYNAME), ' has a rating of '), CAST(UP.RATING AS STRING)), ' stars.') "DESCRIPTION"
+FROM USERPROFILE UP
+LEFT OUTER JOIN COUNTRYTABLE CT ON ((CT.COUNTRYCODE = UP.COUNTRYCODE));
+
+For query topology and execution plan please run: EXPLAIN <QueryId>
+
+Local runtime statistics
+------------------------
+messages-per-sec:         0   total-messages:       109     last-message: 2019-09-27T11:27:58.782Z
+
+(Statistics of the local KSQL server interaction with the Kafka topic UP_JOINED)
+```
+
+
+`ksql>`
+select * from up_joined;
+
+```markdown
+1569508462153 | IN | Bob JONES from India has a rating of 3.9 stars.
+1569508463564 | GB | Bob SMITH from United Kingdom has a rating of 3.4 stars.
+1569508465313 | IN | Grace DOTTY from India has a rating of 3.9 stars.
+1569508466956 | US | Dan JONES from United States has a rating of 2.2 stars.
+1569508470352 | IN | Frank SMITH from India has a rating of 4.9 stars.
+1569508472067 | US | Bob JONES from United States has a rating of 4.9 stars.
+1569508473330 | GB | Frank FAWCETT from United Kingdom has a rating of 4.4 stars.
+```
+
+
 
 
 
