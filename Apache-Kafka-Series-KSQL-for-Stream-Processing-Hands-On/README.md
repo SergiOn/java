@@ -843,10 +843,78 @@ kafka-console-producer --broker-list localhost:9092 --topic COMPLAINTS_JSON
 ```
 
 
+#### section 5, lecture 17
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+kafka-avro-console-producer  --broker-list localhost:9092 --topic COMPLAINTS_AVRO --property value.schema='
+{
+  "type": "record",
+  "name": "myrecord",
+  "fields": [
+      {"name": "customer_name",  "type": "string" }
+    , {"name": "complaint_type", "type": "string" }
+    , {"name": "trip_cost", "type": "float" }
+    , {"name": "new_customer", "type": "boolean"}
+  ]
+}'
+{"customer_name":"Carol", "complaint_type":"Late arrival", "trip_cost": 19.60, "new_customer": false}
 
 
+`ksql>`
+list topics;
+
+```markdown
+ Kafka Topic                 | Registered | Partitions | Partition Replicas | Consumers | ConsumerGroups 
+---------------------------------------------------------------------------------------------------------
+ _confluent-metrics          | false      | 12         | 1                  | 0         | 0              
+ _confluent-monitoring       | false      | 1          | 1                  | 0         | 0              
+ _schemas                    | false      | 1          | 1                  | 0         | 0              
+ COMPLAINTS_AVRO             | false      | 1          | 1                  | 0         | 0              
+ COMPLAINTS_CSV              | true       | 1          | 1                  | 0         | 0              
+ COMPLAINTS_JSON             | true       | 1          | 1                  | 0         | 0              
+ COUNTRY-CSV                 | true       | 1          | 1                  | 1         | 1              
+ default_ksql_processing_log | true       | 1          | 1                  | 0         | 0              
+ UP_JOINED                   | true       | 1          | 1                  | 0         | 0              
+ USER_PROFILE_PRETTY         | false      | 1          | 1                  | 0         | 0              
+ USERPROFILE                 | true       | 1          | 1                  | 1         | 1              
+---------------------------------------------------------------------------------------------------------
+```
 
 
+`ksql>`
+print COMPLAINTS_AVRO;
+
+`ksql>`
+print COMPLAINTS_AVRO from beginning;
+
+`ksql>`
+create stream complaints_avro with (kafka_topic='COMPLAINTS_AVRO', value_format='AVRO');
+
+```markdown
+ Message        
+----------------
+ Stream created 
+----------------
+```
+
+
+`ksql>`
+select * from complaints_avro;
+
+
+kafka-avro-console-producer  --broker-list localhost:9092 --topic COMPLAINTS_AVRO --property value.schema='
+{
+  "type": "record",
+  "name": "myrecord",
+  "fields": [
+      {"name": "customer_name",  "type": "string" }
+    , {"name": "complaint_type", "type": "string" }
+    , {"name": "trip_cost", "type": "float" }
+    , {"name": "new_customer", "type": "boolean"}
+  ]
+}'
+{"customer_name":"Bad Data", "complaint_type":"Bad driver", "trip_cost": 22.40, "new_customer": ShouldBeABoolean}
 
 
 
