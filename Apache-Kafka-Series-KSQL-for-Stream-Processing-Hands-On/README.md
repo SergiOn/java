@@ -756,6 +756,59 @@ select * from up_joined;
 ```
 
 
+#### section 5, lecture 15
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+kafka-topics --bootstrap-server localhost:9092 --create --partitions 1 --replication-factor 1 --topic COMPLAINTS_CSV
+
+```markdown
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+```
+
+
+`ksql>`
+CREATE STREAM complaints_csv (customer_name VARCHAR , complaint_type VARCHAR, trip_cost DOUBLE, new_customer BOOLEAN)
+WITH (VALUE_FORMAT = 'DELIMITED', KAFKA_TOPIC = 'COMPLAINTS_CSV');
+
+```markdown
+ Message        
+----------------
+ Stream created 
+----------------
+```
+
+`ksql>`
+select * from complaints_csv;
+
+kafka-console-producer --broker-list localhost:9092 --topic COMPLAINTS_CSV
+
+```markdown
+Alice, Late arrival, 43.10, true
+```
+
+`ksql>`
+```markdown
+1569585564032 | null | Alice |  Late arrival | 43.1 | false
+```
+
+```markdown
+Alice, Bob and Carole, Bad driver, 43.10, true
+```
+
+
+confluent local log ksql-server
+
+confluent local log ksql-server -f
+```markdown
+doesn't work
+```
+
+
+
+
+
+
 
 
 
