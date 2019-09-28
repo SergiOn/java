@@ -917,6 +917,78 @@ kafka-avro-console-producer  --broker-list localhost:9092 --topic COMPLAINTS_AVR
 {"customer_name":"Bad Data", "complaint_type":"Bad driver", "trip_cost": 22.40, "new_customer": ShouldBeABoolean}
 
 
+#### section 5, lecture 18
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+ksql
+
+`ksql>`
+SET 'auto.offset.reset'='earliest';
+
+
+confluent local status
+
+confluent local start
+
+confluent local status
+
+confluent local stop
+
+confluent local start
+
+confluent local status
+
+
+http://localhost:9021/clusters
+
+
+kafka-avro-console-producer  --broker-list localhost:9092 --topic COMPLAINTS_AVRO --property value.schema='
+{
+  "type": "record",
+  "name": "myrecord",
+  "fields": [
+      {"name": "customer_name",  "type": "string" }
+    , {"name": "complaint_type", "type": "string" }
+    , {"name": "trip_cost", "type": "float" }
+    , {"name": "new_customer", "type": "boolean"}
+    , {"name": "number_of_rides", "type": "int", "default" : 1}
+  ]
+}'
+
+```json
+{"customer_name":"Ed", "complaint_type":"Dirty car", "trip_cost": 29.10, "new_customer": false, "number_of_rides": 22}
+```
+
+
+curl -s -X GET http://localhost:8081/subjects/COMPLAINTS_AVRO-value/versions
+
+curl -s -X GET http://localhost:8081/subjects/COMPLAINTS_AVRO-value/versions/1 | jq '.'
+
+curl -s -X GET http://localhost:8081/subjects/COMPLAINTS_AVRO-value/versions/2 | jq '.'
+
+
+`ksql>`
+select * from complaints_avro;
+
+`ksql>`
+describe complaints_avro;
+
+`ksql>`
+create stream complaints_avro_v2 with (kafka_topic='COMPLAINTS_AVRO', value_format='AVRO');
+
+`ksql>`
+list streams;
+
+`ksql>`
+describe complaints_avro_v2;
+
+`ksql>`
+select * from complaints_avro_v2;
+
+
+
+
 
 
 
