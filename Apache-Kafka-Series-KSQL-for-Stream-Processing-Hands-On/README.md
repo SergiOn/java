@@ -987,6 +987,81 @@ describe complaints_avro_v2;
 select * from complaints_avro_v2;
 
 
+#### section 5, lecture 19
+
+cd /Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-KSQL-for-Stream-Processing-Hands-On/ksql-course-master
+
+cat demo-weather.json | kafka-console-producer --broker-list localhost:9092 --topic WEATHERNESTED
+
+
+`ksql>`
+CREATE STREAM weather (
+    city STRUCT <name VARCHAR, country VARCHAR, latitude DOUBLE, longitude DOUBLE>,
+    description VARCHAR,
+    clouds BIGINT,
+    deg BIGINT,
+    humidity BIGINT,
+    pressure DOUBLE,
+    rain DOUBLE
+) WITH (KAFKA_TOPIC='WEATHERNESTED', VALUE_FORMAT='JSON');
+
+```markdown
+ Message        
+----------------
+ Stream created 
+----------------
+```
+
+
+`ksql>`
+select * from weather;
+
+```markdown
+1569705650823 | null | {NAME=Sydney, COUNTRY=AU, LATITUDE=-33.8688, LONGITUDE=151.2093} | light rain | 92 | 26 | 94 | 1025.12 | 1.25
+1569705650831 | null | {NAME=Seattle, COUNTRY=US, LATITUDE=47.6062, LONGITUDE=-122.3321} | heavy rain | 92 | 19 | 94 | 1025.12 | 7.0
+1569705650831 | null | {NAME=San Francisco, COUNTRY=US, LATITUDE=37.7749, LONGITUDE=-122.4194} | fog | 92 | 19 | 94 | 1025.12 | 10.0
+1569705650831 | null | {NAME=San Jose, COUNTRY=US, LATITUDE=37.3382, LONGITUDE=-121.8863} | light rain | 92 | 23 | 94 | 1025.12 | 3.0
+1569705650831 | null | {NAME=Fresno, COUNTRY=US, LATITUDE=36.7378, LONGITUDE=-119.7871} | heavy rain | 92 | 22 | 94 | 1025.12 | 6.0
+1569705650831 | null | {NAME=Los Angeles, COUNTRY=US, LATITUDE=34.0522, LONGITUDE=-118.2437} | haze | 92 | 19 | 94 | 1025.12 | 2.0
+1569705650831 | null | {NAME=San Diego, COUNTRY=US, LATITUDE=32.7157, LONGITUDE=-117.1611} | fog | 92 | 19 | 94 | 1025.12 | 2.0
+1569705650831 | null | {NAME=Birmingham, COUNTRY=UK, LATITUDE=52.4862, LONGITUDE=-1.8904} | light rain | 92 | 26 | 94 | 1025.12 | 4.0
+1569705650831 | null | {NAME=London, COUNTRY=GB, LATITUDE=51.5074, LONGITUDE=-0.1278} | heavy rain | 92 | 19 | 94 | 1025.12 | 8.0
+1569705650831 | null | {NAME=Manchester, COUNTRY=GB, LATITUDE=53.4808, LONGITUDE=-2.2426} | fog | 92 | 26 | 94 | 1025.12 | 3.0
+1569705650831 | null | {NAME=Bristol, COUNTRY=GB, LATITUDE=51.4545, LONGITUDE=-2.5879} | light rain | 92 | 19 | 94 | 1025.12 | 3.0
+1569705650831 | null | {NAME=Newcastle, COUNTRY=GB, LATITUDE=54.9783, LONGITUDE=-1.6178} | heavy rain | 92 | 19 | 94 | 1025.12 | 12.0
+1569705650831 | null | {NAME=Liverpool, COUNTRY=GB, LATITUDE=53.4084, LONGITUDE=-2.9916} | haze | 92 | 23 | 94 | 1025.12 | 3.0
+```
+
+
+`ksql>`
+describe weather;
+
+```markdown
+Name                 : WEATHER
+ Field       | Type                                                                                     
+--------------------------------------------------------------------------------------------------------
+ ROWTIME     | BIGINT           (system)                                                                
+ ROWKEY      | VARCHAR(STRING)  (system)                                                                
+ CITY        | STRUCT<NAME VARCHAR(STRING), COUNTRY VARCHAR(STRING), LATITUDE DOUBLE, LONGITUDE DOUBLE> 
+ DESCRIPTION | VARCHAR(STRING)                                                                          
+ CLOUDS      | BIGINT                                                                                   
+ DEG         | BIGINT                                                                                   
+ HUMIDITY    | BIGINT                                                                                   
+ PRESSURE    | DOUBLE                                                                                   
+ RAIN        | DOUBLE                                                                                   
+--------------------------------------------------------------------------------------------------------
+For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
+```
+
+
+`ksql>`
+SELECT city->name AS city_name, city->country AS city_country, city->latitude as latitude, city->longitude as longitude, description, rain from weather;
+
+
+
+
+
+
 
 
 
