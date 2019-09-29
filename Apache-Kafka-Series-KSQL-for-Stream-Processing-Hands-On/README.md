@@ -1057,8 +1057,263 @@ For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
 `ksql>`
 SELECT city->name AS city_name, city->country AS city_country, city->latitude as latitude, city->longitude as longitude, description, rain from weather;
 
+```markdown
+Sydney | AU | -33.8688 | 151.2093 | light rain | 1.25
+Seattle | US | 47.6062 | -122.3321 | heavy rain | 7.0
+San Francisco | US | 37.7749 | -122.4194 | fog | 10.0
+San Jose | US | 37.3382 | -121.8863 | light rain | 3.0
+Fresno | US | 36.7378 | -119.7871 | heavy rain | 6.0
+Los Angeles | US | 34.0522 | -118.2437 | haze | 2.0
+San Diego | US | 32.7157 | -117.1611 | fog | 2.0
+Birmingham | UK | 52.4862 | -1.8904 | light rain | 4.0
+London | GB | 51.5074 | -0.1278 | heavy rain | 8.0
+Manchester | GB | 53.4808 | -2.2426 | fog | 3.0
+Bristol | GB | 51.4545 | -2.5879 | light rain | 3.0
+Newcastle | GB | 54.9783 | -1.6178 | heavy rain | 12.0
+Liverpool | GB | 53.4084 | -2.9916 | haze | 3.0
+```
 
 
+#### section 5, lecture 20
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+`ksql>`
+list streams;
+
+```markdown
+ Stream Name         | Kafka Topic                 | Format    
+---------------------------------------------------------------
+ COMPLAINTS_CSV      | COMPLAINTS_CSV              | DELIMITED 
+ WEATHER             | WEATHERNESTED               | JSON      
+ KSQL_PROCESSING_LOG | default_ksql_processing_log | JSON      
+ UP_JOINED           | UP_JOINED                   | JSON      
+ COMPLAINTS_AVRO     | COMPLAINTS_AVRO             | AVRO      
+ USERPROFILE         | USERPROFILE                 | JSON      
+ COMPLAINTS_AVRO_V2  | COMPLAINTS_AVRO             | AVRO      
+ COMPLAINTS_JSON     | COMPLAINTS_JSON             | JSON      
+---------------------------------------------------------------
+```
+
+
+`ksql>`
+create stream weatherraw with (value_format='AVRO') as
+SELECT city->name AS city_name, city->country AS city_country, city->latitude as latitude, city->longitude as longitude, description, rain from weather;
+
+```markdown
+ Message                    
+----------------------------
+ Stream created and running 
+----------------------------
+```
+
+
+`ksql>`
+list streams;
+
+```markdown
+ Stream Name         | Kafka Topic                 | Format    
+---------------------------------------------------------------
+ COMPLAINTS_CSV      | COMPLAINTS_CSV              | DELIMITED 
+ WEATHER             | WEATHERNESTED               | JSON      
+ KSQL_PROCESSING_LOG | default_ksql_processing_log | JSON      
+ UP_JOINED           | UP_JOINED                   | JSON      
+ COMPLAINTS_AVRO     | COMPLAINTS_AVRO             | AVRO      
+ USERPROFILE         | USERPROFILE                 | JSON      
+ COMPLAINTS_AVRO_V2  | COMPLAINTS_AVRO             | AVRO      
+ WEATHERRAW          | WEATHERRAW                  | AVRO      
+ COMPLAINTS_JSON     | COMPLAINTS_JSON             | JSON      
+---------------------------------------------------------------
+```
+
+
+`ksql>`
+describe extended weatherraw;
+
+```markdown
+Name                 : WEATHERRAW
+Type                 : STREAM
+Key field            : 
+Key format           : STRING
+Timestamp field      : Not set - using <ROWTIME>
+Value format         : AVRO
+Kafka topic          : WEATHERRAW (partitions: 1, replication: 1)
+
+ Field        | Type                      
+------------------------------------------
+ ROWTIME      | BIGINT           (system) 
+ ROWKEY       | VARCHAR(STRING)  (system) 
+ CITY_NAME    | VARCHAR(STRING)           
+ CITY_COUNTRY | VARCHAR(STRING)           
+ LATITUDE     | DOUBLE                    
+ LONGITUDE    | DOUBLE                    
+ DESCRIPTION  | VARCHAR(STRING)           
+ RAIN         | DOUBLE                    
+------------------------------------------
+
+Queries that write into this STREAM
+-----------------------------------
+CSAS_WEATHERRAW_2 : CREATE STREAM WEATHERRAW WITH (REPLICAS = 1, PARTITIONS = 1, VALUE_FORMAT = 'AVRO', KAFKA_TOPIC = 'WEATHERRAW') AS SELECT
+  FETCH_FIELD_FROM_STRUCT(WEATHER.CITY, 'NAME') "CITY_NAME"
+, FETCH_FIELD_FROM_STRUCT(WEATHER.CITY, 'COUNTRY') "CITY_COUNTRY"
+, FETCH_FIELD_FROM_STRUCT(WEATHER.CITY, 'LATITUDE') "LATITUDE"
+, FETCH_FIELD_FROM_STRUCT(WEATHER.CITY, 'LONGITUDE') "LONGITUDE"
+, WEATHER.DESCRIPTION "DESCRIPTION"
+, WEATHER.RAIN "RAIN"
+FROM WEATHER WEATHER;
+
+For query topology and execution plan please run: EXPLAIN <QueryId>
+
+Local runtime statistics
+------------------------
+messages-per-sec:         0   total-messages:        13     last-message: 2019-09-29T10:46:28.055Z
+
+(Statistics of the local KSQL server interaction with the Kafka topic WEATHERRAW)
+```
+
+
+`ksql>`
+select rowkey, city_name from weatherraw;
+
+```markdown
+null | Sydney
+null | Seattle
+null | San Francisco
+null | San Jose
+null | Fresno
+null | Los Angeles
+null | San Diego
+null | Birmingham
+null | London
+null | Manchester
+null | Bristol
+null | Newcastle
+null | Liverpool
+```
+
+
+`ksql>`
+create stream weatherrekeyed as select * from weatherraw partition by city_name;
+
+```markdown
+ Message                    
+----------------------------
+ Stream created and running 
+----------------------------
+```
+
+
+`ksql>`
+describe extended weatherrekeyed;
+
+```markdown
+Name                 : WEATHERREKEYED
+Type                 : STREAM
+Key field            : CITY_NAME
+Key format           : STRING
+Timestamp field      : Not set - using <ROWTIME>
+Value format         : AVRO
+Kafka topic          : WEATHERREKEYED (partitions: 1, replication: 1)
+
+ Field        | Type                      
+------------------------------------------
+ ROWTIME      | BIGINT           (system) 
+ ROWKEY       | VARCHAR(STRING)  (system) 
+ CITY_NAME    | VARCHAR(STRING)           
+ CITY_COUNTRY | VARCHAR(STRING)           
+ LATITUDE     | DOUBLE                    
+ LONGITUDE    | DOUBLE                    
+ DESCRIPTION  | VARCHAR(STRING)           
+ RAIN         | DOUBLE                    
+------------------------------------------
+
+Queries that write into this STREAM
+-----------------------------------
+CSAS_WEATHERREKEYED_3 : CREATE STREAM WEATHERREKEYED WITH (REPLICAS = 1, PARTITIONS = 1, KAFKA_TOPIC = 'WEATHERREKEYED') AS SELECT *
+FROM WEATHERRAW WEATHERRAW
+PARTITION BY CITY_NAME;
+
+For query topology and execution plan please run: EXPLAIN <QueryId>
+
+Local runtime statistics
+------------------------
+messages-per-sec:      0.13   total-messages:        13     last-message: 2019-09-29T10:53:00.443Z
+
+(Statistics of the local KSQL server interaction with the Kafka topic WEATHERREKEYED)
+```
+
+
+`ksql>`
+select rowkey, city_name from weatherrekeyed;
+
+```markdown
+Sydney | Sydney
+Seattle | Seattle
+San Francisco | San Francisco
+San Jose | San Jose
+Fresno | Fresno
+Los Angeles | Los Angeles
+San Diego | San Diego
+Birmingham | Birmingham
+London | London
+Manchester | Manchester
+Bristol | Bristol
+Newcastle | Newcastle
+Liverpool | Liverpool
+```
+
+
+`ksql>`
+create table weathernow with (kafka_topic='WEATHERREKEYED', value_format='AVRO', key='CITY_NAME');
+
+```markdown
+ Message       
+---------------
+ Table created 
+---------------
+```
+
+
+`ksql>`
+select * from weathernow;
+
+```markdown
+1569705650823 | Sydney | Sydney | AU | -33.8688 | 151.2093 | light rain | 1.25
+1569705650831 | Seattle | Seattle | US | 47.6062 | -122.3321 | heavy rain | 7.0
+1569705650831 | San Francisco | San Francisco | US | 37.7749 | -122.4194 | fog | 10.0
+1569705650831 | San Jose | San Jose | US | 37.3382 | -121.8863 | light rain | 3.0
+1569705650831 | Fresno | Fresno | US | 36.7378 | -119.7871 | heavy rain | 6.0
+1569705650831 | Los Angeles | Los Angeles | US | 34.0522 | -118.2437 | haze | 2.0
+1569705650831 | San Diego | San Diego | US | 32.7157 | -117.1611 | fog | 2.0
+1569705650831 | Birmingham | Birmingham | UK | 52.4862 | -1.8904 | light rain | 4.0
+1569705650831 | London | London | GB | 51.5074 | -0.1278 | heavy rain | 8.0
+1569705650831 | Manchester | Manchester | GB | 53.4808 | -2.2426 | fog | 3.0
+1569705650831 | Bristol | Bristol | GB | 51.4545 | -2.5879 | light rain | 3.0
+1569705650831 | Newcastle | Newcastle | GB | 54.9783 | -1.6178 | heavy rain | 12.0
+1569705650831 | Liverpool | Liverpool | GB | 53.4084 | -2.9916 | haze | 3.0
+```
+
+
+`ksql>`
+select * from weathernow where city_name = 'San Diego';
+
+```markdown
+1569705650831 | San Diego | San Diego | US | 32.7157 | -117.1611 | fog | 2.0
+```
+
+
+cd /Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-KSQL-for-Stream-Processing-Hands-On/ksql-course-master
+
+cat demo-weather-changes.json | kafka-console-producer --broker-list localhost:9092 --topic WEATHERNESTED
+
+
+`ksql>`
+select * from weathernow where city_name = 'San Diego';
+
+
+```markdown
+1569755035454 | San Diego | San Diego | US | 32.7157 | -117.1611 | SUNNY | 2.0
+```
 
 
 
