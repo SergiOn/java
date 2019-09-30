@@ -1459,8 +1459,99 @@ Mr. Speedy | Australia | 2.4
 ```
 
 
+#### section 5, lecture 22
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+cd /Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-KSQL-for-Stream-Processing-Hands-On/ksql-course-master
+
+`terminal #1`
+ksql-datagen schema=./datagen/riderequest-europe.avro format=avro topic=riderequest-europe key=rideid maxInterval=5000 iterations=10000
+
+`terminal #2`
+ksql-datagen schema=./datagen/riderequest-america.avro format=avro topic=riderequest-america key=rideid maxInterval=5000 iterations=10000
 
 
+`ksql>`
+create stream rr_america_raw with (kafka_topic='riderequest-america', value_format='avro');
+
+```markdown
+ Message        
+----------------
+ Stream created 
+----------------
+```
+
+
+`ksql>`
+create stream rr_europe_raw with (kafka_topic='riderequest-europe', value_format='avro');
+
+```markdown
+ Message        
+----------------
+ Stream created 
+----------------
+```
+
+
+`ksql>`
+select * from rr_america_raw;
+
+```markdown
+1569877209385 | ride_919 | 1569877208980 | 41.89619374588752 | -106.29139265923145 | ride_919 | Wendy | Seattle
+1569877212153 | ride_228 | 1569877212153 | 44.479693451566106 | -114.36813937507324 | ride_228 | Niaj | San Francisco
+1569877215456 | ride_146 | 1569877215455 | 37.72891168387186 | -107.9027179323889 | ride_146 | Judy | San Diego
+1569877219761 | ride_771 | 1569877219761 | 42.413920324005886 | -116.03196440320018 | ride_771 | Mike | Seattle
+```
+
+
+`ksql>`
+select * from rr_europe_raw;
+
+```markdown
+1569877203146 | ride_176 | 1569877202697 | 51.989351598063095 | 1.5244433018606065 | ride_176 | Carol | Newcastle
+1569877204763 | ride_187 | 1569877204763 | 53.35268098469431 | 1.8985104513063682 | ride_187 | Bob | Newcastle
+1569877208299 | ride_712 | 1569877208298 | 51.93726956674109 | -0.5684191907781968 | ride_712 | Eve | Birmingham
+1569877209170 | ride_458 | 1569877209169 | 52.55164715749092 | 0.5727971739495938 | ride_458 | Heidi | London
+```
+
+
+`ksql>`
+create stream rr_word as select 'Europe' as data_source, * from rr_europe_raw;
+
+```markdown
+ Message                    
+----------------------------
+ Stream created and running 
+----------------------------
+```
+
+
+`ksql>`
+insert into rr_word select 'Americas' as data_source, * from rr_america_raw;
+
+```markdown
+ Message                       
+-------------------------------
+ Insert Into query is running. 
+-------------------------------
+```
+
+
+`ksql>`
+select * from rr_word;
+
+```markdown
+1569877203146 | ride_176 | Europe | 1569877202697 | 51.989351598063095 | 1.5244433018606065 | ride_176 | Carol | Newcastle
+1569877204763 | ride_187 | Europe | 1569877204763 | 53.35268098469431 | 1.8985104513063682 | ride_187 | Bob | Newcastle
+1569877208299 | ride_712 | Europe | 1569877208298 | 51.93726956674109 | -0.5684191907781968 | ride_712 | Eve | Birmingham
+1569877209170 | ride_458 | Europe | 1569877209169 | 52.55164715749092 | 0.5727971739495938 | ride_458 | Heidi | London
+
+1569877209385 | ride_919 | Americas | 1569877208980 | 41.89619374588752 | -106.29139265923145 | ride_919 | Wendy | Seattle
+1569877212153 | ride_228 | Americas | 1569877212153 | 44.479693451566106 | -114.36813937507324 | ride_228 | Niaj | San Francisco
+1569877215456 | ride_146 | Americas | 1569877215455 | 37.72891168387186 | -107.9027179323889 | ride_146 | Judy | San Diego
+1569877219761 | ride_771 | Americas | 1569877219761 | 42.413920324005886 | -116.03196440320018 | ride_771 | Mike | Seattle
+```
 
 
 
