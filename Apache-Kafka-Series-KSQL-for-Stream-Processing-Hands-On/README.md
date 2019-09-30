@@ -205,7 +205,7 @@ list topics;
 
 `ksql>`
 CREATE STREAM userprofile (userid INT, firstname VARCHAR, lastname VARCHAR, countrycode VARCHAR, rating DOUBLE)
-WITH (VALUE_FORMAT = 'JSON', KAFKA_TOPIC = 'USERPROFILE');
+    WITH (VALUE_FORMAT = 'JSON', KAFKA_TOPIC = 'USERPROFILE');
 
 
 `ksql>`
@@ -250,6 +250,9 @@ kafka-console-producer --broker-list localhost:9092 --topic USERPROFILE << EOF
 {"userid": 1001, "firstname":"Bob", "lastname":"Smith", "countrycode":"US", "rating":4.2}
 EOF
 
+
+`ksql>`
+select firstname, lastname, countrycode, rating from userprofile;
 
 ```markdown
 Alison | Smith | GB | 4.7
@@ -661,8 +664,8 @@ Frank | Fawcett | GB | 4.4
 
 `ksql>`
 select up.firstname, up.lastname, up.countrycode, ct.countryname
-from USERPROFILE up
-left join COUNTRYTABLE ct on ct.countrycode = up.countrycode;
+    from USERPROFILE up
+    left join COUNTRYTABLE ct on ct.countrycode = up.countrycode;
 
 ```markdown
 Bob | Jones | IN | India
@@ -677,12 +680,12 @@ Frank | Fawcett | GB | United Kingdom
 
 `ksql>`
 create stream up_joined as
-select up.firstname
-|| ' ' || ucase(up.lastname)
-|| ' from ' || ct.countryname
-|| ' has a rating of ' || cast(rating as varchar) || ' stars.' as description
-from USERPROFILE up
-left join COUNTRYTABLE ct on ct.countrycode = up.countrycode;
+    select up.firstname
+        || ' ' || ucase(up.lastname)
+        || ' from ' || ct.countryname
+        || ' has a rating of ' || cast(rating as varchar) || ' stars.' as description
+    from USERPROFILE up
+    left join COUNTRYTABLE ct on ct.countrycode = up.countrycode;
 
 ```markdown
  Message                    
@@ -769,7 +772,7 @@ WARNING: Due to limitations in metric names, topics with a period ('.') or under
 
 `ksql>`
 CREATE STREAM complaints_csv (customer_name VARCHAR , complaint_type VARCHAR, trip_cost DOUBLE, new_customer BOOLEAN)
-WITH (VALUE_FORMAT = 'DELIMITED', KAFKA_TOPIC = 'COMPLAINTS_CSV');
+    WITH (VALUE_FORMAT = 'DELIMITED', KAFKA_TOPIC = 'COMPLAINTS_CSV');
 
 ```markdown
  Message        
@@ -818,7 +821,7 @@ WARNING: Due to limitations in metric names, topics with a period ('.') or under
 
 `ksql>`
 CREATE STREAM complaints_json (customer_name VARCHAR , complaint_type VARCHAR, trip_cost DOUBLE, new_customer BOOLEAN)
-WITH (VALUE_FORMAT = 'JSON', KAFKA_TOPIC = 'COMPLAINTS_JSON');
+    WITH (VALUE_FORMAT = 'JSON', KAFKA_TOPIC = 'COMPLAINTS_JSON');
 
 ```markdown
  Message        
@@ -1098,7 +1101,7 @@ list streams;
 
 `ksql>`
 create stream weatherraw with (value_format='AVRO') as
-SELECT city->name AS city_name, city->country AS city_country, city->latitude as latitude, city->longitude as longitude, description, rain from weather;
+    SELECT city->name AS city_name, city->country AS city_country, city->latitude as latitude, city->longitude as longitude, description, rain from weather;
 
 ```markdown
  Message                    
@@ -1314,6 +1317,152 @@ select * from weathernow where city_name = 'San Diego';
 ```markdown
 1569755035454 | San Diego | San Diego | US | 32.7157 | -117.1611 | SUNNY | 2.0
 ```
+
+
+#### section 5, lecture 21
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+cd /Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-KSQL-for-Stream-Processing-Hands-On/ksql-course-master
+
+kafka-topics --bootstrap-server localhost:9092 --create --partitions 2 --replication-factor 1 --topic DRIVER_PROFILE
+
+```markdown
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+```
+
+
+kafka-console-producer --broker-list localhost:9092 --topic DRIVER_PROFILE
+
+```json
+{"driver_name":"Mr. Speedy", "countrycode":"AU", "rating":2.4}
+```
+
+
+ksql
+
+`ksql>`
+SET 'auto.offset.reset'='earliest';
+
+`ksql>`
+CREATE STREAM DRIVER_PROFILE (driver_name VARCHAR, countrycode VARCHAR, rating DOUBLE)
+    WITH (VALUE_FORMAT='JSON', KAFKA_TOPIC='DRIVER_PROFILE');
+
+```markdown
+ Message        
+----------------
+ Stream created 
+----------------
+```
+
+
+`ksql>`
+select dp.driver_name, ct.countryname, dp.rating
+    from DRIVER_PROFILE dp
+    left join COUNTRYTABLE ct on ct.countrycode = dp.countrycode;
+
+```markdown
+Can't join DRIVER_PROFILE with COUNTRYTABLE since the number of partitions don't match. DRIVER_PROFILE partitions = 2; COUNTRYTABLE partitions = 1. Please repartition either one so that the number of partitions match.
+Statement: select dp.driver_name, ct.countryname, dp.rating
+    from DRIVER_PROFILE dp
+    left join COUNTRYTABLE ct on ct.countrycode = dp.countrycode;
+Caused by: Can't join DRIVER_PROFILE with COUNTRYTABLE since the number of
+	partitions don't match. DRIVER_PROFILE partitions = 2; COUNTRYTABLE partitions =
+	1. Please repartition either one so that the number of partitions match.
+```
+
+
+`ksql>`
+create stream driverprofile_rekeyed with (partitions=1) as select * from DRIVER_PROFILE partition by driver_name;
+
+```markdown
+ Message                    
+----------------------------
+ Stream created and running 
+----------------------------
+```
+
+
+`ksql>`
+describe extended driver_profile;
+
+```markdown
+Name                 : DRIVER_PROFILE
+Type                 : STREAM
+Key field            : 
+Key format           : STRING
+Timestamp field      : Not set - using <ROWTIME>
+Value format         : JSON
+Kafka topic          : DRIVER_PROFILE (partitions: 2, replication: 1)
+
+ Field       | Type                      
+-----------------------------------------
+ ROWTIME     | BIGINT           (system) 
+ ROWKEY      | VARCHAR(STRING)  (system) 
+ DRIVER_NAME | VARCHAR(STRING)           
+ COUNTRYCODE | VARCHAR(STRING)           
+ RATING      | DOUBLE                    
+-----------------------------------------
+
+Local runtime statistics
+------------------------
+consumer-messages-per-sec:      0.01 consumer-total-bytes:        61 consumer-total-messages:         1     last-message: 2019-09-30T09:59:43.188Z
+
+(Statistics of the local KSQL server interaction with the Kafka topic DRIVER_PROFILE)
+```
+
+
+`ksql>`
+describe extended driverprofile_rekeyed;
+
+```markdown
+Name                 : DRIVERPROFILE_REKEYED
+Type                 : STREAM
+Key field            : DRIVER_NAME
+Key format           : STRING
+Timestamp field      : Not set - using <ROWTIME>
+Value format         : JSON
+Kafka topic          : DRIVERPROFILE_REKEYED (partitions: 1, replication: 1)
+
+ Field       | Type                      
+-----------------------------------------
+ ROWTIME     | BIGINT           (system) 
+ ROWKEY      | VARCHAR(STRING)  (system) 
+ DRIVER_NAME | VARCHAR(STRING)           
+ COUNTRYCODE | VARCHAR(STRING)           
+ RATING      | DOUBLE                    
+-----------------------------------------
+
+Queries that write into this STREAM
+-----------------------------------
+CSAS_DRIVERPROFILE_REKEYED_4 : CREATE STREAM DRIVERPROFILE_REKEYED WITH (KAFKA_TOPIC = 'DRIVERPROFILE_REKEYED', REPLICAS = 1, PARTITIONS = 1) AS SELECT *
+FROM DRIVER_PROFILE DRIVER_PROFILE
+PARTITION BY DRIVER_NAME;
+
+For query topology and execution plan please run: EXPLAIN <QueryId>
+
+Local runtime statistics
+------------------------
+messages-per-sec:         0   total-messages:         1     last-message: 2019-09-30T09:59:43.188Z
+
+(Statistics of the local KSQL server interaction with the Kafka topic DRIVERPROFILE_REKEYED)
+```
+
+
+`ksql>`
+select dp2.driver_name, ct.countryname, dp2.rating
+    from DRIVERPROFILE_REKEYED dp2
+    left join COUNTRYTABLE ct on ct.countrycode = dp2.countrycode;
+
+```markdown
+Mr. Speedy | Australia | 2.4
+```
+
+
+
+
+
+
 
 
 
