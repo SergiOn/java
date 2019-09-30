@@ -1845,5 +1845,170 @@ Oscar is travelling 1563 km to San Francisco where the weather is reported as SU
 ```
 
 
+#### section 6, lecture 25
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+`ksql>`
+LIST PROPERTIES;
+
+```markdown
+ Property                                               | Default override | Effective Value                                                                                    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ ksql.access.validator.enable                           |                  | auto                                                                                               
+ ksql.avro.maps.named                                   |                  | true                                                                                               
+ ksql.extension.dir                                     |                  | ext                                                                                                
+ ksql.functions.substring.legacy.args                   |                  | false                                                                                              
+ ksql.insert.into.values.enabled                        |                  | true                                                                                               
+ ksql.internal.topic.replicas                           |                  | 1                                                                                                  
+ ksql.metrics.extension                                 |                  | NULL                                                                                               
+ ksql.metrics.tags.custom                               |                  |                                                                                                    
+ ksql.named.internal.topics                             |                  | on                                                                                                 
+ ksql.output.topic.name.prefix                          |                  |                                                                                                    
+ ksql.persistent.prefix                                 |                  | query_                                                                                             
+ ksql.query.fields.key.legacy                           |                  | false                                                                                              
+ ksql.query.persistent.active.limit                     |                  | 2147483647                                                                                         
+ ksql.schema.registry.url                               |                  | http://localhost:8081                                                                              
+ ksql.security.extension.class                          |                  | NULL                                                                                               
+ ksql.service.id                                        |                  | default_                                                                                           
+ ksql.sink.partitions                                   |                  | NULL                                                                                               
+ ksql.sink.replicas                                     |                  | NULL                                                                                               
+ ksql.sink.window.change.log.additional.retention       |                  | 1000000                                                                                            
+ ksql.streams.application.id                            | SERVER           | KSQL_REST_SERVER_DEFAULT_APP_ID                                                                    
+ ksql.streams.auto.offset.reset                         | SESSION          | earliest                                                                                           
+ ksql.streams.bootstrap.servers                         | SERVER           | localhost:9092                                                                                     
+ ksql.streams.cache.max.bytes.buffering                 | SERVER           | 10000000                                                                                           
+ ksql.streams.commit.interval.ms                        | SERVER           | 2000                                                                                               
+ ksql.streams.consumer.interceptor.classes              | SERVER           | io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor                          
+ ksql.streams.default.deserialization.exception.handler | SERVER           | io.confluent.ksql.errors.LogMetricAndContinueExceptionHandler                                      
+ ksql.streams.default.production.exception.handler      | SERVER           | io.confluent.ksql.errors.ProductionExceptionHandlerUtil$LogAndFailProductionExceptionHandler       
+ ksql.streams.num.stream.threads                        | SERVER           | 4                                                                                                  
+ ksql.streams.producer.interceptor.classes              | SERVER           | io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor                          
+ ksql.streams.state.dir                                 | SERVER           | /var/folders/hf/kcy8xkw11_lg76v2_8q41rr00000gn/T/confluent.024FnuQC/ksql-server/data/kafka-streams 
+ ksql.streams.topology.optimization                     | SERVER           | all                                                                                                
+ ksql.transient.prefix                                  |                  | transient_                                                                                         
+ ksql.udf.collect.metrics                               |                  | false                                                                                              
+ ksql.udf.enable.security.manager                       |                  | true                                                                                               
+ ksql.udfs.enabled                                      |                  | true                                                                                               
+ ksql.windowed.session.key.legacy                       |                  | false                                                                                              
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+```
+
+
+confluent local status
+
+```markdown
+    The local commands are intended for a single-node development environment
+    only, NOT for production usage. https://docs.confluent.io/current/cli/index.html
+
+control-center is [UP]
+ksql-server is [UP]
+connect is [UP]
+kafka-rest is [UP]
+schema-registry is [UP]
+kafka is [UP]
+zookeeper is [UP]
+```
+
+
+confluent local stop ksql-server
+
+```markdown
+    The local commands are intended for a single-node development environment
+    only, NOT for production usage. https://docs.confluent.io/current/cli/index.html
+
+Using CONFLUENT_CURRENT: /var/folders/hf/kcy8xkw11_lg76v2_8q41rr00000gn/T/confluent.024FnuQC
+Stopping ksql-server
+ksql-server is [DOWN]
+```
+
+
+cp /Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-KSQL-for-Stream-Processing-Hands-On/ksql-course-master/java/pre-compiled/ksql-udf-taxi-1.0.jar \
+   /Library/Kafka/confluent-5.3.1/ext
+
+
+confluent local start ksql-server
+
+
+`ksql>`
+list functions;
+
+```markdown
+ Function Name         | Type      
+-----------------------------------
+ ABS                   | SCALAR    
+ ARRAYCONTAINS         | SCALAR    
+ CEIL                  | SCALAR    
+ COLLECT_LIST          | AGGREGATE 
+ COLLECT_SET           | AGGREGATE 
+ COMPLEXFUNCTION       | SCALAR    
+ CONCAT                | SCALAR    
+ CONFIGURABLEUDF       | SCALAR    
+ COUNT                 | AGGREGATE 
+ DATETOSTRING          | SCALAR    
+ E2ECONFIGURABLEUDF    | SCALAR    
+ ELT                   | SCALAR    
+ EXTRACTJSONFIELD      | SCALAR    
+ FIELD                 | SCALAR    
+ FLOOR                 | SCALAR    
+ GEO_DISTANCE          | SCALAR    
+ HISTOGRAM             | AGGREGATE 
+ IFNULL                | SCALAR    
+ LCASE                 | SCALAR    
+ LEN                   | SCALAR    
+ MASK                  | SCALAR    
+ MASK_KEEP_LEFT        | SCALAR    
+ MASK_KEEP_RIGHT       | SCALAR    
+ MASK_LEFT             | SCALAR    
+ MASK_RIGHT            | SCALAR    
+ MAX                   | AGGREGATE 
+ MIN                   | AGGREGATE 
+ RANDOM                | SCALAR    
+ ROUND                 | SCALAR    
+ SOMEFUNCTION          | SCALAR    
+ SPLIT                 | SCALAR    
+ STRINGTODATE          | SCALAR    
+ STRINGTOTIMESTAMP     | SCALAR    
+ SUBSTRING             | SCALAR    
+ SUM                   | AGGREGATE 
+ TAXI_WAIT             | SCALAR      <--
+ TEST_UDAF             | AGGREGATE 
+ TEST_UDF              | SCALAR    
+ TIMESTAMPTOSTRING     | SCALAR    
+ TOPK                  | AGGREGATE 
+ TOPKDISTINCT          | AGGREGATE 
+ TRIM                  | SCALAR    
+ UCASE                 | SCALAR    
+ URL_DECODE_PARAM      | SCALAR    
+ URL_ENCODE_PARAM      | SCALAR    
+ URL_EXTRACT_FRAGMENT  | SCALAR    
+ URL_EXTRACT_HOST      | SCALAR    
+ URL_EXTRACT_PARAMETER | SCALAR    
+ URL_EXTRACT_PATH      | SCALAR    
+ URL_EXTRACT_PORT      | SCALAR    
+ URL_EXTRACT_PROTOCOL  | SCALAR    
+ URL_EXTRACT_QUERY     | SCALAR    
+ WINDOWEND             | AGGREGATE 
+ WINDOWSTART           | AGGREGATE 
+-----------------------------------
+```
+
+
+`ksql>`
+DESCRIBE FUNCTION TAXI_WAIT;
+
+```markdown
+Name        : TAXI_WAIT
+Overview    : Return expected wait time in minutes
+Type        : scalar
+Jar         : /Library/Kafka/confluent-5.3.1/ext/ksql-udf-taxi-1.0.jar
+Variations  : 
+
+	Variation   : TAXI_WAIT(VARCHAR, DOUBLE)
+	Returns     : DOUBLE
+	Description : Given weather and distance return expected wait time in minutes
+```
+
+
 
 
