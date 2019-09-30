@@ -1554,8 +1554,106 @@ select * from rr_word;
 ```
 
 
+#### section 5, lecture 23
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+`ksql>`
+select data_source, city_name, count(*)
+    from rr_word
+    window tumbling (size 60 seconds)
+    group by data_source, city_name;
+
+```markdown
+Europe | London | 13
+Europe | Birmingham | 2
+Europe | Manchester | 1
+Americas | San Diego | 3
+Europe | Bristol | 2
+Americas | San Francisco | 14
+Americas | Seattle | 2
+Europe | Liverpool | 2
+Americas | San Francisco | 15
+Europe | Newcastle | 2
+Americas | San Francisco | 1
+Europe | London | 1
+Europe | Manchester | 1
+Europe | Bristol | 1
+Americas | Seattle | 1
+Europe | London | 2
+Americas | San Francisco | 2
+Europe | Bristol | 2
+Americas | San Francisco | 3
+Europe | Manchester | 2
+Americas | San Francisco | 4
+```
 
 
+`ksql>`
+select data_source, city_name, COLLECT_LIST(user)
+    from rr_word
+    window tumbling (size 60 seconds)
+    group by data_source, city_name;
+
+```markdown
+Europe | London | [Eve, Eve, Alice, Carol, Ivan, Alice, Dan, Dan, Frank, Alice, Ivan, Eve, Dan]
+Europe | Newcastle | [Frank]
+Europe | Manchester | [Grace]
+Americas | San Diego | [Walter, Walter]
+Europe | Bristol | [Bob, Dan, Grace, Bob, Alice]
+Europe | Birmingham | [Carol]
+Americas | San Jose | [Ted, Walter, Ted, Trudy, Wendy]
+Americas | Seattle | [Oscar]
+Europe | Liverpool | [Ivan, Frank, Alice]
+Americas | Los Angeles | [Walter, Judy]
+Europe | London | [Eve, Frank, Alice, Heidi, Dan, Eve, Grace, Dan, Heidi, Carol, Frank, Alice, Dan, Ivan, Bob]
+Americas | San Francisco | [Trudy, Peggy, Peggy, Oscar, Sybil, Sybil, Wendy, Wendy, Wendy, Niaj, Wendy, Walter, Wendy, Walter, Trudy, Ted]
+Europe | Manchester | [Bob]
+Americas | Seattle | [Wendy]
+Americas | San Diego | [Oscar, Trudy]
+Americas | San Jose | [Peggy, Wendy]
+```
+
+
+`ksql>`
+select TIMESTAMPTOSTRING(WindowStart(), 'HH:mm:ss'),
+       TIMESTAMPTOSTRING(WindowEnd(), 'HH:mm:ss'),
+       data_source,
+       TOPK(city_name, 3),
+       count(*)
+    from rr_word
+    WINDOW TUMBLING (SIZE 1 minute)
+    GROUP BY data_source;
+
+```markdown
+00:00:00 | 00:01:00 | Europe | [Newcastle, Newcastle, Newcastle] | 28
+00:01:00 | 00:02:00 | Europe | [Newcastle, Newcastle, Newcastle] | 26
+00:00:00 | 00:01:00 | Americas | [Seattle, Seattle, Seattle] | 22
+00:01:00 | 00:02:00 | Americas | [Seattle, Seattle, Seattle] | 26
+00:02:00 | 00:03:00 | Europe | [Newcastle, Manchester, London] | 22
+00:02:00 | 00:03:00 | Americas | [Seattle, Seattle, Seattle] | 25
+00:03:00 | 00:04:00 | Americas | [San Jose, San Jose, San Jose] | 19
+00:03:00 | 00:04:00 | Europe | [Newcastle, Manchester, London] | 29
+00:04:00 | 00:05:00 | Americas | [Seattle, Seattle, San Francisco] | 22
+00:04:00 | 00:05:00 | Europe | [Newcastle, Newcastle, Manchester] | 23
+00:05:00 | 00:06:00 | Americas | [Seattle, Seattle, Seattle] | 25
+00:05:00 | 00:06:00 | Europe | [Newcastle, Newcastle, London] | 23
+00:06:00 | 00:07:00 | Americas | [Seattle, San Jose, San Jose] | 25
+00:06:00 | 00:07:00 | Europe | [Manchester, London, London] | 23
+00:07:00 | 00:08:00 | Europe | [Newcastle, Newcastle, Newcastle] | 21
+00:07:00 | 00:08:00 | Americas | [San Jose, San Jose, San Francisco] | 28
+00:08:00 | 00:09:00 | Europe | [London, London, London] | 22
+00:08:00 | 00:09:00 | Americas | [Seattle, Seattle, Seattle] | 23
+00:09:00 | 00:10:00 | Europe | [Newcastle, Manchester, Manchester] | 24
+00:09:00 | 00:10:00 | Americas | [Seattle, Seattle, Seattle] | 27
+00:10:00 | 00:11:00 | Americas | [San Jose, San Jose, San Jose] | 23
+00:10:00 | 00:11:00 | Europe | [Newcastle, Manchester, London] | 26
+00:11:00 | 00:12:00 | Americas | [Seattle, San Jose, San Francisco] | 21
+00:11:00 | 00:12:00 | Europe | [Newcastle, Newcastle, Newcastle] | 31
+00:12:00 | 00:13:00 | Americas | [Seattle, Seattle, San Francisco] | 23
+00:12:00 | 00:13:00 | Europe | [Newcastle, Newcastle, Manchester] | 22
+00:13:00 | 00:14:00 | Americas | [Seattle, Seattle, San Jose] | 29
+```
 
 
 
