@@ -2010,5 +2010,85 @@ Variations  :
 ```
 
 
+#### section 6, lecture 26
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+`ksql>`
+select * from ridetodest;
+
+```markdown
+1569880932107 | London | Frank | London | GB | heavy rain | 8.0 | 164.75873321703418
+1569880934495 | San Jose | Oscar | San Jose | US | light rain | 3.0 | 789.2444214243801
+1569880935908 | London | Heidi | London | GB | heavy rain | 8.0 | 163.46377468342524
+1569880937567 | London | Grace | London | GB | heavy rain | 8.0 | 34.43187260750569
+1569880937927 | Los Angeles | Oscar | Los Angeles | US | haze | 2.0 | 1789.101066073534
+1569880939312 | San Francisco | Niaj | San Francisco | US | SUNNY | 10.0 | 1429.9182555246339
+1569880939674 | San Francisco | Wendy | San Francisco | US | SUNNY | 10.0 | 839.8581788353116
+```
+
+
+`ksql>`
+describe ridetodest;
+
+```markdown
+Name                 : RIDETODEST
+ Field               | Type                      
+-------------------------------------------------
+ ROWTIME             | BIGINT           (system) 
+ ROWKEY              | VARCHAR(STRING)  (system) 
+ USER                | VARCHAR(STRING)           
+ CITY_NAME           | VARCHAR(STRING)           
+ CITY_COUNTRY        | VARCHAR(STRING)           
+ WEATHER_DESCRIPTION | VARCHAR(STRING)           
+ RAIN                | DOUBLE                    
+ DIST                | DOUBLE                    
+-------------------------------------------------
+For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
+```
+
+
+`ksql>`
+select user,
+       round(dist) as dist,
+       weather_description,
+       round(TAXI_WAIT(weather_description, dist)) as taxi_wait_min
+    from ridetodest;
+
+```markdown
+Frank | 165 | heavy rain | 13
+Oscar | 789 | light rain | 32
+Heidi | 163 | heavy rain | 13
+Grace | 34 | heavy rain | 3
+Oscar | 1789 | haze | 54
+Niaj | 1430 | SUNNY | 29
+Wendy | 840 | SUNNY | 17
+```
+
+
+`ksql>`
+select user
+       || ' will be waiting '
+       || cast(round(TAXI_WAIT(weather_description, dist)) as varchar)
+       || ' minutes for their trip of '
+       || cast(round(dist) as varchar)
+       || ' km to '
+       || city_name
+       || ' where it is '
+       || weather_description
+    from ridetodest;
+
+```markdown
+Walter will be waiting 21 minutes for their trip of 1071 km to San Francisco where it is SUNNY
+Frank will be waiting 13 minutes for their trip of 165 km to London where it is heavy rain
+Oscar will be waiting 32 minutes for their trip of 789 km to San Jose where it is light rain
+Heidi will be waiting 13 minutes for their trip of 163 km to London where it is heavy rain
+Grace will be waiting 3 minutes for their trip of 34 km to London where it is heavy rain
+Oscar will be waiting 54 minutes for their trip of 1789 km to Los Angeles where it is haze
+Niaj will be waiting 29 minutes for their trip of 1430 km to San Francisco where it is SUNNY
+Wendy will be waiting 17 minutes for their trip of 840 km to San Francisco where it is SUNNY
+```
+
+
 
 
