@@ -1656,6 +1656,193 @@ select TIMESTAMPTOSTRING(WindowStart(), 'HH:mm:ss'),
 ```
 
 
+#### section 5, lecture 24
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+`ksql>`
+select * from rr_word;
+
+```markdown
+1569878755530 | ride_874 | Americas | 1569878755530 | 42.087376648417646 | -118.68475095319592 | ride_874 | Wendy | San Francisco
+1569878757333 | ride_770 | Europe | 1569878757333 | 51.44288149211938 | 1.9120547789921596 | ride_770 | Eve | London
+1569878760297 | ride_524 | Americas | 1569878760297 | 40.20963989997225 | -106.93109650993992 | ride_524 | Ted | San Diego
+1569878761430 | ride_433 | Europe | 1569878761430 | 50.711828034715545 | -0.7968568885320106 | ride_433 | Carol | Newcastle
+```
+
+
+`ksql>`
+describe rr_word;
+
+```markdown
+Name                 : RR_WORD
+ Field       | Type                      
+-----------------------------------------
+ ROWTIME     | BIGINT           (system) 
+ ROWKEY      | VARCHAR(STRING)  (system) 
+ DATA_SOURCE | VARCHAR(STRING)           
+ REQUESTTIME | BIGINT                    
+ LATITUDE    | DOUBLE                    
+ LONGITUDE   | DOUBLE                    
+ RIDEID      | VARCHAR(STRING)           
+ USER        | VARCHAR(STRING)           
+ CITY_NAME   | VARCHAR(STRING)           
+-----------------------------------------
+For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
+```
+
+
+`ksql>`
+create stream requested_journey as
+    select rr.latitude as from_latitude,
+           rr.longitude as from_longitude,
+           rr.user,
+           rr.city_name as city_name,
+           w.city_country,
+           w.latitude as to_latitude,
+           w.longitude as to_longitude,
+           w.description as weather_description,
+           w.rain
+    from rr_word rr
+    left join weathernow w on rr.city_name = w.city_name;
+
+```markdown
+ Message                    
+----------------------------
+ Stream created and running 
+----------------------------
+```
+
+
+`ksql>`
+select * from requested_journey;
+
+```markdown
+1569879295041 | Los Angeles | 44.12888251597481 | -118.79168065220374 | Sybil | Los Angeles | US | 34.0522 | -118.2437 | haze | 2.0
+1569879295072 | London | 51.728036848997 | 1.9217193102365546 | Eve | London | GB | 51.5074 | -0.1278 | heavy rain | 8.0
+1569879296604 | London | 53.434572666603806 | 0.7518067856543964 | Heidi | London | GB | 51.5074 | -0.1278 | heavy rain | 8.0
+1569879298087 | San Francisco | 44.389069059203756 | -119.64122676982434 | Wendy | San Francisco | US | 37.7749 | -122.4194 | SUNNY | 10.0
+1569879298249 | Bristol | 50.19125513292464 | 0.48015118999664086 | Heidi | Bristol | GB | 51.4545 | -2.5879 | light rain | 3.0
+1569879299722 | San Diego | 42.327649864755664 | -106.39592425868776 | Ted | San Diego | US | 32.7157 | -117.1611 | SUNNY | 2.0
+1569879300132 | London | 51.472950587764174 | -0.6259174747327707 | Eve | London | GB | 51.5074 | -0.1278 | heavy rain | 8.0
+1569879301480 | San Francisco | 38.463525099933314 | -115.52130464268086 | Sybil | San Francisco | US | 37.7749 | -122.4194 | SUNNY | 10.0
+1569879301946 | San Francisco | 39.77074842676313 | -103.15390241684696 | Ted | San Francisco | US | 37.7749 | -122.4194 | SUNNY | 10.0
+1569879304113 | Seattle | 42.268040429285605 | -108.12409155396625 | Walter | Seattle | US | 47.6062 | -122.3321 | heavy rain | 7.0
+1569879304198 | San Jose | 41.55423321818248 | -119.67542996833639 | Oscar | San Jose | US | 37.3382 | -121.8863 | light rain | 3.0
+1569879304947 | London | 49.529885033364955 | 1.58612003508714 | Ivan | London | GB | 51.5074 | -0.1278 | heavy rain | 8.0
+```
+
+
+`ksql>`
+describe requested_journey;
+
+```markdown
+Name                 : REQUESTED_JOURNEY
+ Field               | Type                      
+-------------------------------------------------
+ ROWTIME             | BIGINT           (system) 
+ ROWKEY              | VARCHAR(STRING)  (system) 
+ FROM_LATITUDE       | DOUBLE                    
+ FROM_LONGITUDE      | DOUBLE                    
+ USER                | VARCHAR(STRING)           
+ CITY_NAME           | VARCHAR(STRING)           
+ CITY_COUNTRY        | VARCHAR(STRING)           
+ TO_LATITUDE         | DOUBLE                    
+ TO_LONGITUDE        | DOUBLE                    
+ WEATHER_DESCRIPTION | VARCHAR(STRING)           
+ RAIN                | DOUBLE                    
+-------------------------------------------------
+For runtime statistics and query details run: DESCRIBE EXTENDED <Stream,Table>;
+```
+
+
+`ksql>`
+select user,
+       city_name,
+       city_country,
+       weather_description,
+       rain,
+       GEO_DISTANCE(from_latitude, from_longitude, to_latitude, to_longitude, 'km') as dist
+    from requested_journey;
+
+```markdown
+Carol | London | GB | heavy rain | 8.0 | 57.14218225524198
+Oscar | Seattle | US | heavy rain | 7.0 | 1240.8254500489131
+Peggy | San Francisco | US | SUNNY | 10.0 | 568.9718989203743
+Judy | San Francisco | US | SUNNY | 10.0 | 1460.1856014867678
+Carol | Birmingham | UK | light rain | 4.0 | 179.55908884881953
+Bob | London | GB | heavy rain | 8.0 | 95.01663803611274
+Trudy | San Jose | US | light rain | 3.0 | 533.2588422483718
+Walter | San Francisco | US | SUNNY | 10.0 | 776.5003420441011
+Walter | San Francisco | US | SUNNY | 10.0 | 1094.7035413843184
+Grace | Birmingham | UK | light rain | 4.0 | 306.9242424376605
+Walter | Fresno | US | heavy rain | 6.0 | 1256.9108246905364
+Sybil | Seattle | US | heavy rain | 7.0 | 1594.3245754368531
+Eve | Bristol | GB | light rain | 3.0 | 263.69413021477385
+```
+
+
+`ksql>`
+create stream ridetodest as
+    select user,
+           city_name,
+           city_country,
+           weather_description,
+           rain,
+           GEO_DISTANCE(from_latitude, from_longitude, to_latitude, to_longitude, 'km') as dist
+    from requested_journey;
+
+```markdown
+ Message                    
+----------------------------
+ Stream created and running 
+----------------------------
+```
+
+
+`ksql>`
+select * from ridetodest;
+
+```markdown
+1569879876257 | London | Ivan | London | GB | heavy rain | 8.0 | 100.0269754616705
+1569879878133 | London | Alice | London | GB | heavy rain | 8.0 | 93.2275465858676
+1569879879702 | Birmingham | Heidi | Birmingham | UK | light rain | 4.0 | 172.51949260282214
+1569879880313 | San Jose | Sybil | San Jose | US | light rain | 3.0 | 1709.3101707257324
+1569879881397 | London | Alice | London | GB | heavy rain | 8.0 | 131.83233957505269
+1569879884703 | London | Bob | London | GB | heavy rain | 8.0 | 62.53597797616088
+1569879884796 | San Francisco | Trudy | San Francisco | US | SUNNY | 10.0 | 1211.1700557225993
+1569879887800 | San Jose | Oscar | San Jose | US | light rain | 3.0 | 1324.94117724489
+1569879887882 | London | Heidi | London | GB | heavy rain | 8.0 | 147.2187574583526
+1569879888901 | London | Ivan | London | GB | heavy rain | 8.0 | 256.500142011494
+1569879891763 | London | Carol | London | GB | heavy rain | 8.0 | 163.66014630509852
+```
+
+
+`ksql>`
+select user
+    || ' is travelling '
+    || cast(round(dist) as varchar)
+    || ' km to '
+    || city_name
+    || ' where the weather is reported as '
+    || weather_description
+    from ridetodest;
+
+```markdown
+Frank is travelling 194 km to Birmingham where the weather is reported as light rain
+Sybil is travelling 1004 km to Fresno where the weather is reported as heavy rain
+Eve is travelling 123 km to London where the weather is reported as heavy rain
+Sybil is travelling 1058 km to San Francisco where the weather is reported as SUNNY
+Dan is travelling 171 km to London where the weather is reported as heavy rain
+Walter is travelling 1312 km to San Jose where the weather is reported as light rain
+Carol is travelling 404 km to Liverpool where the weather is reported as haze
+Bob is travelling 111 km to London where the weather is reported as heavy rain
+Wendy is travelling 600 km to San Francisco where the weather is reported as SUNNY
+Trudy is travelling 334 km to San Francisco where the weather is reported as SUNNY
+Carol is travelling 92 km to London where the weather is reported as heavy rain
+Trudy is travelling 1749 km to San Diego where the weather is reported as SUNNY
+Oscar is travelling 1563 km to San Francisco where the weather is reported as SUNNY
+```
 
 
 
