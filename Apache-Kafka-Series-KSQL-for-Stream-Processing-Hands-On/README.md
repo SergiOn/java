@@ -2367,5 +2367,28 @@ SET 'auto.offset.reset'='earliest';
 LIST_PROPERTIES;
 
 
+#### section 7, lecture 31
 
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+RocksDB
+`rocksdb:`
+https://en.wikipedia.org/wiki/RocksDB
+
+
+`ksql`
+list properties;
+
+```markdown
+ksql.streams.state.dir
+```
+
+ksql
+
+`ksql`
+CREATE STREAM userprofile (userid INT, firstname VARCHAR, lastname VARCHAR, countrycode VARCHAR, rating DOUBLE)
+    WITH (VALUE_FORMAT = 'JSON', KAFKA_TOPIC = 'USERPROFILE');
+
+`ksql`
+select countrycode, count(*) from userprofile group by countrycode;
 
