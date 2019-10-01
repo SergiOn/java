@@ -1,0 +1,1 @@
+create stream bob as select * from rr_europe_raw where user = 'Bob';

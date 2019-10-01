@@ -2090,5 +2090,32 @@ Wendy will be waiting 17 minutes for their trip of 840 km to San Francisco where
 ```
 
 
+#### section 7, lecture 27
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+`ksql>`
+SET 'auto.offset.reset'='earliest';
+
+cat /Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-KSQL-for-Stream-Processing-Hands-On/ksql-course-master/where-is-bob.ksql
+
+
+confluent local stop ksql-server
+
+cd /Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-KSQL-for-Stream-Processing-Hands-On/ksql-course-master
+
+ksql-server-start /Library/Kafka/confluent-5.3.1/etc/ksql/ksql-server.properties --queries-file ./where-is-bob.ksql
+
+ksql-server-start /Library/Kafka/confluent-5.3.1/etc/ksql/ksql-server-custom.properties --queries-file ./where-is-bob-custom.ksql
+
+ksql
+
+kafka-topics --bootstrap-server localhost:9092 --list --topic BOB
+
+kafka-avro-console-consumer --bootstrap-server localhost:9092 --topic BOB
+
+
+
+
 
 
