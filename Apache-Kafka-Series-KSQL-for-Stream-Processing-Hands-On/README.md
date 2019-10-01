@@ -2104,7 +2104,7 @@ confluent local stop ksql-server
 
 cd /Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-KSQL-for-Stream-Processing-Hands-On/ksql-course-master
 
-ksql-server-start /Library/Kafka/confluent-5.3.1/etc/ksql/ksql-server.properties --queries-file ./where-is-bob.ksql
+ksql-server-start $CONFLUENT_HOME/etc/ksql/ksql-server.properties --queries-file ./where-is-bob.ksql
 
 ksql-server-start /Library/Kafka/confluent-5.3.1/etc/ksql/ksql-server-custom.properties --queries-file ./where-is-bob-custom.ksql
 
@@ -2335,5 +2335,37 @@ docker-compose -f docker-compose-prod.yml ps
 docker-compose -f docker-compose-prod.yml start ksql-server-1
 
 docker-compose -f docker-compose-prod.yml start ksql-server-2
+
+
+#### section 7, lecture 30
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+
+confluent local stop
+
+
+`destroy data`
+confluent destroy
+
+cd $CONFLUENT_HOME/etc/ksql
+
+cat ksql-server.properties
+
+confluent local start ksql-server
+
+
+ksql
+
+`ksql`
+LIST_PROPERTIES;
+
+`ksql`
+SET 'auto.offset.reset'='earliest';
+
+`ksql`
+LIST_PROPERTIES;
+
+
 
 
