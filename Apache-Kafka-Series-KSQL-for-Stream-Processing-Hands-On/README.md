@@ -2287,8 +2287,53 @@ Sub-topology: 0
 ```
 
 
+#### section 7, lecture 29
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+/Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-KSQL-for-Stream-Processing-Hands-On/ksql-course-master/docker-compose-prod.yml
+
+/Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-KSQL-for-Stream-Processing-Hands-On/ksql-course-master/docker-compose.yml
 
 
+docker ps
 
+docker-compose -f docker-compose-prod.yml up -d
+
+ksql-datagen schame=/Users/serhii/Documents/Web/Training/Java/java/Apache-Kafka-Series-KSQL-for-Stream-Processing-Hands-On/ksql-course-master/datagen/userprofile.avro \
+    format=json topic=USERPROFILE key=userid maxInterval=1000 iterations=10000
+
+ksql
+
+`ksql>`
+CREATE STREAM userprofile (userid INT, firstname VARCHAR, lastname VARCHAR, countrycode VARCHAR, rating DOUBLE)
+    WITH (VALUE_FORMAT = 'JSON', KAFKA_TOPIC = 'USERPROFILE');
+
+`ksql>`
+create stream up_lastseen as
+    SELECT TIMESTAMPTOSTRING(rowtime, 'dd/MMM HH:mm:ss') as createtime, firstname
+    from userprofile;
+
+kafka-console-consumer --bootstrap-server localhost:9092 --topic UP_LASTSEEN
+
+docker-compose -f docker-compose-prod.yml ps
+
+docker-compose -f docker-compose-prod.yml stop ksql-server-1
+
+docker-compose -f docker-compose-prod.yml ps
+
+docker-compose -f docker-compose-prod.yml start ksql-server-1
+
+docker-compose -f docker-compose-prod.yml stop ksql-server-2
+
+docker-compose -f docker-compose-prod.yml ps
+
+docker-compose -f docker-compose-prod.yml stop ksql-server-1
+
+docker-compose -f docker-compose-prod.yml ps
+
+docker-compose -f docker-compose-prod.yml start ksql-server-1
+
+docker-compose -f docker-compose-prod.yml start ksql-server-2
 
 
