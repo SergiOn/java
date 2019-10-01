@@ -2115,6 +2115,179 @@ kafka-topics --bootstrap-server localhost:9092 --list --topic BOB
 kafka-avro-console-consumer --bootstrap-server localhost:9092 --topic BOB
 
 
+#### section 7, lecture 28
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+`ksql>`
+select * from userprofile;
+
+```markdown
+1569836565610 | 1096 | 1096 | Bob | Dotty | GB | 3.9
+1569836566163 | 1097 | 1097 | Eve | Edison | IN | 3.9
+1569836568230 | 1098 | 1098 | Eve | Edison | GB | 4.9
+1569836569870 | 1099 | 1099 | Frank | Jones | AU | 3.7
+```
+
+
+`ksql>`
+create stream my_stream
+    as select firstname
+    from userprofile;
+
+```markdown
+ Message                    
+----------------------------
+ Stream created and running 
+----------------------------
+```
+
+
+`ksql>`
+show queries;
+
+```markdown
+ Query ID                     | Kafka Topic           | Query String                                                                                                                                                                                                                                                                                      
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ CSAS_UP_JOINED_1             | UP_JOINED             | CREATE STREAM UP_JOINED WITH (REPLICAS = 1, PARTITIONS = 1, KAFKA_TOPIC = 'UP_JOINED') AS SELECT concat(concat(concat(concat(concat(concat(concat(UP.FIRSTNAME, ' '), UCASE(UP.LASTNAME)), ' from '), CT.COUNTRYNAME), ' has a rating of '), CAST(UP.RATING AS STRING)), ' stars.') "DESCRIPTION"
+FROM USERPROFILE UP
+LEFT OUTER JOIN COUNTRYTABLE CT ON ((CT.COUNTRYCODE = UP.COUNTRYCODE)); 
+ CSAS_RIDETODEST_8            | RIDETODEST            | CREATE STREAM RIDETODEST WITH (REPLICAS = 1, PARTITIONS = 1, KAFKA_TOPIC = 'RIDETODEST') AS SELECT
+  REQUESTED_JOURNEY.USER "USER"
+, REQUESTED_JOURNEY.CITY_NAME "CITY_NAME"
+, REQUESTED_JOURNEY.CITY_COUNTRY "CITY_COUNTRY"
+, REQUESTED_JOURNEY.WEATHER_DESCRIPTION "WEATHER_DESCRIPTION"
+, REQUESTED_JOURNEY.RAIN "RAIN"
+, GEO_DISTANCE(REQUESTED_JOURNEY.FROM_LATITUDE, REQUESTED_JOURNEY.FROM_LONGITUDE, REQUESTED_JOURNEY.TO_LATITUDE, REQUESTED_JOURNEY.TO_LONGITUDE, 'km') "DIST"
+FROM REQUESTED_JOURNEY REQUESTED_JOURNEY; 
+ CSAS_WEATHERREKEYED_3        | WEATHERREKEYED        | CREATE STREAM WEATHERREKEYED WITH (REPLICAS = 1, PARTITIONS = 1, KAFKA_TOPIC = 'WEATHERREKEYED') AS SELECT *
+FROM WEATHERRAW WEATHERRAW
+PARTITION BY CITY_NAME;                                                                                                                                   
+ CSAS_RR_WORD_5               | RR_WORD               | CREATE STREAM RR_WORD WITH (REPLICAS = 1, PARTITIONS = 1, KAFKA_TOPIC = 'RR_WORD') AS SELECT
+  'Europe' "DATA_SOURCE"
+, *
+FROM RR_EUROPE_RAW RR_EUROPE_RAW;                                                                                                                                       
+ InsertQuery_6                | RR_WORD               | insert into rr_word select 'Americas' as data_source, * from rr_america_raw;                                                                                                                                                                                                                      
+ CSAS_MY_STREAM_9             | MY_STREAM             | CREATE STREAM MY_STREAM WITH (REPLICAS = 1, PARTITIONS = 1, KAFKA_TOPIC = 'MY_STREAM') AS SELECT USERPROFILE.FIRSTNAME "FIRSTNAME"
+FROM USERPROFILE USERPROFILE;                                                                                                                                  
+ CSAS_WEATHERRAW_2            | WEATHERRAW            | CREATE STREAM WEATHERRAW WITH (REPLICAS = 1, PARTITIONS = 1, VALUE_FORMAT = 'AVRO', KAFKA_TOPIC = 'WEATHERRAW') AS SELECT
+  FETCH_FIELD_FROM_STRUCT(WEATHER.CITY, 'NAME') "CITY_NAME"
+, FETCH_FIELD_FROM_STRUCT(WEATHER.CITY, 'COUNTRY') "CITY_COUNTRY"
+, FETCH_FIELD_FROM_STRUCT(WEATHER.CITY, 'LATITUDE') "LATITUDE"
+, FETCH_FIELD_FROM_STRUCT(WEATHER.CITY, 'LONGITUDE') "LONGITUDE"
+, WEATHER.DESCRIPTION "DESCRIPTION"
+, WEATHER.RAIN "RAIN"
+FROM WEATHER WEATHER; 
+ CSAS_DRIVERPROFILE_REKEYED_4 | DRIVERPROFILE_REKEYED | CREATE STREAM DRIVERPROFILE_REKEYED WITH (KAFKA_TOPIC = 'DRIVERPROFILE_REKEYED', REPLICAS = 1, PARTITIONS = 1) AS SELECT *
+FROM DRIVER_PROFILE DRIVER_PROFILE
+PARTITION BY DRIVER_NAME;                                                                                                           
+ CSAS_REQUESTED_JOURNEY_7     | REQUESTED_JOURNEY     | CREATE STREAM REQUESTED_JOURNEY WITH (REPLICAS = 1, PARTITIONS = 1, KAFKA_TOPIC = 'REQUESTED_JOURNEY') AS SELECT
+  RR.LATITUDE "FROM_LATITUDE"
+, RR.LONGITUDE "FROM_LONGITUDE"
+, RR.USER "USER"
+, RR.CITY_NAME "CITY_NAME"
+, W.CITY_COUNTRY "CITY_COUNTRY"
+, W.LATITUDE "TO_LATITUDE"
+, W.LONGITUDE "TO_LONGITUDE"
+, W.DESCRIPTION "WEATHER_DESCRIPTION"
+, W.RAIN "RAIN"
+FROM RR_WORD RR
+LEFT OUTER JOIN WEATHERNOW W ON ((RR.CITY_NAME = W.CITY_NAME)); 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+For detailed information on a Query run: EXPLAIN <Query ID>;
+```
+
+
+`ksql>`
+explain CSAS_MY_STREAM_9;
+
+```markdown
+ID                   : CSAS_MY_STREAM_9
+SQL                  : CREATE STREAM MY_STREAM WITH (REPLICAS = 1, PARTITIONS = 1, KAFKA_TOPIC = 'MY_STREAM') AS SELECT USERPROFILE.FIRSTNAME "FIRSTNAME"
+FROM USERPROFILE USERPROFILE;
+
+ Field     | Type                      
+---------------------------------------
+ ROWTIME   | BIGINT           (system) 
+ ROWKEY    | VARCHAR(STRING)  (system) 
+ FIRSTNAME | VARCHAR(STRING)           
+---------------------------------------
+
+Sources that this query reads from: 
+-----------------------------------
+USERPROFILE
+
+For source description please run: DESCRIBE [EXTENDED] <SourceId>
+
+Sinks that this query writes to: 
+-----------------------------------
+MY_STREAM
+
+For sink description please run: DESCRIBE [EXTENDED] <SinkId>
+
+Execution plan      
+--------------      
+ > [ SINK ] | Schema: [FIRSTNAME VARCHAR] | Logger: CSAS_MY_STREAM_9.MY_STREAM
+		 > [ PROJECT ] | Schema: [FIRSTNAME VARCHAR] | Logger: CSAS_MY_STREAM_9.Project
+				 > [ SOURCE ] | Schema: [USERPROFILE.ROWTIME BIGINT, USERPROFILE.ROWKEY VARCHAR, USERPROFILE.USERID INT, USERPROFILE.FIRSTNAME VARCHAR, USERPROFILE.LASTNAME VARCHAR, USERPROFILE.COUNTRYCODE VARCHAR, USERPROFILE.RATING DOUBLE] | Logger: CSAS_MY_STREAM_9.KsqlTopic
+
+
+Processing topology 
+------------------- 
+Topologies:
+   Sub-topology: 0
+    Source: KSTREAM-SOURCE-0000000000 (topics: [USERPROFILE])
+      --> KSTREAM-MAPVALUES-0000000001
+    Processor: KSTREAM-MAPVALUES-0000000001 (stores: [])
+      --> KSTREAM-TRANSFORMVALUES-0000000002
+      <-- KSTREAM-SOURCE-0000000000
+    Processor: KSTREAM-TRANSFORMVALUES-0000000002 (stores: [])
+      --> KSTREAM-MAPVALUES-0000000003
+      <-- KSTREAM-MAPVALUES-0000000001
+    Processor: KSTREAM-MAPVALUES-0000000003 (stores: [])
+      --> KSTREAM-MAPVALUES-0000000004
+      <-- KSTREAM-TRANSFORMVALUES-0000000002
+    Processor: KSTREAM-MAPVALUES-0000000004 (stores: [])
+      --> KSTREAM-SINK-0000000005
+      <-- KSTREAM-MAPVALUES-0000000003
+    Sink: KSTREAM-SINK-0000000005 (topic: MY_STREAM)
+      <-- KSTREAM-MAPVALUES-0000000004
+
+
+
+Overridden Properties
+---------------------
+ Property          | Value 
+---------------------------
+ auto.offset.reset |       
+---------------------------
+```
+
+
+https://zz85.github.io/kafka-streams-viz/
+
+```markdown
+Sub-topology: 0
+    Source: KSTREAM-SOURCE-0000000000 (topics: [USERPROFILE])
+      --> KSTREAM-MAPVALUES-0000000001
+    Processor: KSTREAM-MAPVALUES-0000000001 (stores: [])
+      --> KSTREAM-TRANSFORMVALUES-0000000002
+      <-- KSTREAM-SOURCE-0000000000
+    Processor: KSTREAM-TRANSFORMVALUES-0000000002 (stores: [])
+      --> KSTREAM-MAPVALUES-0000000003
+      <-- KSTREAM-MAPVALUES-0000000001
+    Processor: KSTREAM-MAPVALUES-0000000003 (stores: [])
+      --> KSTREAM-MAPVALUES-0000000004
+      <-- KSTREAM-TRANSFORMVALUES-0000000002
+    Processor: KSTREAM-MAPVALUES-0000000004 (stores: [])
+      --> KSTREAM-SINK-0000000005
+      <-- KSTREAM-MAPVALUES-0000000003
+    Sink: KSTREAM-SINK-0000000005 (topic: MY_STREAM)
+      <-- KSTREAM-MAPVALUES-0000000004
+```
+
+
+
 
 
 
