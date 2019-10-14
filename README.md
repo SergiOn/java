@@ -391,3 +391,12 @@ https://www.udemy.com/kafka-ksql/
 
 Use SQL on Apache Kafka with Confluent KSQL! Build an entire taxi booking application based on KSQL stream processing
 
+
+## Hibernate: Advanced Development Techniques
+
+https://www.udemy.com/course/hibernate-tutorial-advanced/
+
+##### About this course
+
+Learn Advanced Hibernate techniques for Mapping Sets, Lists, Embeddable, Enums and Inheritance
+
