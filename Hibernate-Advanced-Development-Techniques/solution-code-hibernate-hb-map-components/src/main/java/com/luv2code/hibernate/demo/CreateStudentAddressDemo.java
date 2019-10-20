@@ -26,13 +26,15 @@ public class CreateStudentAddressDemo {
 
             // create the address object
             Address homeAddress = new Address("Some Street", "Some City", "12345");
+            Address billingAddress = new Address("Some Billing Street", "Some Billing City", "101010");
 
             // start the transaction
             session.beginTransaction();
 
             // save the object
             System.out.println("Saving the student and address...");
-            tempStudent.setHomeAddress(homeAddress);
+//            tempStudent.setHomeAddress(homeAddress);
+            tempStudent.setBillingAddress(billingAddress);
             session.persist(tempStudent);
 
             // commit the transaction
