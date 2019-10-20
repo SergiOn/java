@@ -16,7 +16,10 @@
         <property name="connection.pool_size">1</property>
 
         <!-- Select our SQL dialect -->
-        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Set the database engine to innodb -->
+        <property name="hibernate.dialect.storage_engine">innodb</property>
 
         <!-- Echo the SQL to stdout -->
         <property name="show_sql">true</property>
