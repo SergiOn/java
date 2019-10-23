@@ -8,7 +8,6 @@ import javax.persistence.*;
 public abstract class User {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(strategy = GenerationType.TABLE)
     @Column(name = "id")
     private int id;
