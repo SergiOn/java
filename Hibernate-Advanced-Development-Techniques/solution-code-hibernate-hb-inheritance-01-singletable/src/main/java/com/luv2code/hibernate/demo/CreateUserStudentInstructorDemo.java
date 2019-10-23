@@ -2,7 +2,6 @@ package com.luv2code.hibernate.demo;
 
 import com.luv2code.hibernate.demo.entity.Instructor;
 import com.luv2code.hibernate.demo.entity.Student;
-import com.luv2code.hibernate.demo.entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
