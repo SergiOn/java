@@ -400,3 +400,12 @@ https://www.udemy.com/course/hibernate-tutorial-advanced/
 
 Learn Advanced Hibernate techniques for Mapping Sets, Lists, Embeddable, Enums and Inheritance
 
+
+## Angular 2 Complete E-Commerce App Course - Java,Spring,MySQL
+
+https://www.udemy.com/course/build-angular-2-complete-e-comerce-app-java-spring-mysql/
+
+##### About this course
+
+A Comprehensive Project with Step-By-Step Guide on latest Angular 2 Ecosystem and Java Spring Framework Ecosystem
+
