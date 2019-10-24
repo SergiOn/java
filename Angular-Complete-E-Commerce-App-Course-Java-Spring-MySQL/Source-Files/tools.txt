@@ -1,0 +1,24 @@
+angular 2
+typescript
+sublime
+atom
+typescript plugin
+
+angular cli
+angular 2 material
+bootstrap
+
+java 8
+
+spring
+spring boot
+spring data
+spring security
+hibernate
+eclipse
+intellij
+
+mysql
+mysqlworkbench
+sequel pro
+
