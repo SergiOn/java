@@ -10,3 +10,39 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   margin: 0;
 }
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-select {
+  width: 100%;
+}
+
+mat-slide-toggle {
+  width:100%;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background-color: #333;
+  color: #333;
+}
+
+.box {
+  border: 1px solid black;
+}
+
+.container {
+  width:90%;
+  margin:auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.primary {
+  color:white;
+}

@@ -3,8 +3,8 @@
     Admin Portal
   </h3>
   <div class="links" *ngIf="loggedIn">
-    <a mat-button routerLink=".">View Book List</a>
-    <a mat-button routerLink=".">Add a Book</a>
+    <button mat-button routerLink="/bookList">View Book List</button>
+    <button mat-button routerLink="/addNewBook">Add a Book</button>
     <button mat-button (click)="logout()">Logout</button>
   </div>
 </mat-toolbar>

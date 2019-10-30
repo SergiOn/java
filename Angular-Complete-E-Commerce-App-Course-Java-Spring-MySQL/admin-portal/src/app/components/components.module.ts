@@ -12,6 +12,7 @@ import {
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
 import { AddNewBookComponent } from './add-new-book/add-new-book.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { AddNewBookComponent } from './add-new-book/add-new-book.component';
     MatFormFieldModule,
     MatInputModule,
     MatSlideToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    RouterModule
   ],
   declarations: [
     NavBarComponent,
