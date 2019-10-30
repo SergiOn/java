@@ -31,13 +31,13 @@ export class LoginService {
   }
 
   logout() {
-    const url = 'http://localhost:8181/user/logout';
+    const url = 'http://localhost:8181/logout';
 
     const headers = new HttpHeaders ({
       'x-auth-token' : localStorage.getItem('xAuthToken')
     });
 
-    return this.http.post(url, '', { headers });
+    return this.http.post(url, undefined, { headers, responseType: 'text' });
   }
 
 }

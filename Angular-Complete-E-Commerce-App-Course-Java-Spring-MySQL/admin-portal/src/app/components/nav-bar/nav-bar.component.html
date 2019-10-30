@@ -5,6 +5,6 @@
   <div class="links" *ngIf="loggedIn">
     <a mat-button routerLink=".">View Book List</a>
     <a mat-button routerLink=".">Add a Book</a>
-    <a mat-button routerLink=".">Logout</a>
+    <button mat-button (click)="logout()">Logout</button>
   </div>
 </mat-toolbar>

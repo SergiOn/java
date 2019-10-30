@@ -38,8 +38,8 @@ public class LoginResource {
 		return new ResponseEntity("Session Active!", HttpStatus.OK);
 	}
 
-	@RequestMapping(value="/user/logout", method=RequestMethod.POST)
-	public ResponseEntity logout(){
+	@RequestMapping(value="/logout", method=RequestMethod.POST)
+	public ResponseEntity logout() {
 		SecurityContextHolder.clearContext();
 		return new ResponseEntity("Logout Successfully!", HttpStatus.OK);
 	}
