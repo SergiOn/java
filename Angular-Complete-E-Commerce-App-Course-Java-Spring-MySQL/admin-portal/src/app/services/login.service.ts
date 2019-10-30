@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class LoginService {
@@ -19,14 +20,14 @@ export class LoginService {
     return this.http.get(url, { headers });
   }
 
-  checkSession() {
+  checkSession(): Observable<string> {
     const url = 'http://localhost:8181/checkSession';
 
     const headers = new HttpHeaders ({
       'x-auth-token' : localStorage.getItem('xAuthToken')
     });
 
-    return this.http.get(url, { headers } );
+    return this.http.get(url, { headers, responseType: 'text' } );
   }
 
   logout() {

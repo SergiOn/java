@@ -44,3 +44,11 @@ redis-cli
 ```
 > ping
 
+```bash
+monitor
+```
+
+```bash
+keys '*'
+```
+

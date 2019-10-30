@@ -16,11 +16,15 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginService.checkSession().subscribe(
-      res => {
+      (res) => {
         this.loggedIn = true;
+        console.log('LoginComponent: next', this.loggedIn);
+        console.log('LoginComponent: next', res);
       },
-      error => {
+      (error) => {
         this.loggedIn = false;
+        console.log('LoginComponent: error', this.loggedIn);
+        console.log('LoginComponent: error', error);
       }
     );
   }

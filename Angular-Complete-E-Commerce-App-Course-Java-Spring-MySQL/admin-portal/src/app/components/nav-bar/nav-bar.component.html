@@ -2,15 +2,9 @@
   <h3 class="name">
     Admin Portal
   </h3>
-  <div class="links" *ngIf="loggedIn$ | async">
+  <div class="links" *ngIf="loggedIn">
     <a mat-button routerLink=".">View Book List</a>
     <a mat-button routerLink=".">Add a Book</a>
     <a mat-button routerLink=".">Logout</a>
   </div>
 </mat-toolbar>
-
-<button class="mat-warn"
-    mat-raised-button
-    (click)="toggleDisplay()">
-  Toggle
-</button>
