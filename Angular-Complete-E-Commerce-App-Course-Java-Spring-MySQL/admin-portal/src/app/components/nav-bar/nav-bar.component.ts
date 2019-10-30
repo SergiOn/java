@@ -15,7 +15,8 @@ export class NavBarComponent {
     scan((accumulator: boolean, current: undefined) => !accumulator)
   );
 
-  constructor() { }
+  constructor() {
+  }
 
   toggleDisplay(): void {
     this.loggedInSync.next();
