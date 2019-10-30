@@ -11,6 +11,7 @@ export class UploadImageService {
   }
 
   upload(bookId: number) {
+    console.log(this.filesToUpload);
     this.makeFileRequest(`http://localhost:8181/book/add/image?id=${bookId}`, [], this.filesToUpload).subscribe((result) => {
       console.log(result);
     }, (error) => {
@@ -35,14 +36,16 @@ export class UploadImageService {
 
   makeFileRequest(url: string, params: string[], files: File[]) {
     const formData: FormData = new FormData();
-    files.forEach((file) => formData.append('uploads[]', file, file.name));
+
+    for (let i = 0; i < files.length; i++) {
+      formData.append('uploads[]', files[i], files[i].name);
+    }
 
     const headers = new HttpHeaders({
-      'Content-Type': 'multipart/form-data',
       'x-auth-token' : localStorage.getItem('xAuthToken')
     });
 
-    return this.http.post(url, formData, { headers });
+    return this.http.post(url, formData, { headers, responseType: 'text' });
   }
 
 }
