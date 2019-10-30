@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MatButtonModule, MatFormFieldModule, MatGridListModule, MatInputModule, MatToolbarModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatInputModule, MatSelectModule,
+  MatSlideToggleModule,
+  MatToolbarModule
+} from '@angular/material';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
-import { LoginService } from '../services/login.service';
+import { AddNewBookComponent } from './add-new-book/add-new-book.component';
 
 @NgModule({
   imports: [
@@ -14,15 +21,16 @@ import { LoginService } from '../services/login.service';
     MatToolbarModule,
     MatGridListModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSlideToggleModule,
+    MatSelectModule
   ],
   declarations: [
     NavBarComponent,
-    LoginComponent
+    LoginComponent,
+    AddNewBookComponent
   ],
-  providers: [
-    LoginService
-  ],
+  providers: [],
   exports: [
     NavBarComponent,
     LoginComponent

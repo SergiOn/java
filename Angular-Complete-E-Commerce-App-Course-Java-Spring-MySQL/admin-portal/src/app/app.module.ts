@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
-import { HttpClientModule } from '@angular/common/http';
+import { AddBookService } from './services/add-book.service';
+import { LoginService } from './services/login.service';
+import { UploadImageService } from './services/upload-image.service';
 
 @NgModule({
   imports: [
@@ -17,7 +20,11 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
   ],
-  providers: [],
+  providers: [
+    LoginService,
+    AddBookService,
+    UploadImageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
