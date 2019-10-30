@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule, MatToolbarModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule, MatFormFieldModule, MatGridListModule, MatInputModule, MatToolbarModule } from '@angular/material';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from '../services/login.service';
@@ -8,8 +9,12 @@ import { LoginService } from '../services/login.service';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   declarations: [
     NavBarComponent,
@@ -19,7 +24,8 @@ import { LoginService } from '../services/login.service';
     LoginService
   ],
   exports: [
-    NavBarComponent
+    NavBarComponent,
+    LoginComponent
   ]
 })
 export class ComponentsModule { }

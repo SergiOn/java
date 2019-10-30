@@ -8,8 +8,8 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  private credential = { username: '', password: ''};
-  private loggedIn = false;
+  public credential = { username: '', password: ''};
+  public loggedIn = false;
 
   constructor(private loginService: LoginService) {
   }
