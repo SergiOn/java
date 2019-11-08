@@ -5,7 +5,9 @@ import {
   MatButtonModule,
   MatFormFieldModule,
   MatGridListModule,
-  MatInputModule, MatSelectModule,
+  MatInputModule,
+  MatListModule,
+  MatSelectModule,
   MatSlideToggleModule,
   MatToolbarModule
 } from '@angular/material';
@@ -14,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { AddNewBookComponent } from './add-new-book/add-new-book.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { RouterModule } from '@angular/router';
+import { ViewBookComponent } from './view-book/view-book.component';
 
 @NgModule({
   imports: [
@@ -26,13 +29,15 @@ import { RouterModule } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     MatSlideToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    MatListModule
   ],
   declarations: [
     NavBarComponent,
     LoginComponent,
     AddNewBookComponent,
-    BookListComponent
+    BookListComponent,
+    ViewBookComponent
   ],
   providers: [],
   exports: [
