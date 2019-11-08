@@ -8,6 +8,7 @@ import { ComponentsModule } from './components/components.module';
 import { AddBookService } from './services/add-book.service';
 import { LoginService } from './services/login.service';
 import { UploadImageService } from './services/upload-image.service';
+import { GetBookListService } from './services/get-book-list.service';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { UploadImageService } from './services/upload-image.service';
   providers: [
     LoginService,
     AddBookService,
-    UploadImageService
+    UploadImageService,
+    GetBookListService
   ],
   bootstrap: [AppComponent]
 })

@@ -12,11 +12,13 @@ import {
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
 import { AddNewBookComponent } from './add-new-book/add-new-book.component';
+import { BookListComponent } from './book-list/book-list.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     FormsModule,
     MatButtonModule,
     MatToolbarModule,
@@ -24,13 +26,13 @@ import { RouterModule } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     MatSlideToggleModule,
-    MatSelectModule,
-    RouterModule
+    MatSelectModule
   ],
   declarations: [
     NavBarComponent,
     LoginComponent,
-    AddNewBookComponent
+    AddNewBookComponent,
+    BookListComponent
   ],
   providers: [],
   exports: [

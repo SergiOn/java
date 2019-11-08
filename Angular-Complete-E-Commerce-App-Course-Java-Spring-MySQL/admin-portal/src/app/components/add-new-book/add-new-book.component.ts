@@ -13,7 +13,10 @@ export class AddNewBookComponent implements OnInit {
   public newBook: Book = new Book();
   public bookAdded: boolean;
 
-  constructor(private addBookService: AddBookService, public uploadImageService: UploadImageService) { }
+  constructor(
+    private addBookService: AddBookService,
+    public uploadImageService: UploadImageService
+  ) { }
 
   ngOnInit() {
     this.bookAdded = false;
