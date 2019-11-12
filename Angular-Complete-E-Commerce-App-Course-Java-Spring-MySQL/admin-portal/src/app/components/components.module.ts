@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import {
-  MatButtonModule,
+  MatButtonModule, MatDialogModule,
   MatFormFieldModule,
   MatGridListModule,
   MatInputModule,
@@ -15,7 +15,7 @@ import {
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
 import { AddNewBookComponent } from './add-new-book/add-new-book.component';
-import { BookListComponent } from './book-list/book-list.component';
+import { BookListComponent, DialogResultExampleDialogComponent } from './book-list/book-list.component';
 import { ViewBookComponent } from './view-book/view-book.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 
@@ -31,7 +31,8 @@ import { EditBookComponent } from './edit-book/edit-book.component';
     MatInputModule,
     MatSlideToggleModule,
     MatSelectModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   declarations: [
     NavBarComponent,
@@ -39,12 +40,16 @@ import { EditBookComponent } from './edit-book/edit-book.component';
     AddNewBookComponent,
     BookListComponent,
     ViewBookComponent,
-    EditBookComponent
+    EditBookComponent,
+    DialogResultExampleDialogComponent
   ],
   providers: [],
   exports: [
     NavBarComponent,
     LoginComponent
+  ],
+  entryComponents: [
+    DialogResultExampleDialogComponent
   ]
 })
 export class ComponentsModule { }

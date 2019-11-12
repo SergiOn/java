@@ -3,6 +3,7 @@ import { Book } from 'src/app/models/book';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { GetBookListService } from 'src/app/services/get-book-list.service';
+import { RemoveBookService } from 'src/app/services/remove-book.service';
 
 @Component({
   selector: 'app-book-list',
@@ -20,9 +21,9 @@ export class BookListComponent implements OnInit {
 
   constructor(
     private getBookListService: GetBookListService,
-    // private removeBookService: RemoveBookService,
+    private removeBookService: RemoveBookService,
     private router: Router,
-    // public dialog: MatDialog
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -35,23 +36,23 @@ export class BookListComponent implements OnInit {
   }
 
   openDialog(book: Book) {
-    // const dialogRef = this.dialog.open(DialogResultExampleDialog);
-    // dialogRef.afterClosed().subscribe(
-    //   result => {
-    //     console.log(result);
-    //     if (result === 'yes') {
-    //       this.removeBookService.sendBook(book.id).subscribe(
-    //         res => {
-    //           console.log(res);
-    //           this.getBookList();
-    //         },
-    //         err => {
-    //           console.log(err);
-    //         }
-    //       );
-    //     }
-    //   }
-    // );
+    const dialogRef = this.dialog.open(DialogResultExampleDialogComponent);
+    dialogRef.afterClosed().subscribe(
+      result => {
+        console.log(result);
+        if (result === 'yes') {
+          this.removeBookService.sendBook(book.id).subscribe(
+            res => {
+              console.log(res);
+              this.getBookList();
+            },
+            err => {
+              console.log(err);
+            }
+          );
+        }
+      }
+    );
   }
 
   updateRemoveBookList(checked: boolean, book: Book) {
@@ -73,24 +74,24 @@ export class BookListComponent implements OnInit {
   }
 
   removeSelectedBooks() {
-    // const dialogRef = this.dialog.open(DialogResultExampleDialog);
-    // dialogRef.afterClosed().subscribe(
-    //   result => {
-    //     console.log(result);
-    //     if (result === 'yes') {
-    //       for (const book of this.removeBookList) {
-    //         this.removeBookService.sendBook(book.id).subscribe(
-    //           res => {
-    //
-    //           },
-    //           err => {
-    //           }
-    //         );
-    //       }
-    //       location.reload();
-    //     }
-    //   }
-    // );
+    const dialogRef = this.dialog.open(DialogResultExampleDialogComponent);
+    dialogRef.afterClosed().subscribe(
+      result => {
+        console.log(result);
+        if (result === 'yes') {
+          for (const book of this.removeBookList) {
+            this.removeBookService.sendBook(book.id).subscribe(
+              res => {
+
+              },
+              err => {
+              }
+            );
+          }
+          location.reload();
+        }
+      }
+    );
   }
 
   getBookList() {
@@ -105,14 +106,12 @@ export class BookListComponent implements OnInit {
     );
   }
 
-
-
 }
 
-// @Component({
-//   selector: 'dialog-result-example-dialog',
-//   templateUrl: './dialog-result-example-dialog.html'
-// })
-// export class DialogResultExampleDialog {
-//   constructor(public dialogRef: MatDialogRef<DialogResultExampleDialog>) {}
-// }
+@Component({
+  selector: 'app-dialog-result-example-dialog',
+  templateUrl: './dialog-result-example-dialog.html'
+})
+export class DialogResultExampleDialogComponent {
+  constructor(public dialogRef: MatDialogRef<DialogResultExampleDialogComponent>) {}
+}
