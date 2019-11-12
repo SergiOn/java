@@ -35,10 +35,8 @@ export class ViewBookComponent implements OnInit {
   }
 
   onSelect(book: Book) {
-    this.router.navigate(['/editBook', this.book.id])
-    // .then(s => location.reload())
-    ;
+    this.router.navigate(['/editBook', this.book.id]);
+      // .then(s => location.reload());
   }
-
 
 }
