@@ -10,6 +10,7 @@ import { LoginService } from './services/login.service';
 import { UploadImageService } from './services/upload-image.service';
 import { GetBookListService } from './services/get-book-list.service';
 import { GetBookService } from 'src/app/services/get-book.service';
+import { EditBookService } from 'src/app/services/edit-book.service';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { GetBookService } from 'src/app/services/get-book.service';
     AddBookService,
     UploadImageService,
     GetBookListService,
-    GetBookService
+    GetBookService,
+    EditBookService
   ],
   bootstrap: [AppComponent]
 })
