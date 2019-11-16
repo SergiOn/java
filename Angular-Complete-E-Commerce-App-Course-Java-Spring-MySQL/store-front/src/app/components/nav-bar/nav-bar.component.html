@@ -8,7 +8,7 @@
 
     <div id="navbar">
       <ul class="nav navbar-nav navbar-left">
-        <li><a md-button routerLink="/bookList">BOOK</a></li>
+        <li><a mat-button routerLink="/bookList">BOOK</a></li>
         <form (ngSubmit)="onSearchByTitle()" class="navbar-form">
           <div class="form-group">
             <input type="text" name="searcyByTitle" [(ngModel)]="keyword" class="form-control" placeholder="Book Title" />
@@ -18,16 +18,16 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li *ngIf="!loggedIn">
-          <a md-button routerLink="/myAccount">MY ACCOUNT</a>
+          <a mat-button routerLink="/myAccount">MY ACCOUNT</a>
         </li>
         <li *ngIf="loggedIn">
-          <a md-button routerLink="/shoppingCart">SHOPPING CART</a>
+          <a mat-button routerLink="/shoppingCart">SHOPPING CART</a>
         </li>
         <li *ngIf="loggedIn">
-          <a md-button routerLink="/myProfile">MY PROFILE</a>
+          <a mat-button routerLink="/myProfile">MY PROFILE</a>
         </li>
         <li *ngIf="loggedIn">
-          <a md-button (click)="logout()">LOGOUT</a>
+          <a mat-button (click)="logout()">LOGOUT</a>
         </li>
       </ul>
     </div>
