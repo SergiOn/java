@@ -24,7 +24,7 @@ export class LoginService {
     const url = 'http://localhost:8181/checkSession';
 
     const headers = new HttpHeaders ({
-      'x-auth-token' : localStorage.getItem('xAuthToken')
+      'x-auth-token' : localStorage.getItem('xAuthToken') || ''
     });
 
     return this.http.get(url, { headers, responseType: 'text' } );
@@ -34,7 +34,7 @@ export class LoginService {
     const url = 'http://localhost:8181/logout';
 
     const headers = new HttpHeaders ({
-      'x-auth-token' : localStorage.getItem('xAuthToken')
+      'x-auth-token' : localStorage.getItem('xAuthToken') || ''
     });
 
     return this.http.post(url, undefined, { headers, responseType: 'text' });

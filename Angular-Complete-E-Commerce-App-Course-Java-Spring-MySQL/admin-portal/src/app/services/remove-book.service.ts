@@ -13,7 +13,7 @@ export class RemoveBookService {
 
     const headers = new HttpHeaders ({
       'Content-Type': 'application/json',
-      'x-auth-token' : localStorage.getItem('xAuthToken')
+      'x-auth-token' : localStorage.getItem('xAuthToken') || ''
     });
 
     return this.http.post(url, bookId, { headers });

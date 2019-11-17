@@ -11,6 +11,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { UserService } from './services/user.service';
 import { LoginService } from './services/login.service';
+import { BookService } from './services/book.service';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { LoginService } from './services/login.service';
   ],
   providers: [
     LoginService,
-    UserService
+    UserService,
+    BookService
   ],
   bootstrap: [AppComponent]
 })

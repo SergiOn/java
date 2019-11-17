@@ -42,7 +42,7 @@ export class UploadImageService {
     }
 
     const headers = new HttpHeaders({
-      'x-auth-token' : localStorage.getItem('xAuthToken')
+      'x-auth-token' : localStorage.getItem('xAuthToken') || ''
     });
 
     return this.http.post(url, formData, { headers, responseType: 'text' });

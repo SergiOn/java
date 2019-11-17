@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class MyAccountComponent implements OnInit {
 
+  private serverPath = AppConst.serverPath;
   public loginError = false;
   private loggedIn = false;
   public credential = { username: '', password: ''};
@@ -34,9 +35,11 @@ export class MyAccountComponent implements OnInit {
   ngOnInit() {
     this.loginService.checkSession().subscribe(
       res => {
+        console.log(res);
         this.loggedIn = true;
       },
       error => {
+        console.log(error);
         this.loggedIn = false;
       }
     );

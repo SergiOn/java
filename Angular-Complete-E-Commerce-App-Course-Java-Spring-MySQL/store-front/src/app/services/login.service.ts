@@ -24,20 +24,20 @@ export class LoginService {
 
   checkSession() {
     const url = `${this.serverPath}/checkSession`;
-    const headers = new HttpHeaders({
-      'x-auth-token' : localStorage.getItem('xAuthToken')
+    const headers = new HttpHeaders ({
+      'x-auth-token' : localStorage.getItem('xAuthToken') || ''
     });
 
-    return this.http.get(url, { headers });
+    return this.http.get(url, { headers, responseType: 'text' } );
   }
 
   logout() {
     const url = `${this.serverPath}/user/logout`;
     const headers = new HttpHeaders({
-      'x-auth-token' : localStorage.getItem('xAuthToken')
+      'x-auth-token' : localStorage.getItem('xAuthToken') || ''
     });
 
-    return this.http.post(url, '', { headers });
+    return this.http.post(url, '', { headers, responseType: 'text' });
   }
 
 }
