@@ -17,30 +17,30 @@ import java.util.Map;
 @RestController
 public class LoginResource {
 
-	@Autowired
-	private UserService userService;
+    @Autowired
+    private UserService userService;
 
-	@RequestMapping("/token")
-	public Map<String, String> token(HttpSession session, HttpServletRequest request) {
-		System.out.println(request.getRemoteHost());
-		
-		String remoteHost = request.getRemoteHost();
-		int portNumber = request.getRemotePort();
-		
-		System.out.println(remoteHost+":"+portNumber);
-		System.out.println(request.getRemoteAddr());
-		
-		return Collections.singletonMap("token", session.getId());
-	}
+    @RequestMapping("/token")
+    public Map<String, String> token(HttpSession session, HttpServletRequest request) {
+        System.out.println(request.getRemoteHost());
 
-	@RequestMapping("/checkSession")
-	public ResponseEntity checkSession() {
-		return new ResponseEntity("Session Active!", HttpStatus.OK);
-	}
+        String remoteHost = request.getRemoteHost();
+        int portNumber = request.getRemotePort();
 
-	@RequestMapping(value = "/logout", method = RequestMethod.POST)
-	public ResponseEntity logout() {
-		SecurityContextHolder.clearContext();
-		return new ResponseEntity("Logout Successfully!", HttpStatus.OK);
-	}
+        System.out.println(remoteHost+":"+portNumber);
+        System.out.println(request.getRemoteAddr());
+
+        return Collections.singletonMap("token", session.getId());
+    }
+
+    @RequestMapping("/checkSession")
+    public ResponseEntity checkSession() {
+        return new ResponseEntity("Session Active!", HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    public ResponseEntity logout() {
+        SecurityContextHolder.clearContext();
+        return new ResponseEntity("Logout Successfully!", HttpStatus.OK);
+    }
 }

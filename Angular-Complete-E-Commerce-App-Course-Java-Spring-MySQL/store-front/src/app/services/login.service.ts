@@ -32,7 +32,7 @@ export class LoginService {
   }
 
   logout() {
-    const url = `${this.serverPath}/user/logout`;
+    const url = `${this.serverPath}/logout`;
     const headers = new HttpHeaders({
       'x-auth-token' : localStorage.getItem('xAuthToken') || ''
     });
