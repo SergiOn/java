@@ -6,12 +6,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "book")
-public class Book implements Serializable {
-    private static final long serialVersionUID = 425345L;
+public class Book implements Serializable{
+    private static final long serialVersionUID=425345L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
     private String title;
@@ -26,9 +25,9 @@ public class Book implements Serializable {
     private double shippingWeight;
     private double listPrice;
     private double ourPrice;
-    private boolean active = true;
+    private boolean active=true;
 
-    @Column(columnDefinition = "text")
+    @Column(columnDefinition="text")
     private String description;
     private int inStockNumber;
 
@@ -170,4 +169,5 @@ public class Book implements Serializable {
     public void setBookImage(MultipartFile bookImage) {
         this.bookImage = bookImage;
     }
+
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AppConst } from 'src/app/constants/app-const';
 import { UserPayment } from 'src/app/models/user-payment';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class PaymentService {
@@ -20,14 +21,14 @@ export class PaymentService {
     return this.http.post(url, payment, { headers });
   }
 
-  getUserPaymentList() {
+  getUserPaymentList(): Observable<UserPayment[]> {
     const url = `${this.serverPath}/payment/getUserPaymentList`;
 
     const headers = new HttpHeaders({
       'Content-Type' : 'application/json',
       'x-auth-token' : localStorage.getItem('xAuthToken') || ''
     });
-    return this.http.get(url,  { headers });
+    return this.http.get<UserPayment[]>(url,  { headers });
   }
 
   removePayment(id: number) {

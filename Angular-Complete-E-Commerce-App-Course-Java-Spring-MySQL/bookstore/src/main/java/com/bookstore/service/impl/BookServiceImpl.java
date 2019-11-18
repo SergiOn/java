@@ -54,4 +54,5 @@ public class BookServiceImpl implements BookService{
     public void removeOne(Long id) {
         bookRepository.deleteById(id);
     }
+
 }

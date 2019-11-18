@@ -94,7 +94,7 @@ public class UserResource {
         return new ResponseEntity("Email sent!", HttpStatus.OK);
     }
 
-    @RequestMapping(value="/updateUserInfo", method=RequestMethod.POST)
+    @RequestMapping(value = "/updateUserInfo", method = RequestMethod.POST)
     public ResponseEntity profileInfo(
             @RequestBody HashMap<String, Object> mapper
     ) throws Exception{

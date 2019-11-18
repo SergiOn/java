@@ -43,4 +43,5 @@ public class LoginResource {
         SecurityContextHolder.clearContext();
         return new ResponseEntity("Logout Successfully!", HttpStatus.OK);
     }
+
 }

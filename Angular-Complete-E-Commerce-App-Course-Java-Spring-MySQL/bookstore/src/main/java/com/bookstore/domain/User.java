@@ -10,19 +10,18 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Entity
-@Table(name = "user")
-public class User implements UserDetails, Serializable {
+public class User implements UserDetails, Serializable{
 
     private static final long serialVersionUID = 902783495L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, updatable = false)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="Id", nullable=false, updatable = false)
+    private Long id;
 
     private String username;
     private String password;
@@ -33,19 +32,32 @@ public class User implements UserDetails, Serializable {
     private String phone;
     private boolean enabled = true;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
     private Set<UserRole> userRoles = new HashSet<>();
 
-    public long getId() {
+
+    @OneToMany(cascade=CascadeType.ALL, mappedBy = "user")
+    private List<UserPayment> userPaymentList;
+
+    @OneToMany(cascade=CascadeType.ALL, mappedBy = "user")
+    private List<UserShipping> userShippingList;
+
+
+    @OneToOne(cascade=CascadeType.ALL, mappedBy = "user")
+    private ShoppingCart shoppingCart;
+
+    @OneToMany(mappedBy="user")
+    private List<Order> orderList;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    @Override
     public String getUsername() {
         return username;
     }
@@ -54,7 +66,6 @@ public class User implements UserDetails, Serializable {
         this.username = username;
     }
 
-    @Override
     public String getPassword() {
         return password;
     }
@@ -95,10 +106,7 @@ public class User implements UserDetails, Serializable {
         this.phone = phone;
     }
 
-    @Override
-    public boolean isEnabled() {
-        return enabled;
-    }
+
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
@@ -112,25 +120,76 @@ public class User implements UserDetails, Serializable {
         this.userRoles = userRoles;
     }
 
+
+
+    public List<UserPayment> getUserPaymentList() {
+        return userPaymentList;
+    }
+
+    public void setUserPaymentList(List<UserPayment> userPaymentList) {
+        this.userPaymentList = userPaymentList;
+    }
+
+
+
+    public List<UserShipping> getUserShippingList() {
+        return userShippingList;
+    }
+
+    public void setUserShippingList(List<UserShipping> userShippingList) {
+        this.userShippingList = userShippingList;
+    }
+
+
+
+    public ShoppingCart getShoppingCart() {
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(ShoppingCart shoppingCart) {
+        this.shoppingCart = shoppingCart;
+    }
+
+
+
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return userRoles.stream()
-                .map((UserRole ur) -> new Authority(ur.getRole().getName()))
-                .collect(Collectors.toSet());
+
+        Set<GrantedAuthority> authorities = new HashSet<>();
+        userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
+
+        return authorities;
     }
 
     @Override
     public boolean isAccountNonExpired() {
+        // TODO Auto-generated method stub
         return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
+        // TODO Auto-generated method stub
         return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
+        // TODO Auto-generated method stub
         return true;
     }
+
+    @Override
+    public boolean isEnabled() {
+        return enabled;
+    }
+
 }

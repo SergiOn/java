@@ -36,7 +36,7 @@ public class BookResource {
     public ResponseEntity upload(
             @RequestParam("id") Long id,
             HttpServletResponse response, HttpServletRequest request
-    ) {
+    ){
         try {
             Book book = bookService.findOne(id);
             MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
@@ -46,7 +46,7 @@ public class BookResource {
 
 
             byte[] bytes = multipartFile.getBytes();
-            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File("src/main/resources/static/image/book/" + fileName)));
+            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File("src/main/resources/static/image/book/"+fileName)));
             stream.write(bytes);
             stream.close();
 
@@ -72,7 +72,7 @@ public class BookResource {
             Files.delete(Paths.get("src/main/resources/static/image/book/"+fileName));
 
             byte[] bytes = multipartFile.getBytes();
-            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File("src/main/resources/static/image/book/" + fileName)));
+            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File("src/main/resources/static/image/book/"+fileName)));
             stream.write(bytes);
             stream.close();
 
@@ -94,11 +94,13 @@ public class BookResource {
     }
 
     @RequestMapping(value = "/remove", method = RequestMethod.POST)
-    public ResponseEntity remove(@RequestBody String id) throws IOException {
+    public ResponseEntity remove(
+            @RequestBody String id
+    ) throws IOException {
         bookService.removeOne(Long.parseLong(id));
-        String fileName = id + ".png";
+        String fileName = id+".png";
 
-        Files.delete(Paths.get("src/main/resources/static/image/book/" + fileName));
+        Files.delete(Paths.get("src/main/resources/static/image/book/"+fileName));
 
         return new ResponseEntity("Remove Success!", HttpStatus.OK);
     }
@@ -115,4 +117,5 @@ public class BookResource {
 
         return bookList;
     }
+
 }
