@@ -12,7 +12,7 @@
   <div *ngIf="!dataFetched" style="margin-top: 50px;">
     <div class="row">
       <div class="col-md-2 col-md-offset-5">
-        <md-spinner></md-spinner>
+        <mat-spinner></mat-spinner>
       </div>
     </div>
   </div>
@@ -23,8 +23,8 @@
         <div class="panel-group">
           <div class="panel panel-default" style="border:none;">
             <div class="panel-body" style="background-color: #ededed; margin-top: 20px;">
-              <md-tab-group [selectedIndex]="selectedProfileTab">
-                <md-tab label="Edit">
+              <mat-tab-group [selectedIndex]="selectedProfileTab">
+                <mat-tab label="Edit">
                   <div style="margin-top: 20px;">
                     <div class="alert alert-danger" *ngIf="incorrectPassword">
                       <strong>Incorrect Password!</strong> Please enter the correct password for the current user.
@@ -35,7 +35,7 @@
                   </div>
                   <form (ngSubmit)="onUpdateUserInfo()">
                     <input type="hidden" name="id" [(ngModel)]="user.id" />
-                    <div class="bg-info" *ngIf="updateUserInfo">User info updated.</div>
+                    <div class="bg-info" *ngIf="updateSuccess">User info updated.</div>
                     <div class="form-group">
                       <div class="row">
                         <div class="col-xs-6">
@@ -51,11 +51,12 @@
                     <div class="form-group">
                       <label for="username">
                         Username *
-                      </label>&nbsp;<span *ngIf="usernameExists" style="color:red">Username already exists. Choose a different one.</span>
+                      </label>&nbsp;
+<!--                      <span *ngIf="usernameExists" style="color:red">Username already exists. Choose a different one.</span>-->
                       <input required="required" type="text" class="form-control" id="username" name="username" [(ngModel)]="user.username" />
                     </div>
                     <div class="form-group">
-                      <label for="currentPassword">
+                      <label for="password">
                         Current Password
                       </label>
                       <input type="password" class="form-control" id="password" name="password" [(ngModel)]="currentPassword" />
@@ -64,7 +65,8 @@
                     <div class="form-group">
                       <label for="email">
                         Email Address *
-                      </label>&nbsp;<span *ngIf="emailExists" style="color:red">Email already exists. Choose a different one.</span>
+                      </label>&nbsp;
+<!--                      <span *ngIf="emailExists" style="color:red">Email already exists. Choose a different one.</span>-->
                       <input required="required" type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" />
                       <p style="color:#828282;">A valid e-mail address. All e-mails from the system will be sent to this address.</p>
                     </div>
@@ -82,8 +84,8 @@
                     </div>
                     <button md-raised-button type="submit" class="mat-primary" id="udpateuserInfoButton">Save</button>
                   </form>
-                </md-tab>
-                <md-tab label="Orders">
+                </mat-tab>
+                <mat-tab label="Orders">
                   <div class="panel-group">
                     <div class="panel panel-default panel-faq" style="border: none;">
                       <div class="panel-body" style="background-color: #ededed; margin-top: 20px;">
@@ -189,7 +191,7 @@
                                       </tr>
                                       </thead>
                                       <tbody>
-                                      <tr *ngFor="let cartItem of cartItemList">
+                                      <tr *ngFor="let cartItem of order.cartItemList">
                                         <td>{{cartItem.book.title}}
                                         </td>
                                         <td class="text-center">{{cartItem.book.ourPrice}}
@@ -235,14 +237,14 @@
                       </div>
                     </div>
                   </div>
-                </md-tab>
-                <md-tab label="Payment">
+                </mat-tab>
+                <mat-tab label="Payment">
                   <br>
                   <br>
                   <div>
                     <p *ngIf="defaultPaymentSet">Default payment set successfully!</p>
-                    <md-tab-group (selectedIndexChange)="selectedBillingChange($event)" [selectedIndex]="selectedBillingTab">
-                      <md-tab label="List of Credit Cards">
+                    <mat-tab-group (selectedIndexChange)="selectedBillingChange($event)" [selectedIndex]="selectedBillingTab">
+                      <mat-tab label="List of Credit Cards">
                         <form (ngSubmit)="setDefaultPayment()" method="post">
                           <table class="table">
                             <thead>
@@ -268,10 +270,10 @@
                           </table>
                           <button md-raised-button class="mat-primary" type="submit">Save</button>
                         </form>
-                      </md-tab>
-                      <md-tab label="Add(Update) Credit Card">
+                      </mat-tab>
+                      <mat-tab label="Add(Update) Credit Card">
                         <form (ngSubmit)="onNewPayment()" method="post">
-                          <div class="bg-info" *ngIf="updateUserPaymentInfo">User info updated.</div>
+<!--                          <div class="bg-info" *ngIf="updateUserPaymentInfo">User info updated.</div>-->
                           <input hidden="hidden" name="id" [(ngModel)]="userPayment.id" />
                           <div class="form-group">
                             <h5>* Give a name for your card:</h5>
@@ -285,7 +287,7 @@
                           </div>
                           <div class="form-group">
                             <label for="billingAddress">* Street Address</label>
-                            <input type="text" class="form-control" id="billAddress" placeholder="Street Address 1" name="userBillingStreet1" required="required" [(ngModel)]="userBilling.userBillingStreet1" />
+                            <input type="text" class="form-control" id="billingAddress" placeholder="Street Address 1" name="userBillingStreet1" required="required" [(ngModel)]="userBilling.userBillingStreet1" />
                           </div>
                           <div class="form-group">
                             <input type="text" class="form-control" placeholder="Street Address 2" name="userBillingStreet2" [(ngModel)]="userBilling.userBillingStreet2" />
@@ -294,7 +296,7 @@
                             <div class="col-xs-4">
                               <div class="form-group">
                                 <label for="billingCity">* City</label>
-                                <input type="text" class="form-control" id="userBillingCity" placeholder="Your Billing City" name="userBillingCity" required="required" [(ngModel)]="userBilling.userBillingCity" />
+                                <input type="text" class="form-control" id="billingCity" placeholder="Your Billing City" name="userBillingCity" required="required" [(ngModel)]="userBilling.userBillingCity" />
                               </div>
                             </div>
                             <div class="col-xs-4">
@@ -309,7 +311,7 @@
                             <div class="col-xs-4">
                               <div class="form-group">
                                 <label for="billingZipcode">* Zipcode</label>
-                                <input type="text" class="form-control" id="userBillingZipcode" placeholder="Zipcode" name="userBillingZipcode" required="required" [(ngModel)]="userBilling.userBillingZipcode" />
+                                <input type="text" class="form-control" id="billingZipcode" placeholder="Zipcode" name="userBillingZipcode" required="required" [(ngModel)]="userBilling.userBillingZipcode" />
                               </div>
                             </div>
                           </div>
@@ -400,17 +402,17 @@
                             Save All
                           </button>
                         </form>
-                      </md-tab>
-                    </md-tab-group>
+                      </mat-tab>
+                    </mat-tab-group>
                   </div>
-                </md-tab>
-                <md-tab label="Shipping">
+                </mat-tab>
+                <mat-tab label="Shipping">
                   <br>
                   <br>
                   <div>
                     <p *ngIf="defaultShippingSet">Default shipping set successfully!</p>
-                    <md-tab-group (selectedIndexChange)="selectedShippingChange($event)" [selectedIndex]="selectedShippingTab">
-                      <md-tab label="List of Shipping Addresses">
+                    <mat-tab-group (selectedIndexChange)="selectedShippingChange($event)" [selectedIndex]="selectedShippingTab">
+                      <mat-tab label="List of Shipping Addresses">
                         <form (ngSubmit)="setDefaultShipping()" method="post">
                           <table class="table">
                             <thead>
@@ -426,7 +428,7 @@
                                 <input type="radio" name="defaultUserShippingId" [(ngModel)]="defaultUserShippingId" [value]="userShipping.id" />
                                 <span>default</span>
                               </td>
-                              <td>{{userShipping.userShippingStreet1}}, {{userShipping.userShippingStreetCity}}, {{userShipping.userShippingState}}</td>
+                              <td>{{userShipping.userShippingStreet1}}, {{userShipping.userShippingCity}}, {{userShipping.userShippingState}}</td>
                               <td>
                                 <a md-button (click)="onUpdateShipping(userShipping)"><i class="fa fa-pencil"></i></a>
                                 <a md-button (click)="onRemoveShipping(userShipping.id)"><i class="fa fa-times"></i></a>
@@ -436,10 +438,10 @@
                           </table>
                           <button md-raised-button class="mat-primary" type="submit">Save</button>
                         </form>
-                      </md-tab>
-                      <md-tab label="Add(Update) Shipping Address">
+                      </mat-tab>
+                      <mat-tab label="Add(Update) Shipping Address">
                         <form (ngSubmit)="onNewShipping()" method="post">
-                          <div class="bg-info" *ngIf="updateUserShippingInfo">User info updated.</div>
+<!--                          <div class="bg-info" *ngIf="updateUserShippingInfo">User info updated.</div>-->
                           <input hidden="hidden" name="id" [(ngModel)]="userShipping.id" />
                           <div class="form-group">
                             <label for="shippingname">* Name</label>
@@ -471,7 +473,7 @@
                             <div class="col-xs-4">
                               <div class="form-group">
                                 <label for="shippingZipcode">* Zipcode</label>
-                                <input type="text" class="form-control" id="userShippingZipcode" placeholder="Zipcode" name="userShippingZipcode" required="required" [(ngModel)]="userShipping.userShippingZipcode" />
+                                <input type="text" class="form-control" id="shippingZipcode" placeholder="Zipcode" name="userShippingZipcode" required="required" [(ngModel)]="userShipping.userShippingZipcode" />
                               </div>
                             </div>
                           </div>
@@ -480,11 +482,11 @@
                             Save All
                           </button>
                         </form>
-                      </md-tab>
-                    </md-tab-group>
+                      </mat-tab>
+                    </mat-tab-group>
                   </div>
-                </md-tab>
-              </md-tab-group>
+                </mat-tab>
+              </mat-tab-group>
             </div>
           </div>
         </div>

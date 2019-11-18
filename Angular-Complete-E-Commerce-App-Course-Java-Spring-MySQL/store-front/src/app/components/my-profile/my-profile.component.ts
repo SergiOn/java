@@ -17,18 +17,18 @@ import { Order } from 'src/app/models/order';
 export class MyProfileComponent implements OnInit {
 
   private serverPath = AppConst.serverPath;
-  private dataFetched = false;
+  public dataFetched = false;
   private loginError: boolean;
   private loggedIn: boolean;
   private credential = { username: '', password: '' };
 
   private user: User = new User();
-  private updateSuccess: boolean;
+  public updateSuccess: boolean;
   private newPassword: string;
-  private incorrectPassword: boolean;
+  public incorrectPassword: boolean;
   private currentPassword: string;
 
-  private selectedProfileTab = 0;
+  public selectedProfileTab = 0;
   private selectedBillingTab = 0;
   private selectedShippingTab = 0;
 
@@ -40,15 +40,14 @@ export class MyProfileComponent implements OnInit {
   private stateList: string[] = [];
 
   private userShipping: UserShipping = new UserShipping();
-  private userShippingList: UserShipping[] = [];
+  public userShippingList: UserShipping[] = [];
 
   private defaultUserShippingId: number;
   private defaultShippingSet: boolean;
 
   private orderList: Order[] = [];
-  private order: Order = new Order();
+  public order: Order = new Order();
   private displayOrderDetail: boolean;
-
 
   constructor(
     private loginService: LoginService,
@@ -66,7 +65,7 @@ export class MyProfileComponent implements OnInit {
       },
       error => {
         this.loggedIn = false;
-        console.log("inactive session");
+        console.log('inactive session');
         this.router.navigate(['/myAccount']);
       }
     );
@@ -75,10 +74,10 @@ export class MyProfileComponent implements OnInit {
 
     this.orderService.getOrderList().subscribe(
       res => {
-        this.orderList = res.json();
+        this.orderList = res;
       },
       error => {
-        console.log(error.text());
+        console.log(error);
       }
     );
 
@@ -120,8 +119,6 @@ export class MyProfileComponent implements OnInit {
     );
   }
 
-
-
   onNewPayment() {
     this.paymentService.newPayment(this.userPayment).subscribe(
       res => {
@@ -130,7 +127,7 @@ export class MyProfileComponent implements OnInit {
         this.userPayment = new UserPayment();
       },
       error => {
-        console.log(error.text());
+        console.log(error);
       }
     );
   }
@@ -147,7 +144,7 @@ export class MyProfileComponent implements OnInit {
         this.getCurrentUser();
       },
       error => {
-        console.log(error.text());
+        console.log(error);
       }
     );
   }
@@ -160,7 +157,7 @@ export class MyProfileComponent implements OnInit {
         this.defaultPaymentSet = true;
       },
       error => {
-        console.log(error.text());
+        console.log(error);
       }
     );
   }
@@ -173,7 +170,7 @@ export class MyProfileComponent implements OnInit {
         this.userShipping = new UserShipping();
       },
       error => {
-        console.log(error.text());
+        console.log(error);
       }
     );
   }
@@ -189,7 +186,7 @@ export class MyProfileComponent implements OnInit {
         this.getCurrentUser();
       },
       error => {
-        console.log(error.text());
+        console.log(error);
       }
     );
   }
@@ -202,7 +199,7 @@ export class MyProfileComponent implements OnInit {
         this.defaultShippingSet = true;
       },
       error => {
-        console.log(error.text());
+        console.log(error);
       }
     );
   }
