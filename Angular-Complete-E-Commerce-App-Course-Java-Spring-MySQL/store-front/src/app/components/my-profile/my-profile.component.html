@@ -82,7 +82,7 @@
                       </label>
                       <input type="password" class="form-control" id="txtConfirmPassword" name="txtNewPassword" />
                     </div>
-                    <button md-raised-button type="submit" class="mat-primary" id="udpateuserInfoButton">Save</button>
+                    <button mat-raised-button type="submit" class="mat-primary" id="udpateuserInfoButton">Save</button>
                   </form>
                 </mat-tab>
                 <mat-tab label="Orders">
@@ -262,13 +262,13 @@
                               </td>
                               <td>{{userPayment.cardName}}</td>
                               <td>
-                                <a md-button (click)="onUpdatePayment(userPayment)"><i class="fa fa-pencil"></i></a>
-                                <a md-button (click)="onRemovePayment(userPayment.id)"><i class="fa fa-times"></i></a>
+                                <a mat-button (click)="onUpdatePayment(userPayment)"><i class="fa fa-pencil"></i></a>
+                                <a mat-button (click)="onRemovePayment(userPayment.id)"><i class="fa fa-times"></i></a>
                               </td>
                             </tr>
                             </tbody>
                           </table>
-                          <button md-raised-button class="mat-primary" type="submit">Save</button>
+                          <button mat-raised-button class="mat-primary" type="submit">Save</button>
                         </form>
                       </mat-tab>
                       <mat-tab label="Add(Update) Credit Card">
@@ -398,7 +398,7 @@
                             </div>
                           </div>
                           <hr />
-                          <button md-raised-button type="submit" class="mat-primary">
+                          <button mat-raised-button type="submit" class="mat-primary">
                             Save All
                           </button>
                         </form>
@@ -430,13 +430,13 @@
                               </td>
                               <td>{{userShipping.userShippingStreet1}}, {{userShipping.userShippingCity}}, {{userShipping.userShippingState}}</td>
                               <td>
-                                <a md-button (click)="onUpdateShipping(userShipping)"><i class="fa fa-pencil"></i></a>
-                                <a md-button (click)="onRemoveShipping(userShipping.id)"><i class="fa fa-times"></i></a>
+                                <a mat-button (click)="onUpdateShipping(userShipping)"><i class="fa fa-pencil"></i></a>
+                                <a mat-button (click)="onRemoveShipping(userShipping.id)"><i class="fa fa-times"></i></a>
                               </td>
                             </tr>
                             </tbody>
                           </table>
-                          <button md-raised-button class="mat-primary" type="submit">Save</button>
+                          <button mat-raised-button class="mat-primary" type="submit">Save</button>
                         </form>
                       </mat-tab>
                       <mat-tab label="Add(Update) Shipping Address">
@@ -478,7 +478,7 @@
                             </div>
                           </div>
                           <hr />
-                          <button md-raised-button type="submit" class="mat-primary">
+                          <button mat-raised-button type="submit" class="mat-primary">
                             Save All
                           </button>
                         </form>

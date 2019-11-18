@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { UserService } from 'src/app/services/user.service';
+import { PaymentService } from 'src/app/services/payment.service';
+import { ShippingService } from 'src/app/services/shipping.service';
+import { OrderService } from 'src/app/services/order.service';
 import { AppConst } from 'src/app/constants/app-const';
 import { User } from 'src/app/models/user';
 import { UserPayment } from 'src/app/models/user-payment';
@@ -50,12 +53,12 @@ export class MyProfileComponent implements OnInit {
   private displayOrderDetail: boolean;
 
   constructor(
+    private router: Router,
     private loginService: LoginService,
     private userService: UserService,
     private paymentService: PaymentService,
     private shippingService: ShippingService,
-    private orderService: OrderService,
-    private router: Router
+    private orderService: OrderService
   ) { }
 
   ngOnInit() {

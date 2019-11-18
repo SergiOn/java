@@ -13,6 +13,9 @@ import { UserService } from './services/user.service';
 import { LoginService } from './services/login.service';
 import { BookService } from './services/book.service';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
+import { PaymentService } from 'src/app/services/payment.service';
+import { ShippingService } from 'src/app/services/shipping.service';
+import { OrderService } from 'src/app/services/order.service';
 
 @NgModule({
   imports: [
@@ -35,7 +38,10 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
   providers: [
     LoginService,
     UserService,
-    BookService
+    BookService,
+    PaymentService,
+    ShippingService,
+    OrderService
   ],
   bootstrap: [AppComponent]
 })
