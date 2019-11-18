@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AppConst } from '../constants/app-const';
 import { User } from '../models/user';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class UserService {
@@ -56,14 +57,14 @@ export class UserService {
     return this.http.post(url, userInfo, { headers });
   }
 
-  getCurrentUser() {
+  getCurrentUser(): Observable<User> {
     const url = `${this.serverPath}/user/getCurrentUser`;
     const headers = new HttpHeaders({
       'Content-Type' : 'application/json',
       'x-auth-token' : localStorage.getItem('xAuthToken') || ''
     });
 
-    return this.http.get(url, { headers });
+    return this.http.get<User>(url, { headers });
   }
 
 }

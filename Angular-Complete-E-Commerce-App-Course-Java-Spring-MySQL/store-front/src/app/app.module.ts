@@ -12,6 +12,7 @@ import { MyAccountComponent } from './components/my-account/my-account.component
 import { UserService } from './services/user.service';
 import { LoginService } from './services/login.service';
 import { BookService } from './services/book.service';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { BookService } from './services/book.service';
     AppComponent,
     HomeComponent,
     NavBarComponent,
-    MyAccountComponent
+    MyAccountComponent,
+    MyProfileComponent
   ],
   providers: [
     LoginService,
