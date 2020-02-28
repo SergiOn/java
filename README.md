@@ -418,3 +418,12 @@ https://www.udemy.com/course/testing-spring-boot-beginner-to-guru
 
 Become an Expert Testing Java and Spring Boot Applications using JUnit 5, Mockito, Spring Boot, and More!
 
+
+## Master Java Unit Testing with Spring Boot & Mockito
+
+https://www.udemy.com/course/learn-unit-testing-with-spring-boot
+
+##### About this course
+
+Learn to write awesome Java JUnit unit tests with Spring Boot, Mockito, JsonAssert, Hamcrest & JsonPath in 40 easy steps
+
