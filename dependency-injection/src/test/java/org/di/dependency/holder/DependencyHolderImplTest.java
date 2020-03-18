@@ -16,28 +16,27 @@ import static org.junit.jupiter.api.Assertions.*;
 class DependencyHolderImplTest {
 
     private DependencyHolder sut;
+    private Map<Class<?>, Class<?>> dependencies;
 
     @BeforeEach
     public void beforeEach() {
         sut = new DependencyHolderImpl();
+        dependencies = Whitebox.getInternalState(sut, "dependencies");
     }
 
     @Test
     public void dependenciesHasCorrectType() {
-        var dependencies = Whitebox.getInternalState(sut, "dependencies");
         assertThat(dependencies, instanceOf(Map.class));
     }
 
     @Test
     public void dependenciesHasCorrectDefaultSize() {
-        Map<Class<?>, Class<?>> dependencies = Whitebox.getInternalState(sut, "dependencies");
         assertThat(dependencies, anEmptyMap());
     }
 
     @Test
     public void saveDependency() {
         sut.saveDependency(ADependency.class, ADependencyImpl.class);
-        Map<Class<?>, Class<?>> dependencies = Whitebox.getInternalState(sut, "dependencies");
 
         assertThat(dependencies, aMapWithSize(1));
         assertThat(dependencies, hasEntry(ADependency.class, ADependencyImpl.class));
@@ -45,7 +44,6 @@ class DependencyHolderImplTest {
 
     @Test
     public void loadDependency() {
-        Map<Class<?>, Class<?>> dependencies = Whitebox.getInternalState(sut, "dependencies");
         dependencies.put(ADependency.class, ADependencyImpl.class);
 
         assertThat(dependencies, aMapWithSize(1));
@@ -56,7 +54,6 @@ class DependencyHolderImplTest {
     void isDependencyExist() {
         assertFalse(sut.isDependencyExist(ADependency.class));
 
-        Map<Class<?>, Class<?>> dependencies = Whitebox.getInternalState(sut, "dependencies");
         dependencies.put(ADependency.class, ADependencyImpl.class);
 
         assertTrue(sut.isDependencyExist(ADependency.class));
