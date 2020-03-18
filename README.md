@@ -54,3 +54,10 @@ Project includes Spring Boot, Liquibase, Spring Cloud dependencies and similar s
 The idea is use: Spring boot, Spring Cloud, Liquibase, MySQL, Hibernate, Eureka, Zuul, Oauth2, Jwt, Zipkin, Sleuth, Elasticsearch, Kibana, Logstash, Configuration server, Redis, Feign, Hystrix, Prometheus, Grafana, Docker, Kubernetes, AWS.
 
 
+## Dependency Injection
+
+#### About project
+
+It implements its own dependency injection mechanism similar to ideas from the Spring framework
+
+
