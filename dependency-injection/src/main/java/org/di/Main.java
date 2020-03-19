@@ -1,59 +1,60 @@
 package org.di;
 
-import org.di.examples.UserService;
-import org.di.examples.UserServiceImpl;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Optional;
+import org.di.dependency.holder.DependencyHolder;
+import org.di.dependency.holder.DependencyHolderImpl;
+import org.di.dependency.holder.DependencyInstanceHolder;
+import org.di.dependency.holder.DependencyInstanceHolderImpl;
+import org.di.dependency.injection.DependencyInjection;
+import org.di.dependency.injection.DependencyInjectionImpl;
+import org.di.examples.*;
 
 public class Main {
 
     public static void main(String[] args) {
+        DependencyHolder dependencyHolder = new DependencyHolderImpl();
+        DependencyInstanceHolder dependencyInstanceHolder = new DependencyInstanceHolderImpl();
+        DependencyInjection dependencyInjection = new DependencyInjectionImpl(dependencyHolder, dependencyInstanceHolder);
 
-        DependencyHolderImpl dependencyHolder = new DependencyHolderImpl();
-        dependencyHolder.registerDependency(UserService.class, UserServiceImpl.class);
-        Class<?> userServiceClass = dependencyHolder.loadDependency(UserService.class);
+        dependencyInjection.registerDependencyClass(ADependency.class, ADependencyImpl.class);
+        dependencyInjection.registerDependencyClass(BDependency.class, BDependencyImpl.class);
+        dependencyInjection.registerDependencyClass(UserService.class, UserServiceImpl.class);
 
-//        Optional.ofNullable(null).stream()
+        System.out.println("----- ----- -----");
+        System.out.println("----- ----- before (start) ----- -----");
+        System.out.println("----- ----- -----");
+        System.out.println("----- ----- dependencyHolder ----- -----");
+        System.out.println(dependencyHolder.loadDependency(ADependency.class));
+        System.out.println(dependencyHolder.loadDependency(UserService.class));
+        System.out.println("----- ----- DependencyInstanceHolder ----- -----");
+        System.out.println(dependencyInstanceHolder.loadDependency(ADependency.class));
+        System.out.println(dependencyInstanceHolder.loadDependency(UserService.class));
+        System.out.println("----- ----- -----");
+        System.out.println("----- ----- before (end) ----- -----");
+        System.out.println("----- ----- -----");
 
-        Constructor<?>[] declaredConstructors = userServiceClass.getDeclaredConstructors();
-        UserService userService = (UserService) Arrays.stream(declaredConstructors)
-                .filter(constructor -> constructor.getGenericParameterTypes().length == 0)
-                .map(constructor -> {
-                    try {
-                        return constructor.newInstance();
-                    } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
-                        e.printStackTrace();
-                        return null;
-                    }
-                })
-                .findFirst()
-                .orElse(null);
-
+        UserService userService = dependencyInjection.getDependencyInstance(UserService.class);
+        System.out.println("----- ----- -----");
+        System.out.println(userService);
         System.out.println(userService.getUserName());
+        System.out.println(userService.getDependency1Name());
+        System.out.println(userService.getDependency2Name());
+        System.out.println(new UserServiceImpl(new ADependencyImpl(), new ADependencyImpl()));
+        System.out.println("----- ----- -----");
 
-        var arr = new ArrayList<String>();
-        arr.add("1");
-        arr.add("2");
-        arr.add("3");
-
-        for (int i = 0; i < arr.size(); i++) {
-//            System.out.println(arr.get(i));
-//            arr.add(String.valueOf(i + 4));
-        }
-
-//        arr.forEach(i -> {
-//            System.out.println(i);
-//            arr.add(i + i);
-//        });
-
-//        for (String i : arr) {
-//            System.out.println(i);
-//            arr.add(i + i);
-//        }
+        System.out.println("----- ----- -----");
+        System.out.println("----- ----- after (start) ----- -----");
+        System.out.println("----- ----- -----");
+        System.out.println("----- ----- dependencyHolder ----- -----");
+        System.out.println(dependencyHolder.loadDependency(ADependency.class));
+        System.out.println(dependencyHolder.loadDependency(UserService.class));
+        System.out.println("----- ----- DependencyInstanceHolder ----- -----");
+        System.out.println(dependencyInstanceHolder.loadDependency(ADependency.class));
+        System.out.println(dependencyInstanceHolder.loadDependency(ADependency.class));
+        System.out.println(dependencyInstanceHolder.loadDependency(UserService.class));
+        System.out.println(dependencyInstanceHolder.loadDependency(UserService.class));
+        System.out.println("----- ----- -----");
+        System.out.println("----- ----- after (end) ----- -----");
+        System.out.println("----- ----- -----");
 
     }
 

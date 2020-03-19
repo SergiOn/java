@@ -21,6 +21,8 @@ dependencies {
     testCompileOnly group: 'org.powermock', name: 'powermock-api-mockito2', version: '2.0.5'
     testCompileOnly group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
 //    testCompileOnly group: 'org.assertj', name: 'assertj-core', version: '3.15.0'
+//    compileOnly group: 'org.openjdk.jmh', name: 'jmh-core', version: '1.23'
+//    compileOnly group: 'org.openjdk.jmh', name: 'jmh-generator-annprocess', version: '1.23'
 }
 
 test {
