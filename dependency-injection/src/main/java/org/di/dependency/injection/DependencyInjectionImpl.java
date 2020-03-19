@@ -38,7 +38,7 @@ public class DependencyInjectionImpl implements DependencyInjection {
         Constructor<?> constructor = Arrays.stream(constructors)
                 .filter(c -> c.getParameterCount() == 0 || Arrays.stream(c.getParameterTypes()).allMatch(dependencyHolder::isDependencyExist))
                 .reduce((acc, c) -> c.getParameterCount() > 0 ? c : acc)
-                .get();
+                .orElseThrow();
 
         Class<?>[] parameterTypes = constructor.getParameterTypes();
 
@@ -55,7 +55,7 @@ public class DependencyInjectionImpl implements DependencyInjection {
             instance = (K) constructor.newInstance(instantiatedDependencies);
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
-            return null;
+            throw new RuntimeException("Exception with instantiating constructor: " + constructor.getName());
         }
 
         dependencyInstanceHolder.saveDependency(key, instance);
