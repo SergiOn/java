@@ -47,7 +47,7 @@ https://github.com/SeriyBg/starwars-istio
 
 ## Spring-Liquibase-Okr
 
-#### About project
+#### About the project
 
 Project includes Spring Boot, Liquibase, Spring Cloud dependencies and similar staff.
 
@@ -58,8 +58,17 @@ The idea is use: Spring boot, Spring Cloud, Liquibase, MySQL, Hibernate, Eureka,
 
 https://en.wikipedia.org/wiki/Dependency_injection
 
-#### About project
+#### About the project
 
 It implements its own dependency injection mechanism similar to ideas from the Spring framework
+
+
+## Annotation Processing
+
+http://hannesdorfmann.com/annotation-processing/annotationprocessing101
+
+#### About the project
+
+How to write an annotation processor
 
 
