@@ -1,7 +1,0 @@
-rootProject.name = 'annotation-processing'
-
-include 'pizzastore-handwritten'
-include 'pizzastore'
-include 'annotation'
-include 'processor'
-
