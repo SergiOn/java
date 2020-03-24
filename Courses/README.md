@@ -4,7 +4,7 @@
 
 https://www.udemy.com/build-a-web-app-with-spring-boot-and-angular-2
 
-#### About this course
+#### About
 
 (Updated) Step by Step guide on Angular 2 + Spring Boot + Hiberante + Token-based Security+Eclipse
 
@@ -13,7 +13,7 @@ https://www.udemy.com/build-a-web-app-with-spring-boot-and-angular-2
 
 https://www.udemy.com/learning-web-application-with-spring-5-and-angular-2
 
-#### About this course
+#### About
 
 Learn how to make your own Web Application with Spring 5 and Angular 2
 
@@ -24,7 +24,7 @@ https://console.developers.google.com/apis/credentials?project=packt-lwa-spring-
 
 https://www.udemy.com/reactive-programming-with-spring-framework-5
 
-#### About this course
+#### About
 
 Learn Functional Reactive Programming with Spring Framework 5!
 
@@ -33,7 +33,7 @@ Learn Functional Reactive Programming with Spring Framework 5!
 
 https://www.udemy.com/building-an-e-commerce-store-using-java-spring-framework
 
-#### About this course
+#### About
 
 Hands-on experience with Spring MVC, Spring Data, Hibernate, JPA, Spring Security, Spring Webflow and more
 
@@ -42,7 +42,7 @@ Hands-on experience with Spring MVC, Spring Data, Hibernate, JPA, Spring Securit
 
 https://www.udemy.com/application-development-with-spring-50-and-angular-6
 
-#### About this course
+#### About
 
 Explore the power of Spring 5.0 with Java to create your own real-world and enterprise-level applications
 
@@ -51,7 +51,7 @@ Explore the power of Spring 5.0 with Java to create your own real-world and ente
 
 https://www.udemy.com/build-an-online-bank-with-java-angular-2-spring-and-more
 
-#### About this course
+#### About
 
 Comprehensive guide on building online banking system with Frontend, Backend, Database, REST and more using latest Tech
 
@@ -60,7 +60,7 @@ Comprehensive guide on building online banking system with Frontend, Backend, Da
 
 https://www.udemy.com/learn-microservices-with-spring-boot-and-spring-cloud
 
-#### About this course
+#### About
 
 A Hands-on Guide on Spring and Microservices
 
@@ -69,7 +69,7 @@ A Hands-on Guide on Spring and Microservices
 
 https://www.udemy.com/data-structures-and-algorithms-bootcamp/
 
-#### About this course
+#### About
 
 How to ace your Silicon Valley style coding interview
 
@@ -84,7 +84,7 @@ http://www.mathcs.emory.edu/~cheung/Courses/171/Syllabus/9-BinTree/BST-delete2.h
 
 https://www.udemy.com/spring-hibernate-tutorial/
 
-#### About this course
+#### About
 
 Spring 5: Learn Spring 5 Core, AOP, Spring MVC, Spring Security, Spring REST, Spring Boot 2, Thymeleaf, JPA & Hibernate
 
@@ -105,7 +105,7 @@ https://www.mulesoft.com/tcat/tomcat-ssl
 
 https://www.udemy.com/course/spring-framework-5-beginner-to-guru/
 
-#### About this course
+#### About
 
 Spring Framework 5: Learn Spring Framework 5, Spring Boot 2, Spring MVC, Spring Data JPA, Spring Data MongoDB, Hibernate
 
@@ -152,7 +152,7 @@ https://github.com/springframeworkguru/spring5-mvc-rest/tree/swagger-ep-assn-rev
 
 https://www.udemy.com/course/java-spring-framework-masterclass/
 
-#### About this course
+#### About
 
 Can't Find a good Spring Tutorial? Finally Understand Spring 5 With Spring Core, Spring MVC, Spring Boot 2 and more
 
@@ -166,7 +166,7 @@ https://logback.qos.ch/manual/layouts.html#conversionWord
 
 https://www.udemy.com/how-to-connect-java-jdbc-to-mysql/
 
-#### About this course
+#### About
 
 Learn how to connect to a MySQL database with Java JDBC
 
@@ -175,7 +175,7 @@ Learn how to connect to a MySQL database with Java JDBC
 
 https://www.udemy.com/deploy-java-spring-apps-online/
 
-#### About this course
+#### About
 
 Learn how to deploy your Java Spring Apps online to showcase your Spring Skills! (Live Internet Access)
 
@@ -184,7 +184,7 @@ Learn how to deploy your Java Spring Apps online to showcase your Spring Skills!
 
 https://www.udemy.com/learn-rabbitmq-asynchronous-messaging-with-java-and-spring/
 
-#### About this course
+#### About
 
 Learn how to develop Queues, Exchanges, Routings and Listeners with Rabbit MQ using Java and Spring!
 
@@ -211,7 +211,7 @@ rabbitmqctl status
 
 https://www.baeldung.com/rest-with-spring-course
 
-#### About this course
+#### About
 
 From HTTP fundamentals to API Mastery
 
@@ -220,7 +220,7 @@ From HTTP fundamentals to API Mastery
 
 https://www.udemy.com/java-streams/
 
-#### About this course
+#### About
 
 Functional Programming with Java 8
 
@@ -229,7 +229,7 @@ Functional Programming with Java 8
 
 https://www.udemy.com/java-multithreading/
 
-#### About this course
+#### About
 
 Unveiling the mysteries of multithreading in Java. The ultimate Java multithreading course
 
@@ -238,7 +238,7 @@ Unveiling the mysteries of multithreading in Java. The ultimate Java multithread
 
 https://www.udemy.com/java-multithreading-concurrency-performance-optimization/
 
-#### About this course
+#### About
 
 Become an expert in Multithreading, Concurrency & Parallel programming in Java, with strong emphasis on high performance
 
@@ -247,7 +247,7 @@ Become an expert in Multithreading, Concurrency & Parallel programming in Java, 
 
 https://www.udemy.com/multithreading-and-parallel-computing-in-java/
 
-#### About this course
+#### About
 
 Multithreading and Concurrent Programming, Parallel Computation and MapReduce in Java
 
@@ -256,7 +256,7 @@ Multithreading and Concurrent Programming, Parallel Computation and MapReduce in
 
 https://www.udemy.com/efficient-java-multithreading-with-executors/
 
-#### About this course
+#### About
 
 Learn how to use the modern Executors framework to do everything that you can do with the Threads API ... and more!
 
@@ -265,7 +265,7 @@ Learn how to use the modern Executors framework to do everything that you can do
 
 https://www.udemy.com/java-application-performance-and-memory-management/
 
-#### About this course
+#### About
 
 Learn how to tune the JVM and make good coding choices to ensure your applications perform optimally.
 
@@ -274,7 +274,7 @@ Learn how to tune the JVM and make good coding choices to ensure your applicatio
 
 https://www.udemy.com/course/apache-kafka/
 
-#### About this course
+#### About
 
 START HERE: Learn Apache Kafka 2.0 Ecosystem, Core Concepts, Real World Java Producers/Consumers & Big Data Architecture
 
@@ -283,7 +283,7 @@ START HERE: Learn Apache Kafka 2.0 Ecosystem, Core Concepts, Real World Java Pro
 
 https://www.udemy.com/kafka-connect/
 
-#### About this course
+#### About
 
 Kafka Connect - Learn How to Source Twitter Data, Store in Apache Kafka Topics & Sink in ElasticSearch and PostgreSQL
 
@@ -292,7 +292,7 @@ Kafka Connect - Learn How to Source Twitter Data, Store in Apache Kafka Topics &
 
 https://www.udemy.com/confluent-schema-registry
 
-#### About this course
+#### About
 
 Kafka - Master Avro, the Confluent Schema Registry and Kafka REST Proxy. Build Avro Producers/Consumers, Evolve Schemas
 
@@ -301,7 +301,7 @@ Kafka - Master Avro, the Confluent Schema Registry and Kafka REST Proxy. Build A
 
 https://www.udemy.com/kafka-cluster-setup/
 
-#### About this course
+#### About
 
 Hands-On Training on ZooKeeper Quorum Setup, Kafka Cluster Setup and Administration in AWS.
 
@@ -310,7 +310,7 @@ Hands-On Training on ZooKeeper Quorum Setup, Kafka Cluster Setup and Administrat
 
 https://www.udemy.com/kafka-streams/
 
-#### About this course
+#### About
 
 Learn the Kafka Streams API with Hands-On Examples, Learn Exactly Once, Build and Deploy Apps with Java 8
 
@@ -319,7 +319,7 @@ Learn the Kafka Streams API with Hands-On Examples, Learn Exactly Once, Build an
 
 https://www.udemy.com/apache-kafka-security/
 
-#### About this course
+#### About
 
 Hands-On Course - Kafka Security Setup in AWS with SSL Encryption & Authentication, SASL Kerberos, ACL in Zookeeper
 
@@ -328,7 +328,7 @@ Hands-On Course - Kafka Security Setup in AWS with SSL Encryption & Authenticati
 
 https://www.udemy.com/course/kafka-monitoring-and-operations/
 
-#### About this course
+#### About
 
 Kafka Monitoring Setup with Prometheus and Grafana, Kafka Operations and Kafka Cluster Upgrades Hands-On. Setup in AWS
 
@@ -337,7 +337,7 @@ Kafka Monitoring Setup with Prometheus and Grafana, Kafka Operations and Kafka C
 
 https://www.udemy.com/kafka-ksql/
 
-#### About this course
+#### About
 
 Use SQL on Apache Kafka with Confluent KSQL! Build an entire taxi booking application based on KSQL stream processing
 
@@ -346,7 +346,7 @@ Use SQL on Apache Kafka with Confluent KSQL! Build an entire taxi booking applic
 
 https://www.udemy.com/course/hibernate-tutorial-advanced/
 
-#### About this course
+#### About
 
 Learn Advanced Hibernate techniques for Mapping Sets, Lists, Embeddable, Enums and Inheritance
 
@@ -355,7 +355,7 @@ Learn Advanced Hibernate techniques for Mapping Sets, Lists, Embeddable, Enums a
 
 https://www.udemy.com/course/build-angular-2-complete-e-comerce-app-java-spring-mysql/
 
-#### About this course
+#### About
 
 A Comprehensive Project with Step-By-Step Guide on latest Angular 2 Ecosystem and Java Spring Framework Ecosystem
 
@@ -364,7 +364,7 @@ A Comprehensive Project with Step-By-Step Guide on latest Angular 2 Ecosystem an
 
 https://www.udemy.com/course/testing-spring-boot-beginner-to-guru
 
-#### About this course
+#### About
 
 Become an Expert Testing Java and Spring Boot Applications using JUnit 5, Mockito, Spring Boot, and More!
 
@@ -373,7 +373,7 @@ Become an Expert Testing Java and Spring Boot Applications using JUnit 5, Mockit
 
 https://www.udemy.com/course/learn-unit-testing-with-spring-boot
 
-#### About this course
+#### About
 
 Learn to write awesome Java JUnit unit tests with Spring Boot, Mockito, JsonAssert, Hamcrest & JsonPath in 40 easy steps
 
@@ -382,8 +382,17 @@ Learn to write awesome Java JUnit unit tests with Spring Boot, Mockito, JsonAsse
 
 https://www.udemy.com/course/practical-test-driven-development-for-java-programmers
 
-##### About this course
+##### About
 
 A truly practical approach to the fundamentals of test driven development in Java, featuring JUnit and Mockito
+
+
+## The Gradle Masterclass
+
+https://www.udemy.com/course/gradle-masterclass
+
+##### About
+
+Discover the most advanced Java Build tools on the Planet!
 
 
