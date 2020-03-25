@@ -1,0 +1,24 @@
+println ">>> build.gradle --> This is executed during the configuration phase  - timestamp @ ${gradle.timestamp()}"
+
+
+// logger.info ">>> build.gradle: $project.gradle.gradleVersion"
+// logger.info ">>> build.gradle: $project.gradle.gradleHomeDir"
+// logger.info ">>> build.gradle: $project.gradle.gradleUserHomeDir"
+
+// logger.info ">>> build.gradle: $buildFile"
+
+// logger.info ">>> build.gradle: ${relativePath(buildFile)}"
+
+
+/*
+logger.info """
+******************************************************************************
+Welcome to Gradle $gradle.gradleVersion - http://www.gradle.org
+Gradle home is set to: $gradle.gradleHomeDir
+Gradle user directory is set to: $gradle.gradleUserHomeDir
+
+Base directory: $projectDir
+Running script  ${relativePath(buildFile)}
+******************************************************************************
+"""
+*/

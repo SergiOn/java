@@ -1,0 +1,15 @@
+import java.text.*
+
+gradle.ext.timestamp = {
+   def df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+   df.setTimeZone(TimeZone.getTimeZone("UTC"))
+   return df.format(new Date())
+}
+
+
+
+println ">>> another.gradle --> This is executed during the initialization phase  - timestamp @ ${gradle.timestamp()}"
+
+// logger.info ">>> another.gradle: $gradle.gradleVersion"
+// logger.info ">>> another.gradle: $gradle.gradleHomeDir"
+// logger.info ">>> another.gradle: $gradle.gradleUserHomeDir"

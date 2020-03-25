@@ -1,0 +1,5 @@
+println ">>> settings.gradle --> This is executed during the initialization phase  - timestamp @ ${gradle.timestamp()}"
+
+// logger.info ">>> settings.gradle: $settings.gradle.gradleVersion"
+// logger.info ">>> settings.gradle: $settings.gradle.gradleHomeDir"
+// logger.info ">>> settings.gradle: $settings.gradle.gradleUserHomeDir"

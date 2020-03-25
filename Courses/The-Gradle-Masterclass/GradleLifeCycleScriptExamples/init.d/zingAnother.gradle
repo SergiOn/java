@@ -1,0 +1,6 @@
+println ">>> zingAnother.gradle --> This is executed during the initialization phase  - timestamp @ ${gradle.timestamp()}"
+
+
+// logger.info ">>> zingAnother.gradle: $gradle.gradleVersion"
+// logger.info ">>> zingAnother.gradle: $gradle.gradleHomeDir"
+// logger.info ">>> zingAnother.gradle: $gradle.gradleUserHomeDir"
