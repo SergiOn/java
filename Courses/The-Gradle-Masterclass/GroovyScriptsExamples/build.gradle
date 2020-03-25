@@ -1,0 +1,194 @@
+import java.text.*
+
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+sdf.setTimeZone(TimeZone.getTimeZone("UTC"))
+ 
+
+System.out.println "Hello World now: " + sdf.format(new Date())
+
+
+void sayHelloWorld() {
+	println "Hello world!"
+}
+
+sayHelloWorld()
+
+int doubleIt(int i) {
+	println(i)
+	i * 3
+	def y = i
+}
+
+println doubleIt(2)
+
+def s1 = "a string"
+def s2 = 'a string'
+def s3 = """ A
+	string
+	on
+	multiple
+	lines
+"""
+String interpolation
+def x = 4
+println "x is $x"
+
+def myCourse = "gradle"
+println "I'm training in: ${myCourse.toUpperCase()}"
+
+
+
+//Properties...
+
+class Person {                       
+
+    String name                      
+    Integer age
+    
+   
+     Person(name, age) {          
+        this.name = name
+        this.age = age
+    }
+
+}
+
+def p = new Person("Fred", 35)
+println p.age
+p.age = 36
+println p.age
+
+// with a Map
+
+Map m = new HashMap()
+
+m.put("foo", "Fred")
+println m.get("foo")
+
+m.foo = "bill"
+m.bar = "Jane"
+m.baz = "Dave"
+
+m.foo
+m.bar
+m.baz
+
+
+println m.foo
+println m.bar
+println m.baz
+
+//Closures
+
+def echoIt = { parameter ->
+	println parameter
+}
+
+//called like a normal method
+echoIt("Hello World!")
+
+
+//with type Closure <Interface>
+Closure echoIt2 = { parameter ->
+	println parameter
+}
+
+
+//pass closures as parameters
+
+def oneArgMethod(closure) {
+	closure() * 2
+}
+
+println oneArgMethod {10}
+
+
+
+
+def twoArgMethod(factor, closure){
+	closure() * factor
+}
+
+println twoArgMethod(3, {10})
+
+twoArgMethod 3, {10}
+
+
+def i = oneArgMethod {
+	def y = 3
+	y * 2
+}
+
+assert i == 12
+
+//common uses for closure ... iterators!
+for (int j in [1,2,3]){
+	println j
+}
+
+[1,2,3].each {
+	println it
+}
+
+
+
+// Closure resolution
+
+
+
+class Person1 {                       
+
+    String name = "Fred"                     
+    
+	Closure nameSayer = {
+		println name
+	}
+}
+
+def p1 = new Person1()
+p1.nameSayer()
+
+// Closed over a context
+def theName = "John"
+def sayName = {
+	println theName
+}
+sayName()
+theName = "Fred"
+sayName()
+
+
+
+class Person2 {                       
+
+    String theName                      
+    Integer theAge
+    
+   
+     Person2(theName, theAge) {          
+        this.theName = theName
+        this.theAge = theAge
+    }
+
+
+	def executeInside(Closure c){
+		c.delegate = this
+		c()
+	}
+
+}
+
+def p2 = new Person2("Fred", 35)
+println p2.theName
+
+p2.executeInside {println theName}
+
+
+// Core Gradle Objects
+
+logger.info "Hello!"
+
+apply {
+	println "Hello again!!"
+}
+
