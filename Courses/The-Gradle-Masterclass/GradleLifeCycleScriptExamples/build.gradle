@@ -1,4 +1,5 @@
-println ">>> build.gradle --> This is executed during the configuration phase  - timestamp @ ${gradle.timestamp()}"
+//println ">>> build.gradle --> This is executed during the configuration phase  - timestamp @ ${gradle.timestamp()}"
+println ">>> build.gradle --> This is executed during the configuration phase  - timestamp @ "
 
 
 // logger.info ">>> build.gradle: $project.gradle.gradleVersion"
