@@ -1,0 +1,116 @@
+defaultTasks 'doFinished'
+
+//logger.info ">>> build.gradle --> This is executed during the configuration phase  - timestamp @ ${gradle.timestamp()}"
+logger.info ">>> build.gradle --> This is executed during the configuration phase  - timestamp @ "
+
+
+
+task doStartProcess {
+	doLast{
+		logger.info "$name - Now starting the process - OK!"
+	}
+}
+
+task doStep2{
+	doLast{
+		logger.info "$name - Performed OK!"
+	}
+}
+
+task doSomethingInTheMiddle (dependsOn: ['doStartProcess', 'doStep2']) {
+	doLast{
+		logger.info "$name - Performed the middle step - OK!"
+	}
+}
+
+
+task doFinished (dependsOn: ['doSomethingInTheMiddle', 'doStep2'])   {
+	doLast{
+		logger.info "$name - Done - OK!"
+	}	
+}
+
+
+/*
+
+defaultTasks 'doFinished'
+
+logger.info ">>> build.gradle --> This is executed during the configuration phase  - timestamp @ ${gradle.timestamp()}"
+
+
+
+task doStartProcess {
+	doLast{
+		logger.info "$name - Now starting the process - OK!"
+	}
+}
+
+task doStep2{
+	doLast{
+		logger.info "$name - Performed OK!"
+	}
+}
+
+task doSomethingInTheMiddle (dependsOn: ['doStartProcess',  tasks.findAll { task -> task.name.startsWith('doStep2')  }  ]) {
+	doLast{
+		logger.info "$name - Performed the middle step - OK!"
+	}
+}
+
+
+task doFinished (dependsOn: ['doSomethingInTheMiddle', 'doStep2'])   {
+	doLast{
+		logger.info "$name - Done - OK!"
+	}	
+}
+
+
+logger.info ">>> ${ project.tasks.findAll { task -> task.name.startsWith('doStep2')  }  }"
+
+*/
+
+/*
+
+//Add to dependency to existing Task
+
+defaultTasks 'doFinished'
+
+logger.info ">>> build.gradle --> This is executed during the configuration phase  - timestamp @ ${gradle.timestamp()}"
+
+
+task doStartProcess {
+	doLast{
+		logger.info "$name - Now starting the process - OK!"
+	}
+}
+
+task doStep2 {
+	doLast{
+		logger.info "$name - Performed OK!"
+	}
+}
+
+task doSomethingInTheMiddle  {
+	doLast{
+		logger.info "$name - Performed the middle step - OK!"
+	}
+}
+
+
+task doFinished (dependsOn: 'doSomethingInTheMiddle'){
+	doLast{
+		logger.info "$name - Done - OK!"
+	}	
+}
+
+
+logger.info "${ project.tasks.findAll { task -> task.name.startsWith('doStep2')} }"
+
+
+//Conditional logic
+if ( Math.random() < 0.5){
+	doSomethingInTheMiddle.dependsOn doStartProcess, tasks.findAll { task -> task.name.startsWith('doStep2') }
+}
+
+
+*/
