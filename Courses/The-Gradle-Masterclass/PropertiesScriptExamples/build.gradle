@@ -1,0 +1,75 @@
+//println ">>> build.gradle --> This is executed during the configuration phase  - timestamp @ ${gradle.timestamp()}"
+println ">>> build.gradle --> This is executed during the configuration phase  - timestamp @ "
+
+
+// logger.info ">>> build.gradle: $project.gradle.gradleVersion"
+// logger.info ">>> build.gradle: $project.gradle.gradleHomeDir"
+// logger.info ">>> build.gradle: $project.gradle.gradleUserHomeDir"
+
+// logger.info ">>> build.gradle: $buildFile"
+
+// logger.info ">>> build.gradle: ${relativePath(buildFile)}"
+
+
+/*
+logger.info """
+******************************************************************************
+Welcome to Gradle $gradle.gradleVersion - http://www.gradle.org
+Gradle home is set to: $gradle.gradleHomeDir
+Gradle user directory is set to: $gradle.gradleUserHomeDir
+
+Base directory: $projectDir
+Running script  ${relativePath(buildFile)}
+******************************************************************************
+"""
+*/
+
+
+
+//Properties
+
+logger.info "has property: ${project.gradle.hasProperty('$gradleVersion')}"
+
+logger.info "has property: ${hasProperty('projectDir')}"
+
+
+logger.info project.gradlePropertiesProp
+logger.info "has property: ${project.hasProperty('gradlePropertiesProp')}"
+
+
+
+if ( project.hasProperty('gradlePropertiesProp') ) {
+	logger.info "The property file value is $gradlePropertiesProp"
+} else {
+	logger.info "Oops! gradlePropertiesProp can't be found"
+}
+
+
+
+if ( project.hasProperty('commandLineProjectProp') ) {
+	logger.info "The property file value is $commandLineProjectProp"
+} else {
+	logger.info "Oops! commandLineProjectProp can't be found"
+}
+
+
+project.ext.sayHello = "Hello!"
+if ( project.hasProperty('sayHello') ) {
+	logger.info project.sayHello
+} else {
+	logger.info "Unable to say Hello!"
+}
+
+if ( project.gradle.hasProperty('timestamp') ) {
+	logger.info project.gradle.timestamp()
+} else {
+	logger.info "Oops! timestamp() unavailable!"
+}
+
+
+if ( gradle.ext.has('timestamp') ) {
+	logger.info gradle.timestamp()
+} else {
+	logger.info "Oops! timestamp() unavailable!"
+}
+
