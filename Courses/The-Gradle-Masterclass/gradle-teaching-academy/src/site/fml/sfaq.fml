@@ -1,0 +1,35 @@
+<faqs xmlns="http://maven.apache.org/FML/1.0.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/FML/1.0.1 http://maven.apache.org/xsd/fml-1.0.1.xsd"
+  title="Frequently Asked Questions"
+  toplink="false">
+
+	<part id="interfaces-extending">
+		<title>Academy Interfaces</title>
+		<faq id="extending-approach">
+			<question>How do I extend the base Academy Interfaces?</question>
+			<answer>
+				<p>Easiest in the Eclipse IDE. Just create a new Interface and use the extends key word.
+				Remember you are extending the base interface found in the academy-share.jar file.</p>
+			</answer>			
+		</faq>		
+		<faq id="impl-approach">
+			<question>Do I always need to extend the base interface before I implement it?</question>
+			<answer>
+				<p>The short answer is yes! because of the domain type provided in replacement of the generic T extends DomainObject.</p>
+			</answer>			
+		</faq>	
+	</part>
+	
+	
+	<part id="user-details-module">
+		<title>Reusing the User-details Module</title>
+		<faq id="user-details">
+			<question>Can I use the user details module in my other projects?</question>
+			<answer>
+				<p>Yes, the modules have been designed per function. So they can be reused if that functionality is required else where.</p>
+			</answer>			
+		</faq>		
+	</part>
+
+</faqs>

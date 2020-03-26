@@ -1,0 +1,5 @@
+description = 'Teaching Academy Registration Repository'
+
+dependencies {
+	implementation 'org.springframework:spring-webmvc:4.0.3.RELEASE'    
+}

@@ -1,0 +1,6 @@
+description = 'Teaching Academy User Details Implementation'
+
+dependencies {
+	implementation 'org.springframework:spring-webmvc:4.0.3.RELEASE'
+	implementation 'javax.inject:javax.inject:1'	
+}

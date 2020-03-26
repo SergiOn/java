@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/DECORATION/1.3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/DECORATION/1.3.0 http://maven.apache.org/xsd/decoration-1.3.0.xsd">
+	<body>
+		<links>
+			<item name="Teaching Academy" position="right" href="${project.url}"/>
+		</links>
+		
+		<breadcrumbs>
+			<item name="denOfprogramming" href="http://www.denofprogramming.com/" />
+			<item name="denOfprogramming Courses" href="http://www.denofprogramming.com/courses" />			
+		</breadcrumbs>
+		
+		<menu name="Overview">
+			<item name="History of Teaching Academy" href="history.html"/>
+			<item name="Sample Code" href="sample.html"/>
+			<item name="FAQ" href="sfaq.html"/>
+		</menu>	
+		<menu ref="modules"/>
+		<menu ref="reports" inherit="bottom"/>		
+	</body>
+	
+	<skin>
+		<groupId>org.apache.maven.skins</groupId>
+		<artifactId>maven-stylus-skin</artifactId>
+		<version>1.5</version>
+	</skin>
+	
+</project>
+

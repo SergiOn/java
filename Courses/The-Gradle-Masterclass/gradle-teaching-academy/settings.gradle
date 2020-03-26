@@ -1,0 +1,35 @@
+include 'academy-utils'
+include 'academy-shared'
+include 'academy-web'
+include 'academy-audit-interface'
+include 'academy-audit'
+include 'academy-audit-repository'
+include 'academy-audit-integration'
+
+include 'academy-user-details-interface'
+include 'academy-user-details'
+include 'academy-user-details-repository'
+include 'academy-user-details-integration'
+
+include 'academy-student-interface'
+include 'academy-student'
+include 'academy-student-integration'
+
+include 'academy-courses-interface'
+include 'academy-courses'
+include 'academy-courses-repository'
+include 'academy-courses-integration'
+
+include 'academy-registration-interface'
+include 'academy-registration'
+include 'academy-registration-repository'
+include 'academy-registration-integration'
+
+
+
+rootProject.name = theName
+
+rootProject.children.each { subproject -> 
+     subproject.buildFileName = "${subproject.name}.gradle" 
+}
+

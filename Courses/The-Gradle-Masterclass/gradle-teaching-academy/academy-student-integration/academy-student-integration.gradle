@@ -1,0 +1,7 @@
+description = 'Teaching Academy Student Integration Tests'
+
+
+dependencies {
+	implementation 'org.springframework:spring-webmvc:4.0.3.RELEASE'
+	implementation 'javax.inject:javax.inject:1'
+}

@@ -1,0 +1,238 @@
+subprojects {
+
+	apply plugin: 'java-library'
+//	apply plugin: 'findbugs'
+//	apply plugin: 'pmd'
+
+    
+	description = 'Teaching Academy Root Project'
+	group = theGroup
+	version = theVersion
+
+	sourceCompatibility = theSourceCompatibility
+	targetCompatibility = theSourceCompatibility
+
+	
+    repositories {
+        mavenCentral()
+    }
+    
+    dependencies {    	 
+    	testImplementation 'org.springframework:spring-test:4.0.3.RELEASE'    	
+        testImplementation	'junit:junit:4.12'
+    }
+    
+/*    
+    //FindBugs
+   
+    findbugs {
+    	toolVersion = "3.0.1"
+    	ignoreFailures = true
+    	reportLevel = "high"
+    	reportsDir = file("$project.buildDir/findbugsReports")
+    	
+    }
+    
+    tasks.withType(FindBugs) {
+   	 reports {
+    	    xml.enabled false
+        	html.enabled true 
+    	}
+	}
+   	
+    	
+	//PMD
+	
+	pmd {
+		ignoreFailures = true
+		pmdTest.enabled= false
+		ruleSets = [
+			'java-basic',
+            'java-braces',
+            'java-clone',
+            'java-codesize',
+            'java-comments',
+            'java-controversial',
+            'java-coupling',
+            'java-design',
+            'java-empty',
+            'java-finalizers',
+            'java-imports',
+            'java-optimizations',
+            'java-strictexception',
+            'java-strings',
+            'java-typeresolution',
+            'java-unnecessary',
+            'java-unusedcode'		
+		]	
+	}
+	
+	tasks.withType(Pmd){
+	    reports{
+	        xml.enabled=true
+	        html.enabled=true
+	    }
+	}
+	
+*/
+	
+}
+
+
+project(':academy-audit') {
+
+    dependencies {
+        api project(':academy-audit-interface')
+    }
+}
+
+
+project(':academy-audit-interface') {
+	
+    dependencies {
+        api project(':academy-shared')
+    }
+}
+
+project(':academy-audit-repository') {
+	
+    dependencies {
+        api project(':academy-audit-interface')
+    }
+}
+
+
+
+project(':academy-courses') {
+
+    dependencies {
+        api project(':academy-courses-interface')
+    }
+}
+
+project(':academy-courses-integration') {
+	
+    dependencies {
+        api project(':academy-courses-interface')
+    }
+}
+
+
+project(':academy-courses-interface') {
+	
+    dependencies {
+        api project(':academy-shared')
+    }
+}
+
+
+project(':academy-courses-repository') {
+	
+    dependencies {
+        api project(':academy-courses-interface')        
+    }
+}
+
+project(':academy-registration') {
+	
+    dependencies {
+        api project(':academy-registration-interface')        
+    }
+}
+
+
+project(':academy-registration-integration') {
+	
+    dependencies {
+        implementation project(':academy-registration-interface')
+        implementation project(':academy-registration')
+		implementation project(':academy-registration-repository')
+		implementation project(':academy-student')
+		implementation project(':academy-user-details')
+		implementation project(':academy-user-details-repository')
+		implementation project(':academy-courses')
+		implementation project(':academy-courses-repository')		      
+    }
+}
+
+
+project(':academy-registration-interface') {
+
+
+    dependencies {
+        api project(':academy-shared')
+        api project(':academy-courses-interface')
+		api project(':academy-student-interface')		   
+    }
+}
+
+project(':academy-registration-repository') {
+	
+    dependencies {
+        api project(':academy-registration-interface')	   
+    }
+}
+
+
+project(':academy-student') {
+	
+    dependencies {
+        api project(':academy-student-interface')	   
+    }
+}
+
+
+project(':academy-student-integration') {
+	
+    dependencies {
+        implementation project(':academy-student')	 
+        implementation project(':academy-user-details')        	 
+    }
+}
+
+project(':academy-student-interface') {
+	
+    dependencies {
+        api project(':academy-user-details-interface')	   
+    }
+}
+
+
+project(':academy-user-details') {
+	
+    dependencies {
+        api project(':academy-user-details-interface')	   
+    }
+}
+
+project(':academy-user-details-interface') {
+	
+    dependencies {
+        api project(':academy-shared')	   
+    }
+}
+
+project(':academy-user-details-repository') {
+	
+    dependencies {
+        api project(':academy-user-details-interface')	   
+    }
+}
+
+
+
+project(':academy-web') {
+
+    dependencies {
+        implementation project(':academy-student')
+        implementation project(':academy-user-details')
+        implementation project(':academy-user-details-repository')        
+    }
+}
+
+
+task delpoy(dependsOn: ':academy-web:deployToTomcat') {
+	doLast{	
+ 		println ">>>Deploying artifacts"	
+	}
+}
