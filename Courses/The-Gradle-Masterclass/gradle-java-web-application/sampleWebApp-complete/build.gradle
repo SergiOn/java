@@ -1,0 +1,71 @@
+plugins {
+  id 'java'
+  id 'war'
+}
+
+
+
+group = 'com.denofprogramming'
+version = '0.0.1-SNAPSHOT'
+
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+
+ext.tomcatHome = 'C:/software/Apache Software Foundation/apache-tomcat-9.0.1'
+ext.tomcatWebapps = "$tomcatHome/webapps"
+
+
+
+war {
+	archiveName = 'mywebapp.war'	
+}
+
+repositories {
+	mavenCentral()
+}
+
+
+task deployToTomcat(type: Copy, dependsOn: 'war'){	
+	from war
+    into "$tomcatWebapps"	
+}
+
+dependencies { 
+
+
+	implementation ('org.springframework:spring-webmvc:4.0.3.RELEASE') {
+	 	exclude group: 'commons-logging', module: 'commons-logging'
+	}
+
+	//depends on commons logging so we need to use the jcl-over-slf4j once exluded commons logging for backward compatibility  
+	//compile 'org.springframework:spring-webmvc:4.0.3.RELEASE'
+
+	// this is needed once we exclude commons logging for backward compatibility issues for this verion of Spring MVC
+	//https://www.slf4j.org/legacy.html
+	implementation 'org.slf4j:jcl-over-slf4j:1.7.25'
+
+	//now we can standardise on the SLF4j logging interface
+	//https://www.slf4j.org/manual.html
+	implementation 'org.slf4j:slf4j-log4j12:1.7.25'
+	
+	//This comes as a tranient dependency with slf4j over log4j
+	//compile 'log4j:log4j:1.2.17'
+
+
+
+	implementation 'javax.inject:javax.inject:1'
+	implementation 'org.apache.commons:commons-math3:3.2'
+	implementation 'jstl:jstl:1.2'
+	
+
+	
+	compileOnly "javax.servlet:javax.servlet-api:3.0.1"
+	testImplementation	'junit:junit:4.11'
+
+}
+
+
