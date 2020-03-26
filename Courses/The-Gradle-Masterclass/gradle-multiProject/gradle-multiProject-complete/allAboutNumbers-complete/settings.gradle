@@ -1,0 +1,6 @@
+include 'pickerNumberApplication1-complete', 'plusplus-complete', 'randomNumberGen1-complete'
+
+rootProject.name = 'allAboutNumbers-complete'
+
+
+
