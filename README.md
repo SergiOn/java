@@ -1,6 +1,6 @@
 # Java
 
-## [Database courses](./Courses)
+## [Java courses](./Courses)
 
 ## Simple server
 
@@ -31,17 +31,17 @@ https://github.com/SergiOn/istio-mastery
 https://github.com/rinormaloku/istio-mastery
 
 https://medium.com/google-cloud/back-to-microservices-with-istio-p1-827c872daa53
-<br>
+
 https://medium.com/google-cloud/back-to-microservices-with-istio-part-2-authentication-authorization-b079f77358ac
 
 https://habr.com/ru/company/flant/blog/438426/
-<br>
+
 https://habr.com/ru/company/flant/blog/440378/
-<br>
+
 https://habr.com/ru/company/flant/blog/443668/
 
 Examples:
-<br>
+
 https://github.com/SeriyBg/starwars-istio
 
 
